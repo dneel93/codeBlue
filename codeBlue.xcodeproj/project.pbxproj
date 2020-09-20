@@ -18,6 +18,12 @@
 		CCA449C42511E5CB0097D370 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCA449C22511E5CB0097D370 /* Main.storyboard */; };
 		CCA449C62511E5CD0097D370 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCA449C52511E5CD0097D370 /* Assets.xcassets */; };
 		CCA449D12511E5F90097D370 /* firstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA449D02511E5F90097D370 /* firstVC.swift */; };
+		CCC429812517CE87001AA0D9 /* guidedPulse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCC429802517CE87001AA0D9 /* guidedPulse.storyboard */; };
+		CCC429832517CEAB001AA0D9 /* guidedPulseVC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC429822517CEAB001AA0D9 /* guidedPulseVC1.swift */; };
+		CCC429852517CF40001AA0D9 /* guidedNoPulse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCC429842517CF40001AA0D9 /* guidedNoPulse.storyboard */; };
+		CCC429872517CF81001AA0D9 /* guidedNoPulseVC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC429862517CF81001AA0D9 /* guidedNoPulseVC1.swift */; };
+		CCC429892517DDBA001AA0D9 /* guidedPulseVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC429882517DDBA001AA0D9 /* guidedPulseVC2.swift */; };
+		CCC4298B2517DED2001AA0D9 /* UIButton_check+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC4298A2517DED2001AA0D9 /* UIButton_check+ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +40,12 @@
 		CCA449C52511E5CD0097D370 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CCA449CA2511E5CD0097D370 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CCA449D02511E5F90097D370 /* firstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstVC.swift; sourceTree = "<group>"; };
+		CCC429802517CE87001AA0D9 /* guidedPulse.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = guidedPulse.storyboard; sourceTree = "<group>"; };
+		CCC429822517CEAB001AA0D9 /* guidedPulseVC1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guidedPulseVC1.swift; sourceTree = "<group>"; };
+		CCC429842517CF40001AA0D9 /* guidedNoPulse.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = guidedNoPulse.storyboard; sourceTree = "<group>"; };
+		CCC429862517CF81001AA0D9 /* guidedNoPulseVC1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guidedNoPulseVC1.swift; sourceTree = "<group>"; };
+		CCC429882517DDBA001AA0D9 /* guidedPulseVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guidedPulseVC2.swift; sourceTree = "<group>"; };
+		CCC4298A2517DED2001AA0D9 /* UIButton_check+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton_check+ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,12 +84,18 @@
 				CCA449C22511E5CB0097D370 /* Main.storyboard */,
 				CC27714F2513110300EC6E94 /* Algos.storyboard */,
 				CC27715D2517C4B900EC6E94 /* guided.storyboard */,
+				CCC429802517CE87001AA0D9 /* guidedPulse.storyboard */,
+				CCC429842517CF40001AA0D9 /* guidedNoPulse.storyboard */,
 				CCA449CA2511E5CD0097D370 /* Info.plist */,
 				CCA449D02511E5F90097D370 /* firstVC.swift */,
 				CC2771512513113500EC6E94 /* algoVC.swift */,
 				CC2771532513981200EC6E94 /* cardiacArrestVC.swift */,
 				CC27715925147EEF00EC6E94 /* UIButton+ext.swift */,
 				CC27715B2517C0C200EC6E94 /* guided1VC.swift */,
+				CCC429822517CEAB001AA0D9 /* guidedPulseVC1.swift */,
+				CCC429882517DDBA001AA0D9 /* guidedPulseVC2.swift */,
+				CCC429862517CF81001AA0D9 /* guidedNoPulseVC1.swift */,
+				CCC4298A2517DED2001AA0D9 /* UIButton_check+ext.swift */,
 			);
 			path = codeBlue;
 			sourceTree = "<group>";
@@ -144,6 +162,8 @@
 				CCA449C62511E5CD0097D370 /* Assets.xcassets in Resources */,
 				CC27715E2517C4B900EC6E94 /* guided.storyboard in Resources */,
 				CCA449C42511E5CB0097D370 /* Main.storyboard in Resources */,
+				CCC429812517CE87001AA0D9 /* guidedPulse.storyboard in Resources */,
+				CCC429852517CF40001AA0D9 /* guidedNoPulse.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,10 +174,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCC4298B2517DED2001AA0D9 /* UIButton_check+ext.swift in Sources */,
 				CCA449BD2511E5CB0097D370 /* AppDelegate.swift in Sources */,
 				CC27715A25147EEF00EC6E94 /* UIButton+ext.swift in Sources */,
 				CCA449BF2511E5CB0097D370 /* SceneDelegate.swift in Sources */,
+				CCC429872517CF81001AA0D9 /* guidedNoPulseVC1.swift in Sources */,
 				CCA449D12511E5F90097D370 /* firstVC.swift in Sources */,
+				CCC429892517DDBA001AA0D9 /* guidedPulseVC2.swift in Sources */,
+				CCC429832517CEAB001AA0D9 /* guidedPulseVC1.swift in Sources */,
 				CC2771522513113500EC6E94 /* algoVC.swift in Sources */,
 				CC2771542513981200EC6E94 /* cardiacArrestVC.swift in Sources */,
 				CC27715C2517C0C200EC6E94 /* guided1VC.swift in Sources */,

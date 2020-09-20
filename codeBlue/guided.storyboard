@@ -26,6 +26,9 @@
                                 <state key="normal" title="Pulse">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Xz6-d7-kkn" kind="show" id="JKg-J3-6xK"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P61-i8-SbE">
                                 <rect key="frame" x="107" y="468" width="200" height="100"/>
@@ -38,6 +41,9 @@
                                 <state key="normal" title="No Pulse">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="ffl-BO-ygl" kind="show" id="9Fy-Q0-AUo"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -57,7 +63,27 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Fb-CT-R7v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="548" y="17"/>
+            <point key="canvasLocation" x="771" y="17"/>
+        </scene>
+        <!--guidedPulse-->
+        <scene sceneID="iTa-FD-yIk">
+            <objects>
+                <viewControllerPlaceholder storyboardName="guidedPulse" id="Xz6-d7-kkn" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="IPq-Rh-qI9"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XMs-NX-4IZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1334" y="-76"/>
+        </scene>
+        <!--guidedNoPulse-->
+        <scene sceneID="t8J-65-Ef6">
+            <objects>
+                <viewControllerPlaceholder storyboardName="guidedNoPulse" id="ffl-BO-ygl" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="ATg-2S-ECr"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zuw-QK-sXZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1345" y="124"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="a6f-PT-vne">

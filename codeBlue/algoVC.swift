@@ -25,7 +25,6 @@ class algoVC: UIViewController {
         tachy.configure(title: "Tachycardia")
         brady.configure(title: "Bradycardia")
         cardiacArrest.configure(title: "Cardiac Arrest")
-        self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationItem.title = "ACLS Algorithms"
     }
     
