@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import SideMenu
 
 class firstVC: UIViewController {
 
     @IBOutlet var guidedCode: UIButton!
     
     @IBOutlet var aclsAlgo: UIButton!
+    
+    var menu: SideMenuNavigationController?
     
     
     
@@ -21,17 +24,48 @@ class firstVC: UIViewController {
         super.viewDidLoad()
         guidedCode.layer.cornerRadius = 8
         aclsAlgo.layer.cornerRadius = 8
+        menu = SideMenuNavigationController(rootViewController: MenuListController())
+        menu?.leftSide=true
+        menu?.setNavigationBarHidden(true, animated: false)
+        SideMenuManager.default.leftMenuNavigationController = menu
+        SideMenuManager.default.addPanGestureToPresent(toView: self.view)
+        
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func menuTapped(_ sender: Any) {
+        present(menu!, animated:true)
     }
-    */
+    
+
+
+    class MenuListController: UITableViewController{
+        
+        var items = ["About","ACLS Information","Help"]
+        
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            tableView.backgroundColor = .blue
+            tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        }
+        
+        override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return items.count
+        }
+        
+        override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+            cell.textLabel?.text = items[indexPath.row]
+            cell.backgroundColor = .lightText
+            return cell
+        }
+        
+        override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            //do something
+            
+        }
+        
+    }
+    
 
 }

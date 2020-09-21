@@ -76,7 +76,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="oSk-cO-PFN"/>
+                    <navigationItem key="navigationItem" id="oSk-cO-PFN">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="QyP-ry-NxX">
+                            <connections>
+                                <action selector="menuTapped:" destination="BYZ-38-t0r" id="dHR-bk-a6d"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="aclsAlgo" destination="yzY-g5-83r" id="lnF-Nd-DSv"/>
                         <outlet property="guidedCode" destination="fwT-l0-d0v" id="gUg-Gi-zSm"/>
@@ -84,7 +90,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-165.21739130434784" y="63.616071428571423"/>
+            <point key="canvasLocation" x="-80" y="64"/>
         </scene>
         <!--guided-->
         <scene sceneID="eDR-eC-6Ii">
