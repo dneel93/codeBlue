@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3D5949D6D3BE6C59B52E842D /* Pods_codeBlue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21B6B85A26A6890BB52B78B3 /* Pods_codeBlue.framework */; };
 		CC2771502513110300EC6E94 /* Algos.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC27714F2513110300EC6E94 /* Algos.storyboard */; };
 		CC2771522513113500EC6E94 /* algoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2771512513113500EC6E94 /* algoVC.swift */; };
 		CC2771542513981200EC6E94 /* cardiacArrestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2771532513981200EC6E94 /* cardiacArrestVC.swift */; };
 		CC27715A25147EEF00EC6E94 /* UIButton+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC27715925147EEF00EC6E94 /* UIButton+ext.swift */; };
 		CC27715C2517C0C200EC6E94 /* guided1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC27715B2517C0C200EC6E94 /* guided1VC.swift */; };
 		CC27715E2517C4B900EC6E94 /* guided.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC27715D2517C4B900EC6E94 /* guided.storyboard */; };
+		CC2E4B35251B0EF000EE57E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC2E4B34251B0EF000EE57E0 /* LaunchScreen.storyboard */; };
 		CCA449BD2511E5CB0097D370 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA449BC2511E5CB0097D370 /* AppDelegate.swift */; };
 		CCA449BF2511E5CB0097D370 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA449BE2511E5CB0097D370 /* SceneDelegate.swift */; };
 		CCA449C42511E5CB0097D370 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCA449C22511E5CB0097D370 /* Main.storyboard */; };
@@ -28,14 +28,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		07F7BB01AF4C9BFB81896780 /* Pods-codeBlue.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-codeBlue.debug.xcconfig"; path = "Target Support Files/Pods-codeBlue/Pods-codeBlue.debug.xcconfig"; sourceTree = "<group>"; };
-		21B6B85A26A6890BB52B78B3 /* Pods_codeBlue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_codeBlue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC27714F2513110300EC6E94 /* Algos.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Algos.storyboard; sourceTree = "<group>"; };
 		CC2771512513113500EC6E94 /* algoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = algoVC.swift; sourceTree = "<group>"; };
 		CC2771532513981200EC6E94 /* cardiacArrestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardiacArrestVC.swift; sourceTree = "<group>"; };
 		CC27715925147EEF00EC6E94 /* UIButton+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+ext.swift"; sourceTree = "<group>"; };
 		CC27715B2517C0C200EC6E94 /* guided1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guided1VC.swift; sourceTree = "<group>"; };
 		CC27715D2517C4B900EC6E94 /* guided.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = guided.storyboard; sourceTree = "<group>"; };
+		CC2E4B34251B0EF000EE57E0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CCA449B92511E5CB0097D370 /* codeBlue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = codeBlue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCA449BC2511E5CB0097D370 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCA449BE2511E5CB0097D370 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,7 +48,6 @@
 		CCC429862517CF81001AA0D9 /* guidedNoPulseVC1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guidedNoPulseVC1.swift; sourceTree = "<group>"; };
 		CCC429882517DDBA001AA0D9 /* guidedPulseVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guidedPulseVC2.swift; sourceTree = "<group>"; };
 		CCC4298A2517DED2001AA0D9 /* UIButton_check+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton_check+ext.swift"; sourceTree = "<group>"; };
-		E881FD6E6C8B465985DE6629 /* Pods-codeBlue.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-codeBlue.release.xcconfig"; path = "Target Support Files/Pods-codeBlue/Pods-codeBlue.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,29 +55,46 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D5949D6D3BE6C59B52E842D /* Pods_codeBlue.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		29379FA90D631F18D6E2C8E7 /* Pods */ = {
+		CC7B9E76251C09A900D8F16D /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				07F7BB01AF4C9BFB81896780 /* Pods-codeBlue.debug.xcconfig */,
-				E881FD6E6C8B465985DE6629 /* Pods-codeBlue.release.xcconfig */,
+				CC2E4B34251B0EF000EE57E0 /* LaunchScreen.storyboard */,
+				CCA449C22511E5CB0097D370 /* Main.storyboard */,
+				CC27714F2513110300EC6E94 /* Algos.storyboard */,
+				CC27715D2517C4B900EC6E94 /* guided.storyboard */,
+				CCC429802517CE87001AA0D9 /* guidedPulse.storyboard */,
+				CCC429842517CF40001AA0D9 /* guidedNoPulse.storyboard */,
 			);
-			name = Pods;
-			path = Pods;
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		9F35E077E366789112DF655E /* Frameworks */ = {
+		CC7B9E77251C09DF00D8F16D /* VCs */ = {
 			isa = PBXGroup;
 			children = (
-				21B6B85A26A6890BB52B78B3 /* Pods_codeBlue.framework */,
+				CCA449D02511E5F90097D370 /* firstVC.swift */,
+				CC2771512513113500EC6E94 /* algoVC.swift */,
+				CC27715B2517C0C200EC6E94 /* guided1VC.swift */,
+				CCC429822517CEAB001AA0D9 /* guidedPulseVC1.swift */,
+				CCC429882517DDBA001AA0D9 /* guidedPulseVC2.swift */,
+				CCC429862517CF81001AA0D9 /* guidedNoPulseVC1.swift */,
+				CC2771532513981200EC6E94 /* cardiacArrestVC.swift */,
 			);
-			name = Frameworks;
+			path = VCs;
+			sourceTree = "<group>";
+		};
+		CC7B9E78251C0A2500D8F16D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CC27715925147EEF00EC6E94 /* UIButton+ext.swift */,
+				CCC4298A2517DED2001AA0D9 /* UIButton_check+ext.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		CCA449B02511E5CB0097D370 = {
@@ -87,8 +102,6 @@
 			children = (
 				CCA449BB2511E5CB0097D370 /* codeBlue */,
 				CCA449BA2511E5CB0097D370 /* Products */,
-				29379FA90D631F18D6E2C8E7 /* Pods */,
-				9F35E077E366789112DF655E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,24 +116,13 @@
 		CCA449BB2511E5CB0097D370 /* codeBlue */ = {
 			isa = PBXGroup;
 			children = (
+				CC7B9E78251C0A2500D8F16D /* Extensions */,
+				CC7B9E77251C09DF00D8F16D /* VCs */,
+				CC7B9E76251C09A900D8F16D /* Storyboards */,
 				CCA449BC2511E5CB0097D370 /* AppDelegate.swift */,
 				CCA449BE2511E5CB0097D370 /* SceneDelegate.swift */,
 				CCA449C52511E5CD0097D370 /* Assets.xcassets */,
-				CCA449C22511E5CB0097D370 /* Main.storyboard */,
-				CC27714F2513110300EC6E94 /* Algos.storyboard */,
-				CC27715D2517C4B900EC6E94 /* guided.storyboard */,
-				CCC429802517CE87001AA0D9 /* guidedPulse.storyboard */,
-				CCC429842517CF40001AA0D9 /* guidedNoPulse.storyboard */,
 				CCA449CA2511E5CD0097D370 /* Info.plist */,
-				CCA449D02511E5F90097D370 /* firstVC.swift */,
-				CC2771512513113500EC6E94 /* algoVC.swift */,
-				CC2771532513981200EC6E94 /* cardiacArrestVC.swift */,
-				CC27715925147EEF00EC6E94 /* UIButton+ext.swift */,
-				CC27715B2517C0C200EC6E94 /* guided1VC.swift */,
-				CCC429822517CEAB001AA0D9 /* guidedPulseVC1.swift */,
-				CCC429882517DDBA001AA0D9 /* guidedPulseVC2.swift */,
-				CCC429862517CF81001AA0D9 /* guidedNoPulseVC1.swift */,
-				CCC4298A2517DED2001AA0D9 /* UIButton_check+ext.swift */,
 			);
 			path = codeBlue;
 			sourceTree = "<group>";
@@ -132,11 +134,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CCA449CD2511E5CD0097D370 /* Build configuration list for PBXNativeTarget "codeBlue" */;
 			buildPhases = (
-				806AB59FD8687DF14CA38FBC /* [CP] Check Pods Manifest.lock */,
 				CCA449B52511E5CB0097D370 /* Sources */,
 				CCA449B62511E5CB0097D370 /* Frameworks */,
 				CCA449B72511E5CB0097D370 /* Resources */,
-				C0C3B50B07C68EF88B366ED4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -191,52 +191,11 @@
 				CCA449C42511E5CB0097D370 /* Main.storyboard in Resources */,
 				CCC429812517CE87001AA0D9 /* guidedPulse.storyboard in Resources */,
 				CCC429852517CF40001AA0D9 /* guidedNoPulse.storyboard in Resources */,
+				CC2E4B35251B0EF000EE57E0 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		806AB59FD8687DF14CA38FBC /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-codeBlue-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C0C3B50B07C68EF88B366ED4 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-codeBlue/Pods-codeBlue-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-codeBlue/Pods-codeBlue-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-codeBlue/Pods-codeBlue-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CCA449B52511E5CB0097D370 /* Sources */ = {
@@ -387,7 +346,6 @@
 		};
 		CCA449CE2511E5CD0097D370 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 07F7BB01AF4C9BFB81896780 /* Pods-codeBlue.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -406,7 +364,6 @@
 		};
 		CCA449CF2511E5CD0097D370 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E881FD6E6C8B465985DE6629 /* Pods-codeBlue.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
