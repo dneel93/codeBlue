@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C767F190C8375A43E4636CF /* Pods_codeBlue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 218F4FFF39E871C2346E422A /* Pods_codeBlue.framework */; };
 		CC2771502513110300EC6E94 /* Algos.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC27714F2513110300EC6E94 /* Algos.storyboard */; };
 		CC2771522513113500EC6E94 /* algoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2771512513113500EC6E94 /* algoVC.swift */; };
 		CC2771542513981200EC6E94 /* cardiacArrestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2771532513981200EC6E94 /* cardiacArrestVC.swift */; };
@@ -14,6 +15,10 @@
 		CC27715C2517C0C200EC6E94 /* guided1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC27715B2517C0C200EC6E94 /* guided1VC.swift */; };
 		CC27715E2517C4B900EC6E94 /* guided.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC27715D2517C4B900EC6E94 /* guided.storyboard */; };
 		CC2E4B35251B0EF000EE57E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC2E4B34251B0EF000EE57E0 /* LaunchScreen.storyboard */; };
+		CC50AB4125426FE100B2B96E /* rhythmTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC50AB4025426FE100B2B96E /* rhythmTableVC.swift */; };
+		CC50ABCE254FCC7700B2B96E /* asystolePEA.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC50ABCD254FCC7600B2B96E /* asystolePEA.swift */; };
+		CC50ABD5254FD3A000B2B96E /* asystolePeaContVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC50ABD4254FD3A000B2B96E /* asystolePeaContVC.swift */; };
+		CC50ABD9254FD86300B2B96E /* HTcausesTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC50ABD8254FD86300B2B96E /* HTcausesTableVC.swift */; };
 		CCA449BD2511E5CB0097D370 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA449BC2511E5CB0097D370 /* AppDelegate.swift */; };
 		CCA449BF2511E5CB0097D370 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA449BE2511E5CB0097D370 /* SceneDelegate.swift */; };
 		CCA449C42511E5CB0097D370 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCA449C22511E5CB0097D370 /* Main.storyboard */; };
@@ -25,9 +30,23 @@
 		CCC429872517CF81001AA0D9 /* guidedNoPulseVC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC429862517CF81001AA0D9 /* guidedNoPulseVC1.swift */; };
 		CCC429892517DDBA001AA0D9 /* guidedPulseVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC429882517DDBA001AA0D9 /* guidedPulseVC2.swift */; };
 		CCC4298B2517DED2001AA0D9 /* UIButton_check+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC4298A2517DED2001AA0D9 /* UIButton_check+ext.swift */; };
+		CCD2D28B2526E390008DB015 /* guidedPulseVC3.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD2D28A2526E390008DB015 /* guidedPulseVC3.swift */; };
+		CCD2D2A2252702CD008DB015 /* guidedNoPulseVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD2D2A1252702CD008DB015 /* guidedNoPulseVC2.swift */; };
+		CCD2D2A92527F5BE008DB015 /* guidedPulseVC4.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD2D2A82527F5BE008DB015 /* guidedPulseVC4.swift */; };
+		CCD2D2E22533FE87008DB015 /* guidedPulseOverdoseTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD2D2E12533FE86008DB015 /* guidedPulseOverdoseTableVC.swift */; };
+		CCD2D2E525340635008DB015 /* guidedPulseVC5.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD2D2E425340635008DB015 /* guidedPulseVC5.swift */; };
+		CCEB7C97253C2E2D00DD66EB /* cardiacTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEB7C96253C2E2C00DD66EB /* cardiacTableVC.swift */; };
+		CCEB7C9B253F50C000DD66EB /* postArrestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEB7C9A253F50C000DD66EB /* postArrestVC.swift */; };
+		CCEB7CA2253F57D100DD66EB /* postArrestTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEB7CA1253F57D100DD66EB /* postArrestTableVC.swift */; };
+		CCEB7CA525400B2400DD66EB /* bradyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEB7CA425400B2300DD66EB /* bradyVC.swift */; };
+		CCEB7CA825400C7000DD66EB /* bradyTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEB7CA725400C7000DD66EB /* bradyTableVC.swift */; };
+		CCEB7CAB2540124C00DD66EB /* tachyTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEB7CAA2540124C00DD66EB /* tachyTableVC.swift */; };
+		CCEB7CAE2540126900DD66EB /* tachyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEB7CAD2540126900DD66EB /* tachyVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		218F4FFF39E871C2346E422A /* Pods_codeBlue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_codeBlue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4465DD027E4E25CB011CF503 /* Pods-codeBlue.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-codeBlue.release.xcconfig"; path = "Target Support Files/Pods-codeBlue/Pods-codeBlue.release.xcconfig"; sourceTree = "<group>"; };
 		CC27714F2513110300EC6E94 /* Algos.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Algos.storyboard; sourceTree = "<group>"; };
 		CC2771512513113500EC6E94 /* algoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = algoVC.swift; sourceTree = "<group>"; };
 		CC2771532513981200EC6E94 /* cardiacArrestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardiacArrestVC.swift; sourceTree = "<group>"; };
@@ -35,6 +54,10 @@
 		CC27715B2517C0C200EC6E94 /* guided1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guided1VC.swift; sourceTree = "<group>"; };
 		CC27715D2517C4B900EC6E94 /* guided.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = guided.storyboard; sourceTree = "<group>"; };
 		CC2E4B34251B0EF000EE57E0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CC50AB4025426FE100B2B96E /* rhythmTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rhythmTableVC.swift; sourceTree = "<group>"; };
+		CC50ABCD254FCC7600B2B96E /* asystolePEA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = asystolePEA.swift; sourceTree = "<group>"; };
+		CC50ABD4254FD3A000B2B96E /* asystolePeaContVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = asystolePeaContVC.swift; sourceTree = "<group>"; };
+		CC50ABD8254FD86300B2B96E /* HTcausesTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTcausesTableVC.swift; sourceTree = "<group>"; };
 		CCA449B92511E5CB0097D370 /* codeBlue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = codeBlue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCA449BC2511E5CB0097D370 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCA449BE2511E5CB0097D370 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +71,19 @@
 		CCC429862517CF81001AA0D9 /* guidedNoPulseVC1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guidedNoPulseVC1.swift; sourceTree = "<group>"; };
 		CCC429882517DDBA001AA0D9 /* guidedPulseVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guidedPulseVC2.swift; sourceTree = "<group>"; };
 		CCC4298A2517DED2001AA0D9 /* UIButton_check+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton_check+ext.swift"; sourceTree = "<group>"; };
+		CCD2D28A2526E390008DB015 /* guidedPulseVC3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guidedPulseVC3.swift; sourceTree = "<group>"; };
+		CCD2D2A1252702CD008DB015 /* guidedNoPulseVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guidedNoPulseVC2.swift; sourceTree = "<group>"; };
+		CCD2D2A82527F5BE008DB015 /* guidedPulseVC4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guidedPulseVC4.swift; sourceTree = "<group>"; };
+		CCD2D2E12533FE86008DB015 /* guidedPulseOverdoseTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guidedPulseOverdoseTableVC.swift; sourceTree = "<group>"; };
+		CCD2D2E425340635008DB015 /* guidedPulseVC5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guidedPulseVC5.swift; sourceTree = "<group>"; };
+		CCEB7C96253C2E2C00DD66EB /* cardiacTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardiacTableVC.swift; sourceTree = "<group>"; };
+		CCEB7C9A253F50C000DD66EB /* postArrestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postArrestVC.swift; sourceTree = "<group>"; };
+		CCEB7CA1253F57D100DD66EB /* postArrestTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postArrestTableVC.swift; sourceTree = "<group>"; };
+		CCEB7CA425400B2300DD66EB /* bradyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bradyVC.swift; sourceTree = "<group>"; };
+		CCEB7CA725400C7000DD66EB /* bradyTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bradyTableVC.swift; sourceTree = "<group>"; };
+		CCEB7CAA2540124C00DD66EB /* tachyTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tachyTableVC.swift; sourceTree = "<group>"; };
+		CCEB7CAD2540126900DD66EB /* tachyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tachyVC.swift; sourceTree = "<group>"; };
+		F52F8D09D017512DC21828F6 /* Pods-codeBlue.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-codeBlue.debug.xcconfig"; path = "Target Support Files/Pods-codeBlue/Pods-codeBlue.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +91,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C767F190C8375A43E4636CF /* Pods_codeBlue.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CC7B9E76251C09A900D8F16D /* Storyboards */ = {
+		2C8570DA89D2C4479C6A832E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				218F4FFF39E871C2346E422A /* Pods_codeBlue.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7EF199EFDEF30096ED0943BF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F52F8D09D017512DC21828F6 /* Pods-codeBlue.debug.xcconfig */,
+				4465DD027E4E25CB011CF503 /* Pods-codeBlue.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CC7B9E76251C09A900D8F16D /* view */ = {
 			isa = PBXGroup;
 			children = (
 				CC2E4B34251B0EF000EE57E0 /* LaunchScreen.storyboard */,
@@ -71,10 +125,10 @@
 				CCC429802517CE87001AA0D9 /* guidedPulse.storyboard */,
 				CCC429842517CF40001AA0D9 /* guidedNoPulse.storyboard */,
 			);
-			path = Storyboards;
+			path = view;
 			sourceTree = "<group>";
 		};
-		CC7B9E77251C09DF00D8F16D /* VCs */ = {
+		CC7B9E77251C09DF00D8F16D /* controller */ = {
 			isa = PBXGroup;
 			children = (
 				CCA449D02511E5F90097D370 /* firstVC.swift */,
@@ -82,10 +136,26 @@
 				CC27715B2517C0C200EC6E94 /* guided1VC.swift */,
 				CCC429822517CEAB001AA0D9 /* guidedPulseVC1.swift */,
 				CCC429882517DDBA001AA0D9 /* guidedPulseVC2.swift */,
+				CCD2D28A2526E390008DB015 /* guidedPulseVC3.swift */,
+				CCD2D2A82527F5BE008DB015 /* guidedPulseVC4.swift */,
+				CCD2D2E425340635008DB015 /* guidedPulseVC5.swift */,
+				CCD2D2E12533FE86008DB015 /* guidedPulseOverdoseTableVC.swift */,
 				CCC429862517CF81001AA0D9 /* guidedNoPulseVC1.swift */,
+				CCD2D2A1252702CD008DB015 /* guidedNoPulseVC2.swift */,
+				CC50ABCD254FCC7600B2B96E /* asystolePEA.swift */,
+				CC50ABD4254FD3A000B2B96E /* asystolePeaContVC.swift */,
+				CC50ABD8254FD86300B2B96E /* HTcausesTableVC.swift */,
 				CC2771532513981200EC6E94 /* cardiacArrestVC.swift */,
+				CCEB7C96253C2E2C00DD66EB /* cardiacTableVC.swift */,
+				CCEB7C9A253F50C000DD66EB /* postArrestVC.swift */,
+				CCEB7CA1253F57D100DD66EB /* postArrestTableVC.swift */,
+				CCEB7CA425400B2300DD66EB /* bradyVC.swift */,
+				CCEB7CA725400C7000DD66EB /* bradyTableVC.swift */,
+				CCEB7CAD2540126900DD66EB /* tachyVC.swift */,
+				CCEB7CAA2540124C00DD66EB /* tachyTableVC.swift */,
+				CC50AB4025426FE100B2B96E /* rhythmTableVC.swift */,
 			);
-			path = VCs;
+			path = controller;
 			sourceTree = "<group>";
 		};
 		CC7B9E78251C0A2500D8F16D /* Extensions */ = {
@@ -102,6 +172,8 @@
 			children = (
 				CCA449BB2511E5CB0097D370 /* codeBlue */,
 				CCA449BA2511E5CB0097D370 /* Products */,
+				7EF199EFDEF30096ED0943BF /* Pods */,
+				2C8570DA89D2C4479C6A832E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -116,15 +188,23 @@
 		CCA449BB2511E5CB0097D370 /* codeBlue */ = {
 			isa = PBXGroup;
 			children = (
-				CC7B9E78251C0A2500D8F16D /* Extensions */,
-				CC7B9E77251C09DF00D8F16D /* VCs */,
-				CC7B9E76251C09A900D8F16D /* Storyboards */,
+				CCD2D261251DAB80008DB015 /* Models */,
+				CC7B9E77251C09DF00D8F16D /* controller */,
+				CC7B9E76251C09A900D8F16D /* view */,
 				CCA449BC2511E5CB0097D370 /* AppDelegate.swift */,
 				CCA449BE2511E5CB0097D370 /* SceneDelegate.swift */,
 				CCA449C52511E5CD0097D370 /* Assets.xcassets */,
 				CCA449CA2511E5CD0097D370 /* Info.plist */,
 			);
 			path = codeBlue;
+			sourceTree = "<group>";
+		};
+		CCD2D261251DAB80008DB015 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CC7B9E78251C0A2500D8F16D /* Extensions */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,9 +214,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CCA449CD2511E5CD0097D370 /* Build configuration list for PBXNativeTarget "codeBlue" */;
 			buildPhases = (
+				539997E883C9D1DCF7E9FF6E /* [CP] Check Pods Manifest.lock */,
 				CCA449B52511E5CB0097D370 /* Sources */,
 				CCA449B62511E5CB0097D370 /* Frameworks */,
 				CCA449B72511E5CB0097D370 /* Resources */,
+				0132D581BFEA6D7ECC9CDD86 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -154,7 +236,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1150;
-				LastUpgradeCheck = 1150;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Dylan Neel";
 				TargetAttributes = {
 					CCA449B82511E5CB0097D370 = {
@@ -197,22 +279,80 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0132D581BFEA6D7ECC9CDD86 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-codeBlue/Pods-codeBlue-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-codeBlue/Pods-codeBlue-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-codeBlue/Pods-codeBlue-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		539997E883C9D1DCF7E9FF6E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-codeBlue-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CCA449B52511E5CB0097D370 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CCC4298B2517DED2001AA0D9 /* UIButton_check+ext.swift in Sources */,
+				CCEB7CAB2540124C00DD66EB /* tachyTableVC.swift in Sources */,
 				CCA449BD2511E5CB0097D370 /* AppDelegate.swift in Sources */,
 				CC27715A25147EEF00EC6E94 /* UIButton+ext.swift in Sources */,
+				CCEB7C97253C2E2D00DD66EB /* cardiacTableVC.swift in Sources */,
 				CCA449BF2511E5CB0097D370 /* SceneDelegate.swift in Sources */,
+				CCEB7CA2253F57D100DD66EB /* postArrestTableVC.swift in Sources */,
+				CCD2D2A2252702CD008DB015 /* guidedNoPulseVC2.swift in Sources */,
 				CCC429872517CF81001AA0D9 /* guidedNoPulseVC1.swift in Sources */,
 				CCA449D12511E5F90097D370 /* firstVC.swift in Sources */,
+				CCEB7CA825400C7000DD66EB /* bradyTableVC.swift in Sources */,
+				CC50AB4125426FE100B2B96E /* rhythmTableVC.swift in Sources */,
+				CCD2D2E22533FE87008DB015 /* guidedPulseOverdoseTableVC.swift in Sources */,
+				CCEB7CAE2540126900DD66EB /* tachyVC.swift in Sources */,
+				CCD2D2E525340635008DB015 /* guidedPulseVC5.swift in Sources */,
+				CCD2D2A92527F5BE008DB015 /* guidedPulseVC4.swift in Sources */,
+				CC50ABD9254FD86300B2B96E /* HTcausesTableVC.swift in Sources */,
 				CCC429892517DDBA001AA0D9 /* guidedPulseVC2.swift in Sources */,
 				CCC429832517CEAB001AA0D9 /* guidedPulseVC1.swift in Sources */,
+				CCEB7C9B253F50C000DD66EB /* postArrestVC.swift in Sources */,
 				CC2771522513113500EC6E94 /* algoVC.swift in Sources */,
 				CC2771542513981200EC6E94 /* cardiacArrestVC.swift in Sources */,
+				CC50ABD5254FD3A000B2B96E /* asystolePeaContVC.swift in Sources */,
+				CC50ABCE254FCC7700B2B96E /* asystolePEA.swift in Sources */,
+				CCD2D28B2526E390008DB015 /* guidedPulseVC3.swift in Sources */,
 				CC27715C2517C0C200EC6E94 /* guided1VC.swift in Sources */,
+				CCEB7CA525400B2400DD66EB /* bradyVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +396,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -316,6 +457,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -346,6 +488,7 @@
 		};
 		CCA449CE2511E5CD0097D370 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F52F8D09D017512DC21828F6 /* Pods-codeBlue.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -364,6 +507,7 @@
 		};
 		CCA449CF2511E5CD0097D370 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4465DD027E4E25CB011CF503 /* Pods-codeBlue.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

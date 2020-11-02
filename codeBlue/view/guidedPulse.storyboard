@@ -1,0 +1,779 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gd8-Xf-HMc">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Guided PulseVC1-->
+        <scene sceneID="tmf-en-UwR">
+            <objects>
+                <viewController storyboardIdentifier="guidedPulse" id="Ho3-SN-chK" customClass="guidedPulseVC1" customModule="codeBlue" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GTw-3j-ERi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="WQ9-eP-eEe">
+                                <rect key="frame" x="87.5" y="218.5" width="200" height="230"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nhC-NV-a3N">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
+                                        <color key="backgroundColor" red="0.063293721959999993" green="0.1892634336" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="cW9-A0-pJV"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <state key="normal" title="Tachycardia">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="7av-l5-O47" kind="show" id="dsm-NE-jb1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lgq-bv-6XX">
+                                        <rect key="frame" x="0.0" y="130" width="200" height="100"/>
+                                        <color key="backgroundColor" red="0.063293721959999993" green="0.1892634336" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="y6k-L9-3bB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <state key="normal" title="Bradycardia">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="cNf-bF-bLl" kind="show" id="1Iz-AW-Ive"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="823-k4-Gxv"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kIv-Hx-7Zc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WQ9-eP-eEe" firstAttribute="centerX" secondItem="GTw-3j-ERi" secondAttribute="centerX" id="7Sx-Oz-mjV"/>
+                            <constraint firstItem="WQ9-eP-eEe" firstAttribute="centerY" secondItem="GTw-3j-ERi" secondAttribute="centerY" id="M5U-O2-Vm2"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="bFc-mc-jox"/>
+                    <connections>
+                        <outlet property="bradyButton" destination="Lgq-bv-6XX" id="ZdU-tm-Nd2"/>
+                        <outlet property="tachyButton" destination="nhC-NV-a3N" id="Cuc-do-Mdi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7CD-ZP-j3e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1430" y="-488"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="MbQ-dO-POZ">
+            <objects>
+                <viewController id="b2y-ho-vz6" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b1K-mc-Mbv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Syncrhonized Cardioversion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WeK-cf-cB8">
+                                <rect key="frame" x="30.5" y="154" width="314" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1iW-H1-zfH">
+                                <rect key="frame" x="30" y="256" width="315" height="191"/>
+                                <string key="text">💙 Regular, narrow complex give adenosine  💊 Adenosine: 6mg IV rapid push, then 12mg if second doses needed  💊 Sedation: Midazolam (1-2mg IV) or Fentanyl (25-100mcg IV)</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="YfV-Ov-mil"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WeK-cf-cB8" firstAttribute="centerX" secondItem="b1K-mc-Mbv" secondAttribute="centerX" id="JL8-e0-mKQ"/>
+                            <constraint firstItem="1iW-H1-zfH" firstAttribute="leading" secondItem="b1K-mc-Mbv" secondAttribute="leading" constant="30" id="MW3-97-hni"/>
+                            <constraint firstItem="1iW-H1-zfH" firstAttribute="top" secondItem="WeK-cf-cB8" secondAttribute="bottom" constant="70" id="ULe-n5-Gan"/>
+                            <constraint firstItem="1iW-H1-zfH" firstAttribute="centerX" secondItem="b1K-mc-Mbv" secondAttribute="centerX" id="r29-q9-L2A"/>
+                            <constraint firstItem="WeK-cf-cB8" firstAttribute="top" secondItem="YfV-Ov-mil" secondAttribute="top" constant="110" id="rI8-v6-Kcp"/>
+                            <constraint firstAttribute="trailing" secondItem="1iW-H1-zfH" secondAttribute="trailing" constant="30" id="scI-ls-I45"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="HGK-BY-k8d"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aS5-sU-HGB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3039" y="-488"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="NFs-3o-zMW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gd8-Xf-HMc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wbS-ay-xbF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ho3-SN-chK" kind="relationship" relationship="rootViewController" id="T3B-Uf-Cas"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZSH-1Z-Tbh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="457" y="6"/>
+        </scene>
+        <!--Stable Tachycardia-->
+        <scene sceneID="EMW-Cx-WGI">
+            <objects>
+                <viewController id="du0-01-yKM" customClass="guidedPulseVC4" customModule="codeBlue" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PbP-48-llK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="bts-K4-L1B">
+                                <rect key="frame" x="50.5" y="308.5" width="274" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OuN-Bb-7Gd">
+                                        <rect key="frame" x="0.0" y="0.0" width="122" height="50"/>
+                                        <color key="backgroundColor" red="0.063293721959999993" green="0.1892634336" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="122" id="UEC-vn-pdV"/>
+                                            <constraint firstAttribute="height" constant="50" id="asF-Te-DZi"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <state key="normal" title="No">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="0I5-EK-d3F" kind="show" id="eYv-yR-e9H"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kcn-kX-dES">
+                                        <rect key="frame" x="152" y="0.0" width="122" height="50"/>
+                                        <color key="backgroundColor" red="0.063293721959999993" green="0.1892634336" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="122" id="ZOp-KG-gMM"/>
+                                            <constraint firstAttribute="height" constant="50" id="ojy-Q2-e9l"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="uXD-Er-oiW"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <state key="normal" title="Yes">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Y8G-P4-5Nh" kind="show" id="23g-JT-Fil"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wide QRS?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vXm-7X-gcg">
+                                <rect key="frame" x="125" y="239.5" width="125.5" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="j0Y-Qb-aig"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bts-K4-L1B" firstAttribute="centerX" secondItem="PbP-48-llK" secondAttribute="centerX" id="Q3B-8c-NNI"/>
+                            <constraint firstItem="vXm-7X-gcg" firstAttribute="centerX" secondItem="PbP-48-llK" secondAttribute="centerX" id="cDd-e8-RhT"/>
+                            <constraint firstItem="bts-K4-L1B" firstAttribute="top" secondItem="vXm-7X-gcg" secondAttribute="bottom" constant="40" id="tbD-Jq-2ac"/>
+                            <constraint firstItem="bts-K4-L1B" firstAttribute="centerY" secondItem="PbP-48-llK" secondAttribute="centerY" id="ym4-c3-wf8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Stable Tachycardia" id="rLg-FF-yhS"/>
+                    <connections>
+                        <outlet property="noButton" destination="OuN-Bb-7Gd" id="GbL-bL-bEm"/>
+                        <outlet property="yesButton" destination="kcn-kX-dES" id="6SL-If-s5L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Dq-Xd-s4E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2241" y="329"/>
+        </scene>
+        <!--Wide QRS: Stable tachy-->
+        <scene sceneID="da8-nv-4nV">
+            <objects>
+                <viewController id="Y8G-P4-5Nh" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9GP-QG-flv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTj-ls-mCA">
+                                <rect key="frame" x="20" y="44" width="335" height="623"/>
+                                <string key="text">💊 Anti-arrhythmic infusion: Amiodarone 150mg IV / 10 min. Then gtt at 1mg/hr x 6hr, and 0.5mg/hr for 18hr  💊 Consider procainamide or lidocaine   💊 Regular and monomorphic: consider adenosine 6mg IV, 12 mg if second dose needed. </string>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="VTR-In-5Gy"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wTj-ls-mCA" firstAttribute="leading" secondItem="9GP-QG-flv" secondAttribute="leading" constant="20" id="1LF-ru-GmF"/>
+                            <constraint firstAttribute="trailing" secondItem="wTj-ls-mCA" secondAttribute="trailing" constant="20" id="35X-D0-iX7"/>
+                            <constraint firstItem="VTR-In-5Gy" firstAttribute="bottom" secondItem="wTj-ls-mCA" secondAttribute="bottom" id="4oz-kl-EZA"/>
+                            <constraint firstItem="wTj-ls-mCA" firstAttribute="bottom" secondItem="VTR-In-5Gy" secondAttribute="bottom" id="kjx-wI-wxp"/>
+                            <constraint firstItem="wTj-ls-mCA" firstAttribute="top" secondItem="VTR-In-5Gy" secondAttribute="top" id="kwH-rw-64u"/>
+                            <constraint firstItem="wTj-ls-mCA" firstAttribute="centerX" secondItem="9GP-QG-flv" secondAttribute="centerX" id="o6g-b6-SVu"/>
+                            <constraint firstItem="wTj-ls-mCA" firstAttribute="top" secondItem="VTR-In-5Gy" secondAttribute="top" id="qaA-GX-5nh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Wide QRS: Stable tachy" id="9vs-OZ-4ZA"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2jn-vJ-OZ2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3038" y="329"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="eWP-7z-hd7">
+            <objects>
+                <viewController id="naK-VF-6Yd" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Q1t-I5-TTq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Monitor and Observe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Sb-aQ-6me">
+                                <rect key="frame" x="99" y="262" width="217" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="yZb-JU-SlR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="GbI-SB-xSj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fxd-aO-aWX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="703" y="1184"/>
+        </scene>
+        <!--Bradycardia-->
+        <scene sceneID="7Kn-8R-wwP">
+            <objects>
+                <viewController id="cNf-bF-bLl" customClass="guidedPulseVC3" customModule="codeBlue" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mhf-hl-Hd9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sCh-mj-Znc">
+                                <rect key="frame" x="56" y="74" width="263" height="258.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="37" translatesAutoresizingMaskIntoConstraints="NO" id="wo1-Nk-4aV">
+                                        <rect key="frame" x="20" y="20" width="30" height="232"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EJt-2b-JgQ">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="vsTapped:" destination="cNf-bF-bLl" eventType="touchUpInside" id="ikS-P7-3sH"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6N-Aa-Uxq">
+                                                <rect key="frame" x="0.0" y="67.5" width="30" height="30"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="o2Pressed:" destination="cNf-bF-bLl" eventType="touchUpInside" id="3j2-RQ-gfP"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wP2-CE-j2D">
+                                                <rect key="frame" x="0.0" y="134.5" width="30" height="30.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="ecgPressed:" destination="cNf-bF-bLl" eventType="touchUpInside" id="JWs-BB-80i"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLV-o0-QCy">
+                                                <rect key="frame" x="0.0" y="202" width="30" height="30"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="telePressed:" destination="cNf-bF-bLl" eventType="touchUpInside" id="417-ko-v2S"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="42" translatesAutoresizingMaskIntoConstraints="NO" id="EiS-yF-aoJ">
+                                        <rect key="frame" x="80" y="20" width="198" height="232"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full set of VS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9TB-PH-fXL">
+                                                <rect key="frame" x="0.0" y="0.0" width="124" height="26.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oxygen if hypoxemic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nhU-1A-QGN">
+                                                <rect key="frame" x="0.0" y="68.5" width="198" height="26.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ECG" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1hx-1Y-NyA">
+                                                <rect key="frame" x="0.0" y="137" width="43.5" height="26.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tele" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAr-dn-Bpu">
+                                                <rect key="frame" x="0.0" y="205.5" width="39" height="26.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="EiS-yF-aoJ" secondAttribute="bottom" constant="6.6666666666666288" id="9DQ-Td-MOX"/>
+                                    <constraint firstItem="EiS-yF-aoJ" firstAttribute="leading" secondItem="wo1-Nk-4aV" secondAttribute="trailing" constant="30" id="QDV-XG-8VN"/>
+                                    <constraint firstItem="wo1-Nk-4aV" firstAttribute="leading" secondItem="sCh-mj-Znc" secondAttribute="leading" constant="20" id="RcF-kQ-2Rs"/>
+                                    <constraint firstItem="wo1-Nk-4aV" firstAttribute="top" secondItem="sCh-mj-Znc" secondAttribute="top" constant="20" id="X4U-jW-wag"/>
+                                    <constraint firstAttribute="bottom" secondItem="wo1-Nk-4aV" secondAttribute="bottom" constant="6.6666666666666288" id="lg7-hK-GJu"/>
+                                    <constraint firstItem="EiS-yF-aoJ" firstAttribute="top" secondItem="sCh-mj-Znc" secondAttribute="top" constant="20" id="vUJ-eU-zBE"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="💙 Hypotension/Shock  💙  AMS  💙  Ischemic chest pain  💙  ADHF" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1e-a2-sOz" userLabel="💙 Hypotension/Shock  💙  AMS  💙  Ischemic chest pain  💙  ADHF">
+                                <rect key="frame" x="83.5" y="410" width="208" height="167.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Any of the following?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgm-L3-O64">
+                                <rect key="frame" x="70.5" y="356" width="234.5" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="8r1-yo-ykG">
+                                <rect key="frame" x="50.5" y="592.5" width="274" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WLC-16-Dmd">
+                                        <rect key="frame" x="0.0" y="0.0" width="122" height="50"/>
+                                        <color key="backgroundColor" red="0.063293721959999993" green="0.1892634336" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="0ik-zd-18T"/>
+                                            <constraint firstAttribute="width" constant="122" id="AIU-4Y-lDJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <state key="normal" title="No">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="naK-VF-6Yd" kind="show" id="Aq6-Fx-8I0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gqJ-1T-Cci">
+                                        <rect key="frame" x="152" y="0.0" width="122" height="50"/>
+                                        <color key="backgroundColor" red="0.063293721959999993" green="0.1892634336" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="122" id="4o3-uu-00s"/>
+                                            <constraint firstAttribute="height" constant="50" id="5Tm-Ap-NmH"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="cFK-86-gyg"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <state key="normal" title="Yes">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="arg-Tt-CE5" kind="show" id="b0M-wp-gVX"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="B6I-aU-gvD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sCh-mj-Znc" firstAttribute="top" secondItem="B6I-aU-gvD" secondAttribute="top" constant="30" id="3yY-ER-DZu"/>
+                            <constraint firstItem="8r1-yo-ykG" firstAttribute="top" secondItem="G1e-a2-sOz" secondAttribute="bottom" constant="15" id="7dO-JT-WEM"/>
+                            <constraint firstItem="zgm-L3-O64" firstAttribute="centerX" secondItem="mhf-hl-Hd9" secondAttribute="centerX" id="9Ed-IQ-pcA"/>
+                            <constraint firstItem="G1e-a2-sOz" firstAttribute="top" secondItem="zgm-L3-O64" secondAttribute="bottom" constant="25" id="Xn0-9K-YMA"/>
+                            <constraint firstItem="zgm-L3-O64" firstAttribute="top" secondItem="sCh-mj-Znc" secondAttribute="bottom" constant="23.333333333333314" id="ajL-tX-fuV"/>
+                            <constraint firstItem="G1e-a2-sOz" firstAttribute="centerX" secondItem="mhf-hl-Hd9" secondAttribute="centerX" id="b8r-LH-gL5"/>
+                            <constraint firstItem="sCh-mj-Znc" firstAttribute="centerX" secondItem="mhf-hl-Hd9" secondAttribute="centerX" id="bHi-R3-jOd"/>
+                            <constraint firstItem="sCh-mj-Znc" firstAttribute="centerX" secondItem="mhf-hl-Hd9" secondAttribute="centerX" id="iwt-ks-XWw"/>
+                            <constraint firstItem="sCh-mj-Znc" firstAttribute="leading" secondItem="B6I-aU-gvD" secondAttribute="leading" constant="56" id="oDi-Tu-5Wn"/>
+                            <constraint firstItem="8r1-yo-ykG" firstAttribute="centerX" secondItem="mhf-hl-Hd9" secondAttribute="centerX" id="pGk-Tl-SAO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Bradycardia" id="7Cp-hi-ChQ"/>
+                    <connections>
+                        <outlet property="ecgButton" destination="wP2-CE-j2D" id="cMx-xw-z3g"/>
+                        <outlet property="noButton" destination="WLC-16-Dmd" id="LQz-wp-7Ua"/>
+                        <outlet property="o2Button" destination="l6N-Aa-Uxq" id="AE7-Hv-KqI"/>
+                        <outlet property="teleButton" destination="vLV-o0-QCy" id="aDy-tm-7ko"/>
+                        <outlet property="vsButton" destination="EJt-2b-JgQ" id="RNf-JI-CAf"/>
+                        <outlet property="yesButton" destination="gqJ-1T-Cci" id="4TN-Fh-biF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G0o-2V-Zc1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1428" y="329"/>
+        </scene>
+        <!--Tachycardia-->
+        <scene sceneID="uiL-fX-0ln">
+            <objects>
+                <viewController id="7av-l5-O47" customClass="guidedPulseVC2" customModule="codeBlue" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="w2I-fa-ofB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HRm-uw-09p">
+                                <rect key="frame" x="56" y="74" width="263" height="258.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="37" translatesAutoresizingMaskIntoConstraints="NO" id="ggT-67-7ze">
+                                        <rect key="frame" x="20" y="20" width="30" height="232"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMX-86-FdL">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="vsTapped:" destination="7av-l5-O47" eventType="touchUpInside" id="1EX-tw-MwE"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0t-hv-3S2">
+                                                <rect key="frame" x="0.0" y="67.5" width="30" height="30"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="o2Pressed:" destination="7av-l5-O47" eventType="touchUpInside" id="uXz-nA-h51"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mck-4R-hII">
+                                                <rect key="frame" x="0.0" y="134.5" width="30" height="30.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="ecgPressed:" destination="7av-l5-O47" eventType="touchUpInside" id="1Td-zx-ulW"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uim-HU-eGB">
+                                                <rect key="frame" x="0.0" y="202" width="30" height="30"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="telePressed:" destination="7av-l5-O47" eventType="touchUpInside" id="Trj-Sz-j9N"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="42" translatesAutoresizingMaskIntoConstraints="NO" id="aVm-HG-DR7">
+                                        <rect key="frame" x="80" y="20" width="198" height="232"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full set of VS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nNE-Yd-hd8">
+                                                <rect key="frame" x="0.0" y="0.0" width="124" height="26.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oxygen if hypoxemic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ck-AP-Dm8">
+                                                <rect key="frame" x="0.0" y="68.5" width="198" height="26.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ECG" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OiA-Mj-JWe">
+                                                <rect key="frame" x="0.0" y="137" width="43.5" height="26.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tele" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dL-LX-2gJ">
+                                                <rect key="frame" x="0.0" y="205.5" width="39" height="26.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="aVm-HG-DR7" secondAttribute="bottom" constant="6.6666666666666288" id="4T6-NV-MXh"/>
+                                    <constraint firstItem="ggT-67-7ze" firstAttribute="leading" secondItem="HRm-uw-09p" secondAttribute="leading" constant="20" id="B2u-Qf-niN"/>
+                                    <constraint firstAttribute="bottom" secondItem="ggT-67-7ze" secondAttribute="bottom" constant="6.6666666666666288" id="CSg-ml-KUb"/>
+                                    <constraint firstItem="ggT-67-7ze" firstAttribute="top" secondItem="HRm-uw-09p" secondAttribute="top" constant="20" id="IrR-cR-GSi"/>
+                                    <constraint firstItem="aVm-HG-DR7" firstAttribute="leading" secondItem="ggT-67-7ze" secondAttribute="trailing" constant="30" id="d05-UD-QEU"/>
+                                    <constraint firstItem="aVm-HG-DR7" firstAttribute="top" secondItem="HRm-uw-09p" secondAttribute="top" constant="20" id="vsz-au-5y3"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="💙 Hypotension/Shock  💙  AMS  💙  Ischemic chest pain  💙  ADHF" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09x-xM-kMe" userLabel="💙 Hypotension/Shock  💙  AMS  💙  Ischemic chest pain  💙  ADHF">
+                                <rect key="frame" x="83.5" y="410" width="208" height="167.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Any of the following?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Emz-im-rW1">
+                                <rect key="frame" x="70.5" y="356" width="234.5" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="r1R-vU-But">
+                                <rect key="frame" x="50.5" y="592.5" width="274" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bfy-Tg-F7F">
+                                        <rect key="frame" x="0.0" y="0.0" width="122" height="50"/>
+                                        <color key="backgroundColor" red="0.063293721959999993" green="0.1892634336" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="122" id="4yV-GB-6y6"/>
+                                            <constraint firstAttribute="height" constant="50" id="gS9-XA-T1N"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <state key="normal" title="No">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="du0-01-yKM" kind="show" id="610-Rg-YT2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lPc-Ex-Xme">
+                                        <rect key="frame" x="152" y="0.0" width="122" height="50"/>
+                                        <color key="backgroundColor" red="0.063293721959999993" green="0.1892634336" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="122" id="Y0p-jE-vFV"/>
+                                            <constraint firstAttribute="height" constant="50" id="cww-6U-U1K"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="jPz-3s-Cx5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <state key="normal" title="Yes">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="b2y-ho-vz6" kind="show" id="3pS-Ps-mhp"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Jgk-m3-FeZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="09x-xM-kMe" firstAttribute="centerX" secondItem="w2I-fa-ofB" secondAttribute="centerX" id="4AS-dF-su9"/>
+                            <constraint firstItem="HRm-uw-09p" firstAttribute="centerX" secondItem="w2I-fa-ofB" secondAttribute="centerX" id="4Fg-kh-kr3"/>
+                            <constraint firstItem="HRm-uw-09p" firstAttribute="leading" secondItem="Jgk-m3-FeZ" secondAttribute="leading" constant="56" id="4aZ-Zh-f0m"/>
+                            <constraint firstItem="Emz-im-rW1" firstAttribute="centerX" secondItem="w2I-fa-ofB" secondAttribute="centerX" id="5Tp-Qv-rcS"/>
+                            <constraint firstItem="r1R-vU-But" firstAttribute="centerX" secondItem="w2I-fa-ofB" secondAttribute="centerX" id="Ei2-de-rhf"/>
+                            <constraint firstItem="r1R-vU-But" firstAttribute="top" secondItem="09x-xM-kMe" secondAttribute="bottom" constant="15" id="FDh-dF-7xG"/>
+                            <constraint firstItem="HRm-uw-09p" firstAttribute="centerX" secondItem="w2I-fa-ofB" secondAttribute="centerX" id="SeG-Md-gB5"/>
+                            <constraint firstItem="09x-xM-kMe" firstAttribute="top" secondItem="Emz-im-rW1" secondAttribute="bottom" constant="25" id="UQz-tI-QFD"/>
+                            <constraint firstItem="Emz-im-rW1" firstAttribute="top" secondItem="HRm-uw-09p" secondAttribute="bottom" constant="23.333333333333314" id="bIa-Kt-RDE"/>
+                            <constraint firstItem="HRm-uw-09p" firstAttribute="top" secondItem="Jgk-m3-FeZ" secondAttribute="top" constant="30" id="fFk-f4-ftE"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Tachycardia" id="JG0-11-b4K"/>
+                    <connections>
+                        <outlet property="ecgButton" destination="Mck-4R-hII" id="35K-gQ-q0I"/>
+                        <outlet property="noButton" destination="Bfy-Tg-F7F" id="1vE-Sa-k9A"/>
+                        <outlet property="o2Button" destination="O0t-hv-3S2" id="sXC-HD-CUQ"/>
+                        <outlet property="teleButton" destination="uim-HU-eGB" id="srG-hc-eXA"/>
+                        <outlet property="vsButton" destination="lMX-86-FdL" id="ehy-bB-0wd"/>
+                        <outlet property="yesButton" destination="lPc-Ex-Xme" id="7W5-Vp-mf9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4f8-1n-Vdb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2242" y="-488"/>
+        </scene>
+        <!--Unstable brady-->
+        <scene sceneID="FeN-tv-TQ9">
+            <objects>
+                <viewController id="arg-Tt-CE5" customClass="guidedPulseVC5" customModule="codeBlue" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bfn-VT-dQy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NZN-tD-iRP">
+                                <rect key="frame" x="112.5" y="409" width="150" height="108"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zCW-nd-DOI">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="50"/>
+                                        <color key="backgroundColor" red="0.063293721959999993" green="0.1892634336" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="GMF-dl-g2V"/>
+                                            <constraint firstAttribute="height" constant="50" id="bXr-x5-ksM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Overdose DDx">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Zmq-Nj-ed3" kind="show" id="ARU-Y4-ytQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qP-mH-Liu">
+                                        <rect key="frame" x="0.0" y="58" width="150" height="50"/>
+                                        <color key="backgroundColor" red="0.063293721959999993" green="0.1892634336" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="91O-UY-aRD"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="CCo-JZ-Ebe"/>
+                                            <constraint firstAttribute="height" constant="50" id="pYL-aC-QRy"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Pacing">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="1ec-UK-oD4" kind="show" id="ugP-lx-vdw"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XdV-K1-hOu">
+                                <rect key="frame" x="20" y="44" width="335" height="290"/>
+                                <string key="text"> 💊 Atropine 0.5mg bolus q3-5 min (max 6x)  💙 If atropine ineffective: transcutaneous pacing, and call EP for possible transvenous pacing  💊 Dopamine gtt 2-20mcg/kg/min   💊 Epinephrine gtt 2-10mcg/min</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Qzy-Oy-6Wz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="NZN-tD-iRP" firstAttribute="top" secondItem="XdV-K1-hOu" secondAttribute="bottom" constant="75" id="3n4-dQ-9hb"/>
+                            <constraint firstItem="Qzy-Oy-6Wz" firstAttribute="trailing" secondItem="XdV-K1-hOu" secondAttribute="trailing" constant="20" id="AnM-2l-Pn9"/>
+                            <constraint firstItem="Qzy-Oy-6Wz" firstAttribute="bottom" secondItem="NZN-tD-iRP" secondAttribute="bottom" constant="150" id="GWw-nq-G34"/>
+                            <constraint firstItem="NZN-tD-iRP" firstAttribute="centerX" secondItem="bfn-VT-dQy" secondAttribute="centerX" id="KNJ-F6-MBx"/>
+                            <constraint firstItem="XdV-K1-hOu" firstAttribute="top" secondItem="Qzy-Oy-6Wz" secondAttribute="top" id="NAz-v8-ftf"/>
+                            <constraint firstItem="XdV-K1-hOu" firstAttribute="leading" secondItem="Qzy-Oy-6Wz" secondAttribute="leading" constant="20" id="wgW-Ai-r4e"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Unstable brady" id="c6C-Tq-Psk"/>
+                    <connections>
+                        <outlet property="Pacing" destination="1qP-mH-Liu" id="yTK-Eg-cjq"/>
+                        <outlet property="overdoseButton" destination="zCW-nd-DOI" id="mhb-fY-B9c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v5r-g7-ZyD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1469.5652173913045" y="1184.5108695652175"/>
+        </scene>
+        <!--Overdose DDx-->
+        <scene sceneID="Qxb-Uk-c2I">
+            <objects>
+                <tableViewController id="Zmq-Nj-ed3" customClass="guidedPulseOverdoseTableVC" customModule="codeBlue" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="kyi-ke-dAW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="LdN-Io-5bc">
+                                <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LdN-Io-5bc" id="1DI-sT-ksm">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Zmq-Nj-ed3" id="kYT-jr-w9M"/>
+                            <outlet property="delegate" destination="Zmq-Nj-ed3" id="Jww-EH-bi0"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Overdose DDx" id="pQo-d9-plx"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wgp-mH-fQu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1033" y="1952"/>
+        </scene>
+        <!--Pacing-->
+        <scene sceneID="ojD-kS-lIs">
+            <objects>
+                <viewController id="1ec-UK-oD4" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mNU-wB-djC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDP-Rs-gxB">
+                                <rect key="frame" x="20" y="44" width="335" height="623"/>
+                                <string key="text">💙 Dial pacing rate to 80, dial mA up until capture (apcer spike before each QRS, can confirm by pressing 4:1 button on  💊 Sedation: midazolam 1-2mg IV or Fentanyl 25-100mcg IV</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qfu-Hz-rgv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="NDP-Rs-gxB" firstAttribute="top" secondItem="qfu-Hz-rgv" secondAttribute="top" id="8BB-Dh-tcN"/>
+                            <constraint firstItem="qfu-Hz-rgv" firstAttribute="trailing" secondItem="NDP-Rs-gxB" secondAttribute="trailing" constant="20" id="8Mt-Tc-Ilg"/>
+                            <constraint firstItem="NDP-Rs-gxB" firstAttribute="leading" secondItem="qfu-Hz-rgv" secondAttribute="leading" constant="20" id="chU-k7-UdK"/>
+                            <constraint firstItem="qfu-Hz-rgv" firstAttribute="bottom" secondItem="NDP-Rs-gxB" secondAttribute="bottom" id="epd-xJ-4gN"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Pacing" id="RJd-E9-aEw"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tPi-pe-7iD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1847" y="1952"/>
+        </scene>
+        <!--Narrow QRS: Stable tachy-->
+        <scene sceneID="27s-u6-Qhs">
+            <objects>
+                <viewController id="0I5-EK-d3F" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="A2g-wl-XvT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wZA-3N-tas">
+                                <rect key="frame" x="20" y="44" width="335" height="623"/>
+                                <string key="text">💙 Vagal maneuvers  💊 Adenosine 6mg IV then 12mg IV  💊 Metoprolol 5mg IV q5min up to 3x   💊 Esmolol 0.5mg/kg over 1min then gtt 50mcg/kg/min  💊 Diltiazem 10-20mg IV over 2min, then q15min x2 then 5-20mg/hr gtt  💊 Verapamil 2.5-5mg IV over 2min, then 5-10 mg IV q15-30min to total dose 20mg  💊 Digoxin load with 0.5mg IVx1 then 0.25mg IV q6hrs x2 then PO</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RQP-Z2-3wi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RQP-Z2-3wi" firstAttribute="bottom" secondItem="wZA-3N-tas" secondAttribute="bottom" id="0RE-jw-eyI"/>
+                            <constraint firstItem="wZA-3N-tas" firstAttribute="top" secondItem="RQP-Z2-3wi" secondAttribute="top" id="4RP-ze-Ges"/>
+                            <constraint firstItem="wZA-3N-tas" firstAttribute="leading" secondItem="RQP-Z2-3wi" secondAttribute="leading" constant="20" id="qF3-T2-nOb"/>
+                            <constraint firstItem="wZA-3N-tas" firstAttribute="centerX" secondItem="A2g-wl-XvT" secondAttribute="centerX" id="wpe-Hg-00T"/>
+                            <constraint firstItem="RQP-Z2-3wi" firstAttribute="trailing" secondItem="wZA-3N-tas" secondAttribute="trailing" constant="20" id="yMt-qq-LUk"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Narrow QRS: Stable tachy" id="hjg-R9-AaO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pGh-kr-y8u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2241" y="1184"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
