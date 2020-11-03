@@ -46,9 +46,7 @@ class cardiacArrestVC: UIViewController, UIScrollViewDelegate, selectRhythm {
         self.navigationItem.title = "Cardiac Arrest"
         scrollView.delegate = self
         scrollView.minimumZoomScale = 1.0
-        scrollView.maximumZoomScale = 5.0
-        scrollView.contentSize = .init(width: 2000, height: 2000)
-        
+        scrollView.maximumZoomScale = 3.0
         
     }
     
@@ -63,12 +61,7 @@ class cardiacArrestVC: UIViewController, UIScrollViewDelegate, selectRhythm {
         return imageView
     }
 
-    func updateZoomFor(size: CGSize){
-        let widthScale = size.width / imageView.bounds.width
-        let heightScale = size.height / imageView.bounds.height
-        let scale = min(widthScale,heightScale)
-        scrollView.minimumZoomScale = scale
-    }
+  
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
