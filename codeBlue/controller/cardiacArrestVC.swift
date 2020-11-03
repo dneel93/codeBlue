@@ -173,6 +173,30 @@ class cardiacArrestVC: UIViewController, UIScrollViewDelegate, selectRhythm {
         self.navigationController!.pushViewController(rhythmVC, animated: true)
     }
     
+    
+    
+    @IBAction func logPressed(_ sender: Any) {
+        
+       
+        let cprRoundsLog = "CPR rounds: \(cprCountNum)"
+        
+        let epiDosesLog = "Doses Epi: \(epiCountNum)"
+       
+        let defibLog = "AED: \(defibCountNum)"
+        
+        let rhythmLog = rhythmLabelText ?? "None"
+        
+        let amioLog = "Doses Amio: \(amioCountNum)"
+        let totalTimeLog = "Total Time (min): \(Float(totalSeconds)/60)"
+        
+        let array:[String] = [totalTimeLog,cprRoundsLog,epiDosesLog,defibLog,rhythmLog, amioLog]
+
+        let logVC = logTableVC()
+        logVC.LogArray = array
+        self.navigationController!.pushViewController(logVC, animated: true)
+        
+    }
+    
   
        
     

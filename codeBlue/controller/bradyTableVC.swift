@@ -10,7 +10,7 @@ import UIKit
 
 class bradyTableVC: UITableViewController {
 
-    let sections = ["Atropine IV dose", "Dopamine IV Infusion", "Epi IV Infusion"]
+    let sections = ["💊 Atropine IV dose", "💊 Dopamine IV Infusion", "💊 Epi IV Infusion"]
     
     let atropine = ["First Dose: 0.5mg bolus", "Repat every 3-5 min", "Maximum 3 mg"]
     

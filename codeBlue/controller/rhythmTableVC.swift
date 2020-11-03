@@ -12,8 +12,6 @@ protocol selectRhythm{
     func didSelectRhythm(name:String)
 }
 
-
-
 class rhythmTableVC: UITableViewController {
 
 var rhythms = ["VF","Pulseless VT","PEA","Asystole","Other"]
@@ -56,11 +54,6 @@ var delegate:selectRhythm?
 
     }
 
-    
-//  if let viewController = UIStoryboard(name: "Algos", bundle: nil).instantiateViewController(withIdentifier: "cardiacVC") as? cardiacArrestVC {
-//    viewController.rhythmLabelText=rhythm
-//    self.navigationController?.popViewController(animated: true)}
-    
     
     
 

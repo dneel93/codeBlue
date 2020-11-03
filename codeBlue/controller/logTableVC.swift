@@ -1,72 +1,45 @@
 //
-//  guidedPulseOverdoseTableVC.swift
+//  logTableVC.swift
 //  codeBlue
 //
-//  Created by Dylan Neel on 10/11/20.
+//  Created by Dylan Neel on 11/2/20.
 //  Copyright © 2020 Dylan Neel. All rights reserved.
 //
 
 import UIKit
 
-class guidedPulseOverdoseTableVC: UITableViewController {
-    
-    
-    let drugs = ["💊 Beta-blocker", "💊 Ca++ channel-blocker", "💊 Digoxin"]
-    
-    let beta = ["1st line: glucagon 5mg IV over 1 min, second bolus in 10min if no effect. If effective, start gtt at 2-5mg/hr (MAP>60)", "2nd line: Ca-culconate 2g PVI, CaCl2 1g CVC"]
-    let calcium = ["1st line: Ca-gluconate 2g PIV, CaCl2 1g CVC ", "Glucagon (as above)"]
-    let digoxin = ["Give Ab (FAb, Digibind)", "Can try atropine 0.5mg IV while waiting","Correct hypokalemia"]
-    
-    let colorBlue = UIColor(red: 0, green: 0.0314, blue: 0.9569, alpha: 1)
-    
-    
-    
+class logTableVC: UITableViewController {
 
+    var LogArray:[String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Event Log"
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let label = UILabel()
-        label.backgroundColor = colorBlue
-        label.text = "   \(drugs[section])"
-        label.textColor = .white
-        return label
-    }
-    
-
+    // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return drugs.count
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        if section == 0 {return beta.count}
-        else if section == 1 {return calcium.count}
-        else if section == 2 {return digoxin.count}
-        else {return 3}
+        // #warning Incomplete implementation, return the number of rows
+        return LogArray.count
     }
 
-
+  
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
-        
-        let infos = indexPath.section == 0 ? beta[indexPath.row] : indexPath.section == 1 ? calcium[indexPath.row] : digoxin[indexPath.row]
-        
-        cell.textLabel?.text=infos
+        cell.textLabel?.text = LogArray[indexPath.row]
         cell.textLabel?.numberOfLines = 0
 
         return cell
     }
-
+   
 
     /*
     // Override to support conditional editing of the table view.

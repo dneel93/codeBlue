@@ -10,7 +10,7 @@ import UIKit
 
 class tachyTableVC: UITableViewController {
 
-    let sections = ["Synchronized Cardioversion", "Adenosine IV Infusion", "Antiarrythmic Infusions (stable wide QRS)"]
+    let sections = ["♥️ Synchronized Cardioversion", "💊 Adenosine IV Infusion", "💊 Antiarrythmic Infusions (stable wide QRS)"]
     
     let cardioversion = [""]
     

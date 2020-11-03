@@ -276,7 +276,35 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dfw-wC-Ojm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1038" y="-874"/>
+            <point key="canvasLocation" x="1038" y="-806"/>
+        </scene>
+        <!--Log TableVC-->
+        <scene sceneID="ONF-Xl-kfC">
+            <objects>
+                <tableViewController storyboardIdentifier="logTableVC" id="gtT-wD-ZPF" customClass="logTableVC" customModule="codeBlue" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="bJK-bK-Gt1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="zVu-pB-cnq">
+                                <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zVu-pB-cnq" id="HXL-bx-oqT">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="gtT-wD-ZPF" id="JgH-eU-8Hr"/>
+                            <outlet property="delegate" destination="gtT-wD-ZPF" id="xbP-Ba-mXC"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vLo-bj-8RS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1889" y="-824"/>
         </scene>
         <!--Cardiac Arrest-->
         <scene sceneID="fBJ-6c-gan">
@@ -330,8 +358,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="CPR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tad-2v-HoZ">
-                                <rect key="frame" x="4" y="64" width="53" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CPR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tad-2v-HoZ">
+                                <rect key="frame" x="4" y="64.5" width="52" height="19.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="52" id="fpR-2d-7UW"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -342,8 +373,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Epi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F8D-a2-qoR">
-                                <rect key="frame" x="142" y="64" width="52" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Epi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F8D-a2-qoR">
+                                <rect key="frame" x="141.5" y="64.5" width="52" height="19.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="52" id="ZBb-CY-PJH"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -452,6 +486,9 @@
                                         <state key="normal" title="Log">
                                             <color key="titleColor" red="0.057497526308671131" green="0.048675614974717667" blue="0.4315697862694301" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
+                                        <connections>
+                                            <action selector="logPressed:" destination="3xM-vi-fRb" eventType="touchUpInside" id="OlQ-nY-pdk"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -467,6 +504,7 @@
                                     <constraint firstItem="Ybz-f4-J9V" firstAttribute="leading" secondItem="bqa-YK-15B" secondAttribute="trailing" constant="-28" id="dua-Yt-foO"/>
                                     <constraint firstItem="Ybz-f4-J9V" firstAttribute="centerY" secondItem="bqa-YK-15B" secondAttribute="centerY" id="kxe-6i-sI6"/>
                                     <constraint firstItem="JbK-ys-lCx" firstAttribute="leading" secondItem="Drk-1d-JfG" secondAttribute="trailing" constant="-100" id="lcb-W2-ckw"/>
+                                    <constraint firstItem="brE-bf-fYO" firstAttribute="top" secondItem="a7O-M0-4SU" secondAttribute="top" constant="10" id="mLs-0i-Gm5"/>
                                     <constraint firstAttribute="trailing" secondItem="oO8-eQ-usa" secondAttribute="trailing" id="mrM-R2-lnt"/>
                                     <constraint firstItem="Drk-1d-JfG" firstAttribute="centerY" secondItem="JbK-ys-lCx" secondAttribute="centerY" constant="-1" id="pOR-Zg-Raa"/>
                                     <constraint firstItem="brE-bf-fYO" firstAttribute="top" secondItem="a7O-M0-4SU" secondAttribute="top" constant="10" id="wtf-3S-ROP"/>
@@ -541,7 +579,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v1d-c0-13h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1038" y="-162"/>
+            <point key="canvasLocation" x="1038" y="-124"/>
         </scene>
         <!--Cardiac TableVC-->
         <scene sceneID="u7d-fA-d6d">
@@ -570,7 +608,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5fc-kD-t46" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1956" y="-190"/>
+            <point key="canvasLocation" x="1842" y="-123"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="c9k-VV-x8E">

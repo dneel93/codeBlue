@@ -10,7 +10,7 @@ import UIKit
 
 class postArrestTableVC: UITableViewController {
 
-    let sections = ["Ventilation/oxygenation", "IV bolus", "Epi IV Infusion", "Dopamine IV Infusion", "Norepi IV Infusion"]
+    let sections = ["♥️ Ventilation/oxygenation", "💊 IV bolus", "💊 Epi IV Infusion", "💊 Dopamine IV Infusion", "💊 Norepi IV Infusion"]
     
     let vent = ["Avoid excesive ventilation", "Start 10 breaths/min and titrate to target PetCO2","When feasible, titrate Fi02 to minimum necessary to achieve SpO2 >94%"]
     
