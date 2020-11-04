@@ -20,6 +20,9 @@
 		CC50ABD5254FD3A000B2B96E /* asystolePeaContVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC50ABD4254FD3A000B2B96E /* asystolePeaContVC.swift */; };
 		CC50ABD9254FD86300B2B96E /* HTcausesTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC50ABD8254FD86300B2B96E /* HTcausesTableVC.swift */; };
 		CC50ABE9255067A800B2B96E /* logTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC50ABE8255067A800B2B96E /* logTableVC.swift */; };
+		CC50ABF5255142BB00B2B96E /* vfEpi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC50ABF4255142BA00B2B96E /* vfEpi.swift */; };
+		CC50ABF8255142D200B2B96E /* vfAmio.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC50ABF7255142D200B2B96E /* vfAmio.swift */; };
+		CC50ABFB2551451500B2B96E /* vfVT.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC50ABFA2551451500B2B96E /* vfVT.swift */; };
 		CCA449BD2511E5CB0097D370 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA449BC2511E5CB0097D370 /* AppDelegate.swift */; };
 		CCA449BF2511E5CB0097D370 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA449BE2511E5CB0097D370 /* SceneDelegate.swift */; };
 		CCA449C42511E5CB0097D370 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCA449C22511E5CB0097D370 /* Main.storyboard */; };
@@ -32,7 +35,6 @@
 		CCC429892517DDBA001AA0D9 /* guidedPulseVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC429882517DDBA001AA0D9 /* guidedPulseVC2.swift */; };
 		CCC4298B2517DED2001AA0D9 /* UIButton_check+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC4298A2517DED2001AA0D9 /* UIButton_check+ext.swift */; };
 		CCD2D28B2526E390008DB015 /* guidedPulseVC3.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD2D28A2526E390008DB015 /* guidedPulseVC3.swift */; };
-		CCD2D2A2252702CD008DB015 /* guidedNoPulseVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD2D2A1252702CD008DB015 /* guidedNoPulseVC2.swift */; };
 		CCD2D2A92527F5BE008DB015 /* guidedPulseVC4.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD2D2A82527F5BE008DB015 /* guidedPulseVC4.swift */; };
 		CCD2D2E22533FE87008DB015 /* guidedPulseOverdoseTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD2D2E12533FE86008DB015 /* guidedPulseOverdoseTableVC.swift */; };
 		CCD2D2E525340635008DB015 /* guidedPulseVC5.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD2D2E425340635008DB015 /* guidedPulseVC5.swift */; };
@@ -60,6 +62,9 @@
 		CC50ABD4254FD3A000B2B96E /* asystolePeaContVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = asystolePeaContVC.swift; sourceTree = "<group>"; };
 		CC50ABD8254FD86300B2B96E /* HTcausesTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTcausesTableVC.swift; sourceTree = "<group>"; };
 		CC50ABE8255067A800B2B96E /* logTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logTableVC.swift; sourceTree = "<group>"; };
+		CC50ABF4255142BA00B2B96E /* vfEpi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vfEpi.swift; sourceTree = "<group>"; };
+		CC50ABF7255142D200B2B96E /* vfAmio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vfAmio.swift; sourceTree = "<group>"; };
+		CC50ABFA2551451500B2B96E /* vfVT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vfVT.swift; sourceTree = "<group>"; };
 		CCA449B92511E5CB0097D370 /* codeBlue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = codeBlue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCA449BC2511E5CB0097D370 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCA449BE2511E5CB0097D370 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,7 +79,6 @@
 		CCC429882517DDBA001AA0D9 /* guidedPulseVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guidedPulseVC2.swift; sourceTree = "<group>"; };
 		CCC4298A2517DED2001AA0D9 /* UIButton_check+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton_check+ext.swift"; sourceTree = "<group>"; };
 		CCD2D28A2526E390008DB015 /* guidedPulseVC3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guidedPulseVC3.swift; sourceTree = "<group>"; };
-		CCD2D2A1252702CD008DB015 /* guidedNoPulseVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guidedNoPulseVC2.swift; sourceTree = "<group>"; };
 		CCD2D2A82527F5BE008DB015 /* guidedPulseVC4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guidedPulseVC4.swift; sourceTree = "<group>"; };
 		CCD2D2E12533FE86008DB015 /* guidedPulseOverdoseTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guidedPulseOverdoseTableVC.swift; sourceTree = "<group>"; };
 		CCD2D2E425340635008DB015 /* guidedPulseVC5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guidedPulseVC5.swift; sourceTree = "<group>"; };
@@ -143,7 +147,6 @@
 				CCD2D2E425340635008DB015 /* guidedPulseVC5.swift */,
 				CCD2D2E12533FE86008DB015 /* guidedPulseOverdoseTableVC.swift */,
 				CCC429862517CF81001AA0D9 /* guidedNoPulseVC1.swift */,
-				CCD2D2A1252702CD008DB015 /* guidedNoPulseVC2.swift */,
 				CC50ABCD254FCC7600B2B96E /* asystolePEA.swift */,
 				CC50ABD4254FD3A000B2B96E /* asystolePeaContVC.swift */,
 				CC50ABD8254FD86300B2B96E /* HTcausesTableVC.swift */,
@@ -157,6 +160,9 @@
 				CCEB7CAA2540124C00DD66EB /* tachyTableVC.swift */,
 				CC50AB4025426FE100B2B96E /* rhythmTableVC.swift */,
 				CC50ABE8255067A800B2B96E /* logTableVC.swift */,
+				CC50ABF4255142BA00B2B96E /* vfEpi.swift */,
+				CC50ABF7255142D200B2B96E /* vfAmio.swift */,
+				CC50ABFA2551451500B2B96E /* vfVT.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -337,18 +343,20 @@
 				CCEB7C97253C2E2D00DD66EB /* cardiacTableVC.swift in Sources */,
 				CCA449BF2511E5CB0097D370 /* SceneDelegate.swift in Sources */,
 				CCEB7CA2253F57D100DD66EB /* postArrestTableVC.swift in Sources */,
-				CCD2D2A2252702CD008DB015 /* guidedNoPulseVC2.swift in Sources */,
 				CCC429872517CF81001AA0D9 /* guidedNoPulseVC1.swift in Sources */,
 				CCA449D12511E5F90097D370 /* firstVC.swift in Sources */,
 				CCEB7CA825400C7000DD66EB /* bradyTableVC.swift in Sources */,
+				CC50ABFB2551451500B2B96E /* vfVT.swift in Sources */,
 				CC50AB4125426FE100B2B96E /* rhythmTableVC.swift in Sources */,
 				CCD2D2E22533FE87008DB015 /* guidedPulseOverdoseTableVC.swift in Sources */,
 				CCEB7CAE2540126900DD66EB /* tachyVC.swift in Sources */,
 				CCD2D2E525340635008DB015 /* guidedPulseVC5.swift in Sources */,
 				CCD2D2A92527F5BE008DB015 /* guidedPulseVC4.swift in Sources */,
+				CC50ABF5255142BB00B2B96E /* vfEpi.swift in Sources */,
 				CC50ABD9254FD86300B2B96E /* HTcausesTableVC.swift in Sources */,
 				CCC429892517DDBA001AA0D9 /* guidedPulseVC2.swift in Sources */,
 				CCC429832517CEAB001AA0D9 /* guidedPulseVC1.swift in Sources */,
+				CC50ABF8255142D200B2B96E /* vfAmio.swift in Sources */,
 				CCEB7C9B253F50C000DD66EB /* postArrestVC.swift in Sources */,
 				CC2771522513113500EC6E94 /* algoVC.swift in Sources */,
 				CC2771542513981200EC6E94 /* cardiacArrestVC.swift in Sources */,

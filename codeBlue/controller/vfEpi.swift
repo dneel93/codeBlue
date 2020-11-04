@@ -1,43 +1,52 @@
 //
-//  asystolePeaContVC.swift
+//  vfEpi.swift
 //  codeBlue
 //
-//  Created by Dylan Neel on 11/2/20.
+//  Created by Dylan Neel on 11/3/20.
 //  Copyright © 2020 Dylan Neel. All rights reserved.
 //
 
 import UIKit
 
-class asystolePeaContVC: UIViewController {
-   
-    @IBOutlet var cprLabel: UILabel!
-    @IBOutlet var cprButton: UIButton!
-  
+class vfEpi: UIViewController {
+    
+    
     @IBOutlet var noButton: UIButton!
+    
     @IBOutlet var yesButton: UIButton!
     
-    @IBOutlet var causesButton: UIButton!
+    @IBOutlet var cprButton: UIButton!
     
-    @IBOutlet var htButton: UIButton!
     
+    @IBOutlet var cprLabel: UILabel!
+    
+    @IBOutlet var epiButton: UIButton!
+    
+    @IBOutlet var intButton: UIButton!
     
     var cprSeconds = 0
     var timer:Timer!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        noButton.configure(title: "No")
-        yesButton.configure(title: "Yes")
+        noButton.layer.cornerRadius = 8
+        yesButton.layer.cornerRadius = 8
         cprButton.configureCheck()
-        causesButton.configureCheck()
-        htButton.layer.cornerRadius = 8
+        epiButton.configureCheck()
+        intButton.configureCheck()
 
     }
     
+
+    @IBAction func noPressed(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "guidedNoPulse", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "asystolePEA") as! asystolePEA
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
     
-    @IBAction func cprPress(_ sender: Any) {
-    
+    @IBAction func cprPressed(_ sender: Any) {
         
         if cprButton.isSelected == true{
             cprButton.configureCheck()}
@@ -57,21 +66,29 @@ class asystolePeaContVC: UIViewController {
             startCPR()
         }
         
+        
     }
     
     
-    
-    @IBAction func causesPress(_ sender: Any) {
-        
-        if causesButton.isSelected == true{
-            causesButton.configureCheck()}
+    @IBAction func epiPressed(_ sender: Any) {
+        if epiButton.isSelected == true{
+            epiButton.configureCheck()}
         
         else{
-            causesButton.setBackgroundImage(UIImage(named: "checked_box"), for: .normal)
-            causesButton.isSelected = true}
-        
+            epiButton.setBackgroundImage(UIImage(named: "checked_box"), for: .normal)
+            epiButton.isSelected = true}
     }
     
+    
+    @IBAction func intPressed(_ sender: Any) {
+        
+        if intButton.isSelected == true{
+            intButton.configureCheck()}
+        
+        else{
+            intButton.setBackgroundImage(UIImage(named: "checked_box"), for: .normal)
+            intButton.isSelected = true}
+    }
     
     
     func startCPR(){
@@ -87,21 +104,10 @@ class asystolePeaContVC: UIViewController {
         seconds = (cprSeconds % 3600) % 60
         cprLabel.text = String(format: "CPR: %02d:%02d", minutes, seconds)
     }
-    
 
-    
-    @IBAction func noPressed(_ sender: Any) {
-    
-        if let viewController = UIStoryboard(name: "guidedNoPulse", bundle: nil).instantiateViewController(withIdentifier: "asystolePEA") as? asystolePEA {
-            navigationController?.pushViewController(viewController, animated: true)}}
+   
     
     
     
-    @IBAction func yesPressed(_ sender: Any) {
-        print("YES")
-    }
     
-    
-    
-
 }

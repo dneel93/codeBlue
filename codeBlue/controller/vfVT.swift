@@ -1,39 +1,73 @@
 //
-//  guidedNoPulseVC2.swift
+//  vfVT.swift
 //  codeBlue
 //
-//  Created by Dylan Neel on 10/2/20.
+//  Created by Dylan Neel on 11/3/20.
 //  Copyright © 2020 Dylan Neel. All rights reserved.
 //
 
 import UIKit
 
-class guidedNoPulseVC2: UIViewController {
+class vfVT: UIViewController {
 
- 
-    @IBOutlet var cprLabel: UILabel!
-    @IBOutlet var shockButton: UIButton!
-    @IBOutlet var cprButton: UIButton!
-    @IBOutlet var accessButton: UIButton!
     @IBOutlet var noButton: UIButton!
     @IBOutlet var yesButton: UIButton!
+    
+    @IBOutlet var shockButton: UIButton!
+    
+    @IBOutlet var cprButton: UIButton!
+    
+    @IBOutlet var accessButton: UIButton!
+    
+    @IBOutlet var cprLabel: UILabel!
+    
     var cprSeconds = 0
     var timer:Timer!
     
+    
+    
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        noButton.configure(title: "No")
-        yesButton.configure(title: "Yes")
+
+        noButton.layer.cornerRadius = 8
+        yesButton.layer.cornerRadius = 8
+        shockButton.configureCheck()
         cprButton.configureCheck()
         accessButton.configureCheck()
-        shockButton.configureCheck()
-
+        
     }
     
-    @IBAction func cprPress(_ sender: Any) {
+
+    @IBAction func yesPressed(_ sender: Any) {
     
         
+    }
+    
+    
+    @IBAction func noPressed(_ sender: Any) {
+     
+        let storyboard = UIStoryboard(name: "guidedNoPulse", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "asystolePEA") as! asystolePEA
+        self.navigationController?.pushViewController(vc, animated: true)
         
+        
+    }
+    
+    
+    
+    @IBAction func shockPressed(_ sender: Any) {
+        if shockButton.isSelected == true{
+            shockButton.configureCheck()}
+        
+        else{
+            shockButton.setBackgroundImage(UIImage(named: "checked_box"), for: .normal)
+            shockButton.isSelected = true}
+    }
+    
+    
+    @IBAction func cprPressed(_ sender: Any) {
         if cprButton.isSelected == true{
             cprButton.configureCheck()}
         
@@ -52,36 +86,23 @@ class guidedNoPulseVC2: UIViewController {
             startCPR()
         }
         
-    }
-    
-    
-    
-    @IBAction func shockPress(_ sender: Any) {
-    
-        if shockButton.isSelected == true{
-            shockButton.configureCheck()}
-        
-        else{
-           shockButton.setBackgroundImage(UIImage(named: "checked_box"), for: .normal)
-            shockButton.isSelected = true}
-        
         
     }
     
-    @IBAction func accessPress(_ sender: Any) {
+    
+    @IBAction func accessPressed(_ sender: Any) {
+    
         if accessButton.isSelected == true{
             accessButton.configureCheck()}
         
         else{
             accessButton.setBackgroundImage(UIImage(named: "checked_box"), for: .normal)
             accessButton.isSelected = true}
-    }
     
-   
+    }
     
     
 
-    
     func startCPR(){
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countup), userInfo: nil, repeats: true)
     }
@@ -95,9 +116,8 @@ class guidedNoPulseVC2: UIViewController {
         seconds = (cprSeconds % 3600) % 60
         cprLabel.text = String(format: "CPR: %02d:%02d", minutes, seconds)
     }
-    
-
-    
-    
 
 }
+    
+    
+

@@ -12,11 +12,11 @@ class tachyTableVC: UITableViewController {
 
     let sections = ["♥️ Synchronized Cardioversion", "💊 Adenosine IV Infusion", "💊 Antiarrythmic Infusions (stable wide QRS)"]
     
-    let cardioversion = [""]
+    let cardioversion = ["Narrow regular: 50-100 J", "Narrow irregular: 120-200 J biphasic or 200J monophasic", "Wide regular: 100J", "Wide irregular: defibrillation dose (not synchronized)"]
     
-    let adenosine = [""]
+    let adenosine = ["First dose: 6 mg rapid IV push; follow with NS flush", "Second dose: 12mg if needed"]
     
-    let antiarryth = [""]
+    let antiarryth = ["Procainamide IV dose: 20-50 mg/min, max dose 17 mg/kg", "Amiodarone IV dose: (1) 150 mg over 10 min. Repeat as needed if VT recurs. Follow by maintenance infusion of 1mg/min, first 6 hours.", "Sotalol IV dose: 100mg (1.5mg/kg) over 5 min. Avoid if prolonged QT"]
     
    
     let colorBlue = UIColor(red: 0, green: 0.0314, blue: 0.9569, alpha: 1)
