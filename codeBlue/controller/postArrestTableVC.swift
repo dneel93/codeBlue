@@ -10,7 +10,7 @@ import UIKit
 
 class postArrestTableVC: UITableViewController {
 
-    let sections = ["♥️ Ventilation/oxygenation", "💊 IV bolus", "💊 Epi IV Infusion", "💊 Dopamine IV Infusion", "💊 Norepi IV Infusion"]
+    let sections = ["Ventilation/oxygenation", "IV bolus", "Epi IV Infusion", "Dopamine IV Infusion", "Norepi IV Infusion"]
     
     let vent = ["Avoid excesive ventilation", "Start 10 breaths/min and titrate to target PetCO2","When feasible, titrate Fi02 to minimum necessary to achieve SpO2 >94%"]
     
@@ -22,7 +22,7 @@ class postArrestTableVC: UITableViewController {
     
     let norepi = ["0.1-0.5 mcg/kg minute (in 70-kg adult: 7-35 mcg per minute)"]
   
-    let colorBlue = UIColor(red: 0, green: 0.0314, blue: 0.9569, alpha: 1)
+    let colorBlue = UIColor(red: 0.027, green: 0.226, blue: 0.651, alpha: 1)
     
     
 

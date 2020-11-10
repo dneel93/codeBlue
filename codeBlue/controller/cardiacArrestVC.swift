@@ -10,7 +10,7 @@ import UIKit
 
 class cardiacArrestVC: UIViewController, UIScrollViewDelegate, selectRhythm {
 
-    var rhythmLabelText:String?
+    var rhythmLabelText:String = "Rhythm"
     var timer:Timer!
     var timer2:Timer!
     var timer3:Timer!
@@ -170,14 +170,13 @@ class cardiacArrestVC: UIViewController, UIScrollViewDelegate, selectRhythm {
     
     @IBAction func logPressed(_ sender: Any) {
         
-       
         let cprRoundsLog = "CPR rounds: \(cprCountNum)"
         
         let epiDosesLog = "Doses Epi: \(epiCountNum)"
        
         let defibLog = "AED: \(defibCountNum)"
         
-        let rhythmLog = rhythmLabelText ?? "None"
+        let rhythmLog = "Heart Rhythm: "+rhythmLabelText
         
         let amioLog = "Doses Amio: \(amioCountNum)"
         let totalTimeLog = "Total Time (min): \(Float(totalSeconds)/60)"
@@ -192,7 +191,6 @@ class cardiacArrestVC: UIViewController, UIScrollViewDelegate, selectRhythm {
     
   
        
-    
     func startCPR(){
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countup), userInfo: nil, repeats: true)
     }

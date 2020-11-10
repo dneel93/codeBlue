@@ -12,21 +12,14 @@ class vfVT: UIViewController {
 
     @IBOutlet var noButton: UIButton!
     @IBOutlet var yesButton: UIButton!
-    
     @IBOutlet var shockButton: UIButton!
-    
     @IBOutlet var cprButton: UIButton!
-    
     @IBOutlet var accessButton: UIButton!
-    
     @IBOutlet var cprLabel: UILabel!
     
     var cprSeconds = 0
     var timer:Timer!
     
-    
-    
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,13 +31,10 @@ class vfVT: UIViewController {
         accessButton.configureCheck()
         
     }
-    
 
     @IBAction func yesPressed(_ sender: Any) {
     
-        
     }
-    
     
     @IBAction func noPressed(_ sender: Any) {
      
@@ -52,28 +42,15 @@ class vfVT: UIViewController {
         let vc = storyboard.instantiateViewController(withIdentifier: "asystolePEA") as! asystolePEA
         self.navigationController?.pushViewController(vc, animated: true)
         
-        
     }
-    
     
     
     @IBAction func shockPressed(_ sender: Any) {
-        if shockButton.isSelected == true{
-            shockButton.configureCheck()}
-        
-        else{
-            shockButton.setBackgroundImage(UIImage(named: "checked_box"), for: .normal)
-            shockButton.isSelected = true}
+        shockButton.checkOffOn()
     }
     
-    
     @IBAction func cprPressed(_ sender: Any) {
-        if cprButton.isSelected == true{
-            cprButton.configureCheck()}
-        
-        else{
-            cprButton.setBackgroundImage(UIImage(named: "checked_box"), for: .normal)
-            cprButton.isSelected = true}
+        cprButton.checkOffOn()
         
         
         if timer?.isValid ?? false {
@@ -86,19 +63,11 @@ class vfVT: UIViewController {
             startCPR()
         }
         
-        
     }
     
     
     @IBAction func accessPressed(_ sender: Any) {
-    
-        if accessButton.isSelected == true{
-            accessButton.configureCheck()}
-        
-        else{
-            accessButton.setBackgroundImage(UIImage(named: "checked_box"), for: .normal)
-            accessButton.isSelected = true}
-    
+        accessButton.checkOffOn()
     }
     
     

@@ -10,7 +10,7 @@ import UIKit
 
 class bradyTableVC: UITableViewController {
 
-    let sections = ["💊 Atropine IV dose", "💊 Dopamine IV Infusion", "💊 Epi IV Infusion"]
+    let sections = ["Atropine IV dose", "Dopamine IV Infusion", "Epi IV Infusion"]
     
     let atropine = ["First Dose: 0.5mg bolus", "Repat every 3-5 min", "Maximum 3 mg"]
     
@@ -19,7 +19,7 @@ class bradyTableVC: UITableViewController {
     let epi = ["2-20 mcg/min infusion", "Titrate to patient response"]
     
    
-    let colorBlue = UIColor(red: 0, green: 0.0314, blue: 0.9569, alpha: 1)
+    let colorBlue = UIColor(red: 0.027, green: 0.226, blue: 0.651, alpha: 1)
     
     
 

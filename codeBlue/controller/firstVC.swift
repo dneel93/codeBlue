@@ -26,6 +26,9 @@ class firstVC: UIViewController {
         SideMenuManager.default.leftMenuNavigationController = menu
         SideMenuManager.default.addPanGestureToPresent(toView: self.view)
         
+    
+//        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "ekg.png")!)
+        
     }
     
     
@@ -37,8 +40,7 @@ class firstVC: UIViewController {
     
    
     
-    
-    
+
     
     class MenuListController:
     UITableViewController{
@@ -67,4 +69,27 @@ class firstVC: UIViewController {
         //do something
         }
 
-    }}
+    }
+    
+    
+    @IBAction func guidedPressed(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "guided", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "guided") as! guided1VC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    
+    @IBAction func algosPressed(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "Algos", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "algoVC") as! algoVC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    
+    
+    
+}

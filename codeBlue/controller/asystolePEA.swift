@@ -60,37 +60,19 @@ class asystolePEA: UIViewController {
     
     
     @IBAction func accessPress(_ sender: Any) {
-        if accessButton.isSelected == true{
-            accessButton.configureCheck()}
-        
-        else{
-            accessButton.setBackgroundImage(UIImage(named: "checked_box"), for: .normal)
-            accessButton.isSelected = true}
+        accessButton.checkOffOn()
     }
     
     
     
     @IBAction func epiPressed(_ sender: Any) {
-        
-        if epiButton.isSelected == true{
-            epiButton.configureCheck()}
-        
-        else{
-            epiButton.setBackgroundImage(UIImage(named: "checked_box"), for: .normal)
-            epiButton.isSelected = true}
-        
+        epiButton.checkOffOn()
     }
     
     
     
     @IBAction func intPressed(_ sender: Any) {
-        if intubationButton.isSelected == true{
-            intubationButton.configureCheck()}
-        
-        else{
-            intubationButton.setBackgroundImage(UIImage(named: "checked_box"), for: .normal)
-            intubationButton.isSelected = true}
-        
+        intubationButton.checkOffOn()
     }
     
     

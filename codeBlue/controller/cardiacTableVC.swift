@@ -10,7 +10,7 @@ import UIKit
 
 class cardiacTableVC: UITableViewController {
 
-    let sections = ["♥️ CPR Quality", "💊 Shock Energy for Defib", "♥️ Advanced Airway", "💊 Drug Therapy", "♥️ ROSC","♥️ Reversible Causes"]
+    let sections = ["CPR Quality", "Shock Energy for Defib", "Advanced Airway", "Drug Therapy", "ROSC","Reversible Causes"]
     
     let cpr = ["Push hard (at least 2 inches [5 cm]) and fast (100-120/min) and allow complete chest recoil", "Minimize interruptions in compressions. Avoid excessive ventilation", " Change compressor every 2 minutes, or sooner if fatigued.", "If no advanced airway, 30:2 compression-ventilation ratio.Quantitative waveform capnography", "If PetCO2 <10 mm Hg, attempt to improve CPR quality.", "Intra-arterial pressure: if relaxation phase (diastolic) pressure <20 mm Hg, attempt to improve CPR quality." ]
     
@@ -26,11 +26,9 @@ class cardiacTableVC: UITableViewController {
     let causes = ["Hypovolemia", "Hypoxia", "Hydrogen ion (acidosis)", "Hypo-/hyperkalemia", "Hypothermia", "Tension pneumothorax", "Tamponade, cardiac", "Toxins","Thrombosis, pulmonary", "Thrombosis, cardiac"]
         
     
-    let colorBlue = UIColor(red: 0, green: 0.0314, blue: 0.9569, alpha: 1)
+    let colorBlue = UIColor(red: 0.027, green: 0.226, blue: 0.651, alpha: 1)
     
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
 

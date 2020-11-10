@@ -71,23 +71,12 @@ class vfEpi: UIViewController {
     
     
     @IBAction func epiPressed(_ sender: Any) {
-        if epiButton.isSelected == true{
-            epiButton.configureCheck()}
-        
-        else{
-            epiButton.setBackgroundImage(UIImage(named: "checked_box"), for: .normal)
-            epiButton.isSelected = true}
+        epiButton.checkOffOn()
     }
     
     
     @IBAction func intPressed(_ sender: Any) {
-        
-        if intButton.isSelected == true{
-            intButton.configureCheck()}
-        
-        else{
-            intButton.setBackgroundImage(UIImage(named: "checked_box"), for: .normal)
-            intButton.isSelected = true}
+        intButton.checkOffOn()
     }
     
     

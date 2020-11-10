@@ -63,12 +63,7 @@ class asystolePeaContVC: UIViewController {
     
     @IBAction func causesPress(_ sender: Any) {
         
-        if causesButton.isSelected == true{
-            causesButton.configureCheck()}
-        
-        else{
-            causesButton.setBackgroundImage(UIImage(named: "checked_box"), for: .normal)
-            causesButton.isSelected = true}
+        causesButton.checkOffOn()
         
     }
     
@@ -98,7 +93,7 @@ class asystolePeaContVC: UIViewController {
     
     
     @IBAction func yesPressed(_ sender: Any) {
-        print("YES")
+    
     }
     
     

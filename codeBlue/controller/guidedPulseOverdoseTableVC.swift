@@ -11,13 +11,13 @@ import UIKit
 class guidedPulseOverdoseTableVC: UITableViewController {
     
     
-    let drugs = ["💊 Beta-blocker", "💊 Ca++ channel-blocker", "💊 Digoxin"]
+    let drugs = ["Beta-blocker", "Ca++ channel-blocker", "Digoxin"]
     
     let beta = ["1st line: glucagon 5mg IV over 1 min, second bolus in 10min if no effect. If effective, start gtt at 2-5mg/hr (MAP>60)", "2nd line: Ca-culconate 2g PVI, CaCl2 1g CVC"]
     let calcium = ["1st line: Ca-gluconate 2g PIV, CaCl2 1g CVC ", "Glucagon (as above)"]
     let digoxin = ["Give Ab (FAb, Digibind)", "Can try atropine 0.5mg IV while waiting","Correct hypokalemia"]
     
-    let colorBlue = UIColor(red: 0, green: 0.0314, blue: 0.9569, alpha: 1)
+    let colorBlue = UIColor(red: 0.027, green: 0.226, blue: 0.651, alpha: 1)
     
     
     

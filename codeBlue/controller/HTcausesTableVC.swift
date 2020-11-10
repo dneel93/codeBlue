@@ -17,10 +17,9 @@ class HTcausesTableVC: UITableViewController {
     let Ts = ["Tenison PTX","Tamponade","Toxins (meds,drugs)","Thrombosis (PE)","Thrmobosis (MI)"]
     
     
-    let colorBlue = UIColor(red: 0, green: 0.0314, blue: 0.9569, alpha: 1)
+    let colorBlue = UIColor(red: 0.027, green: 0.226, blue: 0.651, alpha: 1)
     
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -11,8 +11,8 @@ import UIKit
 class guided1VC: UIViewController {
     
     
+  
     @IBOutlet var pulseButton: UIButton!
-    
     @IBOutlet var noPulseButton: UIButton!
     
     override func viewDidLoad() {
@@ -20,7 +20,27 @@ class guided1VC: UIViewController {
         pulseButton.configure(title: "Pulse")
         noPulseButton.configure(title: "No Pulse")
         self.navigationItem.title = "Guided Code"
+
+
+    }
     
+    
+ 
+    @IBAction func pulsePressed(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "guidedPulse", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "guidedPulse") as! guidedPulseVC1
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    
+    @IBAction func noPulsePressed(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "guidedNoPulse", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "guidedNoPulse") as! guidedNoPulseVC1
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
 

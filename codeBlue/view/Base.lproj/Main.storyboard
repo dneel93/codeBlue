@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,69 +16,74 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BWH_logo" translatesAutoresizingMaskIntoConstraints="NO" id="eFv-q2-ena">
+                                <rect key="frame" x="93.5" y="315.5" width="227" height="265"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="227" id="Elv-0A-JQp"/>
+                                    <constraint firstAttribute="width" constant="227" id="GqA-3z-Ac5"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="265" id="etu-sr-aiM"/>
+                                    <constraint firstAttribute="height" constant="265" id="mr9-Eo-uFa"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="CcR-cI-i2J">
+                                <rect key="frame" x="59.5" y="630.5" width="295" height="75"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwT-l0-d0v">
+                                        <rect key="frame" x="0.0" y="0.0" width="135" height="75"/>
+                                        <color key="backgroundColor" red="0.028988612819999999" green="0.22572481629999999" blue="0.65101605650000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="135" id="8hw-E9-d1Z"/>
+                                            <constraint firstAttribute="height" constant="75" id="Y8t-dB-K8C"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="22"/>
+                                        <state key="normal" title="Guided">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="guidedPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hJO-fk-pYD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzY-g5-83r">
+                                        <rect key="frame" x="160" y="0.0" width="135" height="75"/>
+                                        <color key="backgroundColor" red="0.028988612819999999" green="0.22572481629999999" blue="0.65101605650000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="135" id="VDE-h6-h8H"/>
+                                            <constraint firstAttribute="height" constant="75" id="xJx-io-G0F"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="22"/>
+                                        <state key="normal" title="Algorithms">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="algosPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ccc-ce-EgO"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Code Blue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KyA-es-gzN">
-                                <rect key="frame" x="103.5" y="146" width="207" height="57"/>
+                                <rect key="frame" x="103.5" y="213.5" width="207" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="207" id="Qp3-Fy-IxH"/>
                                     <constraint firstAttribute="height" constant="57" id="TIq-Vk-peA"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="26"/>
-                                <color key="textColor" red="0.063293721962469407" green="0.18926343361583298" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="41"/>
+                                <color key="textColor" red="0.028988612819999999" green="0.22572481629999999" blue="0.65101605650000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwT-l0-d0v">
-                                <rect key="frame" x="127" y="403" width="160" height="60"/>
-                                <color key="backgroundColor" red="0.011714357568603921" green="0.11019879574973737" blue="0.96620899438858032" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="Gsn-1L-vNj"/>
-                                    <constraint firstAttribute="height" constant="60" id="ZLW-J9-krT"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="22"/>
-                                <state key="normal" title="Guided Code">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="aPJ-2f-kWj" kind="show" id="JJS-ns-XHr"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzY-g5-83r">
-                                <rect key="frame" x="127" y="493" width="160" height="60"/>
-                                <color key="backgroundColor" red="0.058051891001514977" green="0.14803501047255108" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="5rr-9l-g8t"/>
-                                    <constraint firstAttribute="height" constant="60" id="JPf-MP-LDK"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="22"/>
-                                <state key="normal" title="ACLS Algos">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Mjf-3Q-xay" kind="show" id="WXM-42-PSL"/>
-                                </connections>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BWH" translatesAutoresizingMaskIntoConstraints="NO" id="eFv-q2-ena">
-                                <rect key="frame" x="157" y="213" width="100" height="140"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="140" id="7Zg-AZ-1xA"/>
-                                    <constraint firstAttribute="width" constant="100" id="Tb8-ft-mOv"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="fwT-l0-d0v" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2qi-Tz-QSv"/>
                             <constraint firstItem="KyA-es-gzN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="70r-fM-Kp3"/>
-                            <constraint firstItem="eFv-q2-ena" firstAttribute="top" secondItem="KyA-es-gzN" secondAttribute="bottom" constant="10" id="7TP-ga-UJO"/>
-                            <constraint firstItem="yzY-g5-83r" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9JV-md-JgX"/>
-                            <constraint firstItem="eFv-q2-ena" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="h1d-97-8Yn"/>
-                            <constraint firstItem="KyA-es-gzN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="58" id="mmi-pj-MSS"/>
-                            <constraint firstItem="yzY-g5-83r" firstAttribute="top" secondItem="fwT-l0-d0v" secondAttribute="bottom" constant="30" id="qfs-b2-sTz"/>
-                            <constraint firstItem="fwT-l0-d0v" firstAttribute="top" secondItem="KyA-es-gzN" secondAttribute="bottom" constant="200" id="zcb-Zw-J0M"/>
+                            <constraint firstItem="eFv-q2-ena" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7jH-eq-yzY"/>
+                            <constraint firstItem="eFv-q2-ena" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="MDT-ci-iR9"/>
+                            <constraint firstItem="eFv-q2-ena" firstAttribute="top" secondItem="KyA-es-gzN" secondAttribute="bottom" constant="45" id="PAS-92-URD"/>
+                            <constraint firstItem="CcR-cI-i2J" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TPN-aN-nI6"/>
+                            <constraint firstItem="CcR-cI-i2J" firstAttribute="top" secondItem="eFv-q2-ena" secondAttribute="bottom" constant="50" id="fuI-pu-dPF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="oSk-cO-PFN">
-                        <barButtonItem key="leftBarButtonItem" title="💙 Menu" id="WdS-IL-Lpt">
+                        <barButtonItem key="leftBarButtonItem" image="menubutton" id="WdS-IL-Lpt">
                             <connections>
                                 <action selector="menuTapped:" destination="BYZ-38-t0r" id="SHk-8T-s3f"/>
                             </connections>
@@ -92,27 +96,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-80" y="64"/>
-        </scene>
-        <!--guided-->
-        <scene sceneID="eDR-eC-6Ii">
-            <objects>
-                <viewControllerPlaceholder storyboardName="guided" referencedIdentifier="guided" id="aPJ-2f-kWj" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="32h-9n-bI4"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="K4Z-XK-EsZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="613" y="-15"/>
-        </scene>
-        <!--Algos-->
-        <scene sceneID="ue6-7V-QFe">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Algos" id="Mjf-3Q-xay" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="ir0-Bp-F0b"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DDQ-MJ-HsZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="614" y="136"/>
+            <point key="canvasLocation" x="-81.159420289855078" y="63.616071428571423"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Xt2-z6-2vT">
@@ -134,9 +118,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BWH" width="1200" height="1400"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="BWH_logo" width="227" height="265"/>
+        <image name="menubutton" width="23" height="26"/>
     </resources>
 </document>

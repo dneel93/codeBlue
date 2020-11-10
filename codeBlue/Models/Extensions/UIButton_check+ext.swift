@@ -21,5 +21,20 @@ func configureCheck(){
         heightAnchor.constraint(equalToConstant: 30)
         ])
     
-    }}
+    }
+    
+    
+    func checkOffOn () {
+        
+        if isSelected == true{
+            configureCheck()}
+        
+        else{
+            setBackgroundImage(UIImage(named: "checked_box"), for: .normal)
+            isSelected = true}
+    
+    }
+    
+    
+}
 

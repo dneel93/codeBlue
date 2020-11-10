@@ -12,7 +12,7 @@ extension UIButton {
 
 func configure(title:String){
         self.setTitle(title, for: .normal)
-        self.layer.cornerRadius = 8
+        self.layer.cornerRadius = 10
         self.titleLabel?.numberOfLines = 0
         self.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
         self.titleLabel?.textAlignment = .center}

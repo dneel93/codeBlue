@@ -62,23 +62,14 @@ class guidedNoPulseVC1: UIViewController {
     
     @IBAction func o2Press(_ sender: Any) {
     
-        if o2Button.isSelected == true{
-            o2Button.configureCheck()}
-        
-        else{
-            o2Button.setBackgroundImage(UIImage(named: "checked_box"), for: .normal)
-            o2Button.isSelected = true}
+        o2Button.checkOffOn()
     }
         
     
     
     
     @IBAction func defibPress(_ sender: Any) {
-        if defibButton.isSelected == true{
-            defibButton.configureCheck()}
-        else{
-            defibButton.setBackgroundImage(UIImage(named: "checked_box"), for: .normal)
-            defibButton.isSelected = true}
+        defibButton.checkOffOn()
     }
 
     

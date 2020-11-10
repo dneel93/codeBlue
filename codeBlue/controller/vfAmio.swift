@@ -36,13 +36,7 @@ class vfAmio: UIViewController {
     
     
     @IBAction func cprPressed(_ sender: Any) {
-        if cprButton.isSelected == true{
-            cprButton.configureCheck()}
-        
-        else{
-            cprButton.setBackgroundImage(UIImage(named: "checked_box"), for: .normal)
-            cprButton.isSelected = true}
-        
+        cprButton.checkOffOn()
         
         if timer?.isValid ?? false {
             timer.invalidate()
@@ -53,16 +47,17 @@ class vfAmio: UIViewController {
             cprSeconds = 0
             startCPR()
         }
+        
+        
     }
     
-    
-    
     @IBAction func amioPressed(_ sender: Any) {
-    
+        amioButton.checkOffOn()
     }
     
     
     @IBAction func causesPressed(_ sender: Any) {
+        causesButton.checkOffOn()
     }
     
     
@@ -74,7 +69,6 @@ class vfAmio: UIViewController {
 
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
     
     
     
@@ -106,5 +100,7 @@ class vfAmio: UIViewController {
         seconds = (cprSeconds % 3600) % 60
         cprLabel.text = String(format: "CPR: %02d:%02d", minutes, seconds)
     }
+    
+    
     
 }
