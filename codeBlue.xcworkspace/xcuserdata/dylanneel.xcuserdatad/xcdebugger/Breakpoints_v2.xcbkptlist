@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "400C4644-E134-49C7-8F3B-38828F902AC6"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D3071A2A-6073-4C9F-B11B-A7854E361945"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "codeBlue/controller/guidedPulseVC3.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "3"
+            endingLineNumber = "3"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "55474734-B119-4C1D-AF55-D812733DB3FC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "codeBlue/controller/guidedPulseVC2.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8F9A8BA9-B99D-4D76-9A08-981288B62631"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "codeBlue/controller/guidedPulseVC5.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "guidedPulseVC5"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "8F9A8BA9-B99D-4D76-9A08-981288B62631 - 3145ed856f6b197"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "codeBlue.guidedPulseVC5.Info2.getter : Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "codeBlue"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dylanneel/Desktop/CodeAble/codeBlue/codeBlue/controller/guidedPulseVC5.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "122">
+               </Location>
+               <Location
+                  uuid = "8F9A8BA9-B99D-4D76-9A08-981288B62631 - 5c78dc5b877b89ff"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "codeBlue.guidedPulseVC5.Info2.setter : Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "codeBlue"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dylanneel/Desktop/CodeAble/codeBlue/codeBlue/controller/guidedPulseVC5.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "148">
+               </Location>
+               <Location
+                  uuid = "8F9A8BA9-B99D-4D76-9A08-981288B62631 - bfaa51003909cc1c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "codeBlue.guidedPulseVC5.Info2.modify : Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "codeBlue"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dylanneel/Desktop/CodeAble/codeBlue/codeBlue/controller/guidedPulseVC5.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "8F9A8BA9-B99D-4D76-9A08-981288B62631 - 1dc51a05853034f9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "codeBlue.guidedPulseVC5.Info2.modify : Swift.Array&lt;Swift.String&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "codeBlue"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dylanneel/Desktop/CodeAble/codeBlue/codeBlue/controller/guidedPulseVC5.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "8F9A8BA9-B99D-4D76-9A08-981288B62631 - 586212d3a9b897b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "codeBlue.guidedPulseVC5.init(style: __C.UITableViewStyle) -&gt; codeBlue.guidedPulseVC5"
+                  moduleName = "codeBlue"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dylanneel/Desktop/CodeAble/codeBlue/codeBlue/controller/guidedPulseVC5.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "661">
+               </Location>
+               <Location
+                  uuid = "8F9A8BA9-B99D-4D76-9A08-981288B62631 - f88bda4554ac2df"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "codeBlue.guidedPulseVC5.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; codeBlue.guidedPulseVC5"
+                  moduleName = "codeBlue"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dylanneel/Desktop/CodeAble/codeBlue/codeBlue/controller/guidedPulseVC5.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "685">
+               </Location>
+               <Location
+                  uuid = "8F9A8BA9-B99D-4D76-9A08-981288B62631 - abf1da8336b35da5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "codeBlue.guidedPulseVC5.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;codeBlue.guidedPulseVC5&gt;"
+                  moduleName = "codeBlue"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dylanneel/Desktop/CodeAble/codeBlue/codeBlue/controller/guidedPulseVC5.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "587">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
