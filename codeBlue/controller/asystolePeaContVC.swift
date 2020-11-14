@@ -34,6 +34,10 @@ class asystolePeaContVC: UIViewController {
 
     }
     
+    @IBAction func homeTapped(_ sender: Any) {
+        self.navigationController?.popToRootViewController(animated: true)
+        
+    }
     
     
     @IBAction func cprPress(_ sender: Any) {

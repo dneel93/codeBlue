@@ -22,6 +22,11 @@ class guidedPulseVC4: UIViewController {
 
     }
     
+    @IBAction func homeTapped(_ sender: Any) {
+        self.navigationController?.popToRootViewController(animated: true)
+        
+    }
+    
 
 
 

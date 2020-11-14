@@ -57,6 +57,11 @@ class asystolePEA: UIViewController {
         
     }
     
+    @IBAction func homeTapped(_ sender: Any) {
+        self.navigationController?.popToRootViewController(animated: true)
+        
+    }
+    
     
     
     @IBAction func accessPress(_ sender: Any) {

@@ -33,6 +33,11 @@ class vfAmio: UIViewController {
         causesButton.configureCheck()
     }
     
+    @IBAction func homeTapped(_ sender: Any) {
+        self.navigationController?.popToRootViewController(animated: true)
+        
+    }
+    
     
     
     @IBAction func cprPressed(_ sender: Any) {

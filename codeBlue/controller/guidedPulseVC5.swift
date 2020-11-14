@@ -23,6 +23,10 @@ class guidedPulseVC5: UIViewController {
 
     }
     
+    @IBAction func homeTapped(_ sender: Any) {
+        self.navigationController?.popToRootViewController(animated: true)
+        
+    }
     
     
 

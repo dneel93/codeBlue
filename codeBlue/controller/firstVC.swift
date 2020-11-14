@@ -16,6 +16,7 @@ class firstVC: UIViewController {
     var menu: SideMenuNavigationController?
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         guidedCode.layer.cornerRadius = 8
@@ -50,7 +51,7 @@ class firstVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.backgroundColor = .blue
+        tableView.backgroundColor = UIColor(red: 0.032, green: 0.216, blue: 0.678, alpha: 1)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
     

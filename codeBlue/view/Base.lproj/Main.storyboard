@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WWg-BF-3Xf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WWg-BF-3Xf">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BWH_logo" translatesAutoresizingMaskIntoConstraints="NO" id="eFv-q2-ena">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iHub" translatesAutoresizingMaskIntoConstraints="NO" id="eFv-q2-ena">
                                 <rect key="frame" x="93.5" y="315.5" width="227" height="265"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="227" id="Elv-0A-JQp"/>
@@ -67,7 +67,7 @@
                                     <constraint firstAttribute="height" constant="57" id="TIq-Vk-peA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="41"/>
-                                <color key="textColor" red="0.028988612819999999" green="0.22572481629999999" blue="0.65101605650000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" red="0.127" green="0.31141483780000001" blue="0.58434110880000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -83,7 +83,8 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="oSk-cO-PFN">
-                        <barButtonItem key="leftBarButtonItem" image="menubutton" id="WdS-IL-Lpt">
+                        <barButtonItem key="leftBarButtonItem" image="menubutton-1" id="WdS-IL-Lpt">
+                            <color key="tintColor" red="0.051614977419999999" green="0.3200241029" blue="0.56865334509999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="menuTapped:" destination="BYZ-38-t0r" id="SHk-8T-s3f"/>
                             </connections>
@@ -118,7 +119,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BWH_logo" width="227" height="265"/>
-        <image name="menubutton" width="23" height="26"/>
+        <image name="iHub" width="300" height="300"/>
+        <image name="menubutton-1" width="15" height="17"/>
     </resources>
 </document>

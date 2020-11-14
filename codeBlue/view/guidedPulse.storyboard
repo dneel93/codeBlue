@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gd8-Xf-HMc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gd8-Xf-HMc">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -61,7 +61,14 @@
                             <constraint firstItem="WQ9-eP-eEe" firstAttribute="centerY" secondItem="GTw-3j-ERi" secondAttribute="centerY" id="M5U-O2-Vm2"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="bFc-mc-jox"/>
+                    <navigationItem key="navigationItem" id="bFc-mc-jox">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="home-1" id="oqG-uR-MAc">
+                            <color key="tintColor" red="0.069186054169999997" green="0.4644605517" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="homeTapped:" destination="Ho3-SN-chK" id="FXv-hl-B8o"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="bradyButton" destination="Lgq-bv-6XX" id="ZdU-tm-Nd2"/>
                         <outlet property="tachyButton" destination="nhC-NV-a3N" id="Cuc-do-Mdi"/>
@@ -132,7 +139,14 @@
                             <constraint firstItem="WeK-cf-cB8" firstAttribute="centerY" secondItem="b1K-mc-Mbv" secondAttribute="centerY" constant="-227.5" id="ohG-xN-rbb"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="HGK-BY-k8d"/>
+                    <navigationItem key="navigationItem" id="HGK-BY-k8d">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="home-1" id="pO6-Wc-vLT">
+                            <color key="tintColor" red="0.069186054169999997" green="0.4644605517" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="homeTapped:" destination="b2y-ho-vz6" id="zs9-7c-CEM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="noButton" destination="cng-Ow-j8k" id="hrj-1c-UY7"/>
                         <outlet property="yesButton" destination="I4n-WO-w3y" id="0t7-sc-4bg"/>
@@ -370,7 +384,14 @@
                         <viewLayoutGuide key="safeArea" id="LfK-wv-XDR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="E32-PJ-mEv"/>
+                    <navigationItem key="navigationItem" id="E32-PJ-mEv">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="home-1" id="q7Y-rZ-0JH">
+                            <color key="tintColor" red="0.069186054169999997" green="0.4644605517" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="homeTapped:" destination="dTW-jC-XSz" id="RNi-SF-dVW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="ecgButton" destination="4LU-IX-6Kx" id="V4J-4x-i3Q"/>
                         <outlet property="noButton" destination="8Y9-aH-cZJ" id="M2A-xt-UKN"/>
@@ -444,7 +465,14 @@
                             <constraint firstItem="bts-K4-L1B" firstAttribute="centerY" secondItem="PbP-48-llK" secondAttribute="centerY" id="ym4-c3-wf8"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Stable Tachycardia" id="rLg-FF-yhS"/>
+                    <navigationItem key="navigationItem" title="Stable Tachycardia" id="rLg-FF-yhS">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="home-1" id="jKI-xL-lTs">
+                            <color key="tintColor" red="0.069186054169999997" green="0.4644605517" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="homeTapped:" destination="du0-01-yKM" id="LhM-KN-Zyh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="noButton" destination="OuN-Bb-7Gd" id="GbL-bL-bEm"/>
                         <outlet property="yesButton" destination="kcn-kX-dES" id="6SL-If-s5L"/>
@@ -719,7 +747,14 @@
                             <constraint firstItem="cxz-NB-OMy" firstAttribute="bottom" secondItem="GaR-YD-rWt" secondAttribute="bottom" id="iLU-79-qkg"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="JYn-Bq-xM6"/>
+                    <navigationItem key="navigationItem" id="JYn-Bq-xM6">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="home-1" id="G8N-Hd-CDs">
+                            <color key="tintColor" red="0.069186054169999997" green="0.4644605517" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="homeTapped:" destination="al6-lh-qJr" id="g7M-n3-BjD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="ecgButton" destination="014-pZ-aUU" id="4ma-l7-E5c"/>
                         <outlet property="noButton" destination="4aP-Ek-kC9" id="79S-b3-HFB"/>
@@ -888,7 +923,14 @@
                             <constraint firstItem="CIv-LF-Z9x" firstAttribute="leading" secondItem="Qzy-Oy-6Wz" secondAttribute="leading" constant="15" id="v1q-GQ-3ok"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Unstable brady" id="c6C-Tq-Psk"/>
+                    <navigationItem key="navigationItem" title="Unstable brady" id="c6C-Tq-Psk">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="home-1" id="rYn-xA-b6D">
+                            <color key="tintColor" red="0.069186054169999997" green="0.4644605517" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="homeTapped:" destination="arg-Tt-CE5" id="hIz-X9-pOa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="Pacing" destination="1qP-mH-Liu" id="yTK-Eg-cjq"/>
                         <outlet property="overdoseButton" destination="zCW-nd-DOI" id="mhb-fY-B9c"/>
@@ -1003,7 +1045,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MVL-DE-qMl">
                                 <rect key="frame" x="30" y="246" width="340" height="369"/>
-                                <mutableString key="text">Adenosine 6mg IV then 12mg IV  Metoprolol 5mg IV q5min up to 3x   Esmolol 0.5mg/kg over 1min then gtt 50mcg/kg/min  Diltiazem 10-20mg IV over 2min, then q15min x2 then 5-20mg/hr gtt  Verapamil 2.5-5mg IV over 2min, then 5-10 mg IV q15-30min to total dose 20mg  Digoxin load with 0.5mg IVx1 then 0.25mg IV q6hrs x2 then PO</mutableString>
+                                <string key="text">Adenosine 6mg IV then 12mg IV  Metoprolol 5mg IV q5min up to 3x   Esmolol 0.5mg/kg over 1min then gtt 50mcg/kg/min  Diltiazem 10-20mg IV over 2min, then q15min x2 then 5-20mg/hr gtt  Verapamil 2.5-5mg IV over 2min, then 5-10 mg IV q15-30min to total dose 20mg  Digoxin load with 0.5mg IVx1 then 0.25mg IV q6hrs x2 then PO</string>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1058,6 +1100,7 @@
     </scenes>
     <resources>
         <image name="Group 1" width="303" height="261"/>
+        <image name="home-1" width="29.5" height="31"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

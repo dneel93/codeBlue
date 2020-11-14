@@ -31,6 +31,13 @@ class vfVT: UIViewController {
         accessButton.configureCheck()
         
     }
+    
+    
+    @IBAction func homeTapped(_ sender: Any) {
+        self.navigationController?.popToRootViewController(animated: true)
+        
+    }
+    
 
     @IBAction func yesPressed(_ sender: Any) {
     

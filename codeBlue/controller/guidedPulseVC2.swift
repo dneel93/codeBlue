@@ -34,6 +34,11 @@ class guidedPulseVC2: UIViewController {
         
     }
     
+    @IBAction func homeTapped(_ sender: Any) {
+        self.navigationController?.popToRootViewController(animated: true)
+        
+    }
+    
 
     @IBAction func vsTapped(_ sender: Any) {
         vsButton.checkOffOn()

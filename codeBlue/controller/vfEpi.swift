@@ -38,6 +38,12 @@ class vfEpi: UIViewController {
 
     }
     
+    
+    @IBAction func homeTapped(_ sender: Any) {
+        self.navigationController?.popToRootViewController(animated: true)
+        
+    }
+    
 
     @IBAction func noPressed(_ sender: Any) {
         let storyboard = UIStoryboard(name: "guidedNoPulse", bundle: nil)
@@ -68,6 +74,8 @@ class vfEpi: UIViewController {
         
         
     }
+    
+    
     
     
     @IBAction func epiPressed(_ sender: Any) {

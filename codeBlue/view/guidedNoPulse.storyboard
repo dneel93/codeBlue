@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XWN-CK-ERh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XWN-CK-ERh">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--No Pulse: Check List-->
+        <!--No Pulse-->
         <scene sceneID="BkM-uF-8Hg">
             <objects>
                 <viewController storyboardIdentifier="guidedNoPulse" id="DcD-oV-Hk8" customClass="guidedNoPulseVC1" customModule="codeBlue" customModuleProvider="target" sceneMemberID="viewController">
@@ -99,7 +99,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shockable Rhythm?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0x-dI-LZG">
-                                <rect key="frame" x="104.00000000000001" y="353.66666666666669" width="206.33333333333337" height="28.666666666666686"/>
+                                <rect key="frame" x="103.66666666666669" y="353.66666666666669" width="207" height="28.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -158,7 +158,14 @@
                             <constraint firstItem="vjf-oO-gTi" firstAttribute="top" secondItem="b0x-dI-LZG" secondAttribute="bottom" constant="45" id="isg-eU-aPY"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="No Pulse: Check List" id="Ip8-w7-JTc"/>
+                    <navigationItem key="navigationItem" title="No Pulse" id="Ip8-w7-JTc">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="home-1" id="oVE-wC-xVq">
+                            <color key="tintColor" red="0.069186054169999997" green="0.4644605517" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="homeTapped:" destination="DcD-oV-Hk8" id="IdM-U0-wXr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="cprButton" destination="xOY-fU-mo2" id="ezS-jA-EPX"/>
                         <outlet property="cprLabel" destination="lar-Ve-4aP" id="DMG-ed-ciK"/>
@@ -280,7 +287,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shockable Rhythm?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Hv-10-NCG">
-                                <rect key="frame" x="104.00000000000001" y="353.66666666666669" width="206.33333333333337" height="28.666666666666686"/>
+                                <rect key="frame" x="103.66666666666669" y="353.66666666666669" width="207" height="28.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -336,7 +343,14 @@
                             <constraint firstItem="c18-tf-20q" firstAttribute="centerX" secondItem="zDh-h0-P0m" secondAttribute="centerX" id="vw1-Gs-65B"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="vF/pVT" id="yNb-0e-TEZ"/>
+                    <navigationItem key="navigationItem" title="vF/pVT" id="yNb-0e-TEZ">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="home-1" id="daM-2f-DgK">
+                            <color key="tintColor" red="0.069186054169999997" green="0.4644605517" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="homeTapped:" destination="PXE-td-hvi" id="HT2-Xg-4Hf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="accessButton" destination="pHt-HF-tsA" id="K8Q-Xb-b1F"/>
                         <outlet property="cprButton" destination="zI9-Bm-Nbm" id="nQt-TG-Afj"/>
@@ -457,7 +471,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shockable Rhythm?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CZQ-Zp-f0L">
-                                <rect key="frame" x="104.00000000000001" y="378.66666666666669" width="206.33333333333337" height="28.666666666666686"/>
+                                <rect key="frame" x="103.66666666666669" y="378.66666666666669" width="207" height="28.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -514,7 +528,14 @@
                             <constraint firstItem="CZQ-Zp-f0L" firstAttribute="centerX" secondItem="3Ob-5B-ipT" secondAttribute="centerX" id="wRg-1G-rVW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Asystole/PEA" id="WdS-QD-XGc"/>
+                    <navigationItem key="navigationItem" title="Asystole/PEA" id="WdS-QD-XGc">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="home-1" id="iWh-q4-NWo">
+                            <color key="tintColor" red="0.069186054169999997" green="0.4644605517" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="homeTapped:" destination="PT7-8d-g2m" id="jLf-wt-cfm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="accessButton" destination="c0U-kB-5nn" id="MHy-E8-RHO"/>
                         <outlet property="cprButton" destination="iLB-qp-0fH" id="wh4-zD-NeQ"/>
@@ -611,7 +632,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shockable Rhythm?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggn-p1-FPh">
-                                <rect key="frame" x="104.00000000000001" y="353.66666666666669" width="206.33333333333337" height="28.666666666666686"/>
+                                <rect key="frame" x="103.66666666666669" y="353.66666666666669" width="207" height="28.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -670,7 +691,14 @@
                             <constraint firstItem="B07-xd-xSx" firstAttribute="top" secondItem="AO5-MO-2Yt" secondAttribute="top" id="zp8-FH-ecS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Asystole/PEA Cont." id="rzE-ni-IMA"/>
+                    <navigationItem key="navigationItem" title="Asystole/PEA Cont." id="rzE-ni-IMA">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="home-1" id="0w6-oh-lOf">
+                            <color key="tintColor" red="0.069186054169999997" green="0.4644605517" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="homeTapped:" destination="wuw-Z0-7Yr" id="w77-td-RG1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="causesButton" destination="pI4-5D-4wJ" id="vG9-No-D2j"/>
                         <outlet property="cprButton" destination="5E5-0x-NGJ" id="GXM-K5-ky2"/>
@@ -804,7 +832,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shockable Rhythm?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iZs-nW-GAW">
-                                <rect key="frame" x="104.00000000000001" y="353.66666666666669" width="206.33333333333337" height="28.666666666666686"/>
+                                <rect key="frame" x="103.66666666666669" y="353.66666666666669" width="207" height="28.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -862,7 +890,14 @@
                             <constraint firstItem="Wqr-Lu-rTC" firstAttribute="centerX" secondItem="w2L-VX-2bI" secondAttribute="centerX" id="yR1-56-XIb"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="VF/pVT epi" id="JRj-fP-jAo"/>
+                    <navigationItem key="navigationItem" title="VF/pVT epi" id="JRj-fP-jAo">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="home-1" id="NUP-H2-cGa">
+                            <color key="tintColor" red="0.069186054169999997" green="0.4644605517" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="homeTapped:" destination="dfO-9y-z3m" id="soj-NG-aeJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="cprButton" destination="dYi-OE-3dS" id="jIp-Ct-5va"/>
                         <outlet property="cprLabel" destination="lfD-Tv-6kK" id="chp-eL-acV"/>
@@ -975,7 +1010,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shockable Rhythm?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wi0-f2-yiF">
-                                <rect key="frame" x="104.00000000000001" y="353.66666666666669" width="206.33333333333337" height="28.666666666666686"/>
+                                <rect key="frame" x="103.66666666666669" y="353.66666666666669" width="207" height="28.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1032,7 +1067,14 @@
                             <constraint firstItem="Wi0-f2-yiF" firstAttribute="centerX" secondItem="W3x-Sp-awj" secondAttribute="centerX" id="nBJ-kY-6pl"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="VF/pVT amio" id="B66-O1-wU2"/>
+                    <navigationItem key="navigationItem" title="VF/pVT amio" id="B66-O1-wU2">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="home-1" id="idZ-S0-CRg">
+                            <color key="tintColor" red="0.069186054169999997" green="0.4644605517" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="homeTapped:" destination="JhP-Ly-e5C" id="vaj-cS-yS9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="amioButton" destination="Uel-xO-VOb" id="SXs-fd-3K5"/>
                         <outlet property="causesButton" destination="Qqf-9s-XC8" id="LBo-DO-jEj"/>
@@ -1049,9 +1091,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="NL3-mz-BJm"/>
+        <segue reference="PfX-xa-Bmr"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="home-1" width="29.666666030883789" height="31"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
