@@ -127,7 +127,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Bradycardia" id="lUe-6C-RAm">
-                        <barButtonItem key="rightBarButtonItem" title="Doses/Details" id="8Bb-Ss-zmm">
+                        <barButtonItem key="rightBarButtonItem" title="Details" id="8Bb-Ss-zmm">
                             <connections>
                                 <segue destination="jjn-BO-Bao" kind="show" id="wOf-ur-NQQ"/>
                             </connections>
@@ -206,7 +206,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Post-arrest" id="zK4-5S-VuS">
-                        <barButtonItem key="rightBarButtonItem" title="Doses/Details" id="bM6-48-qeN">
+                        <barButtonItem key="rightBarButtonItem" title="Details" id="bM6-48-qeN">
                             <connections>
                                 <segue destination="Jca-hH-XVl" kind="show" id="mYd-h3-PIn"/>
                             </connections>
@@ -393,13 +393,13 @@
                                 <rect key="frame" x="0.0" y="619" width="375" height="48"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rXi-8z-hQR">
-                                        <rect key="frame" x="161" y="18" width="53.5" height="24"/>
+                                        <rect key="frame" x="161" y="13" width="53.5" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CWX-8m-3Ag">
-                                        <rect key="frame" x="274.5" y="12" width="43" height="36"/>
+                                        <rect key="frame" x="274.5" y="7" width="43" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Start">
                                             <color key="titleColor" systemColor="systemRedColor"/>
@@ -409,7 +409,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="puG-xz-lfH">
-                                        <rect key="frame" x="25.5" y="18" width="90.5" height="24"/>
+                                        <rect key="frame" x="25.5" y="13" width="90.5" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -417,13 +417,13 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.80447214840000003" green="0.84238570930000001" blue="0.89020335669999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstItem="CWX-8m-3Ag" firstAttribute="centerY" secondItem="fUv-Gf-Wl8" secondAttribute="centerY" constant="6" id="0a2-r1-btd"/>
-                                    <constraint firstItem="rXi-8z-hQR" firstAttribute="centerY" secondItem="fUv-Gf-Wl8" secondAttribute="centerY" constant="6" id="25L-4K-fXs"/>
+                                    <constraint firstItem="CWX-8m-3Ag" firstAttribute="centerY" secondItem="fUv-Gf-Wl8" secondAttribute="centerY" constant="1" id="0a2-r1-btd"/>
+                                    <constraint firstItem="rXi-8z-hQR" firstAttribute="centerY" secondItem="fUv-Gf-Wl8" secondAttribute="centerY" constant="1" id="25L-4K-fXs"/>
                                     <constraint firstItem="rXi-8z-hQR" firstAttribute="centerX" secondItem="fUv-Gf-Wl8" secondAttribute="centerX" id="56L-sa-XoX"/>
                                     <constraint firstItem="CWX-8m-3Ag" firstAttribute="leading" secondItem="rXi-8z-hQR" secondAttribute="trailing" constant="60" id="BNo-Er-ytE"/>
                                     <constraint firstAttribute="height" constant="48" id="LZL-xT-MMp"/>
                                     <constraint firstItem="rXi-8z-hQR" firstAttribute="leading" secondItem="puG-xz-lfH" secondAttribute="trailing" constant="45" id="cAF-Lo-5sl"/>
-                                    <constraint firstItem="puG-xz-lfH" firstAttribute="centerY" secondItem="fUv-Gf-Wl8" secondAttribute="centerY" constant="6" id="gO0-Ub-eMk"/>
+                                    <constraint firstItem="puG-xz-lfH" firstAttribute="centerY" secondItem="fUv-Gf-Wl8" secondAttribute="centerY" constant="1" id="gO0-Ub-eMk"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a7O-M0-4SU">
@@ -553,7 +553,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Cardiac Arrest" id="Yua-Ce-vjk">
-                        <barButtonItem key="rightBarButtonItem" title="Doses/Details" id="X6I-CZ-ejV">
+                        <barButtonItem key="rightBarButtonItem" title="Details" id="X6I-CZ-ejV">
                             <connections>
                                 <segue destination="Hya-We-40u" kind="show" id="R7M-0W-Ycz"/>
                             </connections>
@@ -667,7 +667,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tachycardia" id="RhY-p1-fjA">
-                        <barButtonItem key="rightBarButtonItem" title="Doses/Details" id="ZIf-J1-97U">
+                        <barButtonItem key="rightBarButtonItem" title="Details" id="ZIf-J1-97U">
                             <connections>
                                 <segue destination="IBB-qA-e4n" kind="show" id="iUE-Ke-qkP"/>
                             </connections>

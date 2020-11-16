@@ -46,7 +46,7 @@ class firstVC: UIViewController {
     class MenuListController:
     UITableViewController{
     
-    var items = ["About","ACLS Information","Help"]
+        var items = ["About","ACLS Information","Help","Complete Survey"]
     
     
     override func viewDidLoad() {
@@ -67,7 +67,13 @@ class firstVC: UIViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //do something
+        if items[indexPath.row] == "Complete Survey"{
+            if let url = URL(string: "https://docs.google.com/forms/d/e/1FAIpQLSe2t97vEccy5EJx1MyPb7PiPBBf0-xy0MKEqWJZ7CL5XWcuOw/viewform?usp=sf_link") {
+                UIApplication.shared.open(url)
+            }
+            
+        }
+        
         }
 
     }
