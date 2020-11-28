@@ -277,7 +277,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dfw-wC-Ojm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1038" y="-806"/>
+            <point key="canvasLocation" x="1162" y="-907"/>
         </scene>
         <!--Log TableVC-->
         <scene sceneID="ONF-Xl-kfC">
@@ -305,7 +305,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vLo-bj-8RS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1889" y="-824"/>
+            <point key="canvasLocation" x="1841" y="-907"/>
         </scene>
         <!--Cardiac Arrest-->
         <scene sceneID="fBJ-6c-gan">
@@ -393,14 +393,14 @@
                                 <rect key="frame" x="0.0" y="619" width="375" height="48"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rXi-8z-hQR">
-                                        <rect key="frame" x="161" y="13" width="53.5" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <rect key="frame" x="168.5" y="10.5" width="56" height="29"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="21"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CWX-8m-3Ag">
-                                        <rect key="frame" x="274.5" y="7" width="43" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <rect key="frame" x="284.5" y="4.5" width="48" height="41"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="21"/>
                                         <state key="normal" title="Start">
                                             <color key="titleColor" systemColor="systemRedColor"/>
                                         </state>
@@ -409,8 +409,8 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="puG-xz-lfH">
-                                        <rect key="frame" x="25.5" y="13" width="90.5" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <rect key="frame" x="22" y="10.5" width="101.5" height="29"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="21"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -419,7 +419,7 @@
                                 <constraints>
                                     <constraint firstItem="CWX-8m-3Ag" firstAttribute="centerY" secondItem="fUv-Gf-Wl8" secondAttribute="centerY" constant="1" id="0a2-r1-btd"/>
                                     <constraint firstItem="rXi-8z-hQR" firstAttribute="centerY" secondItem="fUv-Gf-Wl8" secondAttribute="centerY" constant="1" id="25L-4K-fXs"/>
-                                    <constraint firstItem="rXi-8z-hQR" firstAttribute="centerX" secondItem="fUv-Gf-Wl8" secondAttribute="centerX" id="56L-sa-XoX"/>
+                                    <constraint firstItem="rXi-8z-hQR" firstAttribute="centerX" secondItem="fUv-Gf-Wl8" secondAttribute="centerX" constant="9" id="56L-sa-XoX"/>
                                     <constraint firstItem="CWX-8m-3Ag" firstAttribute="leading" secondItem="rXi-8z-hQR" secondAttribute="trailing" constant="60" id="BNo-Er-ytE"/>
                                     <constraint firstAttribute="height" constant="48" id="LZL-xT-MMp"/>
                                     <constraint firstItem="rXi-8z-hQR" firstAttribute="leading" secondItem="puG-xz-lfH" secondAttribute="trailing" constant="45" id="cAF-Lo-5sl"/>
@@ -579,7 +579,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v1d-c0-13h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1037.5999999999999" y="-124.58770614692655"/>
+            <point key="canvasLocation" x="1142" y="-123"/>
         </scene>
         <!--Cardiac TableVC-->
         <scene sceneID="u7d-fA-d6d">

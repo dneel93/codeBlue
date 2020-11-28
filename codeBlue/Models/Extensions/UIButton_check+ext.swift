@@ -31,7 +31,10 @@ func configureCheck(){
         
         else{
             setBackgroundImage(UIImage(named: "checked_box"), for: .normal)
-            isSelected = true}
+            isSelected = true
+            
+            
+        }
     
     }
     

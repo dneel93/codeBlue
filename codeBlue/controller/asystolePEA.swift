@@ -21,6 +21,16 @@ class asystolePEA: UIViewController {
     var cprSeconds = 0
     var timer:Timer!
     
+    
+//    GLOBAL VARIABLES
+    @IBOutlet var cprCountGlobal: UILabel!
+    @IBOutlet var shockCountGlobal: UILabel!
+    @IBOutlet var epiCountGlobal: UILabel!
+    @IBOutlet var resetButton: UIButton!
+    
+    @IBOutlet var timeCountGlobal: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         noButton.configure(title: "No")
@@ -29,22 +39,54 @@ class asystolePEA: UIViewController {
         accessButton.configureCheck()
         epiButton.configureCheck()
         intubationButton.configureCheck()
+        cprCountGlobal.text = "CPR:\(globalCounter.cprCountGlobal)"
+        epiCountGlobal.text="Epi:\(globalCounter.epiCountGlobal)"
+        shockCountGlobal.text = "Defib:\(globalCounter.defibCountGlobal)"
+        cprCountGlobal.configureLabel()
+        shockCountGlobal.configureLabel()
+        epiCountGlobal.configureLabel()
+        globalCounter.globalTimer.invalidate()
+        startGlobalTime()
     }
     
     
+    //    GLOBAL variables and timer
+        
+        func startGlobalTime(){
+            globalCounter.globalTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateUITime), userInfo: nil, repeats: true)
+        }
+        
+        @objc func updateUITime() {
+            globalCounter.globalTimeCounter+=1
+            timeCountGlobal.text = "Total Time: \(globalCounter.globalTimeCounter)"
+    }
+        
+    
+    override func viewDidAppear(_ animated: Bool) {
+        cprCountGlobal.text = "CPR:  \(globalCounter.cprCountGlobal)"
+        epiCountGlobal.text="Epi: \(globalCounter.epiCountGlobal)"
+        shockCountGlobal.text = "Defib: \(globalCounter.defibCountGlobal)"
+        timeCountGlobal.text = "Total Time: \(globalCounter.globalTimeCounter)"
+        globalCounter.globalTimer.invalidate()
+        startGlobalTime()
+    }
+    
+    
+    @IBAction func resetTapped(_ sender: Any) {
+        globalCounter.cprCountGlobal = 0
+        globalCounter.epiCountGlobal = 0
+        globalCounter.defibCountGlobal = 0
+        globalCounter.globalTimeCounter=0
+
+        cprCountGlobal.text = "CPR: 0"
+        epiCountGlobal.text = "Epi: 0"
+        shockCountGlobal.text = "Defib: 0"
+        timeCountGlobal.text = "Total Time: 00:00"
+    }
+    
     
     @IBAction func cprPress(_ sender: Any) {
-    
-        
-        
-        if cprButton.isSelected == true{
-            cprButton.configureCheck()}
-        
-        else{
-            cprButton.setBackgroundImage(UIImage(named: "checked_box"), for: .normal)
-            cprButton.isSelected = true}
-        
-        
+        cprButton.checkOffOn()
         if timer?.isValid ?? false {
             timer.invalidate()
             cprLabel.text = "Start CPR"
@@ -53,13 +95,13 @@ class asystolePEA: UIViewController {
         else{
             cprSeconds = 0
             startCPR()
+            globalCounter.cprCountGlobal+=1
+            cprCountGlobal.text = "CPR:  \(globalCounter.cprCountGlobal)"
         }
-        
     }
     
     @IBAction func homeTapped(_ sender: Any) {
         self.navigationController?.popToRootViewController(animated: true)
-        
     }
     
     
@@ -71,8 +113,15 @@ class asystolePEA: UIViewController {
     
     
     @IBAction func epiPressed(_ sender: Any) {
-        epiButton.checkOffOn()
-    }
+        if epiButton.isSelected == true{
+            epiButton.configureCheck()}
+        
+        else{
+            epiButton.setBackgroundImage(UIImage(named: "checked_box"), for: .normal)
+            epiButton.isSelected = true
+            globalCounter.epiCountGlobal+=1
+            epiCountGlobal.text = "Epi:\(globalCounter.epiCountGlobal)"
+        }}
     
     
     

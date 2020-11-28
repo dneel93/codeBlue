@@ -7,29 +7,17 @@
 //
 
 import UIKit
-class TimerManager {
 
-var realSharedInstance: TimerManager?
-var sharedInstance: TimerManager {
-    get{
-        if let realSharedInstance = realSharedInstance {
-            return realSharedInstance
-        }
-        else{
-            realSharedInstance = TimerManager()
-            return realSharedInstance!
-        }
-    }
-}
+class globalCounter{
+    
+    static var cprCountGlobal:Int = 0
+    static var epiCountGlobal:Int = 0
+    static var defibCountGlobal:Int=0
+    static var amioCountGlobal:Int=0
+    static var globalTimer:Timer!
+    static var globalTimeCounter = 0
 
-var timer: Timer
-
-init() {
-    timer = Timer()
-}
-
-func rest() {
-    timer = Timer()
-}
     
 }
+
+

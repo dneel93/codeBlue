@@ -23,6 +23,8 @@
 		CC50ABF5255142BB00B2B96E /* vfEpi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC50ABF4255142BA00B2B96E /* vfEpi.swift */; };
 		CC50ABF8255142D200B2B96E /* vfAmio.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC50ABF7255142D200B2B96E /* vfAmio.swift */; };
 		CC50ABFB2551451500B2B96E /* vfVT.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC50ABFA2551451500B2B96E /* vfVT.swift */; };
+		CC7B7474256F317E00BC961E /* timer2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7B7473256F317E00BC961E /* timer2.swift */; };
+		CC7B74C82571FB4400BC961E /* UILabel+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7B74C72571FB4300BC961E /* UILabel+ext.swift */; };
 		CC82B9EA2554877A001DB28C /* globalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC82B9E92554877A001DB28C /* globalTimer.swift */; };
 		CC82B9FF25591685001DB28C /* guidedPulseVC6.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC82B9FE25591685001DB28C /* guidedPulseVC6.swift */; };
 		CCA449BD2511E5CB0097D370 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA449BC2511E5CB0097D370 /* AppDelegate.swift */; };
@@ -67,6 +69,8 @@
 		CC50ABF4255142BA00B2B96E /* vfEpi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vfEpi.swift; sourceTree = "<group>"; };
 		CC50ABF7255142D200B2B96E /* vfAmio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vfAmio.swift; sourceTree = "<group>"; };
 		CC50ABFA2551451500B2B96E /* vfVT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vfVT.swift; sourceTree = "<group>"; };
+		CC7B7473256F317E00BC961E /* timer2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = timer2.swift; path = codeBlue/Models/timer2.swift; sourceTree = SOURCE_ROOT; };
+		CC7B74C72571FB4300BC961E /* UILabel+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+ext.swift"; sourceTree = "<group>"; };
 		CC82B9E92554877A001DB28C /* globalTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = globalTimer.swift; sourceTree = "<group>"; };
 		CC82B9FE25591685001DB28C /* guidedPulseVC6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guidedPulseVC6.swift; sourceTree = "<group>"; };
 		CCA449B92511E5CB0097D370 /* codeBlue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = codeBlue.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,6 +182,8 @@
 				CC27715925147EEF00EC6E94 /* UIButton+ext.swift */,
 				CCC4298A2517DED2001AA0D9 /* UIButton_check+ext.swift */,
 				CC82B9E92554877A001DB28C /* globalTimer.swift */,
+				CC7B7473256F317E00BC961E /* timer2.swift */,
+				CC7B74C72571FB4300BC961E /* UILabel+ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -355,6 +361,7 @@
 				CCEB7CA825400C7000DD66EB /* bradyTableVC.swift in Sources */,
 				CC50ABFB2551451500B2B96E /* vfVT.swift in Sources */,
 				CC50AB4125426FE100B2B96E /* rhythmTableVC.swift in Sources */,
+				CC7B7474256F317E00BC961E /* timer2.swift in Sources */,
 				CCD2D2E22533FE87008DB015 /* guidedPulseOverdoseTableVC.swift in Sources */,
 				CCEB7CAE2540126900DD66EB /* tachyVC.swift in Sources */,
 				CCD2D2E525340635008DB015 /* guidedPulseVC5.swift in Sources */,
@@ -364,6 +371,7 @@
 				CCC429892517DDBA001AA0D9 /* guidedPulseVC2.swift in Sources */,
 				CCC429832517CEAB001AA0D9 /* guidedPulseVC1.swift in Sources */,
 				CC50ABF8255142D200B2B96E /* vfAmio.swift in Sources */,
+				CC7B74C82571FB4400BC961E /* UILabel+ext.swift in Sources */,
 				CCEB7C9B253F50C000DD66EB /* postArrestVC.swift in Sources */,
 				CC2771522513113500EC6E94 /* algoVC.swift in Sources */,
 				CC82B9FF25591685001DB28C /* guidedPulseVC6.swift in Sources */,

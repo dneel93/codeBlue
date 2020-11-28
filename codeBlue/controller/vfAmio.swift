@@ -21,6 +21,15 @@ class vfAmio: UIViewController {
     var timer:Timer!
     
     
+//   Global Variables
+    
+    @IBOutlet var cprCountGlobal: UILabel!
+    @IBOutlet var shockCountGlobal: UILabel!
+    @IBOutlet var epiCountGlobal: UILabel!
+    @IBOutlet var resetButton: UIButton!
+
+    @IBOutlet var timeCountGlobal: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,11 +40,56 @@ class vfAmio: UIViewController {
         amioButton.configureCheck()
         cprButton.configureCheck()
         causesButton.configureCheck()
+        cprCountGlobal.text = "CPR:  \(globalCounter.cprCountGlobal)"
+        epiCountGlobal.text="Epi: \(globalCounter.epiCountGlobal)"
+        shockCountGlobal.text = "Defib: \(globalCounter.defibCountGlobal)"
+        cprCountGlobal.configureLabel()
+        shockCountGlobal.configureLabel()
+        epiCountGlobal.configureLabel()
+        globalCounter.globalTimer.invalidate()
+        startGlobalTime()
     }
+    
+    
+    //    GLOBAL variables and timer
+        
+        func startGlobalTime(){
+            globalCounter.globalTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateUITime), userInfo: nil, repeats: true)
+        }
+        
+        @objc func updateUITime() {
+            globalCounter.globalTimeCounter+=1
+            timeCountGlobal.text = "Total Time: \(globalCounter.globalTimeCounter)"
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        cprCountGlobal.text = "CPR:  \(globalCounter.cprCountGlobal)"
+        epiCountGlobal.text="Epi: \(globalCounter.epiCountGlobal)"
+        shockCountGlobal.text = "Defib: \(globalCounter.defibCountGlobal)"
+        timeCountGlobal.text = "Total Time: \(globalCounter.globalTimeCounter)"
+        globalCounter.globalTimer.invalidate()
+        startGlobalTime()
+    }
+
+    
+    
+    @IBAction func resetTapped(_ sender: Any) {
+        globalCounter.cprCountGlobal = 0
+        globalCounter.epiCountGlobal = 0
+        globalCounter.defibCountGlobal = 0
+        globalCounter.globalTimeCounter=0
+
+        cprCountGlobal.text = "CPR: 0"
+        epiCountGlobal.text = "Epi: 0"
+        shockCountGlobal.text = "Defib: 0"
+        timeCountGlobal.text = "Total Time: 00:00"
+        
+    }
+    
     
     @IBAction func homeTapped(_ sender: Any) {
         self.navigationController?.popToRootViewController(animated: true)
-        
     }
     
     
@@ -51,6 +105,8 @@ class vfAmio: UIViewController {
         else{
             cprSeconds = 0
             startCPR()
+            globalCounter.cprCountGlobal+=1
+            cprCountGlobal.text = "CPR: \(globalCounter.cprCountGlobal)"
         }
         
         
