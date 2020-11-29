@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Px-k4-Pl8">
-                                <rect key="frame" x="0.0" y="39" width="414" height="259.66666666666669"/>
+                                <rect key="frame" x="0.0" y="39" width="414" height="279"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="f7f-TX-FlF">
                                         <rect key="frame" x="120.00000000000001" y="78" width="177.33333333333337" height="151"/>
@@ -140,7 +140,7 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kku-mH-BMA">
-                                <rect key="frame" x="0.0" y="546" width="414" height="190"/>
+                                <rect key="frame" x="0.0" y="512.33333333333337" width="414" height="223.66666666666663"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="cUd-9f-lrH">
                                         <rect key="frame" x="41" y="5" width="332" height="60"/>
@@ -181,9 +181,9 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABN-0t-b6G">
-                                        <rect key="frame" x="176" y="141" width="63" height="41"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="21"/>
-                                        <state key="normal" title="RESET"/>
+                                        <rect key="frame" x="178" y="141" width="59" height="44"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="23"/>
+                                        <state key="normal" title="Reset"/>
                                         <connections>
                                             <action selector="resetPressed:" destination="DcD-oV-Hk8" eventType="touchUpInside" id="8L8-mc-ksl"/>
                                         </connections>
@@ -220,17 +220,17 @@
                             <constraint firstItem="b0x-dI-LZG" firstAttribute="centerY" secondItem="UY5-0l-zIe" secondAttribute="centerY" id="AAR-Kb-3EE"/>
                             <constraint firstItem="b0x-dI-LZG" firstAttribute="centerX" secondItem="UY5-0l-zIe" secondAttribute="centerX" id="CUQ-gg-i0N"/>
                             <constraint firstItem="Kku-mH-BMA" firstAttribute="leading" secondItem="eZN-9W-VJI" secondAttribute="leading" id="Lcx-rl-eMo"/>
-                            <constraint firstItem="b0x-dI-LZG" firstAttribute="top" secondItem="1Px-k4-Pl8" secondAttribute="bottom" constant="55" id="MJn-Bj-bpc"/>
+                            <constraint firstItem="b0x-dI-LZG" firstAttribute="top" secondItem="1Px-k4-Pl8" secondAttribute="bottom" constant="35.666666666666686" id="MJn-Bj-bpc"/>
                             <constraint firstItem="vjf-oO-gTi" firstAttribute="centerX" secondItem="b0x-dI-LZG" secondAttribute="centerX" id="Nbi-5e-qRP"/>
                             <constraint firstItem="eZN-9W-VJI" firstAttribute="top" secondItem="1Px-k4-Pl8" secondAttribute="top" constant="5" id="S2j-16-3hv"/>
                             <constraint firstItem="1Px-k4-Pl8" firstAttribute="centerX" secondItem="UY5-0l-zIe" secondAttribute="centerX" id="TEF-ek-DdJ"/>
                             <constraint firstItem="b0x-dI-LZG" firstAttribute="centerY" secondItem="UY5-0l-zIe" secondAttribute="centerY" id="Tmj-gd-gBZ"/>
                             <constraint firstItem="1Px-k4-Pl8" firstAttribute="trailing" secondItem="eZN-9W-VJI" secondAttribute="trailing" id="WM1-kb-Da5"/>
                             <constraint firstItem="eZN-9W-VJI" firstAttribute="trailing" secondItem="1Px-k4-Pl8" secondAttribute="trailing" id="bZU-pf-6ad"/>
+                            <constraint firstItem="Kku-mH-BMA" firstAttribute="top" secondItem="vjf-oO-gTi" secondAttribute="bottom" constant="35" id="fwK-wY-5Kb"/>
                             <constraint firstItem="Kku-mH-BMA" firstAttribute="bottom" secondItem="eZN-9W-VJI" secondAttribute="bottom" id="gBH-CS-Uhm"/>
                             <constraint firstItem="vjf-oO-gTi" firstAttribute="top" secondItem="b0x-dI-LZG" secondAttribute="bottom" constant="45" id="isg-eU-aPY"/>
                             <constraint firstItem="Kku-mH-BMA" firstAttribute="trailing" secondItem="eZN-9W-VJI" secondAttribute="trailing" id="jUd-1y-bdC"/>
-                            <constraint firstItem="Kku-mH-BMA" firstAttribute="top" secondItem="vjf-oO-gTi" secondAttribute="bottom" constant="68.666666666666686" id="uL8-XY-ZWm"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="No Pulse" id="Ip8-w7-JTc">
@@ -286,7 +286,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c18-tf-20q">
-                                <rect key="frame" x="0.0" y="39" width="414" height="259.66666666666669"/>
+                                <rect key="frame" x="0.0" y="39" width="414" height="288"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="RR4-iy-Tda">
                                         <rect key="frame" x="120" y="78" width="108.33333333333331" height="151"/>
@@ -409,7 +409,7 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H8B-3T-wV5">
-                                <rect key="frame" x="0.0" y="546" width="414" height="190"/>
+                                <rect key="frame" x="0.0" y="512.33333333333337" width="414" height="223.66666666666663"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="fHd-z9-1DG">
                                         <rect key="frame" x="41" y="5" width="332" height="60"/>
@@ -450,9 +450,9 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hak-wV-crJ">
-                                        <rect key="frame" x="175.66666666666666" y="141" width="63" height="41"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="21"/>
-                                        <state key="normal" title="RESET"/>
+                                        <rect key="frame" x="177.66666666666666" y="141" width="59" height="44"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="23"/>
+                                        <state key="normal" title="Reset"/>
                                         <connections>
                                             <action selector="resetPressed:" destination="DcD-oV-Hk8" eventType="touchUpInside" id="Krx-Ko-yCP"/>
                                             <action selector="resetTapped:" destination="PXE-td-hvi" eventType="touchUpInside" id="srW-Xn-Kld"/>
@@ -484,7 +484,7 @@
                         <viewLayoutGuide key="safeArea" id="MlD-og-qrd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="4Hv-10-NCG" firstAttribute="top" secondItem="c18-tf-20q" secondAttribute="bottom" constant="55" id="3P4-X2-7P9"/>
+                            <constraint firstItem="4Hv-10-NCG" firstAttribute="top" secondItem="c18-tf-20q" secondAttribute="bottom" constant="26.666666666666686" id="3P4-X2-7P9"/>
                             <constraint firstItem="MlD-og-qrd" firstAttribute="trailing" secondItem="c18-tf-20q" secondAttribute="trailing" id="8P5-fA-SUT"/>
                             <constraint firstItem="4Hv-10-NCG" firstAttribute="centerX" secondItem="zDh-h0-P0m" secondAttribute="centerX" id="AQ7-Sy-tif"/>
                             <constraint firstItem="4Hv-10-NCG" firstAttribute="centerY" secondItem="zDh-h0-P0m" secondAttribute="centerY" id="BsY-Yn-tFU"/>
@@ -495,8 +495,8 @@
                             <constraint firstItem="H8B-3T-wV5" firstAttribute="leading" secondItem="MlD-og-qrd" secondAttribute="leading" id="eHV-Bb-C1D"/>
                             <constraint firstItem="lrG-HQ-eFP" firstAttribute="centerX" secondItem="4Hv-10-NCG" secondAttribute="centerX" constant="-2.8333333333333144" id="jG6-Od-JX0"/>
                             <constraint firstItem="H8B-3T-wV5" firstAttribute="bottom" secondItem="MlD-og-qrd" secondAttribute="bottom" id="l3L-y4-YCA"/>
-                            <constraint firstItem="H8B-3T-wV5" firstAttribute="top" secondItem="lrG-HQ-eFP" secondAttribute="bottom" constant="68.670000000000002" id="vj4-NU-Vl2"/>
                             <constraint firstItem="c18-tf-20q" firstAttribute="centerX" secondItem="zDh-h0-P0m" secondAttribute="centerX" id="vw1-Gs-65B"/>
+                            <constraint firstItem="H8B-3T-wV5" firstAttribute="top" secondItem="lrG-HQ-eFP" secondAttribute="bottom" constant="35" id="yji-xe-eqt"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="vF/pVT" id="yNb-0e-TEZ">
@@ -534,7 +534,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BDN-ad-0U8">
-                                <rect key="frame" x="0.0" y="44" width="414" height="284.66666666666669"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="309"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="QPy-9j-pEE">
                                         <rect key="frame" x="120.00000000000001" y="58.000000000000014" width="186.33333333333337" height="192.33333333333337"/>
@@ -673,7 +673,7 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UI6-z7-6bJ">
-                                <rect key="frame" x="0.0" y="571" width="414" height="165"/>
+                                <rect key="frame" x="0.0" y="537.33333333333337" width="414" height="198.66666666666663"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="bZm-Bf-Qr1">
                                         <rect key="frame" x="41" y="0.0" width="332" height="60"/>
@@ -725,9 +725,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YEg-yA-Ri3">
-                                        <rect key="frame" x="175.66666666666666" y="133" width="63" height="41"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="21"/>
-                                        <state key="normal" title="RESET"/>
+                                        <rect key="frame" x="182" y="132" width="59" height="44"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="23"/>
+                                        <state key="normal" title="Reset"/>
                                         <connections>
                                             <action selector="resetPressed:" destination="DcD-oV-Hk8" eventType="touchUpInside" id="k7B-Bm-OTH"/>
                                             <action selector="resetTapped:" destination="PT7-8d-g2m" eventType="touchUpInside" id="izc-3Z-x0c"/>
@@ -738,10 +738,10 @@
                                 <constraints>
                                     <constraint firstItem="bZm-Bf-Qr1" firstAttribute="centerX" secondItem="UI6-z7-6bJ" secondAttribute="centerX" id="8z2-16-QaX"/>
                                     <constraint firstItem="IgH-bq-Gqk" firstAttribute="centerX" secondItem="UI6-z7-6bJ" secondAttribute="centerX" id="FR8-7p-Lw7"/>
-                                    <constraint firstItem="YEg-yA-Ri3" firstAttribute="centerX" secondItem="UI6-z7-6bJ" secondAttribute="centerX" id="YJM-Qg-ycm"/>
+                                    <constraint firstItem="YEg-yA-Ri3" firstAttribute="top" secondItem="IgH-bq-Gqk" secondAttribute="bottom" constant="4" id="STF-dm-uAK"/>
+                                    <constraint firstItem="YEg-yA-Ri3" firstAttribute="centerX" secondItem="UI6-z7-6bJ" secondAttribute="centerX" constant="4.5" id="YJM-Qg-ycm"/>
                                     <constraint firstItem="bZm-Bf-Qr1" firstAttribute="top" secondItem="UI6-z7-6bJ" secondAttribute="top" id="cne-yH-f6U"/>
                                     <constraint firstItem="IgH-bq-Gqk" firstAttribute="top" secondItem="bZm-Bf-Qr1" secondAttribute="bottom" constant="23" id="pzt-xm-RdB"/>
-                                    <constraint firstItem="YEg-yA-Ri3" firstAttribute="top" secondItem="IgH-bq-Gqk" secondAttribute="bottom" constant="5" id="wvA-PD-n7Y"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -752,12 +752,12 @@
                             <constraint firstItem="BDN-ad-0U8" firstAttribute="top" secondItem="I9w-G7-cOl" secondAttribute="top" id="5Lb-Tg-57J"/>
                             <constraint firstItem="CZQ-Zp-f0L" firstAttribute="centerY" secondItem="3Ob-5B-ipT" secondAttribute="centerY" constant="25" id="5ud-xr-6mS"/>
                             <constraint firstItem="bcs-bQ-Xx7" firstAttribute="top" secondItem="CZQ-Zp-f0L" secondAttribute="bottom" constant="45" id="CMw-fO-sfW"/>
+                            <constraint firstItem="UI6-z7-6bJ" firstAttribute="top" secondItem="bcs-bQ-Xx7" secondAttribute="bottom" constant="35" id="Ccx-bl-IzT"/>
                             <constraint firstItem="UI6-z7-6bJ" firstAttribute="trailing" secondItem="I9w-G7-cOl" secondAttribute="trailing" id="CgU-yu-49Q"/>
-                            <constraint firstItem="CZQ-Zp-f0L" firstAttribute="top" secondItem="BDN-ad-0U8" secondAttribute="bottom" constant="50" id="Cv2-Hv-x0u"/>
+                            <constraint firstItem="CZQ-Zp-f0L" firstAttribute="top" secondItem="BDN-ad-0U8" secondAttribute="bottom" constant="25.666666666666686" id="Cv2-Hv-x0u"/>
                             <constraint firstItem="CZQ-Zp-f0L" firstAttribute="centerX" secondItem="3Ob-5B-ipT" secondAttribute="centerX" id="GKV-1a-2bl"/>
                             <constraint firstItem="BDN-ad-0U8" firstAttribute="leading" secondItem="I9w-G7-cOl" secondAttribute="leading" id="Nyf-L2-ZBt"/>
                             <constraint firstItem="UI6-z7-6bJ" firstAttribute="leading" secondItem="I9w-G7-cOl" secondAttribute="leading" id="OB5-R3-23c"/>
-                            <constraint firstItem="UI6-z7-6bJ" firstAttribute="top" secondItem="bcs-bQ-Xx7" secondAttribute="bottom" constant="68.670000000000002" id="Ugw-El-4zR"/>
                             <constraint firstItem="I9w-G7-cOl" firstAttribute="trailing" secondItem="BDN-ad-0U8" secondAttribute="trailing" id="Vv5-tN-xJi"/>
                             <constraint firstItem="bcs-bQ-Xx7" firstAttribute="centerX" secondItem="CZQ-Zp-f0L" secondAttribute="centerX" id="a02-Of-5Ci"/>
                             <constraint firstItem="BDN-ad-0U8" firstAttribute="top" secondItem="I9w-G7-cOl" secondAttribute="top" id="sio-Fb-ZVm"/>
@@ -916,7 +916,7 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SkM-1m-hTb">
-                                <rect key="frame" x="0.0" y="546" width="414" height="190"/>
+                                <rect key="frame" x="0.0" y="512.33333333333337" width="414" height="223.66666666666663"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Rtx-Ol-2gs">
                                         <rect key="frame" x="41" y="5" width="332" height="60"/>
@@ -928,7 +928,7 @@
                                                     <constraint firstAttribute="height" constant="60" id="8pE-ze-KDy"/>
                                                     <constraint firstAttribute="width" constant="100" id="PhU-hN-wAf"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="19"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -939,7 +939,7 @@
                                                     <constraint firstAttribute="height" constant="60" id="AtP-8b-0mM"/>
                                                     <constraint firstAttribute="width" constant="100" id="fOo-o1-2sc"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="19"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -950,7 +950,7 @@
                                                     <constraint firstAttribute="width" constant="100" id="7Kk-Fk-PXH"/>
                                                     <constraint firstAttribute="height" constant="60" id="Sza-FS-wdp"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="19"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -968,9 +968,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6WX-1s-13d">
-                                        <rect key="frame" x="175.66666666666666" y="141" width="63" height="41"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="21"/>
-                                        <state key="normal" title="RESET"/>
+                                        <rect key="frame" x="177.66666666666666" y="141" width="59" height="44"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="23"/>
+                                        <state key="normal" title="Reset"/>
                                         <connections>
                                             <action selector="resetPressed:" destination="DcD-oV-Hk8" eventType="touchUpInside" id="qUR-GE-SFO"/>
                                             <action selector="resetTapped:" destination="wuw-Z0-7Yr" eventType="touchUpInside" id="UWV-tO-6np"/>
@@ -995,13 +995,13 @@
                             <constraint firstItem="B07-xd-xSx" firstAttribute="top" secondItem="AO5-MO-2Yt" secondAttribute="top" id="7Y7-OB-Jon"/>
                             <constraint firstItem="SkM-1m-hTb" firstAttribute="leading" secondItem="AO5-MO-2Yt" secondAttribute="leading" id="9lX-sc-DJ8"/>
                             <constraint firstItem="SkM-1m-hTb" firstAttribute="bottom" secondItem="AO5-MO-2Yt" secondAttribute="bottom" id="QGz-qL-0fg"/>
+                            <constraint firstItem="SkM-1m-hTb" firstAttribute="top" secondItem="4ih-3h-3ci" secondAttribute="bottom" constant="35" id="RQQ-WY-nxX"/>
                             <constraint firstItem="ggn-p1-FPh" firstAttribute="centerY" secondItem="vSw-WF-qYr" secondAttribute="centerY" id="TQy-iy-H6C"/>
                             <constraint firstItem="ggn-p1-FPh" firstAttribute="centerX" secondItem="vSw-WF-qYr" secondAttribute="centerX" id="WWp-3k-zAR"/>
                             <constraint firstItem="ggn-p1-FPh" firstAttribute="centerX" secondItem="vSw-WF-qYr" secondAttribute="centerX" id="Ybb-ev-XL3"/>
                             <constraint firstItem="B07-xd-xSx" firstAttribute="leading" secondItem="AO5-MO-2Yt" secondAttribute="leading" id="aQN-fx-pjW"/>
                             <constraint firstItem="4ih-3h-3ci" firstAttribute="top" secondItem="ggn-p1-FPh" secondAttribute="bottom" constant="45" id="fFO-zV-LUS"/>
                             <constraint firstItem="ggn-p1-FPh" firstAttribute="top" secondItem="B07-xd-xSx" secondAttribute="bottom" constant="10" id="gFf-88-H90"/>
-                            <constraint firstItem="SkM-1m-hTb" firstAttribute="top" secondItem="4ih-3h-3ci" secondAttribute="bottom" constant="68.670000000000002" id="hEr-Rg-Y6U"/>
                             <constraint firstItem="ggn-p1-FPh" firstAttribute="centerY" secondItem="vSw-WF-qYr" secondAttribute="centerY" id="jBD-vS-q8J"/>
                             <constraint firstItem="B07-xd-xSx" firstAttribute="centerX" secondItem="vSw-WF-qYr" secondAttribute="centerX" id="odk-yo-BMA"/>
                             <constraint firstItem="AO5-MO-2Yt" firstAttribute="trailing" secondItem="B07-xd-xSx" secondAttribute="trailing" id="qi6-WE-N8j"/>
@@ -1073,7 +1073,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wqr-Lu-rTC">
-                                <rect key="frame" x="0.0" y="43.999999999999986" width="414" height="254.66666666666663"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="286"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="QPV-jk-sIR">
                                         <rect key="frame" x="120.00000000000001" y="78" width="186.33333333333337" height="151"/>
@@ -1196,7 +1196,7 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="duu-G7-ZnF">
-                                <rect key="frame" x="0.0" y="546" width="414" height="190"/>
+                                <rect key="frame" x="0.0" y="512.33333333333337" width="414" height="223.66666666666663"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="17V-YO-Iba">
                                         <rect key="frame" x="41" y="5" width="332" height="60"/>
@@ -1237,9 +1237,9 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5AN-Je-Dhj">
-                                        <rect key="frame" x="175.66666666666666" y="141" width="63" height="41"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="21"/>
-                                        <state key="normal" title="RESET"/>
+                                        <rect key="frame" x="177.66666666666666" y="141" width="59" height="44"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="23"/>
+                                        <state key="normal" title="Reset"/>
                                         <connections>
                                             <action selector="resetPressed:" destination="DcD-oV-Hk8" eventType="touchUpInside" id="hk4-W3-v8T"/>
                                             <action selector="resetTapped:" destination="dfO-9y-z3m" eventType="touchUpInside" id="awT-Qz-KQd"/>
@@ -1276,10 +1276,10 @@
                             <constraint firstItem="Wqr-Lu-rTC" firstAttribute="top" secondItem="tHV-ge-RVj" secondAttribute="top" id="5j2-TM-rUU"/>
                             <constraint firstItem="duu-G7-ZnF" firstAttribute="leading" secondItem="tHV-ge-RVj" secondAttribute="leading" id="8Hd-p5-Ib2"/>
                             <constraint firstItem="iZs-nW-GAW" firstAttribute="centerY" secondItem="w2L-VX-2bI" secondAttribute="centerY" id="An0-OL-Dxj"/>
-                            <constraint firstItem="duu-G7-ZnF" firstAttribute="top" secondItem="64v-If-K37" secondAttribute="bottom" constant="68.670000000000002" id="KHH-LT-P0Z"/>
                             <constraint firstItem="Wqr-Lu-rTC" firstAttribute="top" secondItem="tHV-ge-RVj" secondAttribute="top" id="LPg-6x-Vem"/>
+                            <constraint firstItem="duu-G7-ZnF" firstAttribute="top" secondItem="64v-If-K37" secondAttribute="bottom" constant="35" id="aXa-7T-Beu"/>
                             <constraint firstItem="Wqr-Lu-rTC" firstAttribute="trailing" secondItem="tHV-ge-RVj" secondAttribute="trailing" id="b4G-Pm-Gpj"/>
-                            <constraint firstItem="iZs-nW-GAW" firstAttribute="top" secondItem="Wqr-Lu-rTC" secondAttribute="bottom" constant="55" id="bot-yN-nRd"/>
+                            <constraint firstItem="iZs-nW-GAW" firstAttribute="top" secondItem="Wqr-Lu-rTC" secondAttribute="bottom" constant="23.666666666666686" id="bot-yN-nRd"/>
                             <constraint firstItem="Wqr-Lu-rTC" firstAttribute="leading" secondItem="tHV-ge-RVj" secondAttribute="leading" id="gmk-4e-qbU"/>
                             <constraint firstItem="64v-If-K37" firstAttribute="centerX" secondItem="w2L-VX-2bI" secondAttribute="centerX" id="gwC-Xt-dW5"/>
                             <constraint firstItem="Wqr-Lu-rTC" firstAttribute="leading" secondItem="tHV-ge-RVj" secondAttribute="leading" id="lfi-hE-KFb"/>
@@ -1313,7 +1313,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3PF-9L-nyu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1721.7391304347827" y="23.64130434782609"/>
+            <point key="canvasLocation" x="1674" y="24"/>
         </scene>
         <!--VF/pVT amio-->
         <scene sceneID="hx0-gs-FR2">
@@ -1324,7 +1324,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yKS-CY-Abi">
-                                <rect key="frame" x="0.0" y="43.999999999999986" width="414" height="254.66666666666663"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="281"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="NFb-jH-VNo">
                                         <rect key="frame" x="119.99999999999999" y="77.999999999999986" width="190.66666666666663" height="152.66666666666663"/>
@@ -1455,7 +1455,7 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gm6-LJ-E74">
-                                <rect key="frame" x="0.0" y="546" width="414" height="190"/>
+                                <rect key="frame" x="0.0" y="512.33333333333337" width="414" height="223.66666666666663"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="W9p-4G-oPM">
                                         <rect key="frame" x="41" y="5" width="332" height="60"/>
@@ -1507,9 +1507,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4mb-MZ-Mvz">
-                                        <rect key="frame" x="175.66666666666666" y="141" width="63" height="41"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="21"/>
-                                        <state key="normal" title="RESET"/>
+                                        <rect key="frame" x="177.66666666666666" y="141" width="59" height="44"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="23"/>
+                                        <state key="normal" title="Reset"/>
                                         <connections>
                                             <action selector="resetPressed:" destination="DcD-oV-Hk8" eventType="touchUpInside" id="atz-R3-T7B"/>
                                             <action selector="resetTapped:" destination="JhP-Ly-e5C" eventType="touchUpInside" id="pA1-Lv-KCS"/>
@@ -1530,10 +1530,10 @@
                         <viewLayoutGuide key="safeArea" id="B5i-Gp-3xA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Wi0-f2-yiF" firstAttribute="top" secondItem="yKS-CY-Abi" secondAttribute="bottom" constant="55" id="17I-5j-svy"/>
+                            <constraint firstItem="Wi0-f2-yiF" firstAttribute="top" secondItem="yKS-CY-Abi" secondAttribute="bottom" constant="28.666666666666686" id="17I-5j-svy"/>
+                            <constraint firstItem="gm6-LJ-E74" firstAttribute="top" secondItem="w93-AE-AsQ" secondAttribute="bottom" constant="35" id="3dg-MQ-u6j"/>
                             <constraint firstItem="gm6-LJ-E74" firstAttribute="leading" secondItem="B5i-Gp-3xA" secondAttribute="leading" id="4uC-Xy-fQ3"/>
                             <constraint firstItem="yKS-CY-Abi" firstAttribute="leading" secondItem="B5i-Gp-3xA" secondAttribute="leading" id="H5c-PU-sO6"/>
-                            <constraint firstItem="gm6-LJ-E74" firstAttribute="top" secondItem="w93-AE-AsQ" secondAttribute="bottom" constant="68.670000000000002" id="O1D-Kr-6Tk"/>
                             <constraint firstItem="Wi0-f2-yiF" firstAttribute="centerY" secondItem="W3x-Sp-awj" secondAttribute="centerY" id="PZR-sU-yEP"/>
                             <constraint firstItem="yKS-CY-Abi" firstAttribute="top" secondItem="B5i-Gp-3xA" secondAttribute="top" id="RQp-A9-NdC"/>
                             <constraint firstItem="w93-AE-AsQ" firstAttribute="top" secondItem="Wi0-f2-yiF" secondAttribute="bottom" constant="45" id="Zrv-UG-1fA"/>
