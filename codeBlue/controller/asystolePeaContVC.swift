@@ -61,12 +61,18 @@ class asystolePeaContVC: UIViewController {
     
     
     override func viewDidAppear(_ animated: Bool) {
-        cprCountGlobal.text = "CPR:  \(globalCounter.cprCountGlobal)"
+        cprCountGlobal.text = "CPR: \(globalCounter.cprCountGlobal)"
         epiCountGlobal.text="Epi: \(globalCounter.epiCountGlobal)"
         shockCountGlobal.text = "Defib: \(globalCounter.defibCountGlobal)"
-        timeCountGlobal.text = "Total Time: \(globalCounter.globalTimeCounter)"
+        var minutes: Int
+        var seconds: Int
+        minutes = (globalCounter.globalTimeCounter % 3600) / 60
+        seconds = (globalCounter.globalTimeCounter % 3600) % 60
+        timeCountGlobal.text = String(format: "Total Time: %02d:%02d", minutes, seconds)
         globalCounter.globalTimer.invalidate()
         startGlobalTime()
+        cprButton.configureCheck()
+        causesButton.configureCheck()
     }
     
     
@@ -80,12 +86,26 @@ class asystolePeaContVC: UIViewController {
         epiCountGlobal.text="Epi: 0"
         shockCountGlobal.text = "Defib: 0"
         timeCountGlobal.text = "Total Time: 00:00"
+        timer.invalidate()
+        cprButton.configureCheck()
+        causesButton.configureCheck()
+        cprLabel.text = "Start CPR"
     }
     
     
 //    UI BUTTONS
     
     @IBAction func homeTapped(_ sender: Any) {
+        globalCounter.cprCountGlobal = 0
+        globalCounter.epiCountGlobal = 0
+        globalCounter.defibCountGlobal = 0
+        globalCounter.globalTimeCounter=0
+
+        cprCountGlobal.text = "CPR: 0"
+        epiCountGlobal.text = "Epi: 0"
+        shockCountGlobal.text = "Defib: 0"
+        timeCountGlobal.text = "Total Time: 00:00"
+        globalCounter.globalTimer.invalidate()
         self.navigationController?.popToRootViewController(animated: true)
     }
     

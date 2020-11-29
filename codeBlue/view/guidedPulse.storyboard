@@ -282,7 +282,7 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check list:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMw-K1-Nmk">
-                                                                <rect key="frame" x="6" y="5.5" width="112.5" height="33"/>
+                                                                <rect key="frame" x="19" y="5.5" width="112.5" height="33"/>
                                                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="24"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -291,7 +291,7 @@
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="bottom" secondItem="Kq9-FW-h8k" secondAttribute="bottom" constant="6.6666666666666288" id="3lr-pG-wM7"/>
-                                                            <constraint firstItem="HMw-K1-Nmk" firstAttribute="leading" secondItem="STg-Jc-HHV" secondAttribute="leading" constant="6" id="5kf-50-wL6"/>
+                                                            <constraint firstItem="HMw-K1-Nmk" firstAttribute="leading" secondItem="STg-Jc-HHV" secondAttribute="leading" constant="19" id="5kf-50-wL6"/>
                                                             <constraint firstAttribute="height" constant="265" id="6lf-RP-HpB"/>
                                                             <constraint firstItem="QfY-pu-gTA" firstAttribute="leading" secondItem="Kq9-FW-h8k" secondAttribute="trailing" constant="30" id="9PM-KL-Doq"/>
                                                             <constraint firstItem="QfY-pu-gTA" firstAttribute="top" secondItem="HMw-K1-Nmk" secondAttribute="bottom" constant="35" id="JnW-Ff-r6i"/>
@@ -652,7 +652,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check list:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oig-cE-Xbt">
-                                                        <rect key="frame" x="6" y="5.5" width="112.5" height="33"/>
+                                                        <rect key="frame" x="17" y="5.5" width="112.5" height="33"/>
                                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="24"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -663,7 +663,7 @@
                                                     <constraint firstItem="w2u-By-Opo" firstAttribute="top" secondItem="Oig-cE-Xbt" secondAttribute="bottom" constant="35" id="8e3-bW-sLR"/>
                                                     <constraint firstAttribute="height" constant="265" id="H2W-YI-iGt"/>
                                                     <constraint firstAttribute="width" constant="300" id="LYN-zn-C1j"/>
-                                                    <constraint firstItem="Oig-cE-Xbt" firstAttribute="leading" secondItem="P7K-DR-Pqg" secondAttribute="leading" constant="6" id="PGc-2m-2Cj"/>
+                                                    <constraint firstItem="Oig-cE-Xbt" firstAttribute="leading" secondItem="P7K-DR-Pqg" secondAttribute="leading" constant="17" id="PGc-2m-2Cj"/>
                                                     <constraint firstAttribute="bottom" secondItem="w2u-By-Opo" secondAttribute="bottom" constant="6.6666666666666288" id="PWj-8s-AZQ"/>
                                                     <constraint firstItem="dK5-7u-tPa" firstAttribute="leading" secondItem="w2u-By-Opo" secondAttribute="trailing" constant="30" id="TV0-WK-aMK"/>
                                                     <constraint firstItem="dK5-7u-tPa" firstAttribute="top" secondItem="Oig-cE-Xbt" secondAttribute="bottom" constant="35" id="ZId-ZS-K0s"/>

@@ -54,8 +54,12 @@ class vfVT: UIViewController {
     }
     
     @objc func updateUITime() {
-        globalCounter.globalTimeCounter+=1
-        timeCountGlobal.text = "Total Time: \(globalCounter.globalTimeCounter)"
+        globalCounter.globalTimeCounter += 1
+        var minutes: Int
+        var seconds: Int
+        minutes = (globalCounter.globalTimeCounter % 3600) / 60
+        seconds = (globalCounter.globalTimeCounter % 3600) % 60
+        timeCountGlobal.text = String(format: "Total Time: %02d:%02d", minutes, seconds)
 }
     
     
@@ -63,9 +67,18 @@ class vfVT: UIViewController {
         cprGlobalCount.text = "CPR:  \(globalCounter.cprCountGlobal)"
         epiCountGlobal.text="Epi: \(globalCounter.epiCountGlobal)"
         shockGlobalCount.text = "Defib: \(globalCounter.defibCountGlobal)"
-        timeCountGlobal.text = "Total Time: \(globalCounter.globalTimeCounter)"
+        var minutes: Int
+        var seconds: Int
+        minutes = (globalCounter.globalTimeCounter % 3600) / 60
+        seconds = (globalCounter.globalTimeCounter % 3600) % 60
+        timeCountGlobal.text = String(format: "Total Time: %02d:%02d", minutes, seconds)
         globalCounter.globalTimer.invalidate()
+        timer?.invalidate()
+        cprLabel.text="Start CPR"
         startGlobalTime()
+        shockButton.configureCheck()
+        cprButton.configureCheck()
+        accessButton.configureCheck()
     }
     
     @IBAction func resetTapped(_ sender: Any) {
@@ -78,12 +91,28 @@ class vfVT: UIViewController {
         epiCountGlobal.text = "Epi: 0"
         shockGlobalCount.text = "Defib: 0"
         timeCountGlobal.text = "Total Time: 00:00"
+        shockButton.configureCheck()
+        cprButton.configureCheck()
+        accessButton.configureCheck()
+        shockButton.configureCheck()
+        timer?.invalidate()
+        cprLabel.text = "Start CPR"
     }
     
 
 // UI buttons
     
     @IBAction func homeTapped(_ sender: Any) {
+        globalCounter.cprCountGlobal = 0
+        globalCounter.epiCountGlobal = 0
+        globalCounter.defibCountGlobal = 0
+        globalCounter.globalTimeCounter=0
+
+        cprGlobalCount.text = "CPR: 0"
+        epiCountGlobal.text = "Epi: 0"
+        shockGlobalCount.text = "Defib: 0"
+        timeCountGlobal.text = "Total Time: 00:00"
+        globalCounter.globalTimer.invalidate()
         self.navigationController?.popToRootViewController(animated: true)
         
     }
@@ -107,7 +136,7 @@ class vfVT: UIViewController {
     @IBAction func shockPressed(_ sender: Any) {
         shockButton.checkOffOn()
         globalCounter.defibCountGlobal+=1
-        shockGlobalCount.text = "Defib:\(globalCounter.defibCountGlobal)"
+        shockGlobalCount.text = "Defib: \(globalCounter.defibCountGlobal)"
     }
     
     @IBAction func cprPressed(_ sender: Any) {

@@ -17,6 +17,7 @@ class vfEpi: UIViewController {
     @IBOutlet var cprLabel: UILabel!
     @IBOutlet var epiButton: UIButton!
     @IBOutlet var intButton: UIButton!
+    @IBOutlet var shockButton: UIButton!
     
     var cprSeconds = 0
     var timer:Timer!
@@ -40,6 +41,7 @@ class vfEpi: UIViewController {
         cprButton.configureCheck()
         epiButton.configureCheck()
         intButton.configureCheck()
+        shockButton.configureCheck()
         cprCountGlobal.text = "CPR:  \(globalCounter.cprCountGlobal)"
         epiCountGlobal.text="Epi: \(globalCounter.epiCountGlobal)"
         shockCountGlobal.text = "Defib: \(globalCounter.defibCountGlobal)"
@@ -59,7 +61,11 @@ class vfEpi: UIViewController {
     
     @objc func updateUITime() {
         globalCounter.globalTimeCounter+=1
-        timeCountGlobal.text = "Total Time: \(globalCounter.globalTimeCounter)"
+        var minutes: Int
+        var seconds: Int
+        minutes = (globalCounter.globalTimeCounter % 3600) / 60
+        seconds = (globalCounter.globalTimeCounter % 3600) % 60
+        timeCountGlobal.text = String(format: "Total Time: %02d:%02d", minutes, seconds)
 }
     
 
@@ -69,9 +75,19 @@ class vfEpi: UIViewController {
         cprCountGlobal.text = "CPR:  \(globalCounter.cprCountGlobal)"
         epiCountGlobal.text="Epi: \(globalCounter.epiCountGlobal)"
         shockCountGlobal.text = "Defib: \(globalCounter.defibCountGlobal)"
-        timeCountGlobal.text = "Total Time: \(globalCounter.globalTimeCounter)"
-        globalCounter.globalTimer.invalidate()
+        var minutes: Int
+        var seconds: Int
+        minutes = (globalCounter.globalTimeCounter % 3600) / 60
+        seconds = (globalCounter.globalTimeCounter % 3600) % 60
+        timeCountGlobal.text = String(format: "Total Time: %02d:%02d", minutes, seconds)
+        globalCounter.globalTimer?.invalidate()
+        timer?.invalidate()
+        cprLabel.text="Start CPR"
         startGlobalTime()
+        cprButton.configureCheck()
+        epiButton.configureCheck()
+        intButton.configureCheck()
+        shockButton.configureCheck()
     }
     
     
@@ -86,9 +102,25 @@ class vfEpi: UIViewController {
         epiCountGlobal.text = "Epi: 0"
         shockCountGlobal.text = "Defib: 0"
         timeCountGlobal.text = "Total Time: 00:00"
+        cprButton.configureCheck()
+        epiButton.configureCheck()
+        intButton.configureCheck()
+        shockButton.configureCheck()
+        timer?.invalidate()
+        cprLabel.text = "Start CPR"
     }
     
     @IBAction func homeTapped(_ sender: Any) {
+        globalCounter.cprCountGlobal = 0
+        globalCounter.epiCountGlobal = 0
+        globalCounter.defibCountGlobal = 0
+        globalCounter.globalTimeCounter=0
+
+        cprCountGlobal.text = "CPR: 0"
+        epiCountGlobal.text = "Epi: 0"
+        shockCountGlobal.text = "Defib: 0"
+        timeCountGlobal.text = "Total Time: 00:00"
+        globalCounter.globalTimer.invalidate()
         self.navigationController?.popToRootViewController(animated: true)
     }
     
@@ -117,6 +149,21 @@ class vfEpi: UIViewController {
             cprCountGlobal.text = "CPR:\(globalCounter.cprCountGlobal)"
         }
         
+        
+    }
+    
+    
+    @IBAction func shockPressed(_ sender: Any) {
+        
+        if shockButton.isSelected == true{
+            shockButton.configureCheck()}
+        
+        else{
+            shockButton.setBackgroundImage(UIImage(named: "checked_box"), for: .normal)
+            shockButton.isSelected = true
+            globalCounter.defibCountGlobal+=1
+            shockCountGlobal.text = "Defib:\(globalCounter.defibCountGlobal)"
+        }
         
     }
     

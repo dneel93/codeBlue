@@ -58,7 +58,11 @@ class asystolePEA: UIViewController {
         
         @objc func updateUITime() {
             globalCounter.globalTimeCounter+=1
-            timeCountGlobal.text = "Total Time: \(globalCounter.globalTimeCounter)"
+            var minutes: Int
+            var seconds: Int
+            minutes = (globalCounter.globalTimeCounter % 3600) / 60
+            seconds = (globalCounter.globalTimeCounter % 3600) % 60
+            timeCountGlobal.text = String(format: "Total Time: %02d:%02d", minutes, seconds)
     }
         
     
@@ -66,9 +70,17 @@ class asystolePEA: UIViewController {
         cprCountGlobal.text = "CPR:  \(globalCounter.cprCountGlobal)"
         epiCountGlobal.text="Epi: \(globalCounter.epiCountGlobal)"
         shockCountGlobal.text = "Defib: \(globalCounter.defibCountGlobal)"
-        timeCountGlobal.text = "Total Time: \(globalCounter.globalTimeCounter)"
+        var minutes: Int
+        var seconds: Int
+        minutes = (globalCounter.globalTimeCounter % 3600) / 60
+        seconds = (globalCounter.globalTimeCounter % 3600) % 60
+        timeCountGlobal.text = String(format: "Total Time: %02d:%02d", minutes, seconds)
         globalCounter.globalTimer.invalidate()
         startGlobalTime()
+        cprButton.configureCheck()
+        accessButton.configureCheck()
+        epiButton.configureCheck()
+        intubationButton.configureCheck()
     }
     
     
@@ -82,6 +94,12 @@ class asystolePEA: UIViewController {
         epiCountGlobal.text = "Epi: 0"
         shockCountGlobal.text = "Defib: 0"
         timeCountGlobal.text = "Total Time: 00:00"
+        cprButton.configureCheck()
+        accessButton.configureCheck()
+        epiButton.configureCheck()
+        intubationButton.configureCheck()
+        timer?.invalidate()
+        cprLabel.text = "Start CPR"
     }
     
     
@@ -96,11 +114,21 @@ class asystolePEA: UIViewController {
             cprSeconds = 0
             startCPR()
             globalCounter.cprCountGlobal+=1
-            cprCountGlobal.text = "CPR:  \(globalCounter.cprCountGlobal)"
+            cprCountGlobal.text = "CPR: \(globalCounter.cprCountGlobal)"
         }
     }
     
     @IBAction func homeTapped(_ sender: Any) {
+        globalCounter.cprCountGlobal = 0
+        globalCounter.epiCountGlobal = 0
+        globalCounter.defibCountGlobal = 0
+        globalCounter.globalTimeCounter=0
+
+        cprCountGlobal.text = "CPR: 0"
+        epiCountGlobal.text = "Epi: 0"
+        shockCountGlobal.text = "Defib: 0"
+        timeCountGlobal.text = "Total Time: 00:00"
+        globalCounter.globalTimer.invalidate()
         self.navigationController?.popToRootViewController(animated: true)
     }
     

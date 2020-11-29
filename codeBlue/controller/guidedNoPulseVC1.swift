@@ -60,7 +60,11 @@ class guidedNoPulseVC1: UIViewController {
     
     @objc func countupGlobalTime() {
         globalCounter.globalTimeCounter += 1
-        timeCountGlobal.text = "Total Time: \(globalCounter.globalTimeCounter)"
+        var minutes: Int
+        var seconds: Int
+        minutes = (globalCounter.globalTimeCounter % 3600) / 60
+        seconds = (globalCounter.globalTimeCounter % 3600) % 60
+        timeCountGlobal.text = String(format: "Total Time: %02d:%02d", minutes, seconds)
 }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -69,6 +73,11 @@ class guidedNoPulseVC1: UIViewController {
         shockCountGlobal.text = "Defib: \(globalCounter.defibCountGlobal)"
         globalCounter.globalTimer.invalidate()
         startGlobalTime()
+        timer?.invalidate()
+        cprLabel.text="Start CPR"
+        cprButton.configureCheck()
+        o2Button.configureCheck()
+        defibButton.configureCheck()
     }
     
     
@@ -82,6 +91,11 @@ class guidedNoPulseVC1: UIViewController {
         epiCountGlobal.text="Epi: 0"
         shockCountGlobal.text = "Defib: 0"
         timeCountGlobal.text = "Total Time: 00:00"
+        cprButton.configureCheck()
+        o2Button.configureCheck()
+        defibButton.configureCheck()
+        timer?.invalidate()
+        cprLabel.text = "Start CPR"
     }
     
     
@@ -89,6 +103,12 @@ class guidedNoPulseVC1: UIViewController {
 //    UI Buttons
     
     @IBAction func homeTapped(_ sender: Any) {
+        globalCounter.globalTimer.invalidate()
+        globalCounter.globalTimeCounter = 0
+        timeCountGlobal.text = "Total Time: 00:00"
+        globalCounter.cprCountGlobal = 0
+        globalCounter.epiCountGlobal = 0
+        globalCounter.defibCountGlobal = 0
         self.navigationController?.popToRootViewController(animated: true)
     }
     

@@ -171,7 +171,7 @@
             </objects>
             <point key="canvasLocation" x="-854" y="675"/>
         </scene>
-        <!--Post-arrest-->
+        <!--Post-arrest (ROSC)-->
         <scene sceneID="MZY-oh-x6Q">
             <objects>
                 <viewController id="VCF-Zi-cYw" customClass="postArrestVC" customModule="codeBlue" customModuleProvider="target" sceneMemberID="viewController">
@@ -182,7 +182,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6FX-Wh-3sR">
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="algo-postarrest" translatesAutoresizingMaskIntoConstraints="NO" id="aC6-Dd-ixn">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ROSC_algo" translatesAutoresizingMaskIntoConstraints="NO" id="aC6-Dd-ixn">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                                     </imageView>
                                 </subviews>
@@ -205,7 +205,7 @@
                             <constraint firstItem="6FX-Wh-3sR" firstAttribute="leading" secondItem="kle-JM-0dp" secondAttribute="leading" id="rYU-az-5ET"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Post-arrest" id="zK4-5S-VuS">
+                    <navigationItem key="navigationItem" title="Post-arrest (ROSC)" id="zK4-5S-VuS">
                         <barButtonItem key="rightBarButtonItem" title="Details" id="bM6-48-qeN">
                             <connections>
                                 <segue destination="Jca-hH-XVl" kind="show" id="mYd-h3-PIn"/>
@@ -713,8 +713,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ROSC_algo" width="409" height="513"/>
         <image name="Tachy_algo_new" width="386" height="637"/>
-        <image name="algo-postarrest" width="474" height="398"/>
         <image name="arrest_algo_new" width="356" height="684"/>
         <image name="brady_algo" width="367" height="741"/>
         <image name="button_blue" width="98" height="48"/>
