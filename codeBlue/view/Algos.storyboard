@@ -427,23 +427,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a7O-M0-4SU">
-                                <rect key="frame" x="0.0" y="173" width="375" height="441"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrest_algo_new" translatesAutoresizingMaskIntoConstraints="NO" id="oO8-eQ-usa">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="452"/>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="oO8-eQ-usa" secondAttribute="bottom" id="1Vy-l9-rAL"/>
-                                    <constraint firstItem="oO8-eQ-usa" firstAttribute="leading" secondItem="a7O-M0-4SU" secondAttribute="leading" id="Bf5-EB-6ih"/>
-                                    <constraint firstAttribute="trailing" secondItem="oO8-eQ-usa" secondAttribute="trailing" id="Dda-ul-Ney"/>
-                                    <constraint firstItem="oO8-eQ-usa" firstAttribute="centerX" secondItem="a7O-M0-4SU" secondAttribute="centerX" id="Fml-9M-xP1"/>
-                                    <constraint firstItem="oO8-eQ-usa" firstAttribute="centerY" secondItem="a7O-M0-4SU" secondAttribute="centerY" constant="5.5" id="LXF-DD-obB"/>
-                                    <constraint firstItem="oO8-eQ-usa" firstAttribute="top" secondItem="a7O-M0-4SU" secondAttribute="top" id="LiQ-JP-iBK"/>
-                                    <constraint firstItem="oO8-eQ-usa" firstAttribute="leading" secondItem="a7O-M0-4SU" secondAttribute="leading" id="PdR-CY-3UL"/>
-                                    <constraint firstAttribute="bottom" secondItem="oO8-eQ-usa" secondAttribute="bottom" id="Qlk-xf-1TA"/>
-                                    <constraint firstAttribute="trailing" secondItem="oO8-eQ-usa" secondAttribute="trailing" id="mrM-R2-lnt"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="165" width="375" height="449"/>
                             </scrollView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="37" translatesAutoresizingMaskIntoConstraints="NO" id="gD8-6g-U34">
                                 <rect key="frame" x="0.5" y="107" width="374" height="50"/>
@@ -534,7 +518,7 @@
                             <constraint firstItem="wwe-fH-YXP" firstAttribute="leading" secondItem="omt-Xn-kzX" secondAttribute="trailing" constant="-30" id="S68-hm-dEu"/>
                             <constraint firstItem="50o-Wk-O9B" firstAttribute="centerY" secondItem="omt-Xn-kzX" secondAttribute="centerY" id="Uu1-Hl-wBd"/>
                             <constraint firstItem="vnz-8Z-WYG" firstAttribute="leading" secondItem="97q-Nq-dSq" secondAttribute="trailing" constant="-29.5" id="XH7-Dv-SBV"/>
-                            <constraint firstItem="a7O-M0-4SU" firstAttribute="top" secondItem="gD8-6g-U34" secondAttribute="bottom" constant="16" id="YDa-3U-N5Y"/>
+                            <constraint firstItem="a7O-M0-4SU" firstAttribute="top" secondItem="gD8-6g-U34" secondAttribute="bottom" constant="8" id="YDa-3U-N5Y"/>
                             <constraint firstItem="tad-2v-HoZ" firstAttribute="centerY" secondItem="uxO-fk-Mnz" secondAttribute="centerY" id="b1c-D0-Jlo"/>
                             <constraint firstItem="wwe-fH-YXP" firstAttribute="leading" secondItem="omt-Xn-kzX" secondAttribute="trailing" constant="-30" id="dYK-1z-oL5"/>
                             <constraint firstItem="a7O-M0-4SU" firstAttribute="leading" secondItem="X84-71-40B" secondAttribute="leading" id="erv-Kc-CJn"/>
@@ -569,7 +553,6 @@
                         <outlet property="defibCount" destination="wwe-fH-YXP" id="UN1-Op-FXG"/>
                         <outlet property="epiCount" destination="F8D-a2-qoR" id="aAI-BA-Jg2"/>
                         <outlet property="epiTime" destination="XYz-bk-gvg" id="mzh-77-wVW"/>
-                        <outlet property="imageView" destination="oO8-eQ-usa" id="XGf-NH-dJC"/>
                         <outlet property="rhythmButton" destination="6ct-WU-NsY" id="IVr-Ob-5oX"/>
                         <outlet property="rhythmLabel" destination="8Wg-tP-IE9" id="MUQ-Xb-Lfr"/>
                         <outlet property="scrollView" destination="a7O-M0-4SU" id="dby-Fs-kP3"/>
@@ -579,7 +562,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v1d-c0-13h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1142" y="-123"/>
+            <point key="canvasLocation" x="1141.5999999999999" y="-123.68815592203899"/>
         </scene>
         <!--Cardiac TableVC-->
         <scene sceneID="u7d-fA-d6d">
@@ -715,7 +698,6 @@
     <resources>
         <image name="ROSC_algo" width="409" height="513"/>
         <image name="Tachy_algo_new" width="386" height="637"/>
-        <image name="arrest_algo_new" width="356" height="684"/>
         <image name="brady_algo" width="367" height="741"/>
         <image name="button_blue" width="98" height="48"/>
         <image name="defib_button" width="99" height="48"/>

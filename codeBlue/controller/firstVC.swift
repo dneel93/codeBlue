@@ -37,12 +37,6 @@ class firstVC: UIViewController {
         present(menu!, animated:true)
     }
     
-   
-    
-   
-    
-
-    
     class MenuListController:
     UITableViewController{
     

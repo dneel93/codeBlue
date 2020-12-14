@@ -40,15 +40,29 @@ class cardiacArrestVC: UIViewController, UIScrollViewDelegate, selectRhythm {
     
     @IBOutlet var amiCount: UILabel!
     @IBOutlet var rhythmButton: UIButton!
+    let image = UIImage(named: "CardiaAlgo_XD")
     
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Cardiac Arrest"
         scrollView.delegate = self
         scrollView.minimumZoomScale = 1.0
         scrollView.maximumZoomScale = 3.0
+        scrollView.addSubview(imageView)
+        imageView.image = image                        // setup image to imageView
+        imageView.frame.size = image?.size ?? .zero    // setup image size or zero to imageView
+        scrollView.contentSize = image?.size ?? .zero
         
     }
+    
+
+    
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {return imageView}
+
+    
+    
+    
     
     func didSelectRhythm(name:String) {
         
@@ -57,12 +71,6 @@ class cardiacArrestVC: UIViewController, UIScrollViewDelegate, selectRhythm {
     }
     
     
-    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return imageView
-    }
-
-  
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     
@@ -189,11 +197,14 @@ class cardiacArrestVC: UIViewController, UIScrollViewDelegate, selectRhythm {
         
     }
     
+
   
        
     func startCPR(){
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countup), userInfo: nil, repeats: true)
     }
+    
+    
     
     
     @objc func countup() {

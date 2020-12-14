@@ -42,7 +42,7 @@ class vfVT: UIViewController {
         cprGlobalCount.configureLabel()
         shockGlobalCount.configureLabel()
         epiCountGlobal.configureLabel()
-        globalCounter.globalTimer.invalidate()
+        globalCounter.globalTimer?.invalidate()
         startGlobalTime()
     }
     
@@ -63,7 +63,8 @@ class vfVT: UIViewController {
 }
     
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         cprGlobalCount.text = "CPR:  \(globalCounter.cprCountGlobal)"
         epiCountGlobal.text="Epi: \(globalCounter.epiCountGlobal)"
         shockGlobalCount.text = "Defib: \(globalCounter.defibCountGlobal)"
@@ -82,21 +83,39 @@ class vfVT: UIViewController {
     }
     
     @IBAction func resetTapped(_ sender: Any) {
-        globalCounter.cprCountGlobal = 0
-        globalCounter.epiCountGlobal = 0
-        globalCounter.defibCountGlobal = 0
-        globalCounter.globalTimeCounter=0
+        
+        if globalCounter.globalTimer?.isValid ?? false {
+            globalCounter.globalTimer?.invalidate()
+            resetButton.setTitle("Reset", for: .normal)
+            resetButton.setTitleColor(.systemBlue, for: .normal)
+        }
+        
+        else if globalCounter.globalTimer?.isValid == false && globalCounter.globalTimeCounter > 0 {
+            
+            resetButton.setTitle("Start", for: .normal)
+            resetButton.setTitleColor(.systemGreen, for: .normal)
+            globalCounter.cprCountGlobal = 0
+            globalCounter.epiCountGlobal = 0
+            globalCounter.defibCountGlobal = 0
+            globalCounter.globalTimeCounter=0
 
-        cprGlobalCount.text = "CPR: 0"
-        epiCountGlobal.text = "Epi: 0"
-        shockGlobalCount.text = "Defib: 0"
-        timeCountGlobal.text = "Total Time: 00:00"
-        shockButton.configureCheck()
-        cprButton.configureCheck()
-        accessButton.configureCheck()
-        shockButton.configureCheck()
-        timer?.invalidate()
-        cprLabel.text = "Start CPR"
+            cprGlobalCount.text = "CPR: 0"
+            epiCountGlobal.text = "Epi: 0"
+            shockGlobalCount.text = "Defib: 0"
+            timeCountGlobal.text = "Total Time: 00:00"
+            shockButton.configureCheck()
+            cprButton.configureCheck()
+            accessButton.configureCheck()
+            shockButton.configureCheck()
+            timer?.invalidate()
+            cprLabel.text = "Start CPR"
+       }
+        
+        else {
+            startGlobalTime()
+            resetButton.setTitle("Stop", for: .normal)
+            resetButton.setTitleColor(.systemRed, for: .normal)}
+        
     }
     
 

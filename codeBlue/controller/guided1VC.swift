@@ -10,8 +10,6 @@ import UIKit
 
 class guided1VC: UIViewController {
     
-    
-  
     @IBOutlet var pulseButton: UIButton!
     @IBOutlet var noPulseButton: UIButton!
     
@@ -21,7 +19,15 @@ class guided1VC: UIViewController {
         noPulseButton.configure(title: "No Pulse")
         self.navigationItem.title = "Guided Code"
 
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        globalCounter.globalTimer?.invalidate()
+        globalCounter.globalTimeCounter = 0
+        globalCounter.cprCountGlobal = 0
+        globalCounter.epiCountGlobal = 0
+        globalCounter.defibCountGlobal = 0
     }
     
     

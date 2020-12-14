@@ -16,21 +16,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iHub" translatesAutoresizingMaskIntoConstraints="NO" id="eFv-q2-ena">
-                                <rect key="frame" x="93.5" y="315.5" width="227" height="265"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noun_health_main" translatesAutoresizingMaskIntoConstraints="NO" id="eFv-q2-ena">
+                                <rect key="frame" x="93.5" y="272" width="227" height="220"/>
+                                <color key="tintColor" red="0.034684747459999998" green="0.2008288801" blue="0.70592218640000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="227" id="Elv-0A-JQp"/>
                                     <constraint firstAttribute="width" constant="227" id="GqA-3z-Ac5"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="265" id="etu-sr-aiM"/>
-                                    <constraint firstAttribute="height" constant="265" id="mr9-Eo-uFa"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="220" id="etu-sr-aiM"/>
+                                    <constraint firstAttribute="height" constant="220" id="mr9-Eo-uFa"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Code Blue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KyA-es-gzN">
+                                <rect key="frame" x="103.5" y="213.5" width="207" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="207" id="Qp3-Fy-IxH"/>
+                                    <constraint firstAttribute="height" constant="57" id="TIq-Vk-peA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="42"/>
+                                <color key="textColor" red="0.034684747459999998" green="0.2008288801" blue="0.70592218640000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="CcR-cI-i2J">
-                                <rect key="frame" x="59.5" y="630.5" width="295" height="75"/>
+                                <rect key="frame" x="59.5" y="554" width="295" height="75"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwT-l0-d0v">
                                         <rect key="frame" x="0.0" y="0.0" width="135" height="75"/>
-                                        <color key="backgroundColor" red="0.028988612819999999" green="0.22572481629999999" blue="0.65101605650000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.03176246211" green="0.21561843159999999" blue="0.6784690619" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="135" id="8hw-E9-d1Z"/>
                                             <constraint firstAttribute="height" constant="75" id="Y8t-dB-K8C"/>
@@ -60,31 +71,21 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Code Blue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KyA-es-gzN">
-                                <rect key="frame" x="103.5" y="213.5" width="207" height="57"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="207" id="Qp3-Fy-IxH"/>
-                                    <constraint firstAttribute="height" constant="57" id="TIq-Vk-peA"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="41"/>
-                                <color key="textColor" red="0.127" green="0.31141483780000001" blue="0.58434110880000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="KyA-es-gzN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="70r-fM-Kp3"/>
                             <constraint firstItem="eFv-q2-ena" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7jH-eq-yzY"/>
-                            <constraint firstItem="eFv-q2-ena" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="MDT-ci-iR9"/>
-                            <constraint firstItem="eFv-q2-ena" firstAttribute="top" secondItem="KyA-es-gzN" secondAttribute="bottom" constant="45" id="PAS-92-URD"/>
+                            <constraint firstItem="eFv-q2-ena" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-66" id="MDT-ci-iR9"/>
+                            <constraint firstItem="eFv-q2-ena" firstAttribute="top" secondItem="KyA-es-gzN" secondAttribute="bottom" constant="1.5" id="PAS-92-URD"/>
                             <constraint firstItem="CcR-cI-i2J" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TPN-aN-nI6"/>
-                            <constraint firstItem="CcR-cI-i2J" firstAttribute="top" secondItem="eFv-q2-ena" secondAttribute="bottom" constant="50" id="fuI-pu-dPF"/>
+                            <constraint firstItem="CcR-cI-i2J" firstAttribute="top" secondItem="eFv-q2-ena" secondAttribute="bottom" constant="62" id="fuI-pu-dPF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="oSk-cO-PFN">
                         <barButtonItem key="leftBarButtonItem" image="menubutton-1" id="WdS-IL-Lpt">
-                            <color key="tintColor" red="0.051614977419999999" green="0.3200241029" blue="0.56865334509999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="tintColor" red="0.034684747459999998" green="0.2008288801" blue="0.70592218640000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="menuTapped:" destination="BYZ-38-t0r" id="SHk-8T-s3f"/>
                             </connections>
@@ -119,7 +120,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="iHub" width="300" height="300"/>
         <image name="menubutton-1" width="15" height="17"/>
+        <image name="noun_health_main" width="1200" height="1200"/>
     </resources>
 </document>

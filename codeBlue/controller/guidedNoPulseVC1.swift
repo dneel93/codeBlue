@@ -48,6 +48,7 @@ class guidedNoPulseVC1: UIViewController {
         cprCountGlobal.text = "CPR:  \(globalCounter.cprCountGlobal)"
         epiCountGlobal.text="Epi: \(globalCounter.epiCountGlobal)"
         shockCountGlobal.text = "Defib: \(globalCounter.defibCountGlobal)"
+        globalCounter.globalTimer?.invalidate()
         startGlobalTime()
         
     }
@@ -55,10 +56,10 @@ class guidedNoPulseVC1: UIViewController {
 //    Global timer and variables
     
     func startGlobalTime(){
-        globalCounter.globalTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countupGlobalTime), userInfo: nil, repeats: true)
+        globalCounter.globalTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateUITime), userInfo: nil, repeats: true)
     }
     
-    @objc func countupGlobalTime() {
+    @objc func updateUITime() {
         globalCounter.globalTimeCounter += 1
         var minutes: Int
         var seconds: Int
@@ -67,12 +68,13 @@ class guidedNoPulseVC1: UIViewController {
         timeCountGlobal.text = String(format: "Total Time: %02d:%02d", minutes, seconds)
 }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        globalCounter.globalTimer.invalidate()
+        startGlobalTime()
         cprCountGlobal.text = "CPR:  \(globalCounter.cprCountGlobal)"
         epiCountGlobal.text="Epi: \(globalCounter.epiCountGlobal)"
         shockCountGlobal.text = "Defib: \(globalCounter.defibCountGlobal)"
-        globalCounter.globalTimer.invalidate()
-        startGlobalTime()
         timer?.invalidate()
         cprLabel.text="Start CPR"
         cprButton.configureCheck()
@@ -82,20 +84,39 @@ class guidedNoPulseVC1: UIViewController {
     
     
     @IBAction func resetPressed(_ sender: Any) {
-        globalCounter.cprCountGlobal = 0
-        globalCounter.epiCountGlobal = 0
-        globalCounter.defibCountGlobal = 0
-        globalCounter.globalTimeCounter = 0
+       
         
-        cprCountGlobal.text = "CPR: 0"
-        epiCountGlobal.text="Epi: 0"
-        shockCountGlobal.text = "Defib: 0"
-        timeCountGlobal.text = "Total Time: 00:00"
-        cprButton.configureCheck()
-        o2Button.configureCheck()
-        defibButton.configureCheck()
-        timer?.invalidate()
-        cprLabel.text = "Start CPR"
+        if globalCounter.globalTimer?.isValid ?? false {
+            globalCounter.globalTimer?.invalidate()
+            resetGlobalButton.setTitle("Reset", for: .normal)
+            resetGlobalButton.setTitleColor(.systemBlue, for: .normal)
+        }
+        
+        else if globalCounter.globalTimer?.isValid == false && globalCounter.globalTimeCounter > 0 {
+            
+            resetGlobalButton.setTitle("Start", for: .normal)
+            resetGlobalButton.setTitleColor(.systemGreen, for: .normal)
+            globalCounter.cprCountGlobal = 0
+            globalCounter.epiCountGlobal = 0
+            globalCounter.defibCountGlobal = 0
+            globalCounter.globalTimeCounter = 0
+            timer?.invalidate()
+            cprLabel.text = "Start CPR"
+            
+            cprCountGlobal.text = "CPR: 0"
+            epiCountGlobal.text="Epi: 0"
+            shockCountGlobal.text = "Defib: 0"
+            timeCountGlobal.text = "Total Time: 00:00"
+            cprButton.configureCheck()
+            o2Button.configureCheck()
+            defibButton.configureCheck()
+       }
+        
+        else {
+            startGlobalTime()
+            resetGlobalButton.setTitle("Stop", for: .normal)
+            resetGlobalButton.setTitleColor(.systemRed, for: .normal)}
+        
     }
     
     
@@ -103,7 +124,8 @@ class guidedNoPulseVC1: UIViewController {
 //    UI Buttons
     
     @IBAction func homeTapped(_ sender: Any) {
-        globalCounter.globalTimer.invalidate()
+        globalCounter.globalTimer?.invalidate()
+        timer?.invalidate()
         globalCounter.globalTimeCounter = 0
         timeCountGlobal.text = "Total Time: 00:00"
         globalCounter.cprCountGlobal = 0

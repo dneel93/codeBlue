@@ -34,7 +34,8 @@ class vfAmio: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        globalCounter.globalTimer?.invalidate()
+        startGlobalTime()
         noButton.layer.cornerRadius = 8
         yesButton.layer.cornerRadius = 8
         causesInfo.layer.cornerRadius = 8
@@ -48,8 +49,7 @@ class vfAmio: UIViewController {
         cprCountGlobal.configureLabel()
         shockCountGlobal.configureLabel()
         epiCountGlobal.configureLabel()
-        globalCounter.globalTimer.invalidate()
-        startGlobalTime()
+       
     }
     
     
@@ -69,43 +69,62 @@ class vfAmio: UIViewController {
     }
     
     
-    override func viewDidAppear(_ animated: Bool) {
-        cprCountGlobal.text = "CPR:  \(globalCounter.cprCountGlobal)"
-        epiCountGlobal.text="Epi: \(globalCounter.epiCountGlobal)"
-        shockCountGlobal.text = "Defib: \(globalCounter.defibCountGlobal)"
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        globalCounter.globalTimer.invalidate()
+        startGlobalTime()
         var minutes: Int
         var seconds: Int
         minutes = (globalCounter.globalTimeCounter % 3600) / 60
         seconds = (globalCounter.globalTimeCounter % 3600) % 60
         timeCountGlobal.text = String(format: "Total Time: %02d:%02d", minutes, seconds)
-        globalCounter.globalTimer.invalidate()
-        startGlobalTime()
+        
+        timer?.invalidate()
+        cprLabel.text="Start CPR"
+        cprCountGlobal.text = "CPR:  \(globalCounter.cprCountGlobal)"
+        epiCountGlobal.text="Epi: \(globalCounter.epiCountGlobal)"
+        shockCountGlobal.text = "Defib: \(globalCounter.defibCountGlobal)"
+        
         amioButton.configureCheck()
         cprButton.configureCheck()
         causesButton.configureCheck()
         shockButton.configureCheck()
-        timer?.invalidate()
-        cprLabel.text="Start CPR"
+        
+        
     }
 
     
     
     @IBAction func resetTapped(_ sender: Any) {
-        globalCounter.cprCountGlobal = 0
-        globalCounter.epiCountGlobal = 0
-        globalCounter.defibCountGlobal = 0
-        globalCounter.globalTimeCounter=0
-
-        cprCountGlobal.text = "CPR: 0"
-        epiCountGlobal.text = "Epi: 0"
-        shockCountGlobal.text = "Defib: 0"
-        timeCountGlobal.text = "Total Time: 00:00"
-        amioButton.configureCheck()
-        cprButton.configureCheck()
-        causesButton.configureCheck()
-        shockButton.configureCheck()
-        timer?.invalidate()
-        cprLabel.text = "Start CPR"
+        if globalCounter.globalTimer?.isValid ?? false {
+            globalCounter.globalTimer?.invalidate()
+            resetButton.setTitle("Reset", for: .normal)
+            resetButton.setTitleColor(.systemBlue, for: .normal)
+        }
+        
+        else if globalCounter.globalTimer?.isValid == false && globalCounter.globalTimeCounter > 0 {
+            
+            resetButton.setTitle("Start", for: .normal)
+            resetButton.setTitleColor(.systemGreen, for: .normal)
+            globalCounter.cprCountGlobal = 0
+            globalCounter.epiCountGlobal = 0
+            globalCounter.defibCountGlobal = 0
+            globalCounter.globalTimeCounter=0
+            cprCountGlobal.text = "CPR: 0"
+            epiCountGlobal.text = "Epi: 0"
+            shockCountGlobal.text = "Defib: 0"
+            timeCountGlobal.text = "Total Time: 00:00"
+            cprButton.configureCheck()
+            amioButton.configureCheck()
+            shockButton.configureCheck()
+            timer?.invalidate()
+            cprLabel.text = "Start CPR"}
+        
+        else {
+            startGlobalTime()
+            resetButton.setTitle("Stop", for: .normal)
+            resetButton.setTitleColor(.systemRed, for: .normal)
+        }
     }
     
     
@@ -119,7 +138,8 @@ class vfAmio: UIViewController {
         epiCountGlobal.text = "Epi: 0"
         shockCountGlobal.text = "Defib: 0"
         timeCountGlobal.text = "Total Time: 00:00"
-        globalCounter.globalTimer.invalidate()
+        globalCounter.globalTimer?.invalidate()
+        timer?.invalidate()
         self.navigationController?.popToRootViewController(animated: true)
     }
     

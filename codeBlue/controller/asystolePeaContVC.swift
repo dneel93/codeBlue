@@ -56,40 +56,59 @@ class asystolePeaContVC: UIViewController {
         
         @objc func updateUITime() {
             globalCounter.globalTimeCounter+=1
-            timeCountGlobal.text = "Total Time: \(globalCounter.globalTimeCounter)"
+            var minutes: Int
+            var seconds: Int
+            minutes = (globalCounter.globalTimeCounter % 3600) / 60
+            seconds = (globalCounter.globalTimeCounter % 3600) % 60
+            timeCountGlobal.text = String(format: "Total Time: %02d:%02d", minutes, seconds)
     }
     
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        globalCounter.globalTimer.invalidate()
+        startGlobalTime()
         cprCountGlobal.text = "CPR: \(globalCounter.cprCountGlobal)"
         epiCountGlobal.text="Epi: \(globalCounter.epiCountGlobal)"
         shockCountGlobal.text = "Defib: \(globalCounter.defibCountGlobal)"
-        var minutes: Int
-        var seconds: Int
-        minutes = (globalCounter.globalTimeCounter % 3600) / 60
-        seconds = (globalCounter.globalTimeCounter % 3600) % 60
-        timeCountGlobal.text = String(format: "Total Time: %02d:%02d", minutes, seconds)
-        globalCounter.globalTimer.invalidate()
-        startGlobalTime()
         cprButton.configureCheck()
         causesButton.configureCheck()
     }
     
     
     @IBAction func resetTapped(_ sender: Any) {
-        globalCounter.cprCountGlobal = 0
-        globalCounter.epiCountGlobal = 0
-        globalCounter.defibCountGlobal = 0
-        globalCounter.globalTimeCounter=0
         
-        cprCountGlobal.text = "CPR: 0"
-        epiCountGlobal.text="Epi: 0"
-        shockCountGlobal.text = "Defib: 0"
-        timeCountGlobal.text = "Total Time: 00:00"
-        timer.invalidate()
-        cprButton.configureCheck()
-        causesButton.configureCheck()
-        cprLabel.text = "Start CPR"
+        if globalCounter.globalTimer?.isValid ?? false {
+            globalCounter.globalTimer?.invalidate()
+            resetButton.setTitle("Reset", for: .normal)
+            resetButton.setTitleColor(.systemBlue, for: .normal)
+        }
+        
+        else if globalCounter.globalTimer?.isValid == false && globalCounter.globalTimeCounter > 0 {
+            
+            resetButton.setTitle("Start", for: .normal)
+            resetButton.setTitleColor(.systemGreen, for: .normal)
+            
+            globalCounter.cprCountGlobal = 0
+            globalCounter.epiCountGlobal = 0
+            globalCounter.defibCountGlobal = 0
+            globalCounter.globalTimeCounter=0
+            
+            cprCountGlobal.text = "CPR: 0"
+            epiCountGlobal.text="Epi: 0"
+            shockCountGlobal.text = "Defib: 0"
+            timeCountGlobal.text = "Total Time: 00:00"
+            timer.invalidate()
+            cprButton.configureCheck()
+            causesButton.configureCheck()
+            cprLabel.text = "Start CPR"
+       }
+        
+        else {
+            startGlobalTime()
+            resetButton.setTitle("Stop", for: .normal)
+            resetButton.setTitleColor(.systemRed, for: .normal)}
+        
     }
     
     
