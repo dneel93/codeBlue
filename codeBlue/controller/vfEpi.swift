@@ -10,6 +10,7 @@ import UIKit
 
 class vfEpi: UIViewController {
     
+//    MARK: Variables
     
     @IBOutlet var noButton: UIButton!
     @IBOutlet var yesButton: UIButton!
@@ -26,7 +27,7 @@ class vfEpi: UIViewController {
     var timer:Timer!
     var epiTimer:Timer!
     
-//    GLOBAL VARIABLES
+//    MARK: GLOBAL VARIABLES
     
     @IBOutlet var cprCountGlobal: UILabel!
     @IBOutlet var shockCountGlobal: UILabel!
@@ -35,6 +36,8 @@ class vfEpi: UIViewController {
     @IBOutlet var timeCountGlobal: UILabel!
     
     
+
+//    MARK:  Code
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +59,7 @@ class vfEpi: UIViewController {
     }
     
     
-//    GLOBAL variables and timer
+//    GLOBAL Timer
     
     func startGlobalTime(){
         globalCounter.globalTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateUITime), userInfo: nil, repeats: true)
@@ -70,6 +73,9 @@ class vfEpi: UIViewController {
         seconds = (globalCounter.globalTimeCounter % 3600) % 60
         timeCountGlobal.text = String(format: "Total Time: %02d:%02d", minutes, seconds)
 }
+    
+    
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -217,7 +223,8 @@ class vfEpi: UIViewController {
     
     
     
-//    Timers
+    
+//    MARK: Timer set up
     
     func startEpi(){
         epiTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countupEpi), userInfo: nil, repeats: true)
@@ -232,7 +239,6 @@ class vfEpi: UIViewController {
         seconds = (epiSeconds % 3600) % 60
         epiLabel.text = String(format: "Epi: %02d:%02d", minutes, seconds)
     }
-    
     
     
     

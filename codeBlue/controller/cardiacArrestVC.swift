@@ -40,7 +40,7 @@ class cardiacArrestVC: UIViewController, UIScrollViewDelegate, selectRhythm {
     
     @IBOutlet var amiCount: UILabel!
     @IBOutlet var rhythmButton: UIButton!
-    let image = UIImage(named: "CardiaAlgo_XD")
+    let image = UIImage(named: "CardiacAlgo_XD")
     
    
     override func viewDidLoad() {
