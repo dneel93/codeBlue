@@ -80,7 +80,6 @@ class cardiacArrestVC: UIViewController, UIScrollViewDelegate, selectRhythm {
     
     
     @IBAction func cprPressed(_ sender: Any){
-        print("PRESS")
     
         if timer?.isValid ?? false {
             

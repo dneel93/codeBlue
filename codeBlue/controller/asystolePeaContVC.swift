@@ -82,6 +82,7 @@ class asystolePeaContVC: UIViewController {
             globalCounter.globalTimer?.invalidate()
             resetButton.setTitle("Reset", for: .normal)
             resetButton.setTitleColor(.systemBlue, for: .normal)
+            timer?.invalidate()
         }
         
         else if globalCounter.globalTimer?.isValid == false && globalCounter.globalTimeCounter > 0 {

@@ -106,6 +106,8 @@ class vfEpi: UIViewController {
             globalCounter.globalTimer?.invalidate()
             resetButton.setTitle("Reset", for: .normal)
             resetButton.setTitleColor(.systemBlue, for: .normal)
+            timer?.invalidate()
+            epiTimer?.invalidate()
         }
         
         else if globalCounter.globalTimer?.isValid == false && globalCounter.globalTimeCounter > 0 {
@@ -125,6 +127,8 @@ class vfEpi: UIViewController {
             intButton.configureCheck()
             shockButton.configureCheck()
             timer?.invalidate()
+            epiTimer?.invalidate()
+            epiLabel.text = "Epinephrine 1mg"
             cprLabel.text = "Start CPR"}
         
         else {
