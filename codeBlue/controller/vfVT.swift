@@ -82,6 +82,7 @@ class vfVT: UIViewController {
         accessButton.configureCheck()
     }
     
+//    
     @IBAction func resetTapped(_ sender: Any) {
         
         if globalCounter.globalTimer?.isValid ?? false {
@@ -89,6 +90,7 @@ class vfVT: UIViewController {
             resetButton.setTitle("Reset", for: .normal)
             resetButton.setTitleColor(.systemBlue, for: .normal)
             timer?.invalidate()
+            
         }
         
         else if globalCounter.globalTimer?.isValid == false && globalCounter.globalTimeCounter > 0 {
