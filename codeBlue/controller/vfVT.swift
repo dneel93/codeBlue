@@ -82,7 +82,6 @@ class vfVT: UIViewController {
         accessButton.configureCheck()
     }
     
-//    
     @IBAction func resetTapped(_ sender: Any) {
         
         if globalCounter.globalTimer?.isValid ?? false {
