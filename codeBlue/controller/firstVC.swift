@@ -9,67 +9,75 @@
 import UIKit
 import SideMenu
 
-class firstVC: UIViewController {
+class firstVC: UIViewController, MenuControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet var guidedCode: UIButton!
     @IBOutlet var aclsAlgo: UIButton!
-    var menu: SideMenuNavigationController?
-    
-    
+    var SideMenu: SideMenuNavigationController?
+    let About = AboutVC()
+    let ACLS = AclsInfoVC()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         guidedCode.layer.cornerRadius = 8
         aclsAlgo.layer.cornerRadius = 8
-        menu = SideMenuNavigationController(rootViewController: MenuListController())
-        menu?.leftSide=true
-        menu?.setNavigationBarHidden(true, animated: false)
-        SideMenuManager.default.leftMenuNavigationController = menu
+        let menu = MenuListController()
+        menu.delegate = self
+        SideMenu = SideMenuNavigationController(rootViewController: menu)
+        SideMenu?.leftSide=true
+        SideMenu?.setNavigationBarHidden(true, animated: false)
+        SideMenuManager.default.leftMenuNavigationController = SideMenu
         SideMenuManager.default.addPanGestureToPresent(toView: self.view)
-        
-    
-//        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "ekg.png")!)
+        addChildVC()
         
     }
     
+    func addChildVC(){
     
-    @IBAction func menuTapped(_ sender: Any) {
-        present(menu!, animated:true)
+    addChild(About)
+    addChild(ACLS)
+        view.addSubview(About.view)
+        view.addSubview(ACLS.view)
+        About.view.frame = view.bounds
+        ACLS.view.frame = view.bounds
+        About.didMove(toParent: self)
+        ACLS.didMove(toParent: self)
+        About.view.isHidden = true
+        ACLS.view.isHidden = true
     }
     
-    class MenuListController:
-    UITableViewController{
-    
-        var items = ["About","ACLS Information","Help","Complete Survey"]
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.backgroundColor = UIColor(red: 0.032, green: 0.216, blue: 0.678, alpha: 1)
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = items[indexPath.row]
-        cell.backgroundColor = .lightText
-        return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if items[indexPath.row] == "Complete Survey"{
-            if let url = URL(string: "https://docs.google.com/forms/d/e/1FAIpQLSe2t97vEccy5EJx1MyPb7PiPBBf0-xy0MKEqWJZ7CL5XWcuOw/viewform?usp=sf_link") {
-                UIApplication.shared.open(url)
+    func didSelectMenuItem(name: String) {
+        SideMenu?.dismiss(animated:true, completion:{[weak self] in
+            
+            if name == "About"{
+                self?.About.view.isHidden = false
+                self?.ACLS.view.isHidden = true
             }
             
-        }
+            else if name == "ACLS Information"{
+                self?.About.view.isHidden = true
+                self?.ACLS.view.isHidden = false
+            }
+            
+            else if name == "Home"{
+                self?.About.view.isHidden = true
+                self?.ACLS.view.isHidden = true
+            }
+           
+            else if name == "Complete Survey"{
+                self?.About.view.isHidden = true
+                self?.ACLS.view.isHidden = true
+               if let url = URL(string: "https://docs.google.com/forms/d/e/1FAIpQLSe2t97vEccy5EJx1MyPb7PiPBBf0-xy0MKEqWJZ7CL5XWcuOw/viewform?usp=sf_link") {
+                    UIApplication.shared.open(url)}
+            }
+        })
         
-        }
+    }
 
+    
+   
+    @IBAction func menuTapped(_ sender: Any) {
+        present(SideMenu!, animated:true)
     }
     
     
@@ -90,7 +98,6 @@ class firstVC: UIViewController {
     }
     
     
-    
-    
-    
 }
+
+

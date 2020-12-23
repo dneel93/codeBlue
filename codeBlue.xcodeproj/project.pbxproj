@@ -24,6 +24,9 @@
 		CC50ABF8255142D200B2B96E /* vfAmio.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC50ABF7255142D200B2B96E /* vfAmio.swift */; };
 		CC50ABFB2551451500B2B96E /* vfVT.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC50ABFA2551451500B2B96E /* vfVT.swift */; };
 		CC7B74C82571FB4400BC961E /* UILabel+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7B74C72571FB4300BC961E /* UILabel+ext.swift */; };
+		CC7B7561259331E900BC961E /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7B7560259331E800BC961E /* AboutVC.swift */; };
+		CC7B75642593329000BC961E /* AclsInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7B75632593328F00BC961E /* AclsInfoVC.swift */; };
+		CC7B75702593B0A400BC961E /* SideMenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7B756F2593B0A400BC961E /* SideMenuManager.swift */; };
 		CC82B9EA2554877A001DB28C /* globalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC82B9E92554877A001DB28C /* globalTimer.swift */; };
 		CC82B9FF25591685001DB28C /* guidedPulseVC6.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC82B9FE25591685001DB28C /* guidedPulseVC6.swift */; };
 		CCA449BD2511E5CB0097D370 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA449BC2511E5CB0097D370 /* AppDelegate.swift */; };
@@ -69,6 +72,9 @@
 		CC50ABF7255142D200B2B96E /* vfAmio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vfAmio.swift; sourceTree = "<group>"; };
 		CC50ABFA2551451500B2B96E /* vfVT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vfVT.swift; sourceTree = "<group>"; };
 		CC7B74C72571FB4300BC961E /* UILabel+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+ext.swift"; sourceTree = "<group>"; };
+		CC7B7560259331E800BC961E /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
+		CC7B75632593328F00BC961E /* AclsInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AclsInfoVC.swift; sourceTree = "<group>"; };
+		CC7B756F2593B0A400BC961E /* SideMenuManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuManager.swift; sourceTree = "<group>"; };
 		CC82B9E92554877A001DB28C /* globalTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = globalTimer.swift; sourceTree = "<group>"; };
 		CC82B9FE25591685001DB28C /* guidedPulseVC6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guidedPulseVC6.swift; sourceTree = "<group>"; };
 		CCA449B92511E5CB0097D370 /* codeBlue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = codeBlue.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,6 +176,8 @@
 				CC50ABF4255142BA00B2B96E /* vfEpi.swift */,
 				CC50ABF7255142D200B2B96E /* vfAmio.swift */,
 				CC50ABFA2551451500B2B96E /* vfVT.swift */,
+				CC7B7560259331E800BC961E /* AboutVC.swift */,
+				CC7B75632593328F00BC961E /* AclsInfoVC.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -221,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				CC7B9E78251C0A2500D8F16D /* Extensions */,
+				CC7B756F2593B0A400BC961E /* SideMenuManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -348,6 +357,7 @@
 				CCEB7CAB2540124C00DD66EB /* tachyTableVC.swift in Sources */,
 				CC50ABE9255067A800B2B96E /* logTableVC.swift in Sources */,
 				CCA449BD2511E5CB0097D370 /* AppDelegate.swift in Sources */,
+				CC7B75642593329000BC961E /* AclsInfoVC.swift in Sources */,
 				CC27715A25147EEF00EC6E94 /* UIButton+ext.swift in Sources */,
 				CC82B9EA2554877A001DB28C /* globalTimer.swift in Sources */,
 				CCEB7C97253C2E2D00DD66EB /* cardiacTableVC.swift in Sources */,
@@ -368,12 +378,14 @@
 				CCC429832517CEAB001AA0D9 /* guidedPulseVC1.swift in Sources */,
 				CC50ABF8255142D200B2B96E /* vfAmio.swift in Sources */,
 				CC7B74C82571FB4400BC961E /* UILabel+ext.swift in Sources */,
+				CC7B75702593B0A400BC961E /* SideMenuManager.swift in Sources */,
 				CCEB7C9B253F50C000DD66EB /* postArrestVC.swift in Sources */,
 				CC2771522513113500EC6E94 /* algoVC.swift in Sources */,
 				CC82B9FF25591685001DB28C /* guidedPulseVC6.swift in Sources */,
 				CC2771542513981200EC6E94 /* cardiacArrestVC.swift in Sources */,
 				CC50ABD5254FD3A000B2B96E /* asystolePeaContVC.swift in Sources */,
 				CC50ABCE254FCC7700B2B96E /* asystolePEA.swift in Sources */,
+				CC7B7561259331E900BC961E /* AboutVC.swift in Sources */,
 				CCD2D28B2526E390008DB015 /* guidedPulseVC3.swift in Sources */,
 				CC27715C2517C0C200EC6E94 /* guided1VC.swift in Sources */,
 				CCEB7CA525400B2400DD66EB /* bradyVC.swift in Sources */,
