@@ -14,8 +14,11 @@ class firstVC: UIViewController, MenuControllerDelegate, UINavigationControllerD
     @IBOutlet var guidedCode: UIButton!
     @IBOutlet var aclsAlgo: UIButton!
     var SideMenu: SideMenuNavigationController?
-    let About = AboutVC()
-    let ACLS = AclsInfoVC()
+    
+    
+    @IBOutlet var ACLS: UIView!
+    
+    @IBOutlet var About: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,45 +31,40 @@ class firstVC: UIViewController, MenuControllerDelegate, UINavigationControllerD
         SideMenu?.setNavigationBarHidden(true, animated: false)
         SideMenuManager.default.leftMenuNavigationController = SideMenu
         SideMenuManager.default.addPanGestureToPresent(toView: self.view)
-        addChildVC()
-        
+        self.ACLS.isHidden = true
+        self.About.isHidden = true
+       
+    
     }
     
-    func addChildVC(){
     
-    addChild(About)
-    addChild(ACLS)
-        view.addSubview(About.view)
-        view.addSubview(ACLS.view)
-        About.view.frame = view.bounds
-        ACLS.view.frame = view.bounds
-        About.didMove(toParent: self)
-        ACLS.didMove(toParent: self)
-        About.view.isHidden = true
-        ACLS.view.isHidden = true
-    }
     
     func didSelectMenuItem(name: String) {
         SideMenu?.dismiss(animated:true, completion:{[weak self] in
             
             if name == "About"{
-                self?.About.view.isHidden = false
-                self?.ACLS.view.isHidden = true
+                
+                self?.ACLS.isHidden = true
+                self?.About.isHidden = false
+
             }
             
             else if name == "ACLS Information"{
-                self?.About.view.isHidden = true
-                self?.ACLS.view.isHidden = false
+               
+                self?.ACLS.isHidden = false
+                self?.About.isHidden = true
             }
             
             else if name == "Home"{
-                self?.About.view.isHidden = true
-                self?.ACLS.view.isHidden = true
+                
+                self?.ACLS.isHidden = true
+                self?.About.isHidden = true
             }
            
             else if name == "Complete Survey"{
-                self?.About.view.isHidden = true
-                self?.ACLS.view.isHidden = true
+                
+                self?.ACLS.isHidden = true
+                self?.About.isHidden = true
                if let url = URL(string: "https://docs.google.com/forms/d/e/1FAIpQLSe2t97vEccy5EJx1MyPb7PiPBBf0-xy0MKEqWJZ7CL5XWcuOw/viewform?usp=sf_link") {
                     UIApplication.shared.open(url)}
             }
