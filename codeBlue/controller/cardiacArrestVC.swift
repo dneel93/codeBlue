@@ -110,7 +110,8 @@ class cardiacArrestVC: UIViewController, UIScrollViewDelegate, selectRhythm {
         
         if timer3?.isValid ?? false {
             timer3.invalidate()
-            totalTimeButton.setTitle("Restart", for: .normal)
+            totalTimeButton.setTitle("Reset", for: .normal)
+            totalTimeButton.setTitleColor(.systemBlue, for: .normal)
             
             
             if timer?.isValid ?? false {timer.invalidate()}
@@ -126,6 +127,7 @@ class cardiacArrestVC: UIViewController, UIScrollViewDelegate, selectRhythm {
             totalSeconds = 0
             totalTime.text = "00:00"
             totalTimeButton.setTitle("Start", for: .normal)
+            totalTimeButton.setTitleColor(.systemGreen, for: .normal)
             
         epiSeconds = 0
         cprSeconds = 0
@@ -144,7 +146,9 @@ class cardiacArrestVC: UIViewController, UIScrollViewDelegate, selectRhythm {
         
         else {
             startTotalTime()
-            totalTimeButton.setTitle("Stop", for: .normal)}
+            totalTimeButton.setTitle("Stop", for: .normal)
+            totalTimeButton.setTitleColor(.systemRed, for: .normal)
+        }
 }
         
     

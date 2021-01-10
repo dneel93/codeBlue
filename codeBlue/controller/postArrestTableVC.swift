@@ -12,7 +12,7 @@ class postArrestTableVC: UITableViewController {
 
     let sections = ["Ventilation/oxygenation", "IV bolus", "Epi IV Infusion", "Dopamine IV Infusion", "Norepi IV Infusion"]
     
-    let vent = ["Avoid excesive ventilation", "Start 10 breaths/min and titrate to target PetCO2","When feasible, titrate Fi02 to minimum necessary to achieve SpO2 >94%"]
+    let vent = ["Avoid excesive ventilation", "Start 1 breath every 6s (10 b/min) and titrate to target PetCO2","When feasible, titrate Fi02 to minimum necessary to achieve SpO2 92-98% (AHA 2020 update)"]
     
     let bolus = ["Approx 1-2 L normal saline or lactated Ringers"]
     

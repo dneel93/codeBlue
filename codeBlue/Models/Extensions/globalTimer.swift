@@ -12,8 +12,8 @@ class globalCounter{
     
     static var cprCountGlobal:Int = 0
     static var epiCountGlobal:Int = 0
-    static var defibCountGlobal:Int=0
-    static var amioCountGlobal:Int=0
+    static var defibCountGlobal:Int = 0
+    static var amioCountGlobal:Int = 0
     static var globalTimer:Timer!
     static var globalTimeCounter = 0
 

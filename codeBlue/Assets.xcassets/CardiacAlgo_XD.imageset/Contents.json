@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "CardiacAlgo_XD.png",
+      "filename" : "cardiacArrest.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "CardiacAlgo_XD@2x.png",
+      "filename" : "cardiacArrest@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "CardiacAlgo_XD@3x.png",
+      "filename" : "cardiacArrest@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

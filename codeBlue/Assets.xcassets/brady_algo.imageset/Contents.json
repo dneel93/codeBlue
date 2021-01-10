@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "brady_algo.png",
+      "filename" : "brady.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "brady_algo@2x.png",
+      "filename" : "brady@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "brady_algo@3x.png",
+      "filename" : "brady@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

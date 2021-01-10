@@ -34,6 +34,7 @@
 		CCA449C42511E5CB0097D370 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCA449C22511E5CB0097D370 /* Main.storyboard */; };
 		CCA449C62511E5CD0097D370 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCA449C52511E5CD0097D370 /* Assets.xcassets */; };
 		CCA449D12511E5F90097D370 /* firstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA449D02511E5F90097D370 /* firstVC.swift */; };
+		CCC2525025A587C600E98607 /* TimerLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC2524F25A587C600E98607 /* TimerLogic.swift */; };
 		CCC429812517CE87001AA0D9 /* guidedPulse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCC429802517CE87001AA0D9 /* guidedPulse.storyboard */; };
 		CCC429832517CEAB001AA0D9 /* guidedPulseVC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC429822517CEAB001AA0D9 /* guidedPulseVC1.swift */; };
 		CCC429852517CF40001AA0D9 /* guidedNoPulse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCC429842517CF40001AA0D9 /* guidedNoPulse.storyboard */; };
@@ -84,6 +85,7 @@
 		CCA449C52511E5CD0097D370 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CCA449CA2511E5CD0097D370 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CCA449D02511E5F90097D370 /* firstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstVC.swift; sourceTree = "<group>"; };
+		CCC2524F25A587C600E98607 /* TimerLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerLogic.swift; sourceTree = "<group>"; };
 		CCC429802517CE87001AA0D9 /* guidedPulse.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = guidedPulse.storyboard; sourceTree = "<group>"; };
 		CCC429822517CEAB001AA0D9 /* guidedPulseVC1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guidedPulseVC1.swift; sourceTree = "<group>"; };
 		CCC429842517CF40001AA0D9 /* guidedNoPulse.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = guidedNoPulse.storyboard; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 			children = (
 				CC7B9E78251C0A2500D8F16D /* Extensions */,
 				CC7B756F2593B0A400BC961E /* SideMenuManager.swift */,
+				CCC2524F25A587C600E98607 /* TimerLogic.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				CC50ABF5255142BB00B2B96E /* vfEpi.swift in Sources */,
 				CC50ABD9254FD86300B2B96E /* HTcausesTableVC.swift in Sources */,
 				CCC429892517DDBA001AA0D9 /* guidedPulseVC2.swift in Sources */,
+				CCC2525025A587C600E98607 /* TimerLogic.swift in Sources */,
 				CCC429832517CEAB001AA0D9 /* guidedPulseVC1.swift in Sources */,
 				CC50ABF8255142D200B2B96E /* vfAmio.swift in Sources */,
 				CC7B74C82571FB4400BC961E /* UILabel+ext.swift in Sources */,

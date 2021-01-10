@@ -12,7 +12,7 @@ class tachyTableVC: UITableViewController {
 
     let sections = ["Synchronized Cardioversion", "Adenosine IV Infusion", "Antiarrythmic Infusions (stable wide QRS)"]
     
-    let cardioversion = ["Narrow regular: 50-100 J", "Narrow irregular: 120-200 J biphasic or 200J monophasic", "Wide regular: 100J", "Wide irregular: defibrillation dose (not synchronized)"]
+    let cardioversion = ["Follow your device's specific recommended energy level to maximize success of the first shock (AHA 2020 update)", "Wide QRS, irregular rhythm: defibrillation dose (not synchronized)"]
     
     let adenosine = ["First dose: 6 mg rapid IV push; follow with NS flush", "Second dose: 12mg if needed"]
     

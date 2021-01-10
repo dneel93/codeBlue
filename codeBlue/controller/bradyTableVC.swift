@@ -12,9 +12,9 @@ class bradyTableVC: UITableViewController {
 
     let sections = ["Atropine IV dose", "Dopamine IV Infusion", "Epi IV Infusion"]
     
-    let atropine = ["First Dose: 0.5mg bolus", "Repat every 3-5 min", "Maximum 3 mg"]
+    let atropine = ["First Dose: 1mg bolus (AHA 2020 update)", "Repat every 3-5 min", "Maximum 3 mg"]
     
-    let dopa = ["Usual infusion rate is 2-20mcg/min", "Titrate to patient response, taper slowly"]
+    let dopa = ["Usual infusion rate is 5-20mcg/min (AHA 2020 update)", "Titrate to patient response, taper slowly"]
     
     let epi = ["2-20 mcg/min infusion", "Titrate to patient response"]
     

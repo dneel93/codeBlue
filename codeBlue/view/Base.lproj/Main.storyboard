@@ -146,15 +146,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ACLS 2018 Evidence" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pp9-8q-r0c">
-                                <rect key="frame" x="0.0" y="29" width="414" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This app includes information that is current for the AHA ACLS 2020 update" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pp9-8q-r0c">
+                                <rect key="frame" x="20" y="44" width="374" height="86"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="gxV-Kd-F5e"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pp9-8q-r0c" firstAttribute="top" secondItem="ScG-ZE-6dq" secondAttribute="top" constant="44" id="29a-N0-bbF"/>
+                            <constraint firstItem="gxV-Kd-F5e" firstAttribute="trailing" secondItem="pp9-8q-r0c" secondAttribute="trailing" constant="20" id="b7Q-ju-85i"/>
+                            <constraint firstItem="pp9-8q-r0c" firstAttribute="leading" secondItem="gxV-Kd-F5e" secondAttribute="leading" constant="20" id="zEm-ls-rTx"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uCq-j9-F4P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -169,13 +174,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About this App" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8H-sL-fHW">
-                                <rect key="frame" x="20" y="64" width="374" height="31.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8H-sL-fHW">
+                                <rect key="frame" x="20" y="64" width="374" height="621"/>
+                                <mutableString key="text">About this App  This app was designed and created by Michael Senter-Zapata (PGY-2 BWH IM) and Dylan Neel (MD-PhD student, HMS)  The beta version of this app will be used by BWH residents running code blue simulations in the STRATUS sim center.  Funding: Brigham Education Institute (HLP ME Grant)  Faculty advisors:  Fidencio Saldaña, MD Narath Carlile, MD MPH </mutableString>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="beu-5K-GjZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="I8H-sL-fHW" secondAttribute="trailing" id="csc-nP-RSV"/>

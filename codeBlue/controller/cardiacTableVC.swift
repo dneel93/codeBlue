@@ -18,10 +18,10 @@ class cardiacTableVC: UITableViewController {
     let defib = [" Biphasic: Manufacturer recommendation (eg, initial dose of 120-200 J); if unknown, use maximum available. Second and subsequent doses should be equivalent, and higher doses may be considered.","Monophasic: 360 J"]
     
     
-    let airway = ["Minimize closed-circuit disconnection", "Use intubator with highest likelihood of first pass success", "Consider video laryngoscopy", "Endotracheal intubation or supraglottic advanced airway", "Waveform capnography or capnometry to confirm and monitor ET tube placement", "Once advanced airway in place, give 1 breath every 6 seconds (10 breaths/min) with continuous chest compression"]
+    let airway = ["Recommend using waveform capnography with a bag mask device","Minimize closed-circuit disconnection", "Use intubator with highest likelihood of first pass success", "Consider video laryngoscopy", "Endotracheal intubation or supraglottic advanced airway", "Waveform capnography or capnometry to confirm and monitor ET tube placement", "Once advanced airway in place, give 1 breath every 6 seconds (10 breaths/min) with continuous chest compression", "AHA 2020 update: 1 breath every 6s with or without advanced airway. For cardiac arrest with an advanced airway (use this rate with a bag-mask device if your local protocl is continuous compressions and asynchronous ventilations."]
     
     
-    let drugs = ["Epinephrine IV/IO dose: 1 mg every 3-5 minutes", "Amiodarone IV/IO dose: First dose: 300 mg bolus. Second dose: 150 mg", "or Lidocaine IV/IO dose: First dose: 1-1.5 mg/kg. Second dose: 0.5-0.75 mg/kg"]
+    let drugs = ["Epinephrine IV/IO dose: 1 mg every 3-5 minutes", "Amiodarone IV/IO dose: First dose: 300 mg bolus. Second dose: 150 mg", "or Lidocaine IV/IO dose: First dose: 1-1.5 mg/kg. Second dose: 0.5-0.75 mg/kg", "Note: Amiodarone and lidocaine are equivalent for treatment (ie, either may be used)"]
     let rosc = ["Pulse and blood pressure", "Abrupt sustained increase in Petco2 (typically ≥40 mm Hg)", "Spontaneous arterial pressure waves with intra-arterial monitoring"]
     let causes = ["Hypovolemia", "Hypoxia", "Hydrogen ion (acidosis)", "Hypo-/hyperkalemia", "Hypothermia", "Tension pneumothorax", "Tamponade, cardiac", "Toxins","Thrombosis, pulmonary", "Thrombosis, cardiac"]
         

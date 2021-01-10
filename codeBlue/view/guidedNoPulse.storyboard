@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XWN-CK-ERh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XWN-CK-ERh">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -297,7 +297,7 @@
                                 <rect key="frame" x="0.0" y="39" width="414" height="286"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="RR4-iy-Tda">
-                                        <rect key="frame" x="120" y="78" width="119.66666666666669" height="151"/>
+                                        <rect key="frame" x="120.00000000000001" y="78" width="216.33333333333337" height="151"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="SHOCK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIh-K7-NoQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="74" height="26.333333333333332"/>
@@ -311,8 +311,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="IV/IO Access" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHc-pv-bBx">
-                                                <rect key="frame" x="0.0" y="124.66666666666664" width="119.66666666666667" height="26.333333333333329"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="IV access (IO if IV fails)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHc-pv-bBx">
+                                                <rect key="frame" x="0.0" y="124.66666666666664" width="216.33333333333334" height="26.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -550,7 +550,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="307"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="QPy-9j-pEE">
-                                        <rect key="frame" x="120.00000000000001" y="58.000000000000014" width="186.33333333333337" height="192.33333333333337"/>
+                                        <rect key="frame" x="120" y="58.000000000000014" width="209" height="192.33333333333337"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start CPR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XR8-M0-3u7">
                                                 <rect key="frame" x="0.0" y="0.0" width="93" height="26.333333333333332"/>
@@ -558,8 +558,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IV/IO access" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bt9-Ds-Wu7">
-                                                <rect key="frame" x="0.0" y="55.33333333333335" width="117" height="26.333333333333336"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IV access (IO if IV fails" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bt9-Ds-Wu7">
+                                                <rect key="frame" x="0.0" y="55.33333333333335" width="209" height="26.333333333333336"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -742,7 +742,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YEg-yA-Ri3">
-                                        <rect key="frame" x="186" y="129.99999999999989" width="51" height="44"/>
+                                        <rect key="frame" x="186" y="130" width="51" height="44"/>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="23"/>
                                         <state key="normal" title="Stop">
                                             <color key="titleColor" systemColor="systemRedColor"/>
@@ -799,6 +799,7 @@
                         <outlet property="cprLabel" destination="XR8-M0-3u7" id="Fcu-pt-tCU"/>
                         <outlet property="epiButton" destination="d69-Au-P8c" id="0o7-H0-SBD"/>
                         <outlet property="epiCountGlobal" destination="KqR-BF-20x" id="qtX-F6-HMy"/>
+                        <outlet property="epiLabel" destination="fas-L1-ZO7" id="1ms-85-GCq"/>
                         <outlet property="intubationButton" destination="SZx-9D-ukB" id="a85-jb-4Tu"/>
                         <outlet property="noButton" destination="Dli-sM-fHk" id="5xY-Wj-KN2"/>
                         <outlet property="resetButton" destination="YEg-yA-Ri3" id="2w7-aA-kJT"/>
@@ -1651,7 +1652,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="PfX-xa-Bmr"/>
+        <segue reference="NL3-mz-BJm"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="home-1" width="29.666666030883789" height="31"/>
