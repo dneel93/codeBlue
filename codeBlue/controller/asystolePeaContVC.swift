@@ -12,15 +12,13 @@ class asystolePeaContVC: UIViewController {
    
     @IBOutlet var cprLabel: UILabel!
     @IBOutlet var cprButton: UIButton!
-  
     @IBOutlet var noButton: UIButton!
     @IBOutlet var yesButton: UIButton!
-    
     @IBOutlet var causesButton: UIButton!
-    
     @IBOutlet var htButton: UIButton!
-    var cprSeconds = 0
-    var timer:Timer!
+   
+    private let cprTimer = timerClass(type: "CPR")
+    
     
 //    GLOBAL VARIABLES
     @IBOutlet var resetButton: UIButton!
@@ -32,47 +30,47 @@ class asystolePeaContVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        globalCounter.setLabelVC(timeCountGlobal, self)
+        globalCounter.globalTimer?.invalidate()
+        globalCounter.startGlobalTime()
+        
         noButton.configure(title: "No")
         yesButton.configure(title: "Yes")
         cprButton.configureCheck()
         causesButton.configureCheck()
         htButton.layer.cornerRadius = 8
-        globalCounter.globalTimer.invalidate()
-        startGlobalTime()
+    
         cprCountGlobal.configureLabel()
         shockCountGlobal.configureLabel()
         epiCountGlobal.configureLabel()
         cprCountGlobal.text = "CPR:\(globalCounter.cprCountGlobal)"
         epiCountGlobal.text="Epi:\(globalCounter.epiCountGlobal)"
         shockCountGlobal.text = "Defib:\(globalCounter.defibCountGlobal)"
-    }
-    
-    
-    //    GLOBAL variables and timer
+        cprTimer.setLabel(cprLabel, self)
         
-        func startGlobalTime(){
-            globalCounter.globalTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateUITime), userInfo: nil, repeats: true)
-        }
-        
-        @objc func updateUITime() {
-            globalCounter.globalTimeCounter+=1
-            var minutes: Int
-            var seconds: Int
-            minutes = (globalCounter.globalTimeCounter % 3600) / 60
-            seconds = (globalCounter.globalTimeCounter % 3600) % 60
-            timeCountGlobal.text = String(format: "Total Time: %02d:%02d", minutes, seconds)
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        globalCounter.globalTimer.invalidate()
-        startGlobalTime()
+        globalCounter.setLabelVC(timeCountGlobal, self)
+        globalCounter.globalTimer?.invalidate()
+        globalCounter.startGlobalTime()
+        
+        
         cprCountGlobal.text = "CPR: \(globalCounter.cprCountGlobal)"
         epiCountGlobal.text="Epi: \(globalCounter.epiCountGlobal)"
         shockCountGlobal.text = "Defib: \(globalCounter.defibCountGlobal)"
         cprButton.configureCheck()
         causesButton.configureCheck()
+        cprTimer.invalidate()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        cprTimer.invalidate()
+        cprTimer.time = 0
     }
     
     
@@ -82,7 +80,7 @@ class asystolePeaContVC: UIViewController {
             globalCounter.globalTimer?.invalidate()
             resetButton.setTitle("Reset", for: .normal)
             resetButton.setTitleColor(.systemBlue, for: .normal)
-            timer?.invalidate()
+            cprTimer.timer?.invalidate()
         }
         
         else if globalCounter.globalTimer?.isValid == false && globalCounter.globalTimeCounter > 0 {
@@ -99,14 +97,14 @@ class asystolePeaContVC: UIViewController {
             epiCountGlobal.text="Epi: 0"
             shockCountGlobal.text = "Defib: 0"
             timeCountGlobal.text = "Total Time: 00:00"
-            timer.invalidate()
+            cprTimer.timer.invalidate()
             cprButton.configureCheck()
             causesButton.configureCheck()
             cprLabel.text = "Start CPR"
        }
         
         else {
-            startGlobalTime()
+            globalCounter.startGlobalTime()
             resetButton.setTitle("Stop", for: .normal)
             resetButton.setTitleColor(.systemRed, for: .normal)}
         
@@ -120,33 +118,43 @@ class asystolePeaContVC: UIViewController {
         globalCounter.epiCountGlobal = 0
         globalCounter.defibCountGlobal = 0
         globalCounter.globalTimeCounter=0
+        cprTimer.timer?.invalidate()
+        cprTimer.time = 0
+        
 
         cprCountGlobal.text = "CPR: 0"
         epiCountGlobal.text = "Epi: 0"
         shockCountGlobal.text = "Defib: 0"
         timeCountGlobal.text = "Total Time: 00:00"
-        globalCounter.globalTimer.invalidate()
+        globalCounter.globalTimer?.invalidate()
         self.navigationController?.popToRootViewController(animated: true)
     }
     
     
     
-//    CHECKLIST
+//    MARK: CHECKLIST
     
     @IBAction func cprPress(_ sender: Any) {
+        
         cprButton.checkOffOn()
-
-        if timer?.isValid ?? false {
-            timer.invalidate()
+        
+        if cprTimer.timer?.isValid ?? false {
+            cprTimer.invalidate()
+            cprLabel.text = "Start CPR"
+        }
+        
+        else if cprTimer.timer?.isValid == false && cprTimer.time == 120 {
+            cprTimer.time = 0
             cprLabel.text = "Start CPR"
         }
         
         else{
-            cprSeconds = 0
-            startCPR()
+            cprTimer.time = 0
+            cprTimer.startTimer()
             globalCounter.cprCountGlobal+=1
-            cprCountGlobal.text = "CPR:  \(globalCounter.cprCountGlobal)"
+            cprCountGlobal.text = "CPR: \(globalCounter.cprCountGlobal)"
         }
+
         
     }
     
@@ -156,18 +164,6 @@ class asystolePeaContVC: UIViewController {
     }
     
     
-    func startCPR(){
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countup), userInfo: nil, repeats: true)
-    }
-    
-    @objc func countup() {
-        cprSeconds += 1
-        var minutes: Int
-        var seconds: Int
-        minutes = (cprSeconds % 3600) / 60
-        seconds = (cprSeconds % 3600) % 60
-        cprLabel.text = String(format: "CPR: %02d:%02d", minutes, seconds)
-    }
     
 
     @IBAction func noPressed(_ sender: Any) {

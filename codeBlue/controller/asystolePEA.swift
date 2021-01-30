@@ -20,8 +20,8 @@ class asystolePEA: UIViewController {
     @IBOutlet var epiLabel: UILabel!
     
     
-    let cprTimer = timerLogic(type:"CPR")
-    let epiTimer = timerLogic(type:"Epi")
+    private let cprTimer = timerClass(type: "CPR")
+    private let epiTimer = timerClass(type: "Epi")
     
     
 //    GLOBAL VARIABLES
@@ -34,6 +34,10 @@ class asystolePEA: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        globalCounter.setLabelVC(timeCountGlobal, self)
+        globalCounter.globalTimer?.invalidate()
+        globalCounter.startGlobalTime()
+        
         noButton.configure(title: "No")
         yesButton.configure(title: "Yes")
         cprButton.configureCheck()
@@ -46,43 +50,39 @@ class asystolePEA: UIViewController {
         cprCountGlobal.configureLabel()
         shockCountGlobal.configureLabel()
         epiCountGlobal.configureLabel()
-        globalCounter.globalTimer?.invalidate()
-        startGlobalTime()
-        cprTimer.setLabel(cprLabel)
-        epiTimer.setLabel(epiLabel)
+        
+        cprTimer.setLabel(cprLabel,self)
+        epiTimer.setLabel(epiLabel,self)
         
     }
     
-    
-    //    GLOBAL timers
-        
-        func startGlobalTime(){
-            globalCounter.globalTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateUITime), userInfo: nil, repeats: true)
-        }
-        
-        @objc func updateUITime() {
-            globalCounter.globalTimeCounter+=1
-            var minutes: Int
-            var seconds: Int
-            minutes = (globalCounter.globalTimeCounter % 3600) / 60
-            seconds = (globalCounter.globalTimeCounter % 3600) % 60
-            timeCountGlobal.text = String(format: "Total Time: %02d:%02d", minutes, seconds)
-    }
-        
+   
     
 //    Code
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        globalCounter.setLabelVC(timeCountGlobal, self)
+        globalCounter.globalTimer?.invalidate()
+        globalCounter.startGlobalTime()
+     
+        
         cprCountGlobal.text = "CPR:  \(globalCounter.cprCountGlobal)"
         epiCountGlobal.text="Epi: \(globalCounter.epiCountGlobal)"
         shockCountGlobal.text = "Defib: \(globalCounter.defibCountGlobal)"
-        globalCounter.globalTimer.invalidate()
-        startGlobalTime()
         cprButton.configureCheck()
         accessButton.configureCheck()
         epiButton.configureCheck()
         intubationButton.configureCheck()
+    }
+    
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        cprTimer.invalidate()
+        cprTimer.time = 0
+        epiTimer.invalidate()
+        epiTimer.time = 0
     }
     
     
@@ -104,7 +104,7 @@ class asystolePEA: UIViewController {
             globalCounter.cprCountGlobal = 0
             globalCounter.epiCountGlobal = 0
             globalCounter.defibCountGlobal = 0
-            globalCounter.globalTimeCounter=0
+            globalCounter.globalTimeCounter = 0
 
             cprCountGlobal.text = "CPR: 0"
             epiCountGlobal.text = "Epi: 0"
@@ -121,10 +121,27 @@ class asystolePEA: UIViewController {
        }
         
         else {
-            startGlobalTime()
+            globalCounter.startGlobalTime()
             resetButton.setTitle("Stop", for: .normal)
             resetButton.setTitleColor(.systemRed, for: .normal)}
         
+    }
+    
+    @IBAction func homeTapped(_ sender: Any) {
+        globalCounter.cprCountGlobal = 0
+        globalCounter.epiCountGlobal = 0
+        globalCounter.defibCountGlobal = 0
+        globalCounter.globalTimeCounter=0
+        globalCounter.globalTimer?.invalidate()
+
+        cprCountGlobal.text = "CPR: 0"
+        epiCountGlobal.text = "Epi: 0"
+        shockCountGlobal.text = "Defib: 0"
+        timeCountGlobal.text = "Total Time: 00:00"
+        
+        cprTimer.invalidate()
+        epiTimer.invalidate()
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
 //    CHECKLIST
@@ -137,31 +154,22 @@ class asystolePEA: UIViewController {
             cprLabel.text = "Start CPR"
         }
         
+        else if cprTimer.timer?.isValid == false && cprTimer.time == 120 {
+            cprTimer.time = 0
+            cprLabel.text = "Start CPR"
+        }
+        
         else{
             cprTimer.time = 0
             cprTimer.startTimer()
             globalCounter.cprCountGlobal+=1
             cprCountGlobal.text = "CPR: \(globalCounter.cprCountGlobal)"
         }
+        
+        
     }
     
-    @IBAction func homeTapped(_ sender: Any) {
-        globalCounter.cprCountGlobal = 0
-        globalCounter.epiCountGlobal = 0
-        globalCounter.defibCountGlobal = 0
-        globalCounter.globalTimeCounter=0
-
-        cprCountGlobal.text = "CPR: 0"
-        epiCountGlobal.text = "Epi: 0"
-        shockCountGlobal.text = "Defib: 0"
-        timeCountGlobal.text = "Total Time: 00:00"
-        globalCounter.globalTimer.invalidate()
-        cprTimer.invalidate()
-        epiTimer.invalidate()
-        self.navigationController?.popToRootViewController(animated: true)
-    }
-    
-    
+   
     
     @IBAction func accessPress(_ sender: Any) {
         accessButton.checkOffOn()
@@ -177,13 +185,16 @@ class asystolePEA: UIViewController {
             epiLabel.text = "Epinephrine 1mg"
         }
         
+        else if epiTimer.timer?.isValid == false && epiTimer.time == 120 {
+            epiTimer.time = 0
+            epiLabel.text = "Epinephrine 1mg"
+        }
+        
         else{
             epiTimer.time = 0
             epiTimer.startTimer()
             globalCounter.epiCountGlobal+=1
-            epiCountGlobal.text = "Epi: \(globalCounter.epiCountGlobal)"
-        }
-        
+            epiCountGlobal.text = "Epi: \(globalCounter.epiCountGlobal)"}
         
         }
     
@@ -192,10 +203,6 @@ class asystolePEA: UIViewController {
         intubationButton.checkOffOn()
     }
     
-    
-
-    
-
     
 
 

@@ -22,10 +22,8 @@ class vfEpi: UIViewController {
     @IBOutlet var epiLabel: UILabel!
     
     
-    var cprSeconds = 0
-    var epiSeconds = 0
-    var timer:Timer!
-    var epiTimer:Timer!
+    private let cprTimer = timerClass(type: "CPR")
+    private let epiTimer = timerClass(type: "Epi")
     
 //    MARK: GLOBAL VARIABLES
     
@@ -41,8 +39,11 @@ class vfEpi: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        globalCounter.setLabelVC(timeCountGlobal, self)
         globalCounter.globalTimer?.invalidate()
-        startGlobalTime()
+        globalCounter.startGlobalTime()
+        
         noButton.layer.cornerRadius = 8
         yesButton.layer.cornerRadius = 8
         cprButton.configureCheck()
@@ -55,30 +56,22 @@ class vfEpi: UIViewController {
         cprCountGlobal.configureLabel()
         shockCountGlobal.configureLabel()
         epiCountGlobal.configureLabel()
+        cprTimer.setLabel(cprLabel, self)
+        epiTimer.setLabel(epiLabel, self)
+        
+       
+        
         
     }
     
-    
-//    GLOBAL Timer
-    
-    func startGlobalTime(){
-        globalCounter.globalTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateUITime), userInfo: nil, repeats: true)
-    }
-    
-    @objc func updateUITime() {
-        globalCounter.globalTimeCounter+=1
-        var minutes: Int
-        var seconds: Int
-        minutes = (globalCounter.globalTimeCounter % 3600) / 60
-        seconds = (globalCounter.globalTimeCounter % 3600) % 60
-        timeCountGlobal.text = String(format: "Total Time: %02d:%02d", minutes, seconds)
-}
-    
-    
 
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        globalCounter.setLabelVC(timeCountGlobal, self)
+        globalCounter.globalTimer?.invalidate()
+        globalCounter.startGlobalTime()
+        
         cprCountGlobal.text = "CPR:  \(globalCounter.cprCountGlobal)"
         epiCountGlobal.text="Epi: \(globalCounter.epiCountGlobal)"
         shockCountGlobal.text = "Defib: \(globalCounter.defibCountGlobal)"
@@ -87,14 +80,24 @@ class vfEpi: UIViewController {
         minutes = (globalCounter.globalTimeCounter % 3600) / 60
         seconds = (globalCounter.globalTimeCounter % 3600) % 60
         timeCountGlobal.text = String(format: "Total Time: %02d:%02d", minutes, seconds)
-        globalCounter.globalTimer?.invalidate()
-        timer?.invalidate()
+       
+        cprTimer.timer?.invalidate()
+        epiTimer.timer?.invalidate()
         cprLabel.text="Start CPR"
-        startGlobalTime()
+        epiLabel.text = "Epinephrine 1mg"
+       
         cprButton.configureCheck()
         epiButton.configureCheck()
         intButton.configureCheck()
         shockButton.configureCheck()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        cprTimer.invalidate()
+        cprTimer.time = 0
+        epiTimer.invalidate()
+        epiTimer.time = 0
     }
     
     
@@ -106,8 +109,8 @@ class vfEpi: UIViewController {
             globalCounter.globalTimer?.invalidate()
             resetButton.setTitle("Reset", for: .normal)
             resetButton.setTitleColor(.systemBlue, for: .normal)
-            timer?.invalidate()
-            epiTimer?.invalidate()
+            cprTimer.timer?.invalidate()
+            epiTimer.timer?.invalidate()
         }
         
         else if globalCounter.globalTimer?.isValid == false && globalCounter.globalTimeCounter > 0 {
@@ -117,7 +120,7 @@ class vfEpi: UIViewController {
             globalCounter.cprCountGlobal = 0
             globalCounter.epiCountGlobal = 0
             globalCounter.defibCountGlobal = 0
-            globalCounter.globalTimeCounter=0
+            globalCounter.globalTimeCounter = 0
             cprCountGlobal.text = "CPR: 0"
             epiCountGlobal.text = "Epi: 0"
             shockCountGlobal.text = "Defib: 0"
@@ -126,13 +129,13 @@ class vfEpi: UIViewController {
             epiButton.configureCheck()
             intButton.configureCheck()
             shockButton.configureCheck()
-            timer?.invalidate()
-            epiTimer?.invalidate()
+            cprTimer.timer?.invalidate()
+            epiTimer.timer?.invalidate()
             epiLabel.text = "Epinephrine 1mg"
             cprLabel.text = "Start CPR"}
         
         else {
-            startGlobalTime()
+            globalCounter.startGlobalTime()
             resetButton.setTitle("Stop", for: .normal)
             resetButton.setTitleColor(.systemRed, for: .normal)
         }
@@ -141,18 +144,18 @@ class vfEpi: UIViewController {
         
         
         
-    
     @IBAction func homeTapped(_ sender: Any) {
         globalCounter.cprCountGlobal = 0
         globalCounter.epiCountGlobal = 0
         globalCounter.defibCountGlobal = 0
         globalCounter.globalTimeCounter=0
-
+        globalCounter.globalTimer.invalidate()
+        
         cprCountGlobal.text = "CPR: 0"
         epiCountGlobal.text = "Epi: 0"
         shockCountGlobal.text = "Defib: 0"
         timeCountGlobal.text = "Total Time: 00:00"
-        globalCounter.globalTimer.invalidate()
+        
         self.navigationController?.popToRootViewController(animated: true)
     }
     
@@ -164,23 +167,29 @@ class vfEpi: UIViewController {
     }
     
     
+//    MARK: Checklist
+    
     @IBAction func cprPressed(_ sender: Any) {
         
         cprButton.checkOffOn()
         
+        if cprTimer.timer?.isValid ?? false {
+            cprTimer.invalidate()
+            cprLabel.text = "Start CPR"
+        }
         
-        if timer?.isValid ?? false {
-            timer.invalidate()
+        else if cprTimer.timer?.isValid == false && cprTimer.time == 120 {
+            cprTimer.time = 0
             cprLabel.text = "Start CPR"
         }
         
         else{
-            cprSeconds = 0
-            startCPR()
+            cprTimer.time = 0
+            cprTimer.startTimer()
             globalCounter.cprCountGlobal+=1
-            cprCountGlobal.text = "CPR:\(globalCounter.cprCountGlobal)"
+            cprCountGlobal.text = "CPR: \(globalCounter.cprCountGlobal)"
         }
-        
+    
         
     }
     
@@ -201,21 +210,25 @@ class vfEpi: UIViewController {
     
     
     @IBAction func epiPressed(_ sender: Any) {
-        
         epiButton.checkOffOn()
         
-        
-        if epiTimer?.isValid ?? false {
+        if epiTimer.timer?.isValid ?? false {
             epiTimer.invalidate()
             epiLabel.text = "Epinephrine 1mg"
         }
         
+        else if epiTimer.timer?.isValid == false && epiTimer.time == 120 {
+            epiTimer.time = 0
+            epiLabel.text = "Epinephrine 1mg"
+        }
+        
         else{
-            epiSeconds = 0
-            startEpi()
+            epiTimer.time = 0
+            epiTimer.startTimer()
             globalCounter.epiCountGlobal+=1
-            epiCountGlobal.text = "Epi:\(globalCounter.epiCountGlobal)"}
-}
+            epiCountGlobal.text = "Epi: \(globalCounter.epiCountGlobal)"}
+        
+    }
     
     
     @IBAction func intPressed(_ sender: Any) {
@@ -225,38 +238,5 @@ class vfEpi: UIViewController {
     
     
     
-    
-    
-    
-//    MARK: Timer set up
-    
-    func startEpi(){
-        epiTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countupEpi), userInfo: nil, repeats: true)
-    }
-    
-    
-    @objc func countupEpi() {
-        epiSeconds += 1
-        var minutes: Int
-        var seconds: Int
-        minutes = (epiSeconds % 3600) / 60
-        seconds = (epiSeconds % 3600) % 60
-        epiLabel.text = String(format: "Epi: %02d:%02d", minutes, seconds)
-    }
-    
-    
-    
-    func startCPR(){
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countup), userInfo: nil, repeats: true)
-    }
-    
-    @objc func countup() {
-        cprSeconds += 1
-        var minutes: Int
-        var seconds: Int
-        minutes = (cprSeconds % 3600) / 60
-        seconds = (cprSeconds % 3600) % 60
-        cprLabel.text = String(format: "CPR: %02d:%02d", minutes, seconds)
-    }
-    
+
 }

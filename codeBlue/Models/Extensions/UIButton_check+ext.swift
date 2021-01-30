@@ -34,10 +34,12 @@ func configureCheck(){
             isSelected = true
             
             
-        }
+        }}
+        
+        
     
     }
     
     
-}
+
 
