@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 
 class guidedNoPulseVC1: UIViewController {
@@ -18,6 +19,7 @@ class guidedNoPulseVC1: UIViewController {
     @IBOutlet var cprLabel: UILabel!
     
     private let cprTimer = timerClass(type: "CPR")
+    private let cprVibration = cprVibrationTimer()
    
 //  MARK: GLOBAL VARIABLE Labels/Button
     @IBOutlet var cprCountGlobal: UILabel!
@@ -59,6 +61,8 @@ class guidedNoPulseVC1: UIViewController {
         super.viewDidDisappear(true)
         cprTimer.invalidate()
         cprTimer.time = 0
+        cprVibration.timer?.invalidate()
+        cprVibration.time = 0
     }
     
 
@@ -91,6 +95,8 @@ class guidedNoPulseVC1: UIViewController {
             resetGlobalButton.setTitle("Reset", for: .normal)
             resetGlobalButton.setTitleColor(.systemBlue, for: .normal)
             cprTimer.invalidate()
+            cprVibration.timer?.invalidate()
+            cprVibration.time = 0
         }
         
         else if globalCounter.globalTimer?.isValid == false && globalCounter.globalTimeCounter > 0 {
@@ -132,6 +138,8 @@ class guidedNoPulseVC1: UIViewController {
         globalCounter.cprCountGlobal = 0
         globalCounter.epiCountGlobal = 0
         globalCounter.defibCountGlobal = 0
+        cprVibration.time=0
+        cprVibration.timer?.invalidate()
         self.navigationController?.popToRootViewController(animated: true)
     }
     
@@ -142,13 +150,22 @@ class guidedNoPulseVC1: UIViewController {
     @IBAction func cprPress(_ sender: Any) {
         cprButton.checkOffOn()
         
+       
+
+
+//       TIMER LOGIC
+        
         if cprTimer.timer?.isValid ?? false {
             cprTimer.invalidate()
+            cprVibration.timer?.invalidate()
+            cprVibration.time=0
             cprLabel.text = "Start CPR"
         }
         
         else if cprTimer.timer?.isValid == false && cprTimer.time == 120 {
             cprTimer.time = 0
+            cprVibration.time=0
+            cprVibration.timer?.invalidate()
             cprLabel.text = "Start CPR"
         }
         
@@ -157,6 +174,10 @@ class guidedNoPulseVC1: UIViewController {
             cprTimer.startTimer()
             globalCounter.cprCountGlobal+=1
             cprCountGlobal.text = "CPR: \(globalCounter.cprCountGlobal)"
+            
+            cprAlert.sendAlert(VC: self)
+            cprVibration.startVibration()
+        
         }
         
     }
@@ -169,6 +190,14 @@ class guidedNoPulseVC1: UIViewController {
     @IBAction func defibPress(_ sender: Any) {
         defibButton.checkOffOn()
     }
+    
+    
+    
+//    CPR correct alert
+    
+    
+    
+    
 
     
 }

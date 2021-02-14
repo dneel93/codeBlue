@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5C767F190C8375A43E4636CF /* Pods_codeBlue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 218F4FFF39E871C2346E422A /* Pods_codeBlue.framework */; };
+		CC0E3A3125D8F518001E16E8 /* cprVibrationTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0E3A3025D8F518001E16E8 /* cprVibrationTimer.swift */; };
 		CC2771502513110300EC6E94 /* Algos.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC27714F2513110300EC6E94 /* Algos.storyboard */; };
 		CC2771522513113500EC6E94 /* algoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2771512513113500EC6E94 /* algoVC.swift */; };
 		CC2771542513981200EC6E94 /* cardiacArrestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2771532513981200EC6E94 /* cardiacArrestVC.swift */; };
@@ -23,6 +24,7 @@
 		CC50ABF5255142BB00B2B96E /* vfEpi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC50ABF4255142BA00B2B96E /* vfEpi.swift */; };
 		CC50ABF8255142D200B2B96E /* vfAmio.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC50ABF7255142D200B2B96E /* vfAmio.swift */; };
 		CC50ABFB2551451500B2B96E /* vfVT.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC50ABFA2551451500B2B96E /* vfVT.swift */; };
+		CC606D0825D8863E002BAEFE /* cprAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC606D0725D8863E002BAEFE /* cprAlert.swift */; };
 		CC7B74C82571FB4400BC961E /* UILabel+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7B74C72571FB4300BC961E /* UILabel+ext.swift */; };
 		CC7B7561259331E900BC961E /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7B7560259331E800BC961E /* AboutVC.swift */; };
 		CC7B75642593329000BC961E /* AclsInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7B75632593328F00BC961E /* AclsInfoVC.swift */; };
@@ -58,6 +60,7 @@
 /* Begin PBXFileReference section */
 		218F4FFF39E871C2346E422A /* Pods_codeBlue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_codeBlue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4465DD027E4E25CB011CF503 /* Pods-codeBlue.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-codeBlue.release.xcconfig"; path = "Target Support Files/Pods-codeBlue/Pods-codeBlue.release.xcconfig"; sourceTree = "<group>"; };
+		CC0E3A3025D8F518001E16E8 /* cprVibrationTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cprVibrationTimer.swift; sourceTree = "<group>"; };
 		CC27714F2513110300EC6E94 /* Algos.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Algos.storyboard; sourceTree = "<group>"; };
 		CC2771512513113500EC6E94 /* algoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = algoVC.swift; sourceTree = "<group>"; };
 		CC2771532513981200EC6E94 /* cardiacArrestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardiacArrestVC.swift; sourceTree = "<group>"; };
@@ -73,6 +76,7 @@
 		CC50ABF4255142BA00B2B96E /* vfEpi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vfEpi.swift; sourceTree = "<group>"; };
 		CC50ABF7255142D200B2B96E /* vfAmio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vfAmio.swift; sourceTree = "<group>"; };
 		CC50ABFA2551451500B2B96E /* vfVT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vfVT.swift; sourceTree = "<group>"; };
+		CC606D0725D8863E002BAEFE /* cprAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cprAlert.swift; sourceTree = "<group>"; };
 		CC7B74C72571FB4300BC961E /* UILabel+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+ext.swift"; sourceTree = "<group>"; };
 		CC7B7560259331E800BC961E /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
 		CC7B75632593328F00BC961E /* AclsInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AclsInfoVC.swift; sourceTree = "<group>"; };
@@ -236,6 +240,8 @@
 				CC7B9E78251C0A2500D8F16D /* Extensions */,
 				CC7B756F2593B0A400BC961E /* SideMenuManager.swift */,
 				CCC2524F25A587C600E98607 /* TimerLogic.swift */,
+				CC0E3A3025D8F518001E16E8 /* cprVibrationTimer.swift */,
+				CC606D0725D8863E002BAEFE /* cprAlert.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -361,6 +367,7 @@
 			files = (
 				CCC4298B2517DED2001AA0D9 /* UIButton_check+ext.swift in Sources */,
 				CC92B9F125C3EDEF00BB0493 /* codeStructureVC.swift in Sources */,
+				CC606D0825D8863E002BAEFE /* cprAlert.swift in Sources */,
 				CCEB7CAB2540124C00DD66EB /* tachyTableVC.swift in Sources */,
 				CC50ABE9255067A800B2B96E /* logTableVC.swift in Sources */,
 				CCA449BD2511E5CB0097D370 /* AppDelegate.swift in Sources */,
@@ -388,6 +395,7 @@
 				CC7B74C82571FB4400BC961E /* UILabel+ext.swift in Sources */,
 				CC7B75702593B0A400BC961E /* SideMenuManager.swift in Sources */,
 				CCEB7C9B253F50C000DD66EB /* postArrestVC.swift in Sources */,
+				CC0E3A3125D8F518001E16E8 /* cprVibrationTimer.swift in Sources */,
 				CC2771522513113500EC6E94 /* algoVC.swift in Sources */,
 				CC82B9FF25591685001DB28C /* guidedPulseVC6.swift in Sources */,
 				CC2771542513981200EC6E94 /* cardiacArrestVC.swift in Sources */,

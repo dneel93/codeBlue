@@ -20,6 +20,22 @@ class codeStructureVC: UIViewController {
     @IBOutlet var leaderButton: UIButton!
     
     
+//    CHECKS
+    
+    
+    @IBOutlet var checkAir: UIImageView!
+    
+    @IBOutlet var checkCPR: UIImageView!
+    
+    @IBOutlet var checkDefib: UIImageView!
+    
+    @IBOutlet var checkMeds: UIImageView!
+    
+    @IBOutlet var checkScribe: UIImageView!
+    
+    @IBOutlet var checkLeader: UIImageView!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +46,19 @@ class codeStructureVC: UIViewController {
     @IBAction func lungPressed(_ sender: Any) {
         
         
+        if lungButton.isSelected == true{
+            checkAir.image = UIImage(named: "white")
+            lungButton.isSelected = false
+        
+        }
+        
+        else{
+            checkAir.image = UIImage(named: "green_check")
+            lungButton.isSelected = true
+            
+            
+        }
+        
         
  }
     
@@ -38,7 +67,18 @@ class codeStructureVC: UIViewController {
     
     @IBAction func cprPressed(_ sender: Any) {
         
+        if cprButton.isSelected == true{
+            checkCPR.image = UIImage(named: "white")
+            cprButton.isSelected = false
         
+        }
+        
+        else{
+            checkCPR.image = UIImage(named: "green_check")
+            cprButton.isSelected = true
+            
+            
+        }
         }
     
     
@@ -46,18 +86,50 @@ class codeStructureVC: UIViewController {
     
     @IBAction func defibPressed(_ sender: Any) {
         
+        if defibButton.isSelected == true{
+            checkDefib.image = UIImage(named: "white")
+            defibButton.isSelected = false
+        
+        }
+        
+        else{
+            checkDefib.image = UIImage(named: "green_check")
+            defibButton.isSelected = true
+            
+            
+        }
        
         
     }
     
     
     @IBAction func medsPressed(_ sender: Any) {
-      
+        if medsButton.isSelected == true{
+            checkMeds.image = UIImage(named: "white")
+            medsButton.isSelected = false
+        
+        }
+        
+        else{
+            checkMeds.image = UIImage(named: "green_check")
+            medsButton.isSelected = true
+            
+            
+        }
     }
     
     
     @IBAction func scribePressed(_ sender: Any) {
+        if scribeButton.isSelected == true{
+            checkScribe.image = UIImage(named: "white")
+            scribeButton.isSelected = false
         
+        }
+        
+        else{
+            checkScribe.image = UIImage(named: "green_check")
+            scribeButton.isSelected = true
+        }
       
         
     }
@@ -65,7 +137,18 @@ class codeStructureVC: UIViewController {
     
     @IBAction func leaderPressed(_ sender: Any) {
         
-      
+        if leaderButton.isSelected == true{
+            checkLeader.image = UIImage(named: "white")
+           leaderButton.isSelected = false
+        
+        }
+        
+        else{
+            checkLeader.image = UIImage(named: "green_check")
+            leaderButton.isSelected = true
+            
+            
+        }
         
         
         }

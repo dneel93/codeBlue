@@ -153,7 +153,7 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CPR" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iMD-sg-FHs">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="60"/>
-                                                <color key="backgroundColor" red="0.03176246211" green="0.21561843159999999" blue="0.6784690619" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" red="0.034684747459999998" green="0.2008288801" blue="0.70592218640000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="Dt2-hh-QF3"/>
                                                     <constraint firstAttribute="height" constant="60" id="GaW-tS-2rt"/>
@@ -164,7 +164,7 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shock" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTn-1A-cxv">
                                                 <rect key="frame" x="116" y="0.0" width="100" height="60"/>
-                                                <color key="backgroundColor" red="0.03176246211" green="0.21561843159999999" blue="0.6784690619" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" red="0.034684747459999998" green="0.2008288801" blue="0.70592218640000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="ZV5-0j-RLe"/>
                                                     <constraint firstAttribute="width" constant="100" id="lAV-JE-DVi"/>
@@ -175,7 +175,7 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Epi" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQ8-hV-Kh3">
                                                 <rect key="frame" x="232" y="0.0" width="100" height="60"/>
-                                                <color key="backgroundColor" red="0.03176246211" green="0.21561843159999999" blue="0.6784690619" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" red="0.034684747459999998" green="0.2008288801" blue="0.70592218640000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="3b6-Qy-fgU"/>
                                                     <constraint firstAttribute="height" constant="60" id="dOq-Fd-egv"/>
@@ -299,8 +299,9 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="RR4-iy-Tda">
                                         <rect key="frame" x="120.00000000000001" y="78" width="216.33333333333337" height="151"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="SHOCK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIh-K7-NoQ">
-                                                <rect key="frame" x="0.0" y="0.0" width="74" height="26.333333333333332"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="SHOCK ⚡️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIh-K7-NoQ">
+                                                <rect key="frame" x="0.0" y="0.0" width="105" height="26.333333333333332"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -427,7 +428,7 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CPR" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZV7-th-bOn">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="60"/>
-                                                <color key="backgroundColor" red="0.03176246211" green="0.21561843159999999" blue="0.6784690619" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" red="0.034684747459999998" green="0.2008288801" blue="0.70592218640000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="Ppv-6S-Nvr"/>
                                                     <constraint firstAttribute="height" constant="60" id="vx3-Wb-Iui"/>
@@ -438,7 +439,7 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shock" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ha8-QE-QQI">
                                                 <rect key="frame" x="116" y="0.0" width="100" height="60"/>
-                                                <color key="backgroundColor" red="0.03176246211" green="0.21561843159999999" blue="0.6784690619" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" red="0.034684747459999998" green="0.2008288801" blue="0.70592218640000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="dAc-Ne-NnT"/>
                                                     <constraint firstAttribute="height" constant="60" id="ncW-1L-jyg"/>
@@ -449,7 +450,7 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Epi" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HKr-zn-8Ur">
                                                 <rect key="frame" x="232" y="0.0" width="100" height="60"/>
-                                                <color key="backgroundColor" red="0.03176246211" green="0.21561843159999999" blue="0.6784690619" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" red="0.034684747459999998" green="0.2008288801" blue="0.70592218640000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="0Pd-Ln-0oc"/>
                                                     <constraint firstAttribute="height" constant="60" id="TPk-5l-2OV"/>
@@ -1102,8 +1103,8 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="QPV-jk-sIR">
                                         <rect key="frame" x="120.00000000000001" y="78.000000000000014" width="186.33333333333337" height="177.33333333333337"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SHOCK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Q2-s4-62i">
-                                                <rect key="frame" x="0.0" y="0.0" width="74" height="26.333333333333332"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SHOCK ⚡️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Q2-s4-62i">
+                                                <rect key="frame" x="0.0" y="0.0" width="105" height="26.333333333333332"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1381,8 +1382,8 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="NFb-jH-VNo">
                                         <rect key="frame" x="119.99999999999999" y="78" width="190.66666666666663" height="168"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SHOCK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EvH-PQ-PYQ">
-                                                <rect key="frame" x="0.0" y="0.0" width="74" height="26.333333333333332"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SHOCK ⚡️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EvH-PQ-PYQ">
+                                                <rect key="frame" x="0.0" y="0.0" width="105" height="26.333333333333332"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1407,7 +1408,7 @@
                                                     <constraint firstAttribute="width" constant="180" id="jva-AW-44v"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                                <state key="normal" title="Consider Causes">
+                                                <state key="normal" title="Consider &quot;H &amp; T's&quot;">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
@@ -1652,7 +1653,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="NL3-mz-BJm"/>
+        <segue reference="PfX-xa-Bmr"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="home-1" width="29.666666030883789" height="31"/>

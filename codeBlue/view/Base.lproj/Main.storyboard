@@ -108,8 +108,9 @@
                                 <action selector="menuTapped:" destination="BYZ-38-t0r" id="SHk-8T-s3f"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="wSe-Tw-5IF">
+                        <barButtonItem key="rightBarButtonItem" image="text.badge.checkmark" catalog="system" id="wSe-Tw-5IF">
                             <inset key="imageInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <color key="tintColor" red="0.034684747459999998" green="0.2008288801" blue="0.70592218640000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <segue destination="exZ-hy-hLf" kind="presentation" id="7Ba-K3-oCy"/>
                             </connections>
@@ -210,7 +211,7 @@
                                     <action selector="leaderPressed:" destination="exZ-hy-hLf" eventType="touchUpInside" id="fwo-Iu-n38"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green_check" translatesAutoresizingMaskIntoConstraints="NO" id="sdS-Rz-0BY">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white" translatesAutoresizingMaskIntoConstraints="NO" id="sdS-Rz-0BY">
                                 <rect key="frame" x="124" y="113" width="35" height="35"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -218,35 +219,35 @@
                                     <constraint firstAttribute="height" constant="35" id="MAd-GN-wzH"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green_check" translatesAutoresizingMaskIntoConstraints="NO" id="KuP-cA-DAh">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white" translatesAutoresizingMaskIntoConstraints="NO" id="KuP-cA-DAh">
                                 <rect key="frame" x="20" y="236" width="35" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="35" id="sC6-1h-7AS"/>
                                     <constraint firstAttribute="height" constant="35" id="zSS-gm-N2K"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green_check" translatesAutoresizingMaskIntoConstraints="NO" id="Fpq-KV-jRe">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white" translatesAutoresizingMaskIntoConstraints="NO" id="Fpq-KV-jRe">
                                 <rect key="frame" x="227" y="236" width="35" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="Pda-do-Kfj"/>
                                     <constraint firstAttribute="width" constant="35" id="kVg-3v-FHw"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green_check" translatesAutoresizingMaskIntoConstraints="NO" id="vjx-ot-QVR">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white" translatesAutoresizingMaskIntoConstraints="NO" id="vjx-ot-QVR">
                                 <rect key="frame" x="20" y="415" width="35" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="aFA-b8-Ibi"/>
                                     <constraint firstAttribute="width" constant="35" id="nLF-q2-JYS"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green_check" translatesAutoresizingMaskIntoConstraints="NO" id="2xx-qc-GT2">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white" translatesAutoresizingMaskIntoConstraints="NO" id="2xx-qc-GT2">
                                 <rect key="frame" x="227" y="415" width="35" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="35" id="JL7-aB-9tS"/>
                                     <constraint firstAttribute="height" constant="35" id="j8x-J7-2fI"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green_check" translatesAutoresizingMaskIntoConstraints="NO" id="nVv-bW-Pbg">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white" translatesAutoresizingMaskIntoConstraints="NO" id="nVv-bW-Pbg">
                                 <rect key="frame" x="124" y="575" width="35" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="3Mx-Pb-A46"/>
@@ -329,6 +330,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="checkAir" destination="sdS-Rz-0BY" id="q9J-Qr-30T"/>
+                        <outlet property="checkCPR" destination="KuP-cA-DAh" id="djc-1A-Zyd"/>
+                        <outlet property="checkDefib" destination="Fpq-KV-jRe" id="UeG-qB-SXW"/>
+                        <outlet property="checkLeader" destination="nVv-bW-Pbg" id="F4e-m4-KyJ"/>
+                        <outlet property="checkMeds" destination="vjx-ot-QVR" id="b4r-ZF-CiL"/>
+                        <outlet property="checkScribe" destination="2xx-qc-GT2" id="OIU-0y-zLN"/>
                         <outlet property="cprButton" destination="87i-fU-AZ2" id="B9s-Jt-gbg"/>
                         <outlet property="defibButton" destination="Pa5-AJ-s5h" id="owV-YJ-6ZM"/>
                         <outlet property="leaderButton" destination="TeE-B3-KRu" id="SJy-xO-a5a"/>
@@ -420,13 +427,14 @@
     <resources>
         <image name="cpr" width="121" height="121"/>
         <image name="defib" width="121" height="121"/>
-        <image name="green_check" width="53" height="53"/>
         <image name="leader" width="121" height="121"/>
         <image name="lung" width="121" height="121"/>
         <image name="meds" width="121" height="121"/>
         <image name="menubutton-1" width="15" height="17"/>
         <image name="noun_health_main" width="1200" height="1200"/>
         <image name="scribe" width="121" height="121"/>
+        <image name="text.badge.checkmark" catalog="system" width="128" height="109"/>
+        <image name="white" width="53" height="53"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
