@@ -21,9 +21,13 @@ class vfEpi: UIViewController {
     @IBOutlet var shockButton: UIButton!
     @IBOutlet var epiLabel: UILabel!
     
+    @IBOutlet weak var roscButton: UIButton!
+    @IBOutlet weak var algoButton: UIButton!
+    @IBOutlet weak var rolesButton: UIButton!
     
     private let cprTimer = timerClass(type: "CPR")
     private let epiTimer = timerClass(type: "Epi")
+    private let cprVibration = cprVibrationTimer()
     
 //    MARK: GLOBAL VARIABLES
     
@@ -33,6 +37,8 @@ class vfEpi: UIViewController {
     @IBOutlet var resetButton: UIButton!
     @IBOutlet var timeCountGlobal: UILabel!
     
+    
+    @IBOutlet weak var resumeButton: UIButton!
     
 
 //    MARK:  Code
@@ -46,6 +52,9 @@ class vfEpi: UIViewController {
         
         noButton.layer.cornerRadius = 8
         yesButton.layer.cornerRadius = 8
+        algoButton.layer.cornerRadius = 8
+        roscButton.layer.cornerRadius = 8
+        rolesButton.layer.cornerRadius = 8
         cprButton.configureCheck()
         epiButton.configureCheck()
         intButton.configureCheck()
@@ -58,13 +67,11 @@ class vfEpi: UIViewController {
         epiCountGlobal.configureLabel()
         cprTimer.setLabel(cprLabel, self)
         epiTimer.setLabel(epiLabel, self)
-        
-       
-        
-        
+        resumeButton.isEnabled = false
+        resumeButton.setBackgroundImage(UIImage(named:"white"), for: .disabled)
+        resumeButton.setBackgroundImage(UIImage(named:"playButton"), for: .normal)
     }
     
-
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -98,12 +105,14 @@ class vfEpi: UIViewController {
         cprTimer.time = 0
         epiTimer.invalidate()
         epiTimer.time = 0
+        cprVibration.timer?.invalidate()
+        cprVibration.time = 0
+        resumeButton.isEnabled = false
     }
     
     
     
     @IBAction func resetTapped(_ sender: Any) {
-        
         
         if globalCounter.globalTimer?.isValid ?? false {
             globalCounter.globalTimer?.invalidate()
@@ -111,6 +120,8 @@ class vfEpi: UIViewController {
             resetButton.setTitleColor(.systemBlue, for: .normal)
             cprTimer.timer?.invalidate()
             epiTimer.timer?.invalidate()
+            cprVibration.timer?.invalidate()
+            resumeButton.isEnabled = true
         }
         
         else if globalCounter.globalTimer?.isValid == false && globalCounter.globalTimeCounter > 0 {
@@ -132,16 +143,41 @@ class vfEpi: UIViewController {
             cprTimer.timer?.invalidate()
             epiTimer.timer?.invalidate()
             epiLabel.text = "Epinephrine 1mg"
-            cprLabel.text = "Start CPR"}
+            cprLabel.text = "Start CPR"
+            resumeButton.isEnabled = false
+        }
         
         else {
             globalCounter.startGlobalTime()
             resetButton.setTitle("Stop", for: .normal)
             resetButton.setTitleColor(.systemRed, for: .normal)
+            resumeButton.isEnabled = false
+            
         }
     
     }
+    
+    
+    @IBAction func resumePressed(_ sender: Any) {
+        resumeButton.isEnabled = false
         
+        if cprTimer.timer?.isValid == false && cprTimer.time > 0 {
+            cprTimer.startTimer()
+            
+        }
+        
+        if epiTimer.timer?.isValid == false && epiTimer.time > 0 {
+            epiTimer.startTimer()
+            
+        }
+        
+        globalCounter.startGlobalTime()
+        resetButton.setTitle("Stop", for: .normal)
+        resetButton.setTitleColor(.systemRed, for: .normal)
+    }
+
+    
+//    UI Buttons
         
         
     @IBAction func homeTapped(_ sender: Any) {
@@ -150,6 +186,8 @@ class vfEpi: UIViewController {
         globalCounter.defibCountGlobal = 0
         globalCounter.globalTimeCounter=0
         globalCounter.globalTimer.invalidate()
+        cprVibration.timer?.invalidate()
+        cprVibration.time = 0
         
         cprCountGlobal.text = "CPR: 0"
         epiCountGlobal.text = "Epi: 0"
@@ -157,6 +195,36 @@ class vfEpi: UIViewController {
         timeCountGlobal.text = "Total Time: 00:00"
         
         self.navigationController?.popToRootViewController(animated: true)
+    }
+    
+    @IBAction func roscPress(_ sender: Any) {
+        globalCounter.globalTimer?.invalidate()
+        resetButton.setTitle("Reset", for: .normal)
+        resetButton.setTitleColor(.systemBlue, for: .normal)
+        cprTimer.invalidate()
+        cprVibration.timer?.invalidate()
+        cprVibration.time = 0
+        resumeButton.isEnabled = true
+        
+        let storyboard = UIStoryboard(name: "Algos", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "rosc")
+        self.present(vc, animated: true)
+    }
+    
+    @IBAction func algoPress(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "guidedNoPulse", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "cardiacAlgo")
+        self.present(vc, animated: true)
+    }
+    
+    
+    
+    
+    
+    @IBAction func structurePressed(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "codeStructure")
+        self.present(vc, animated: true)
     }
     
 
@@ -176,6 +244,8 @@ class vfEpi: UIViewController {
         if cprTimer.timer?.isValid ?? false {
             cprTimer.invalidate()
             cprLabel.text = "Start CPR"
+            cprVibration.timer?.invalidate()
+            cprVibration.time = 0
         }
         
         else if cprTimer.timer?.isValid == false && cprTimer.time == 120 {
@@ -188,6 +258,9 @@ class vfEpi: UIViewController {
             cprTimer.startTimer()
             globalCounter.cprCountGlobal+=1
             cprCountGlobal.text = "CPR: \(globalCounter.cprCountGlobal)"
+            cprVibration.time = 0
+            cprVibration.startVibration()
+            cprAlert.sendAlert(VC: self)
         }
     
         

@@ -19,8 +19,14 @@ class vfAmio: UIViewController {
     @IBOutlet var causesInfo: UIButton!
     @IBOutlet var shockButton: UIButton!
     
+//    MARK: top buttons
+    @IBOutlet weak var rolesButton: UIButton!
+    @IBOutlet weak var algoButton: UIButton!
+    @IBOutlet weak var roscButton: UIButton!
     
+//    MARK: Timers
     private let cprTimer = timerClass(type: "CPR")
+    private let cprVibration = cprVibrationTimer()
     
 //   MARK: Global Variables
     
@@ -29,7 +35,7 @@ class vfAmio: UIViewController {
     @IBOutlet var epiCountGlobal: UILabel!
     @IBOutlet var resetButton: UIButton!
     @IBOutlet var timeCountGlobal: UILabel!
-    
+    @IBOutlet weak var resumeButton: UIButton!
     
 //  MARK: Code
     
@@ -43,6 +49,9 @@ class vfAmio: UIViewController {
        
         noButton.layer.cornerRadius = 8
         yesButton.layer.cornerRadius = 8
+        roscButton.layer.cornerRadius = 8
+        algoButton.layer.cornerRadius = 8
+        rolesButton.layer.cornerRadius = 8
         causesInfo.layer.cornerRadius = 8
         amioButton.configureCheck()
         cprButton.configureCheck()
@@ -55,9 +64,10 @@ class vfAmio: UIViewController {
         shockCountGlobal.configureLabel()
         epiCountGlobal.configureLabel()
         cprTimer.setLabel(cprLabel,self)
+        resumeButton.isEnabled = false
+        resumeButton.setBackgroundImage(UIImage(named:"white"), for: .disabled)
+        resumeButton.setBackgroundImage(UIImage(named:"playButton"), for: .normal)
         
-        
-      
     }
     
 
@@ -92,10 +102,14 @@ class vfAmio: UIViewController {
         super.viewDidDisappear(true)
         cprTimer.invalidate()
         cprTimer.time = 0
+        cprVibration.timer?.invalidate()
+        cprVibration.time = 0
+        resumeButton.isEnabled = false
     
     }
 
-    
+
+    // Regulatory buttons
     
     @IBAction func resetTapped(_ sender: Any) {
         if globalCounter.globalTimer?.isValid ?? false {
@@ -103,6 +117,8 @@ class vfAmio: UIViewController {
             resetButton.setTitle("Reset", for: .normal)
             resetButton.setTitleColor(.systemBlue, for: .normal)
             cprTimer.timer?.invalidate()
+            cprVibration.timer?.invalidate()
+            resumeButton.isEnabled = true
         }
         
         else if globalCounter.globalTimer?.isValid == false && globalCounter.globalTimeCounter > 0 {
@@ -121,13 +137,30 @@ class vfAmio: UIViewController {
             amioButton.configureCheck()
             shockButton.configureCheck()
             cprTimer.timer?.invalidate()
-            cprLabel.text = "Start CPR"}
+            cprLabel.text = "Start CPR"
+            resumeButton.isEnabled = false
+        }
         
         else {
             globalCounter.startGlobalTime()
             resetButton.setTitle("Stop", for: .normal)
             resetButton.setTitleColor(.systemRed, for: .normal)
+            resumeButton.isEnabled = false
         }
+    }
+    
+    
+    @IBAction func resumePressed(_ sender: Any) {
+        resumeButton.isEnabled = false
+        
+        if cprTimer.timer?.isValid == false && cprTimer.time > 0 {
+            cprTimer.startTimer()
+            
+        }
+        
+        globalCounter.startGlobalTime()
+        resetButton.setTitle("Stop", for: .normal)
+        resetButton.setTitleColor(.systemRed, for: .normal)
     }
     
     
@@ -137,6 +170,8 @@ class vfAmio: UIViewController {
         globalCounter.defibCountGlobal = 0
         globalCounter.globalTimeCounter=0
         globalCounter.globalTimer?.invalidate()
+        cprVibration.timer?.invalidate()
+        cprVibration.time = 0
         
         cprCountGlobal.text = "CPR: 0"
         epiCountGlobal.text = "Epi: 0"
@@ -145,6 +180,35 @@ class vfAmio: UIViewController {
         
         cprTimer.timer?.invalidate()
         self.navigationController?.popToRootViewController(animated: true)
+    }
+    
+    
+//    MARK: Top button functions
+    
+    @IBAction func structurePressed(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "codeStructure")
+        self.present(vc, animated: true)
+    }
+    
+    @IBAction func roscPress(_ sender: Any) {
+        globalCounter.globalTimer?.invalidate()
+        resetButton.setTitle("Reset", for: .normal)
+        resetButton.setTitleColor(.systemBlue, for: .normal)
+        cprTimer.invalidate()
+        cprVibration.timer?.invalidate()
+        cprVibration.time = 0
+        resumeButton.isEnabled = true
+        
+        let storyboard = UIStoryboard(name: "Algos", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "rosc")
+        self.present(vc, animated: true)
+    }
+    
+    @IBAction func algoPress(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "guidedNoPulse", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "cardiacAlgo")
+        self.present(vc, animated: true)
     }
     
     
@@ -172,6 +236,8 @@ class vfAmio: UIViewController {
         if cprTimer.timer?.isValid ?? false {
             cprTimer.invalidate()
             cprLabel.text = "Start CPR"
+            cprVibration.timer?.invalidate()
+            cprVibration.time = 0
         }
         
         else if cprTimer.timer?.isValid == false && cprTimer.time == 120 {
@@ -184,6 +250,9 @@ class vfAmio: UIViewController {
             cprTimer.startTimer()
             globalCounter.cprCountGlobal+=1
             cprCountGlobal.text = "CPR: \(globalCounter.cprCountGlobal)"
+            cprVibration.time = 0
+            cprVibration.startVibration()
+            cprAlert.sendAlert(VC: self)
         }
         
         

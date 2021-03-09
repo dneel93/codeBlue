@@ -20,8 +20,15 @@ class asystolePEA: UIViewController {
     @IBOutlet var epiLabel: UILabel!
     
     
+    @IBOutlet weak var roscButton: UIButton!
+    
+    @IBOutlet weak var rolesButton: UIButton!
+    @IBOutlet weak var algoButton: UIButton!
+    
+    
     private let cprTimer = timerClass(type: "CPR")
     private let epiTimer = timerClass(type: "Epi")
+    private let cprVibration = cprVibrationTimer()
     
     
 //    GLOBAL VARIABLES
@@ -30,6 +37,7 @@ class asystolePEA: UIViewController {
     @IBOutlet var epiCountGlobal: UILabel!
     @IBOutlet var resetButton: UIButton!
     @IBOutlet var timeCountGlobal: UILabel!
+    @IBOutlet weak var resumeButton: UIButton!
     
     
     override func viewDidLoad() {
@@ -40,6 +48,9 @@ class asystolePEA: UIViewController {
         
         noButton.configure(title: "No")
         yesButton.configure(title: "Yes")
+        roscButton.layer.cornerRadius = 8
+        algoButton.layer.cornerRadius = 8
+        rolesButton.layer.cornerRadius = 8
         cprButton.configureCheck()
         accessButton.configureCheck()
         epiButton.configureCheck()
@@ -50,9 +61,12 @@ class asystolePEA: UIViewController {
         cprCountGlobal.configureLabel()
         shockCountGlobal.configureLabel()
         epiCountGlobal.configureLabel()
-        
         cprTimer.setLabel(cprLabel,self)
         epiTimer.setLabel(epiLabel,self)
+        
+        resumeButton.isEnabled = false
+        resumeButton.setBackgroundImage(UIImage(named:"white"), for: .disabled)
+        resumeButton.setBackgroundImage(UIImage(named:"playButton"), for: .normal)
         
     }
     
@@ -83,6 +97,9 @@ class asystolePEA: UIViewController {
         cprTimer.time = 0
         epiTimer.invalidate()
         epiTimer.time = 0
+        cprVibration.timer?.invalidate()
+        cprVibration.time = 0
+        resumeButton.isEnabled = false
     }
     
     
@@ -94,6 +111,9 @@ class asystolePEA: UIViewController {
             resetButton.setTitleColor(.systemBlue, for: .normal)
             cprTimer.invalidate()
             epiTimer.invalidate()
+            cprVibration.timer?.invalidate()
+            resumeButton.isEnabled = true
+            
         }
         
         else if globalCounter.globalTimer?.isValid == false && globalCounter.globalTimeCounter > 0 {
@@ -105,6 +125,8 @@ class asystolePEA: UIViewController {
             globalCounter.epiCountGlobal = 0
             globalCounter.defibCountGlobal = 0
             globalCounter.globalTimeCounter = 0
+            cprVibration.timer?.invalidate()
+            resumeButton.isEnabled = false
 
             cprCountGlobal.text = "CPR: 0"
             epiCountGlobal.text = "Epi: 0"
@@ -123,9 +145,25 @@ class asystolePEA: UIViewController {
         else {
             globalCounter.startGlobalTime()
             resetButton.setTitle("Stop", for: .normal)
-            resetButton.setTitleColor(.systemRed, for: .normal)}
+            resetButton.setTitleColor(.systemRed, for: .normal)
+            resumeButton.isEnabled = false
+        }
         
     }
+    
+    
+    
+    @IBAction func resumePressed(_ sender: Any) {
+        resumeButton.isEnabled = false
+        
+        if cprTimer.timer?.isValid == false && cprTimer.time > 0 {
+            cprTimer.startTimer()}
+        
+        globalCounter.startGlobalTime()
+        resetButton.setTitle("Stop", for: .normal)
+        resetButton.setTitleColor(.systemRed, for: .normal)
+    }
+    
     
     @IBAction func homeTapped(_ sender: Any) {
         globalCounter.cprCountGlobal = 0
@@ -133,6 +171,8 @@ class asystolePEA: UIViewController {
         globalCounter.defibCountGlobal = 0
         globalCounter.globalTimeCounter=0
         globalCounter.globalTimer?.invalidate()
+        cprVibration.timer?.invalidate()
+        cprVibration.time = 0
 
         cprCountGlobal.text = "CPR: 0"
         epiCountGlobal.text = "Epi: 0"
@@ -144,6 +184,34 @@ class asystolePEA: UIViewController {
         self.navigationController?.popToRootViewController(animated: true)
     }
     
+    @IBAction func roscPress(_ sender: Any) {
+        globalCounter.globalTimer?.invalidate()
+        resetButton.setTitle("Reset", for: .normal)
+        resetButton.setTitleColor(.systemBlue, for: .normal)
+        cprTimer.invalidate()
+        cprVibration.timer?.invalidate()
+        cprVibration.time = 0
+        resumeButton.isEnabled = true
+        
+        let storyboard = UIStoryboard(name: "Algos", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "rosc")
+        self.present(vc, animated: true)
+    }
+    
+    @IBAction func algoPress(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "guidedNoPulse", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "cardiacAlgo")
+        self.present(vc, animated: true)
+    }
+    
+    
+    @IBAction func structurePressed(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "codeStructure")
+        self.present(vc, animated: true)
+    }
+    
+    
 //    CHECKLIST
     
     @IBAction func cprPress(_ sender: Any) {
@@ -152,6 +220,8 @@ class asystolePEA: UIViewController {
         if cprTimer.timer?.isValid ?? false {
             cprTimer.invalidate()
             cprLabel.text = "Start CPR"
+            cprVibration.timer?.invalidate()
+            cprVibration.time = 0
         }
         
         else if cprTimer.timer?.isValid == false && cprTimer.time == 120 {
@@ -164,6 +234,9 @@ class asystolePEA: UIViewController {
             cprTimer.startTimer()
             globalCounter.cprCountGlobal+=1
             cprCountGlobal.text = "CPR: \(globalCounter.cprCountGlobal)"
+            cprVibration.time = 0
+            cprVibration.startVibration()
+            cprAlert.sendAlert(VC: self)
         }
         
         

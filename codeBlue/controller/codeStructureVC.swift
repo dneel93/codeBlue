@@ -19,6 +19,7 @@ class codeStructureVC: UIViewController {
     @IBOutlet var scribeButton: UIButton!
     @IBOutlet var leaderButton: UIButton!
     
+    @IBOutlet var backButton: UIButton!
     
 //    CHECKS
     
@@ -61,6 +62,13 @@ class codeStructureVC: UIViewController {
         
         
  }
+    
+    
+    
+    @IBAction func backPressed(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: nil)
+    }
     
     
 

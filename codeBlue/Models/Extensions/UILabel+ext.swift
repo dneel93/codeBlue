@@ -10,10 +10,12 @@ import UIKit
 
 extension UILabel {
     
+    
     func configureLabel() {
         self.layer.cornerRadius = 8
         self.layer.masksToBounds = true
     }
+    
     
     
 }

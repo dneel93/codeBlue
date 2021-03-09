@@ -17,6 +17,7 @@ class guidedNoPulseVC1: UIViewController {
     @IBOutlet var o2Button: UIButton!
     @IBOutlet var defibButton: UIButton!
     @IBOutlet var cprLabel: UILabel!
+    @IBOutlet weak var boardButton: UIButton!
     
     private let cprTimer = timerClass(type: "CPR")
     private let cprVibration = cprVibrationTimer()
@@ -25,12 +26,21 @@ class guidedNoPulseVC1: UIViewController {
     @IBOutlet var cprCountGlobal: UILabel!
     @IBOutlet var shockCountGlobal: UILabel!
     @IBOutlet var epiCountGlobal: UILabel!
-    @IBOutlet var resetGlobalButton: UIButton!
+
+    @IBOutlet weak var resetButton: UIButton!
     @IBOutlet var timeCountGlobal: UILabel!
+    
+    @IBOutlet weak var resumeButton: UIButton!
     
 //  MARK: YES NO BUTTON
     @IBOutlet var noButton: UIButton!
     @IBOutlet var yesButton: UIButton!
+    
+    
+//    MARK: TOP buttons
+    @IBOutlet weak var roscButton: UIButton!
+    @IBOutlet weak var algoButton: UIButton!
+    @IBOutlet weak var rolesButton: UIButton!
     
     
 // MARK: Code
@@ -43,17 +53,30 @@ class guidedNoPulseVC1: UIViewController {
         
         noButton.configure(title: "No")
         yesButton.configure(title: "Yes")
+        roscButton.configure(title:"ROSC ♥️")
+        algoButton.configure(title: "Algo 📕")
+        rolesButton.configure(title: "Roles 📋")
         cprButton.configureCheck()
         o2Button.configureCheck()
         defibButton.configureCheck()
+        boardButton.configureCheck()
         cprCountGlobal.configureLabel()
         shockCountGlobal.configureLabel()
         epiCountGlobal.configureLabel()
         cprCountGlobal.text = "CPR:  \(globalCounter.cprCountGlobal)"
         epiCountGlobal.text="Epi: \(globalCounter.epiCountGlobal)"
         shockCountGlobal.text = "Defib: \(globalCounter.defibCountGlobal)"
-        
         cprTimer.setLabel(cprLabel, self)
+        
+        resumeButton.isEnabled = false
+        resumeButton.setBackgroundImage(UIImage(named:"white"), for: .disabled)
+        resumeButton.setBackgroundImage(UIImage(named:"playButton"), for: .normal)
+        
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "codeStructure")
+        self.present(vc, animated: true)
+        
         
     }
     
@@ -63,10 +86,10 @@ class guidedNoPulseVC1: UIViewController {
         cprTimer.time = 0
         cprVibration.timer?.invalidate()
         cprVibration.time = 0
+        resumeButton.isEnabled = false
+        
     }
     
-
-
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -78,11 +101,12 @@ class guidedNoPulseVC1: UIViewController {
         cprCountGlobal.text = "CPR:  \(globalCounter.cprCountGlobal)"
         epiCountGlobal.text="Epi: \(globalCounter.epiCountGlobal)"
         shockCountGlobal.text = "Defib: \(globalCounter.defibCountGlobal)"
-        cprTimer.timer?.invalidate()
+        cprTimer.invalidate()
         cprLabel.text="Start CPR"
         cprButton.configureCheck()
         o2Button.configureCheck()
         defibButton.configureCheck()
+        resumeButton.isEnabled = false
     }
     
     
@@ -92,23 +116,30 @@ class guidedNoPulseVC1: UIViewController {
         
         if globalCounter.globalTimer?.isValid ?? false {
             globalCounter.globalTimer?.invalidate()
-            resetGlobalButton.setTitle("Reset", for: .normal)
-            resetGlobalButton.setTitleColor(.systemBlue, for: .normal)
+            resetButton.setTitle("Reset", for: .normal)
+            resetButton.setTitleColor(.systemBlue, for: .normal)
             cprTimer.invalidate()
             cprVibration.timer?.invalidate()
             cprVibration.time = 0
+            resumeButton.isEnabled = true
+            
         }
+        
+        
         
         else if globalCounter.globalTimer?.isValid == false && globalCounter.globalTimeCounter > 0 {
             
-            resetGlobalButton.setTitle("Start", for: .normal)
-            resetGlobalButton.setTitleColor(.systemGreen, for: .normal)
+            resetButton.setTitle("Start", for: .normal)
+            resetButton.setTitleColor(.systemGreen, for: .normal)
             globalCounter.cprCountGlobal = 0
             globalCounter.epiCountGlobal = 0
             globalCounter.defibCountGlobal = 0
             globalCounter.globalTimeCounter = 0
-            cprTimer.timer?.invalidate()
+            cprTimer.invalidate()
+            
             cprLabel.text = "Start CPR"
+            cprVibration.timer?.invalidate()
+          
             
             cprCountGlobal.text = "CPR: 0"
             epiCountGlobal.text="Epi: 0"
@@ -117,13 +148,33 @@ class guidedNoPulseVC1: UIViewController {
             cprButton.configureCheck()
             o2Button.configureCheck()
             defibButton.configureCheck()
+            boardButton.configureCheck()
+            resumeButton.isEnabled = false
+    
        }
         
         else {
             globalCounter.startGlobalTime()
-            resetGlobalButton.setTitle("Stop", for: .normal)
-            resetGlobalButton.setTitleColor(.systemRed, for: .normal)}
+            resetButton.setTitle("Stop", for: .normal)
+            resetButton.setTitleColor(.systemRed, for: .normal)
+            resumeButton.isEnabled = false
+        }
         
+    }
+    
+    
+    
+    @IBAction func resumePressed(_ sender: Any) {
+        resumeButton.isEnabled = false
+        
+        if cprTimer.timer?.isValid == false && cprTimer.time > 0 {
+            cprTimer.startTimer()
+            
+        }
+        
+        globalCounter.startGlobalTime()
+        resetButton.setTitle("Stop", for: .normal)
+        resetButton.setTitleColor(.systemRed, for: .normal)
     }
     
     
@@ -143,7 +194,44 @@ class guidedNoPulseVC1: UIViewController {
         self.navigationController?.popToRootViewController(animated: true)
     }
     
+// Top buttons
     
+    @IBAction func rolesPress(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "codeStructure")
+        self.present(vc, animated: true)
+    }
+    
+    
+    @IBAction func roscPress(_ sender: Any) {
+        globalCounter.globalTimer?.invalidate()
+        resetButton.setTitle("Reset", for: .normal)
+        resetButton.setTitleColor(.systemBlue, for: .normal)
+        cprTimer.invalidate()
+        cprVibration.timer?.invalidate()
+        cprVibration.time = 0
+        resumeButton.isEnabled = true
+        
+        let storyboard = UIStoryboard(name: "Algos", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "rosc")
+        self.present(vc, animated: true)
+    }
+    
+    
+    
+    @IBAction func algoPress(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "guidedNoPulse", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "cardiacAlgo")
+        self.present(vc, animated: true)
+    
+        }
+        
+    
+    
+    
+    
+
     
 //    MARK: CHECKLIST
 
@@ -153,7 +241,7 @@ class guidedNoPulseVC1: UIViewController {
        
 
 
-//       TIMER LOGIC
+//       TIMER LOGIC for CPR (timer and vibration/alert)
         
         if cprTimer.timer?.isValid ?? false {
             cprTimer.invalidate()
@@ -175,8 +263,9 @@ class guidedNoPulseVC1: UIViewController {
             globalCounter.cprCountGlobal+=1
             cprCountGlobal.text = "CPR: \(globalCounter.cprCountGlobal)"
             
-            cprAlert.sendAlert(VC: self)
+            cprVibration.time = 0
             cprVibration.startVibration()
+            cprAlert.sendAlert(VC: self)
         
         }
         
@@ -189,6 +278,11 @@ class guidedNoPulseVC1: UIViewController {
         
     @IBAction func defibPress(_ sender: Any) {
         defibButton.checkOffOn()
+    }
+    
+    
+    @IBAction func boardPressed(_ sender: Any) {
+        boardButton.checkOffOn()
     }
     
     

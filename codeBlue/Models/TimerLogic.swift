@@ -57,7 +57,6 @@ class timerClass {
     }
     
     
-    
     @objc func countup() {
         time+=1
         var minutes: Int
