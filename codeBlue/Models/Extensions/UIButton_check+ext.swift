@@ -17,8 +17,8 @@ func configureCheck(){
         isSelected = false
     
     NSLayoutConstraint.activate([
-        widthAnchor.constraint(equalToConstant: 30),
-        heightAnchor.constraint(equalToConstant: 30)
+        widthAnchor.constraint(equalToConstant: 35),
+        heightAnchor.constraint(equalToConstant: 35)
         ])
     
     }

@@ -56,7 +56,7 @@ class globalCounter{
         seconds = (globalCounter.globalTimeCounter % 3600) % 60
         
         if let l = globalCounter.label{
-            l.text=String(format: "Total Time: %02d:%02d", minutes, seconds)
+            l.text=String(format: "%02d:%02d", minutes, seconds)
         }
         
         if globalCounter.globalTimeCounter == 600 {
@@ -67,6 +67,15 @@ class globalCounter{
         }
     
 }
+    
+   static func globalReset(){
+        
+        globalTimeCounter = 0
+        cprCountGlobal = 0
+        epiCountGlobal = 0
+        defibCountGlobal = 0
+        globalTimeCounter = 0
+    }
     
     
     

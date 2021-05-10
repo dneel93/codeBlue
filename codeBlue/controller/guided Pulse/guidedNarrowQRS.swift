@@ -31,6 +31,7 @@ class narrowQRS:UIViewController{
         adenosine.configureLabel()
         digoxin.configureLabel()
         
+        
         let tapBeta = UITapGestureRecognizer(target: self, action: #selector(tapFunctionBeta))
         betaBlock.addGestureRecognizer(tapBeta)
         

@@ -10,59 +10,100 @@ import UIKit
 
 class HTcausesTableVC: UITableViewController {
     
-    let sections = ["'H' causes", "'T' causes"]
-    
-    let Hs = ["Hypovolemia","Hypoxia","H+ (acidosis)","Hypokalemia","Hyperkalemia","Hypothermia"]
-    
-    let Ts = ["Tenison PTX","Tamponade","Toxins (meds,drugs)","Thrombosis (PE)","Thrmobosis (MI)"]
-    
-    
-    let colorBlue = UIColor(red: 0.027, green: 0.226, blue: 0.651, alpha: 1)
-    
+    var selectedIndex = IndexPath(row: -1, section: 0)
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "htCell")
     }
 
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let label = UILabel()
-        label.backgroundColor = colorBlue
-        label.text = "   \(sections[section])"
-        label.textColor = .white
-        return label
-    }
+
     
 
+//    Table View delegate methods
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return sections.count
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return htTable.array.count
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return 55.0
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        switch section{
-            case 0: return Hs.count
-            case 1: return Ts.count
-        default: return 1
-        
-        }
-       
-    }
     
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "htCell", for: indexPath) as! TableViewCell
         
         
-        let infos = indexPath.section == 0 ? Hs[indexPath.row] : Ts[indexPath.row]
+        let names = htTable.array[indexPath.row].name
         
-        cell.textLabel?.text=infos
-        cell.textLabel?.numberOfLines = 0
+        let status = htTable.array[indexPath.row].status
+        
+        
+        cell.label.text = names
+        cell.statusLabel.text = status
+        cell.label.numberOfLines = 0
+        cell.statusLabel.numberOfLines = 0
+        cell.setColor()
+        
+        if selectedIndex == indexPath {
+        
+            let p = cell.statusLabel.text
+            
+            switch p {
+            
+            case "?": cell.statusLabel.text = "Ruled out"
+                
+                cell.statusLabel.backgroundColor = .systemRed
+                
+                htTable.array[indexPath.row].status="Ruled out"
+            
+            case "Ruled out": cell.statusLabel.text = "Ruled in"
+                cell.statusLabel.backgroundColor = .systemGreen
+                htTable.array[indexPath.row].status="Ruled in"
+                
+            case "Ruled in": cell.statusLabel.text = "?"
+                cell.statusLabel.backgroundColor = .systemIndigo
+                
+                htTable.array[indexPath.row].status="?"
+            
+                
+            default: cell.statusLabel.text = "?"
+                cell.statusLabel.backgroundColor = .systemIndigo
+                htTable.array[indexPath.row].status="?"
+            
+            }
 
+        }
+        
         return cell
+        
+        
+        
     }
+    
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        selectedIndex = indexPath
+                
+        tableView.reloadRows(at: [selectedIndex], with:.automatic)
+        
+        
+    }
+    
+
+    
+    
 
 
     /*

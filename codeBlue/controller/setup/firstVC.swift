@@ -65,7 +65,7 @@ class firstVC: UIViewController, MenuControllerDelegate, UINavigationControllerD
                 
                 self?.ACLS.isHidden = true
                 self?.About.isHidden = true
-               if let url = URL(string: "https://docs.google.com/forms/d/e/1FAIpQLSe2t97vEccy5EJx1MyPb7PiPBBf0-xy0MKEqWJZ7CL5XWcuOw/viewform?usp=sf_link") {
+               if let url = URL(string: "https://docs.google.com/forms/u/0/d/1tFIBs2LHzO_XXKNnIOgLnc3vDfHJdaE8ten1sJ6i118/viewform?edit_requested=true") {
                     UIApplication.shared.open(url)}
             }
         })
