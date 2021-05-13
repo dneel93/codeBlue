@@ -136,7 +136,7 @@ class vfAmio: UIViewController {
             cprCountGlobal.text = "CPR: 0"
             epiCountGlobal.text = "Epi: 0"
             shockCountGlobal.text = "Defib: 0"
-            timeCountGlobal.text = "Total Time: 00:00"
+            timeCountGlobal.text = "00:00"
             cprButton.configureCheck()
             amioButton.configureCheck()
             cprTimer.timer?.invalidate()
@@ -180,7 +180,7 @@ class vfAmio: UIViewController {
         cprCountGlobal.text = "CPR: 0"
         epiCountGlobal.text = "Epi: 0"
         shockCountGlobal.text = "Defib: 0"
-        timeCountGlobal.text = "Total Time: 00:00"
+        timeCountGlobal.text = "00:00"
         
         cprTimer.timer?.invalidate()
         self.navigationController?.popToRootViewController(animated: true)

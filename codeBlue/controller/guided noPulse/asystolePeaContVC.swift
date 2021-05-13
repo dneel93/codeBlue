@@ -121,7 +121,7 @@ class asystolePeaContVC: UIViewController {
             cprCountGlobal.text = "CPR: 0"
             epiCountGlobal.text="Epi: 0"
             shockCountGlobal.text = "Defib: 0"
-            timeCountGlobal.text = "Total Time: 00:00"
+            timeCountGlobal.text = "00:00"
             cprTimer.timer?.invalidate()
             cprButton.configureCheck()
             causesButton.configureCheck()
@@ -169,7 +169,7 @@ class asystolePeaContVC: UIViewController {
         cprCountGlobal.text = "CPR: 0"
         epiCountGlobal.text = "Epi: 0"
         shockCountGlobal.text = "Defib: 0"
-        timeCountGlobal.text = "Total Time: 00:00"
+        timeCountGlobal.text = "00:00"
         globalCounter.globalTimer?.invalidate()
         self.navigationController?.popToRootViewController(animated: true)
     }
@@ -211,14 +211,14 @@ class asystolePeaContVC: UIViewController {
         
         if cprTimer.timer?.isValid ?? false {
             cprTimer.invalidate()
-            cprLabel.text = "00:00"
+            cprLabel.text = "2:00"
             cprVibration.timer?.invalidate()
             cprVibration.time = 0
         }
         
         else if cprTimer.timer?.isValid == false && cprTimer.time == 0 {
             cprTimer.time = 120
-            cprLabel.text = "00:00"
+            cprLabel.text = "2:00"
         }
         
         else{

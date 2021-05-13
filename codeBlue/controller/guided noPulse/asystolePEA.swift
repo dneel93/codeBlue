@@ -112,6 +112,7 @@ class asystolePEA: UIViewController {
         intLabel.reset()
         accessLabel.reset()
         intLabel.reset()
+        cprListLabel.reset()
     }
     
     
@@ -140,18 +141,19 @@ class asystolePEA: UIViewController {
             cprCountGlobal.text = "CPR: 0"
             epiCountGlobal.text = "Epi: 0"
             shockCountGlobal.text = "Defib: 0"
-            timeCountGlobal.text = "Total Time: 00:00"
+            timeCountGlobal.text = "00:00"
             cprButton.configureCheck()
             accessButton.configureCheck()
             epiButton.configureCheck()
             intubationButton.configureCheck()
             cprTimer.invalidate()
             epiTimer.invalidate()
-            cprLabel.text = "00:00"
+            cprLabel.text = "2:00"
             epiLabel.text = "Epinephrine 1mg"
             intLabel.reset()
             accessLabel.reset()
             intLabel.reset()
+            cprListLabel.reset()
        }
         
         else {
@@ -191,7 +193,7 @@ class asystolePEA: UIViewController {
         cprCountGlobal.text = "CPR: 0"
         epiCountGlobal.text = "Epi: 0"
         shockCountGlobal.text = "Defib: 0"
-        timeCountGlobal.text = "Total Time: 00:00"
+        timeCountGlobal.text = "00:00"
         
         cprTimer.invalidate()
         epiTimer.invalidate()

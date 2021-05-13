@@ -138,7 +138,7 @@ class vfEpi: UIViewController {
             cprCountGlobal.text = "CPR: 0"
             epiCountGlobal.text = "Epi: 0"
             shockCountGlobal.text = "Defib: 0"
-            timeCountGlobal.text = "Total Time: 00:00"
+            timeCountGlobal.text = "00:00"
             cprButton.configureCheck()
             epiButton.configureCheck()
             intButton.configureCheck()
@@ -194,7 +194,7 @@ class vfEpi: UIViewController {
         cprCountGlobal.text = "CPR: 0"
         epiCountGlobal.text = "Epi: 0"
         shockCountGlobal.text = "Defib: 0"
-        timeCountGlobal.text = "Total Time: 00:00"
+        timeCountGlobal.text = "00:00"
         
         self.navigationController?.popToRootViewController(animated: true)
     }

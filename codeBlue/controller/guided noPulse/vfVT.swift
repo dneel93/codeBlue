@@ -126,7 +126,7 @@ class vfVT: UIViewController {
             cprGlobalCount.text = "CPR: 0"
             epiCountGlobal.text = "Epi: 0"
             shockGlobalCount.text = "Defib: 0"
-            timeCountGlobal.text = "Total Time: 00:00"
+            timeCountGlobal.text = "00:00"
             
             cprButton.configureCheck()
             accessButton.configureCheck()
@@ -174,7 +174,7 @@ class vfVT: UIViewController {
         cprGlobalCount.text = "CPR: 0"
         epiCountGlobal.text = "Epi: 0"
         shockGlobalCount.text = "Defib: 0"
-        timeCountGlobal.text = "Total Time: 00:00"
+        timeCountGlobal.text = "00:00"
         globalCounter.globalTimer.invalidate()
         self.navigationController?.popToRootViewController(animated: true)
     }
