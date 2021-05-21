@@ -40,17 +40,16 @@ class guidedNoPulseVC1: UIViewController {
     
     @IBOutlet weak var resumeButton: UIButton!
     
-//  MARK: YES NO BUTTON
     
     
-//    MARK: TOP buttons
+//    MARK: Bottom popup buttons
     @IBOutlet weak var roscButton: UIButton!
     @IBOutlet weak var algoButton: UIButton!
     @IBOutlet weak var rolesButton: UIButton!
     @IBOutlet weak var causesButton: UIButton!
     
     
-// MARK: Code
+// MARK: UI Code 
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,6 +95,7 @@ class guidedNoPulseVC1: UIViewController {
         o2Label.reset()
         defibLabel.reset()
         
+        
     }
     
     
@@ -116,6 +116,7 @@ class guidedNoPulseVC1: UIViewController {
         cprButton.configureCheck()
         o2Button.configureCheck()
         defibButton.configureCheck()
+        assignButton.configureCheck()
         resumeButton.isEnabled = false
         
     }
@@ -190,7 +191,6 @@ class guidedNoPulseVC1: UIViewController {
     
     
     
-//    UI Buttons
     
     @IBAction func homeTapped(_ sender: Any) {
         globalCounter.globalTimer?.invalidate()
@@ -203,7 +203,7 @@ class guidedNoPulseVC1: UIViewController {
         self.navigationController?.popToRootViewController(animated: true)
     }
     
-// Top buttons
+// MARK: Bottom button actions
     
     @IBAction func rolesPress(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -251,7 +251,7 @@ class guidedNoPulseVC1: UIViewController {
     
 
     
-//    MARK: CHECKLIST
+//    MARK: Checklist Actions
     
     
     
@@ -323,8 +323,6 @@ class guidedNoPulseVC1: UIViewController {
     
   
     
-    
-//    CPR correct alert
     
     
     

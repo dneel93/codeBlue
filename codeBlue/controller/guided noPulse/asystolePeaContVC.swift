@@ -10,12 +10,14 @@ import UIKit
 
 class asystolePeaContVC: UIViewController {
    
+    // MARK: Checlist outlets
     @IBOutlet var cprLabel: UILabel!
     @IBOutlet var cprButton: UIButton!
     
     @IBOutlet var causesButton: UIButton!
     @IBOutlet weak var htLabel: UILabel!
     
+    // MARK: bottom popup button outlets
     @IBOutlet weak var roscButton: UIButton!
     @IBOutlet weak var algoButton: UIButton!
     @IBOutlet weak var rolesButton: UIButton!
@@ -30,7 +32,7 @@ class asystolePeaContVC: UIViewController {
     @IBOutlet weak var causesLabel: UILabel!
     
     
-//    GLOBAL VARIABLES
+//    MARK: GLOBAL VARIABLES
     @IBOutlet var resetButton: UIButton!
     @IBOutlet var cprCountGlobal: UILabel!
     @IBOutlet var shockCountGlobal: UILabel!
@@ -156,7 +158,7 @@ class asystolePeaContVC: UIViewController {
     
     
     
-//    UI BUTTONS
+
     
     @IBAction func homeTapped(_ sender: Any) {
         globalCounter.globalReset()
@@ -173,6 +175,8 @@ class asystolePeaContVC: UIViewController {
         globalCounter.globalTimer?.invalidate()
         self.navigationController?.popToRootViewController(animated: true)
     }
+    
+    // MARK: Bottom popup button code 
     
     
     @IBAction func structurePressed(_ sender: Any) {
@@ -202,7 +206,7 @@ class asystolePeaContVC: UIViewController {
     }
     
     
-//    MARK: CHECKLIST
+//    MARK: Checklist button actions
     
     @IBAction func cprPress(_ sender: Any) {
         

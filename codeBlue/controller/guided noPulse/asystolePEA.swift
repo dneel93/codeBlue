@@ -9,6 +9,8 @@
 import UIKit
 
 class asystolePEA: UIViewController {
+    
+    // MARK: Checklist outlets
 
     @IBOutlet var cprLabel: UILabel!
     @IBOutlet var cprButton: UIButton!
@@ -18,28 +20,27 @@ class asystolePEA: UIViewController {
     @IBOutlet var intubationButton: UIButton!
     @IBOutlet var epiLabel: UILabel!
     
-    // List labels
-    
-    
     @IBOutlet weak var intLabel: UILabel!
     @IBOutlet weak var accessLabel: UILabel!
     @IBOutlet weak var cprListLabel: UILabel!
     
     
-    @IBOutlet weak var roscButton: UIButton!
+    // MARK: Bottom popup button outlets
     
+    @IBOutlet weak var roscButton: UIButton!
     @IBOutlet weak var rolesButton: UIButton!
     @IBOutlet weak var algoButton: UIButton!
-    
     @IBOutlet weak var htButton: UIButton!
     
+    
+// MARK: Timers initialize
     
     private let cprTimer = timerClass(type: "CPR")
     private let epiTimer = timerClass(type: "Epi")
     private let cprVibration = cprVibrationTimer()
     
     
-//    GLOBAL VARIABLES
+//   MARK: GLOBAL VARIABLE + UI Buttons
     @IBOutlet var cprCountGlobal: UILabel!
     @IBOutlet var shockCountGlobal: UILabel!
     @IBOutlet var epiCountGlobal: UILabel!
@@ -47,6 +48,8 @@ class asystolePEA: UIViewController {
     @IBOutlet var timeCountGlobal: UILabel!
     @IBOutlet weak var resumeButton: UIButton!
     
+    
+    //MARK: UI Code
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,8 +82,6 @@ class asystolePEA: UIViewController {
     }
     
    
-    
-//    Code
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -198,7 +199,10 @@ class asystolePEA: UIViewController {
         cprTimer.invalidate()
         epiTimer.invalidate()
         self.navigationController?.popToRootViewController(animated: true)
+        
     }
+    
+    // MARK: Bottom button actions
     
     @IBAction func roscPress(_ sender: Any) {
         globalCounter.globalTimer?.invalidate()
@@ -238,7 +242,7 @@ class asystolePEA: UIViewController {
     }
     
     
-//    CHECKLIST
+//    MARK: Checklist buttons 
     
     @IBAction func cprPress(_ sender: Any) {
         cprButton.checkOffOn()
