@@ -19,6 +19,7 @@ struct HT {
 struct htTable{
 
 static var array:[HT] = [
+   FUCKING FUCKKCKCK
     
     HT(name: "Hypovolemia", status: "?"),
     HT(name: "Hypoxia", status: "?"),
