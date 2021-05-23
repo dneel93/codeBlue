@@ -94,7 +94,7 @@ class vfEpi: UIViewController {
        
         cprTimer.timer?.invalidate()
         epiTimer.timer?.invalidate()
-        cprLabel.text="00:00"
+        cprLabel.text="2:00"
         epiLabel.text = "Epinephrine 1mg"
        
         cprButton.configureCheck()
@@ -146,7 +146,7 @@ class vfEpi: UIViewController {
             cprTimer.timer?.invalidate()
             epiTimer.timer?.invalidate()
             epiLabel.text = "Epinephrine 1mg"
-            cprLabel.text = "00:00"
+            cprLabel.text = "2:00"
             resumeButton.isEnabled = false
             cprListLabel.reset()
             intLabel.reset()
@@ -250,14 +250,14 @@ class vfEpi: UIViewController {
         
         if cprTimer.timer?.isValid ?? false {
             cprTimer.invalidate()
-            cprLabel.text = "00:00"
+            cprLabel.text = "2:00"
             cprVibration.timer?.invalidate()
             cprVibration.time = 0
         }
         
         else if cprTimer.timer?.isValid == false && cprTimer.time == 0 {
             cprTimer.time = 120
-            cprLabel.text = "00:00"
+            cprLabel.text = "2:00"
         }
         
         else{

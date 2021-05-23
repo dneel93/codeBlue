@@ -11,11 +11,15 @@ import UIKit
 class HTcausesTableVC: UITableViewController {
     
     var selectedIndex = IndexPath(row: -1, section: 0)
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "htCell")
+        
+        self.tableView.rowHeight = UITableView.automaticDimension
+        self.tableView.estimatedRowHeight = 300
+        
+        
     }
 
 
@@ -31,22 +35,21 @@ class HTcausesTableVC: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return htTable.array.count
     }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        return 55.0
-    }
 
     
-
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "htCell", for: indexPath) as! TableViewCell
         
         
         let names = htTable.array[indexPath.row].name
+        cell.name = names
         
         let status = htTable.array[indexPath.row].status
+        
+        let ddx = htTable.array[indexPath.row].ddx
+        cell.ddx = ddx
         
         
         cell.label.text = names
@@ -54,6 +57,25 @@ class HTcausesTableVC: UITableViewController {
         cell.label.numberOfLines = 0
         cell.statusLabel.numberOfLines = 0
         cell.setColor()
+        
+        cell.arrowButtonTapped = { (button:UIButton) -> Void in
+           
+            
+            if cell.expanded == false{
+                cell.label.text = ddx
+                cell.expanded = true
+            }
+            
+            else{
+                cell.label.text = names
+                cell.expanded = false
+            }
+                        tableView.beginUpdates()
+            
+                        tableView.endUpdates()
+        }
+        
+        
         
         if selectedIndex == indexPath {
         
@@ -91,9 +113,12 @@ class HTcausesTableVC: UITableViewController {
         
     }
     
+    
+    
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        
+        
         selectedIndex = indexPath
                 
         tableView.reloadRows(at: [selectedIndex], with:.automatic)
@@ -101,10 +126,8 @@ class HTcausesTableVC: UITableViewController {
         
     }
     
-
     
-    
-
+   
 
     /*
     // Override to support conditional editing of the table view.
@@ -152,3 +175,5 @@ class HTcausesTableVC: UITableViewController {
     */
 
 }
+
+

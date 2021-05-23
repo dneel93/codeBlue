@@ -111,7 +111,7 @@ class guidedNoPulseVC1: UIViewController {
         cprCountGlobal.text = "CPR:  \(globalCounter.cprCountGlobal)"
         epiCountGlobal.text="Epi: \(globalCounter.epiCountGlobal)"
         shockCountGlobal.text = "Defib: \(globalCounter.defibCountGlobal)"
-        cprTimer.invalidate()
+        cprTimer.timer?.invalidate()
         cprLabel.text="2:00"
         cprButton.configureCheck()
         o2Button.configureCheck()

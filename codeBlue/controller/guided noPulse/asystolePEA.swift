@@ -98,6 +98,8 @@ class asystolePEA: UIViewController {
         accessButton.configureCheck()
         epiButton.configureCheck()
         intubationButton.configureCheck()
+        cprTimer.timer?.invalidate()
+        cprLabel.text="2:00"
     }
     
     
@@ -250,14 +252,14 @@ class asystolePEA: UIViewController {
         
         if cprTimer.timer?.isValid ?? false {
             cprTimer.invalidate()
-            cprLabel.text = "00:00"
+            cprLabel.text = "2:00"
             cprVibration.timer?.invalidate()
             cprVibration.time = 0
         }
         
         else if cprTimer.timer?.isValid == false && cprTimer.time == 0 {
             cprTimer.time = 120
-            cprLabel.text = "00:00"
+            cprLabel.text = "2:00"
         }
         
         else{
@@ -267,7 +269,7 @@ class asystolePEA: UIViewController {
             cprCountGlobal.text = "CPR: \(globalCounter.cprCountGlobal)"
             cprVibration.time = 0
             cprVibration.startVibration()
-            cprAlert.sendAlert(VC: self)
+            
         }
         
         

@@ -84,7 +84,8 @@ class asystolePeaContVC: UIViewController {
         shockCountGlobal.text = "Defib: \(globalCounter.defibCountGlobal)"
         cprButton.configureCheck()
         causesButton.configureCheck()
-        cprTimer.invalidate()
+        cprTimer.timer?.invalidate()
+        cprLabel.text = "2:00"
     }
     
     override func viewDidDisappear(_ animated: Bool) {

@@ -8,25 +8,47 @@
 
 import UIKit
 
+
+
 class TableViewCell: UITableViewCell {
 
-  
+
     
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var label: UILabel!
     
+    @IBOutlet weak var infoButton: UIButton!
+    
+    typealias arrowButtonTappedBlock = (_ button:UIButton) -> Void
+    var arrowButtonTapped : arrowButtonTappedBlock!
+    
+    
+    var name:String?
+    var ddx:String?
+    var expanded:Bool = false
+    var rowHeightddx:Int?
     
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    
+  @IBAction func infoPressed(_ sender: Any) {
+        
+    if arrowButtonTapped != nil {
+        arrowButtonTapped(sender as! UIButton)
+            }
+    
     }
     
     
@@ -50,5 +72,8 @@ class TableViewCell: UITableViewCell {
         
         
     }
+        
+        
+        
 
     }}

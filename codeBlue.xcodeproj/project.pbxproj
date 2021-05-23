@@ -171,7 +171,7 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		CC2FA22926312488007D7525 /* shockable VC */ = {
+		CC2FA22926312488007D7525 /* shockable VCs */ = {
 			isa = PBXGroup;
 			children = (
 				CC2FA22E263125B8007D7525 /* shockVC1.swift */,
@@ -181,7 +181,7 @@
 				CC2FA23626366559007D7525 /* shockVC5.swift */,
 				CC2FA238263667F7007D7525 /* shockVC6.swift */,
 			);
-			path = "shockable VC";
+			path = "shockable VCs";
 			sourceTree = "<group>";
 		};
 		CC2FA22A2631249C007D7525 /* guided Pulse */ = {
@@ -263,7 +263,7 @@
 		CC7B9E77251C09DF00D8F16D /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				CC2FA22926312488007D7525 /* shockable VC */,
+				CC2FA22926312488007D7525 /* shockable VCs */,
 				CC2FA22D26312581007D7525 /* guided noPulse */,
 				CC2FA22C2631252B007D7525 /* setup */,
 				CC2FA22B263124C2007D7525 /* algorithms */,

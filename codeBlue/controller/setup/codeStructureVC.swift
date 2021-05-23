@@ -11,7 +11,6 @@ import UIKit
 class codeStructureVC: UIViewController {
 
     
-    
     @IBOutlet var lungButton: UIButton!
     @IBOutlet var cprButton: UIButton!
     @IBOutlet var defibButton: UIButton!

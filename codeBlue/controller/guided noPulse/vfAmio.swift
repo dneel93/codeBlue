@@ -91,7 +91,7 @@ class vfAmio: UIViewController {
         
         
         cprTimer.timer?.invalidate()
-        cprLabel.text="00:00"
+        cprLabel.text="2:00"
         cprCountGlobal.text = "CPR:  \(globalCounter.cprCountGlobal)"
         epiCountGlobal.text="Epi: \(globalCounter.epiCountGlobal)"
         shockCountGlobal.text = "Defib: \(globalCounter.defibCountGlobal)"
@@ -236,14 +236,14 @@ class vfAmio: UIViewController {
         
         if cprTimer.timer?.isValid ?? false {
             cprTimer.invalidate()
-            cprLabel.text = "00:00"
+            cprLabel.text = "2:00"
             cprVibration.timer?.invalidate()
             cprVibration.time = 0
         }
         
         else if cprTimer.timer?.isValid == false && cprTimer.time == 0{
             cprTimer.time = 120
-            cprLabel.text = "00:00"
+            cprLabel.text = "2:00"
         }
         
         else{
