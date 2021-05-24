@@ -20,24 +20,24 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NaS-at-gaH">
                         <rect key="frame" x="80" y="8" width="166" height="75"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDa-7G-Bbb">
                         <rect key="frame" x="0.0" y="0.0" width="75" height="91"/>
                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZs-eb-bpI">
-                        <rect key="frame" x="266" y="20.5" width="50" height="50"/>
+                        <rect key="frame" x="266" y="18" width="55" height="55"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="50" id="TDJ-KY-ngR"/>
-                            <constraint firstAttribute="width" constant="50" id="Xbx-Hl-HQV"/>
+                            <constraint firstAttribute="height" constant="55" id="TDJ-KY-ngR"/>
+                            <constraint firstAttribute="width" constant="55" id="Xbx-Hl-HQV"/>
                         </constraints>
-                        <state key="normal" image="plus" catalog="system"/>
+                        <state key="normal" image="info.circle.fill" catalog="system"/>
                         <connections>
                             <action selector="infoPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Tbk-Rf-IDx"/>
                         </connections>
@@ -56,7 +56,7 @@
                     <constraint firstItem="hZs-eb-bpI" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="owU-Nq-dVm"/>
                     <constraint firstItem="NaS-at-gaH" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="pUP-6a-6ZV"/>
                     <constraint firstAttribute="bottom" secondItem="NaS-at-gaH" secondAttribute="bottom" constant="8" id="sXC-xy-VBo"/>
-                    <constraint firstAttribute="trailing" secondItem="hZs-eb-bpI" secondAttribute="trailing" constant="10" id="srA-Ng-X92"/>
+                    <constraint firstAttribute="trailing" secondItem="hZs-eb-bpI" secondAttribute="trailing" constant="5" id="srA-Ng-X92"/>
                     <constraint firstItem="DDa-7G-Bbb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="tVi-Yn-x18"/>
                 </constraints>
             </tableViewCellContentView>
@@ -70,7 +70,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="info.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

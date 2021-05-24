@@ -120,7 +120,7 @@ class shockVC1: UIViewController {
             resetButton.setTitle("Start", for: .normal)
             resetButton.setTitleColor(.systemGreen, for: .normal)
             
-            timeCountGlobal.text = "Total Time: 00:00"
+            timeCountGlobal.text = "00:00"
             resumeButton.isEnabled = false
             globalCounter.globalReset()        }
     
