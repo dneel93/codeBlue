@@ -14,6 +14,11 @@ class asystolePeaContVC: UIViewController {
     @IBOutlet var cprLabel: UILabel!
     @IBOutlet var cprButton: UIButton!
     
+    @IBOutlet weak var bicarbButton: UIButton!
+    @IBOutlet weak var ionsButton: UIButton!
+    @IBOutlet weak var bicarbLabel: UILabel!
+    @IBOutlet weak var ionsLabel: UILabel!
+    
     @IBOutlet var causesButton: UIButton!
     @IBOutlet weak var htLabel: UILabel!
     
@@ -131,6 +136,7 @@ class asystolePeaContVC: UIViewController {
             cprLabel.text = "00:00"
             causesLabel.reset()
             cprListLabel.reset()
+            htTable.resetTable()
        }
         
         else {
@@ -174,6 +180,7 @@ class asystolePeaContVC: UIViewController {
         shockCountGlobal.text = "Defib: 0"
         timeCountGlobal.text = "00:00"
         globalCounter.globalTimer?.invalidate()
+        htTable.resetTable()
         self.navigationController?.popToRootViewController(animated: true)
     }
     
@@ -237,6 +244,18 @@ class asystolePeaContVC: UIViewController {
         }
 
     }
+    
+    
+    @IBAction func bicarbPress(_ sender: Any) {
+        bicarbButton.checkOffOn()
+        bicarbLabel.fadeLabel()
+    }
+    
+    @IBAction func ionsPress(_ sender: Any) {
+        ionsButton.checkOffOn()
+        ionsLabel.fadeLabel()
+    }
+    
     
     
     @IBAction func causesPress(_ sender: Any) {

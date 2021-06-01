@@ -157,6 +157,7 @@ class asystolePEA: UIViewController {
             accessLabel.reset()
             intLabel.reset()
             cprListLabel.reset()
+            htTable.resetTable()
        }
         
         else {
@@ -200,6 +201,7 @@ class asystolePEA: UIViewController {
         
         cprTimer.invalidate()
         epiTimer.invalidate()
+        htTable.resetTable()
         self.navigationController?.popToRootViewController(animated: true)
         
     }

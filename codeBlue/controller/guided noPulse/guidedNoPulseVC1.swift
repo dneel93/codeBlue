@@ -118,6 +118,7 @@ class guidedNoPulseVC1: UIViewController {
         defibButton.configureCheck()
         assignButton.configureCheck()
         resumeButton.isEnabled = false
+        htTable.resetTable()
         
     }
     
@@ -162,6 +163,7 @@ class guidedNoPulseVC1: UIViewController {
             cprListLabel.reset()
             o2Label.reset()
             defibLabel.reset()
+            htTable.resetTable()
     
        }
         
@@ -200,6 +202,7 @@ class guidedNoPulseVC1: UIViewController {
         globalCounter.globalReset()  
         cprVibration.time=0
         cprVibration.timer?.invalidate()
+        htTable.resetTable()
         self.navigationController?.popToRootViewController(animated: true)
     }
     
@@ -257,18 +260,7 @@ class guidedNoPulseVC1: UIViewController {
     
     @IBAction func assignPress(_ sender: Any) {
         assignLabel.fadeLabel()
-        
-        if assignButton.isSelected == true{
-            assignButton.configureCheck()
-        }
-        
-        else{
-            assignButton.setBackgroundImage(UIImage(named: "checked_box"), for: .normal)
-            assignButton.isSelected = true
-            
-       let storyboard = UIStoryboard(name: "Main", bundle: nil)
-       let vc = storyboard.instantiateViewController(withIdentifier: "codeStructure")
-            self.present(vc, animated: true)}
+        assignButton.checkOffOn()
         
     }
     

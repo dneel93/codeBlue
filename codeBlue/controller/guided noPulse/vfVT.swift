@@ -136,6 +136,7 @@ class vfVT: UIViewController {
             resumeButton.isEnabled = false
             cprListLabel.reset()
             accessLabel.reset()
+            htTable.resetTable()
        }
         
         else {

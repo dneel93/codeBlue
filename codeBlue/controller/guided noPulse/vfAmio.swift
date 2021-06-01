@@ -145,6 +145,7 @@ class vfAmio: UIViewController {
             cprListLabel.reset()
             amioLabel.reset()
             causesLabel.reset()
+            htTable.resetTable()
         }
         
         
@@ -181,6 +182,7 @@ class vfAmio: UIViewController {
         epiCountGlobal.text = "Epi: 0"
         shockCountGlobal.text = "Defib: 0"
         timeCountGlobal.text = "00:00"
+        htTable.resetTable()
         
         cprTimer.timer?.invalidate()
         self.navigationController?.popToRootViewController(animated: true)

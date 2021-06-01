@@ -48,6 +48,22 @@ class globalCounter{
     }
     
     
+    
+    static func alert_20(on vc: UIViewController){
+        
+        let alert_20 = UIAlertController(title: "Check EtC02", message: "20 min since code started, check end-tidal C02.", preferredStyle: UIAlertController.Style.alert)
+        alert_20.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        vc.present(alert_20, animated: true, completion: nil)
+        
+        
+        let when = DispatchTime.now() + 4.5
+               DispatchQueue.main.asyncAfter(deadline: when){
+                   // your code with delay
+                   alert_20.dismiss(animated: true, completion: nil)
+               }
+    }
+    
+    
     @objc static func updateUITime() {
         globalCounter.globalTimeCounter += 1
         var minutes: Int
@@ -63,7 +79,12 @@ class globalCounter{
             if let v = globalCounter.vc {
                 globalCounter.alert(on: v)
             }
-
+        }
+        
+        else if globalCounter.globalTimeCounter == 1200 {
+            if let v = globalCounter.vc {
+                globalCounter.alert_20(on: v)
+            }
         }
     
 }

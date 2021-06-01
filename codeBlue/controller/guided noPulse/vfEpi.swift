@@ -150,6 +150,7 @@ class vfEpi: UIViewController {
             resumeButton.isEnabled = false
             cprListLabel.reset()
             intLabel.reset()
+            htTable.resetTable()
         }
         
         else {
@@ -195,6 +196,7 @@ class vfEpi: UIViewController {
         epiCountGlobal.text = "Epi: 0"
         shockCountGlobal.text = "Defib: 0"
         timeCountGlobal.text = "00:00"
+        htTable.resetTable()
         
         self.navigationController?.popToRootViewController(animated: true)
     }

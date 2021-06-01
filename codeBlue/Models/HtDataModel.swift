@@ -26,15 +26,15 @@ static var array:[HT] = [
     
     HT(name: "\nHypoxia\n", status: "?",ddx:"Hypoxia\n\nDiagnostics:\nEnsure airway patent\n Auscultate for bilateral breath sounds\nCXR (when ROSC)\nSerum tox\n\nTherapeutics:\nConsider intubation"),
     
-    HT(name: "\nH+ (acidosis)\n", status: "?",ddx:"Acidosis\n\nDiagnostics:\nABG, BMP, Ca, iCa\n\nTherapeutics:\nPush amps of sodium bicarbonate PRN\nHyperventnilation"),
+    HT(name: "\nH+ (acidosis)\n", status: "?",ddx:"Acidosis\n\nDiagnostics:\nABG, BMP, Ca, iCa\n\nTherapeutics:\nPush amps of sodium bicarbonate PRN\nHyperventilation"),
    
-    HT(name: "\nHypokalemia\n", status: "?",ddx:"Hypokalemia\n\nDiagnostics:\nBMP, ABG, Tele, ECG(when ROSC)\n\nTherapeutics:\nMagnesium 2-4g IV"),
+    HT(name: "\nHypokalemia\n", status: "?",ddx:"Hypokalemia\n\nDiagnostics:\nBMP, ABG, Tele, ECG (when ROSC)\n\nTherapeutics:\nMagnesium 2-4g IV"),
     
     HT(name: "\nHyperkalemia\n", status:"?",ddx:"Hyperkalemia\n\nDiagnostics:\nBMP, ABG, Tele, ECG (when ROSC)\n\nTherapeutics:\nCalcium chloride (cardiac membrane stabilization)\nSodium bicarb (for likely acidosis)\nInsulin 10U + 25g D50"),
     
     HT(name: "\nHypothermia\n", status: "?",ddx:"Hypothermia\n\nTherapeutics:\nWarming protocol (core T >30C ASAP)"),
     
-    HT(name: "\nHypoglycemia\n", status: "?", ddx: "Hypoglycemia\n\nDiagnostics:\nFingerstick GB\n\nTherapeutics:\nD50 bolus"),
+    HT(name: "\nHypoglycemia\n", status: "?", ddx: "Hypoglycemia\n\nDiagnostics:\nFingerstick BG\n\nTherapeutics:\nD50 bolus"),
     
     HT(name: "\nTension PTX\n", status: "?",ddx:"Tension PTX\n\nDiagnostics:\nAuscultate for bilateral breath sounds\nCXR (when ROSC)\nPleural US\n\nTherapeutics:\nNeedle decompression (2nd intercostal space, midclavicular line)\nConsider thoracostomy"),
     
@@ -44,6 +44,13 @@ static var array:[HT] = [
     HT(name: "\nThrombosis (MI)\n", status:"?",ddx:"Thrombosis\n\nDiagnostics:\nECG (when ROSC) \n\nTherapeutics:\nPCI vs. tPA")
 ]
     
+    
+    
+   static func resetTable(){
+        for n in 0..<htTable.array.count{
+            htTable.array[n].status = "?"
+        }
+    }
     
 }
 
