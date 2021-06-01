@@ -38,12 +38,12 @@ class asystolePeaContVC: UIViewController {
     
     
 //    MARK: GLOBAL VARIABLES
-    @IBOutlet var resetButton: UIButton!
+    @IBOutlet var stopButton: UIButton!
     @IBOutlet var cprCountGlobal: UILabel!
     @IBOutlet var shockCountGlobal: UILabel!
     @IBOutlet var epiCountGlobal: UILabel!
     @IBOutlet var timeCountGlobal: UILabel!
-    @IBOutlet weak var resumeButton: UIButton!
+    @IBOutlet weak var newReset: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +51,8 @@ class asystolePeaContVC: UIViewController {
         globalCounter.setLabelVC(timeCountGlobal, self)
         globalCounter.globalTimer?.invalidate()
         globalCounter.startGlobalTime()
-        resetButton.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 4)
+        stopButton.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 4)
+        newReset.transform = CGAffineTransform(rotationAngle: CGFloat.pi / -4)
         
         roscButton.layer.cornerRadius = 8
         algoButton.layer.cornerRadius = 8
@@ -59,6 +60,8 @@ class asystolePeaContVC: UIViewController {
         htButton.layer.cornerRadius = 8
         cprButton.configureCheck()
         causesButton.configureCheck()
+        bicarbButton.configureCheck()
+        ionsButton.configureCheck()
     
         cprCountGlobal.configureLabel()
         shockCountGlobal.configureLabel()
@@ -68,9 +71,6 @@ class asystolePeaContVC: UIViewController {
         shockCountGlobal.text = "Defib:\(globalCounter.defibCountGlobal)"
         cprTimer.setLabel(cprLabel, self,"noPulse8")
         
-        resumeButton.isEnabled = false
-        resumeButton.setBackgroundImage(UIImage(named:"white"), for: .disabled)
-        resumeButton.setBackgroundImage(UIImage(named:"playButton"), for: .normal)
         
     }
     
@@ -80,8 +80,8 @@ class asystolePeaContVC: UIViewController {
         globalCounter.setLabelVC(timeCountGlobal, self)
         globalCounter.globalTimer?.invalidate()
         globalCounter.startGlobalTime()
-        resetButton.setTitle("Stop", for: .normal)
-        resetButton.setTitleColor(.systemRed, for: .normal)
+        stopButton.setTitle("Stop", for: .normal)
+        stopButton.setTitleColor(.systemRed, for: .normal)
         
         
         cprCountGlobal.text = "CPR: \(globalCounter.cprCountGlobal)"
@@ -99,69 +99,79 @@ class asystolePeaContVC: UIViewController {
         cprTimer.time = 0
         cprVibration.timer?.invalidate()
         cprVibration.time = 0
-        resumeButton.isEnabled = false
+        
         causesLabel.reset()
         cprListLabel.reset()
     }
     
+    @IBAction func stopTapped(_ sender: Any) {
+        //      Stop is pressed on running timer
+                if globalCounter.globalTimer?.isValid ?? false {
+                    globalCounter.globalTimer?.invalidate()
+                    
+                    cprTimer.timer?.invalidate()
+                    cprVibration.timer?.invalidate()
+                    cprVibration.time = 0
+                    stopButton.setTitle("Resume", for: .normal)
+                    stopButton.setTitleColor(.systemIndigo, for: .normal)
+                }
+                
+        //    Resume is pressed on stopped timer
+                else {
+//                 Resume stopped timers
+                    globalCounter.startGlobalTime()
+                    if cprTimer.timer?.isValid == false && cprTimer.time < 120 {
+                        cprTimer.startTimer()}
+//                Configure button
+                    stopButton.setTitle("Stop", for: .normal)
+                    stopButton.setTitleColor(.systemRed, for: .normal)
+                }}
     
-    @IBAction func resetTapped(_ sender: Any) {
+    
+
         
-        if globalCounter.globalTimer?.isValid ?? false {
+
+            
+    
+    
+    @IBAction func resetPress(_ sender: Any) {
+
+//        change stop button color
+            stopButton.setTitle("Start", for: .normal)
+            stopButton.setTitleColor(.systemGreen, for: .normal)
+            
+//        stop timers
             globalCounter.globalTimer?.invalidate()
-            resetButton.setTitle("Reset", for: .normal)
-            resetButton.setTitleColor(.systemBlue, for: .normal)
             cprTimer.timer?.invalidate()
             cprVibration.timer?.invalidate()
-            cprVibration.time = 0
-            resumeButton.isEnabled = true
-        }
-        
-        else if globalCounter.globalTimer?.isValid == false && globalCounter.globalTimeCounter > 0 {
             
-            resetButton.setTitle("Start", for: .normal)
-            resetButton.setTitleColor(.systemGreen, for: .normal)
-            
-            globalCounter.globalReset()  
-            cprVibration.timer?.invalidate()
-            resumeButton.isEnabled = false
-            
+//        Reset everthing
+            globalCounter.globalReset()
             cprCountGlobal.text = "CPR: 0"
-            epiCountGlobal.text="Epi: 0"
+            epiCountGlobal.text = "Epi: 0"
             shockCountGlobal.text = "Defib: 0"
             timeCountGlobal.text = "00:00"
-            cprTimer.timer?.invalidate()
+            cprTimer.time = 120
+            
             cprButton.configureCheck()
             causesButton.configureCheck()
-            cprLabel.text = "00:00"
-            causesLabel.reset()
+            bicarbButton.configureCheck()
+            ionsButton.configureCheck()
+            ionsLabel.reset()
             cprListLabel.reset()
+            bicarbLabel.reset()
+            causesLabel.reset()
+          
+            cprTimer.timer?.invalidate()
+            cprLabel.text = "2:00"
+            
             htTable.resetTable()
-       }
-        
-        else {
-            globalCounter.startGlobalTime()
-            resetButton.setTitle("Stop", for: .normal)
-            resetButton.setTitleColor(.systemRed, for: .normal)
-            resumeButton.isEnabled = false
-        }
         
     }
     
     
     
-    @IBAction func resumePressed(_ sender: Any) {
-        resumeButton.isEnabled = false
-        
-        if cprTimer.timer?.isValid == false && cprTimer.time < 120 {
-            cprTimer.startTimer()
-        }
-        
-        globalCounter.startGlobalTime()
-        resetButton.setTitle("Stop", for: .normal)
-        resetButton.setTitleColor(.systemRed, for: .normal)
-    }
-    
+   
     
     
     
@@ -195,12 +205,11 @@ class asystolePeaContVC: UIViewController {
     
     @IBAction func roscPress(_ sender: Any) {
         globalCounter.globalTimer?.invalidate()
-        resetButton.setTitle("Reset", for: .normal)
-        resetButton.setTitleColor(.systemBlue, for: .normal)
+        stopButton.setTitle("Reset", for: .normal)
+        stopButton.setTitleColor(.systemBlue, for: .normal)
         cprTimer.invalidate()
         cprVibration.timer?.invalidate()
         cprVibration.time = 0
-        resumeButton.isEnabled = true
         
         let storyboard = UIStoryboard(name: "Algos", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "rosc")
@@ -223,14 +232,17 @@ class asystolePeaContVC: UIViewController {
         
         if cprTimer.timer?.isValid ?? false {
             cprTimer.invalidate()
+            cprTimer.time = 120
             cprLabel.text = "2:00"
             cprVibration.timer?.invalidate()
             cprVibration.time = 0
         }
         
-        else if cprTimer.timer?.isValid == false && cprTimer.time == 0 {
+        else if cprTimer.timer?.isValid == false && cprTimer.time < 120 {
             cprTimer.time = 120
             cprLabel.text = "2:00"
+            cprVibration.time=0
+            cprVibration.timer?.invalidate()
         }
         
         else{
@@ -273,6 +285,14 @@ class asystolePeaContVC: UIViewController {
         let storyboard = UIStoryboard(name: "guidedNoPulse", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "htCauses")
         self.present(vc, animated: true)
+    }
+    
+    @IBAction func logPressed(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "guidedNoPulse", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "eventLog")
+        self.present(vc, animated: true)
+        
     }
     
     

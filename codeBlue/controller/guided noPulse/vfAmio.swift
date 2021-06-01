@@ -15,14 +15,16 @@ class vfAmio: UIViewController {
     @IBOutlet var amioButton: UIButton!
     @IBOutlet var causesButton: UIButton!
     @IBOutlet var cprLabel: UILabel!
-   
+    @IBOutlet weak var epiButton: UIButton!
+    
+    @IBOutlet weak var epiLabel: UILabel!
+    
     
 // MARK: labels
 
     @IBOutlet weak var cprListLabel: UILabel!
     @IBOutlet weak var amioLabel: UILabel!
     @IBOutlet weak var causesLabel: UILabel!
-    
     
     
 //    MARK: bottom buttons
@@ -37,15 +39,17 @@ class vfAmio: UIViewController {
 //    MARK: Timers
     private let cprTimer = timerClass(type: "CPR")
     private let cprVibration = cprVibrationTimer()
+    private let epiTimer = timerClass(type: "Epi")
     
 //   MARK: Global Variables
     
     @IBOutlet var cprCountGlobal: UILabel!
     @IBOutlet var shockCountGlobal: UILabel!
     @IBOutlet var epiCountGlobal: UILabel!
-    @IBOutlet var resetButton: UIButton!
+    @IBOutlet var stopButton: UIButton!
     @IBOutlet var timeCountGlobal: UILabel!
-    @IBOutlet weak var resumeButton: UIButton!
+    @IBOutlet weak var newReset: UIButton!
+    
     
 //  MARK: Code
     
@@ -55,8 +59,9 @@ class vfAmio: UIViewController {
         globalCounter.setLabelVC(timeCountGlobal, self)
         globalCounter.globalTimer?.invalidate()
         globalCounter.startGlobalTime()
-        resetButton.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 4)
-       
+        stopButton.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 4)
+        newReset.transform = CGAffineTransform(rotationAngle: CGFloat.pi / -4)
+        
        
         roscButton.layer.cornerRadius = 8
         algoButton.layer.cornerRadius = 8
@@ -66,6 +71,7 @@ class vfAmio: UIViewController {
         amioButton.configureCheck()
         cprButton.configureCheck()
         causesButton.configureCheck()
+        epiButton.configureCheck()
         cprCountGlobal.text = "CPR:  \(globalCounter.cprCountGlobal)"
         epiCountGlobal.text="Epi: \(globalCounter.epiCountGlobal)"
         shockCountGlobal.text = "Defib: \(globalCounter.defibCountGlobal)"
@@ -73,9 +79,7 @@ class vfAmio: UIViewController {
         shockCountGlobal.configureLabel()
         epiCountGlobal.configureLabel()
         cprTimer.setLabel(cprLabel,self,"noPulse9")
-        resumeButton.isEnabled = false
-        resumeButton.setBackgroundImage(UIImage(named:"white"), for: .disabled)
-        resumeButton.setBackgroundImage(UIImage(named:"playButton"), for: .normal)
+        epiTimer.setLabel(epiLabel, self, "noPulse9")
         
     }
     
@@ -86,8 +90,8 @@ class vfAmio: UIViewController {
         globalCounter.setLabelVC(timeCountGlobal, self)
         globalCounter.globalTimer.invalidate()
         globalCounter.startGlobalTime()
-        resetButton.setTitle("Stop", for: .normal)
-        resetButton.setTitleColor(.systemRed, for: .normal)
+        stopButton.setTitle("Stop", for: .normal)
+        stopButton.setTitleColor(.systemRed, for: .normal)
         
         
         cprTimer.timer?.invalidate()
@@ -109,67 +113,94 @@ class vfAmio: UIViewController {
         cprTimer.time = 0
         cprVibration.timer?.invalidate()
         cprVibration.time = 0
-        resumeButton.isEnabled = false
         cprListLabel.reset()
         amioLabel.reset()
         causesLabel.reset()
     }
 
 
-    // Regulatory buttons
+    // UI buttons
     
-    @IBAction func resetTapped(_ sender: Any) {
-        if globalCounter.globalTimer?.isValid ?? false {
+    @IBAction func stopTapped(_ sender: Any) {
+        //      Stop is pressed on running timer
+                if globalCounter.globalTimer?.isValid ?? false {
+                    globalCounter.globalTimer?.invalidate()
+                    
+                    cprTimer.timer?.invalidate()
+                    cprVibration.timer?.invalidate()
+                    epiTimer.invalidate()
+                    cprVibration.time = 0
+                    stopButton.setTitle("Resume", for: .normal)
+                    stopButton.setTitleColor(.systemIndigo, for: .normal)
+                   
+                }
+                
+                
+        //    Resume is pressed on stopped timer
+                else {
+                    
+//                 Resume stopped timers
+                    globalCounter.startGlobalTime()
+                    if cprTimer.timer?.isValid == false && cprTimer.time < 120 {
+                        cprTimer.startTimer()}
+                    
+                    if epiTimer.timer?.isValid == false && epiTimer.time < 180 {
+                        epiTimer.startTimer()}
+//                Configure button
+                    stopButton.setTitle("Stop", for: .normal)
+                    stopButton.setTitleColor(.systemRed, for: .normal)
+            
+                }}
+    
+    
+
+        
+
+            
+    
+    
+    @IBAction func resetPress(_ sender: Any) {
+
+//        change stop button color
+            stopButton.setTitle("Start", for: .normal)
+            stopButton.setTitleColor(.systemGreen, for: .normal)
+            
+//        stop timers
             globalCounter.globalTimer?.invalidate()
-            resetButton.setTitle("Reset", for: .normal)
-            resetButton.setTitleColor(.systemBlue, for: .normal)
             cprTimer.timer?.invalidate()
             cprVibration.timer?.invalidate()
-            resumeButton.isEnabled = true
-        }
-        
-        else if globalCounter.globalTimer?.isValid == false && globalCounter.globalTimeCounter > 0 {
+            epiTimer.invalidate()
             
-            resetButton.setTitle("Start", for: .normal)
-            resetButton.setTitleColor(.systemGreen, for: .normal)
-            globalCounter.globalReset()  
+//        Reset everthing
+            globalCounter.globalReset()
             cprCountGlobal.text = "CPR: 0"
             epiCountGlobal.text = "Epi: 0"
             shockCountGlobal.text = "Defib: 0"
             timeCountGlobal.text = "00:00"
+            cprTimer.time = 120
+            epiTimer.time = 180
+            
+            cprButton.configureCheck()
             cprButton.configureCheck()
             amioButton.configureCheck()
-            cprTimer.timer?.invalidate()
-            cprLabel.text = "00:00"
-            resumeButton.isEnabled = false
+            causesButton.configureCheck()
+            epiButton.configureCheck()
             cprListLabel.reset()
-            amioLabel.reset()
             causesLabel.reset()
+            amioLabel.reset()
+          
+            cprTimer.timer?.invalidate()
+            cprLabel.text = "2:00"
+            epiLabel.text = "Epinephrine 1mg"
+            cprListLabel.reset()
             htTable.resetTable()
-        }
-        
-        
-        else {
-            globalCounter.startGlobalTime()
-            resetButton.setTitle("Stop", for: .normal)
-            resetButton.setTitleColor(.systemRed, for: .normal)
-            resumeButton.isEnabled = false
-        }
     }
     
     
-    @IBAction func resumePressed(_ sender: Any) {
-        resumeButton.isEnabled = false
-        
-        if cprTimer.timer?.isValid == false && cprTimer.time < 120 {
-            cprTimer.startTimer()
-            
-        }
-        
-        globalCounter.startGlobalTime()
-        resetButton.setTitle("Stop", for: .normal)
-        resetButton.setTitleColor(.systemRed, for: .normal)
-    }
+    
+    
+    
+    
     
     
     @IBAction func homeTapped(_ sender: Any) {
@@ -199,12 +230,11 @@ class vfAmio: UIViewController {
     
     @IBAction func roscPress(_ sender: Any) {
         globalCounter.globalTimer?.invalidate()
-        resetButton.setTitle("Reset", for: .normal)
-        resetButton.setTitleColor(.systemBlue, for: .normal)
+        stopButton.setTitle("Reset", for: .normal)
+        stopButton.setTitleColor(.systemBlue, for: .normal)
         cprTimer.invalidate()
         cprVibration.timer?.invalidate()
         cprVibration.time = 0
-        resumeButton.isEnabled = true
         
         let storyboard = UIStoryboard(name: "Algos", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "rosc")
@@ -238,14 +268,17 @@ class vfAmio: UIViewController {
         
         if cprTimer.timer?.isValid ?? false {
             cprTimer.invalidate()
+            cprTimer.time = 120
             cprLabel.text = "2:00"
             cprVibration.timer?.invalidate()
             cprVibration.time = 0
         }
         
-        else if cprTimer.timer?.isValid == false && cprTimer.time == 0{
+        else if cprTimer.timer?.isValid == false && cprTimer.time < 120{
             cprTimer.time = 120
             cprLabel.text = "2:00"
+            cprVibration.time=0
+            cprVibration.timer?.invalidate()
         }
         
         else{
@@ -267,11 +300,45 @@ class vfAmio: UIViewController {
     }
     
     
+    
+    @IBAction func epiPressed(_ sender: Any) {
+        epiButton.checkOffOn()
+        
+        if epiTimer.timer?.isValid ?? false {
+            epiTimer.invalidate()
+            epiTimer.time = 180
+            epiLabel.text = "Epinephrine 1mg"
+        }
+        
+        else if epiTimer.timer?.isValid == false && epiTimer.time < 180 {
+            epiTimer.time = 180
+            epiLabel.text = "Epinephrine 1mmg"
+        }
+        
+        else{
+            epiTimer.time = 180
+            epiTimer.startTimer()
+            globalCounter.epiCountGlobal+=1
+            epiCountGlobal.text = "Epi: \(globalCounter.epiCountGlobal)"}
+        
+    }
+    
+    
+    
+    
     @IBAction func causesPressed(_ sender: Any) {
         causesButton.checkOffOn()
         causesLabel.fadeLabel()
         let storyboard = UIStoryboard(name: "guidedNoPulse", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "htCauses")
+        self.present(vc, animated: true)
+        
+    }
+    
+    @IBAction func logPressed(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "guidedNoPulse", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "eventLog")
         self.present(vc, animated: true)
         
     }

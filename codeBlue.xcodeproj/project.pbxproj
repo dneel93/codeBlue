@@ -29,6 +29,7 @@
 		CC2FA23726366559007D7525 /* shockVC5.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2FA23626366559007D7525 /* shockVC5.swift */; };
 		CC2FA239263667F7007D7525 /* shockVC6.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2FA238263667F7007D7525 /* shockVC6.swift */; };
 		CC3C535325ECDE0A007534C0 /* wideQRS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C535225ECDE0A007534C0 /* wideQRS.swift */; };
+		CC4A06842665932A0058E997 /* eventLogTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4A06832665932A0058E997 /* eventLogTableVC.swift */; };
 		CC50AB4125426FE100B2B96E /* rhythmTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC50AB4025426FE100B2B96E /* rhythmTableVC.swift */; };
 		CC50ABCE254FCC7700B2B96E /* asystolePEA.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC50ABCD254FCC7600B2B96E /* asystolePEA.swift */; };
 		CC50ABD5254FD3A000B2B96E /* asystolePeaContVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC50ABD4254FD3A000B2B96E /* asystolePeaContVC.swift */; };
@@ -96,6 +97,7 @@
 		CC2FA23626366559007D7525 /* shockVC5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shockVC5.swift; sourceTree = "<group>"; };
 		CC2FA238263667F7007D7525 /* shockVC6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shockVC6.swift; sourceTree = "<group>"; };
 		CC3C535225ECDE0A007534C0 /* wideQRS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wideQRS.swift; sourceTree = "<group>"; };
+		CC4A06832665932A0058E997 /* eventLogTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventLogTableVC.swift; sourceTree = "<group>"; };
 		CC50AB4025426FE100B2B96E /* rhythmTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rhythmTableVC.swift; sourceTree = "<group>"; };
 		CC50ABCD254FCC7600B2B96E /* asystolePEA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = asystolePEA.swift; sourceTree = "<group>"; };
 		CC50ABD4254FD3A000B2B96E /* asystolePeaContVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = asystolePeaContVC.swift; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 				CC0E3B2425E23ED4001E16E8 /* algo_guidedNoPulse.swift */,
 				CC2E7AFB262D4B2C009C1669 /* algo_guided1.swift */,
 				CC2E7AFE262D4B40009C1669 /* algo_guided2.swift */,
+				CC4A06832665932A0058E997 /* eventLogTableVC.swift */,
 			);
 			path = "guided noPulse";
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 				CC0E3B2525E23ED4001E16E8 /* algo_guidedNoPulse.swift in Sources */,
 				CCA449BD2511E5CB0097D370 /* AppDelegate.swift in Sources */,
 				CC7B75642593329000BC961E /* AclsInfoVC.swift in Sources */,
+				CC4A06842665932A0058E997 /* eventLogTableVC.swift in Sources */,
 				CC27715A25147EEF00EC6E94 /* UIButton+ext.swift in Sources */,
 				CC909EEC25EC748000650BA3 /* guidedNarrowQRS.swift in Sources */,
 				CC82B9EA2554877A001DB28C /* globalTimer.swift in Sources */,
@@ -644,7 +648,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = BTMP3Q45G4;
 				INFOPLIST_FILE = codeBlue/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -665,7 +669,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = BTMP3Q45G4;
 				INFOPLIST_FILE = codeBlue/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
