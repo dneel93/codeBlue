@@ -11,7 +11,6 @@ import AudioToolbox
 
 class shockVC1: UIViewController {
 
-    
     @IBOutlet weak var noButton: UIButton!
     
     @IBOutlet weak var yesButton: UIButton!
@@ -20,12 +19,12 @@ class shockVC1: UIViewController {
     
     @IBOutlet weak var timeCountGlobal: UILabel!
     
-    @IBOutlet weak var resetButton: UIButton!
     
     
-    @IBOutlet weak var resumeButton: UIButton!
-    
-    
+//    Global variable labels
+    @IBOutlet weak var cprCountGlobal: UILabel!
+    @IBOutlet weak var shockCountGlobal: UILabel!
+    @IBOutlet weak var epiCountGlobal: UILabel!
     
     // MARK:- View did load methods
     
@@ -35,43 +34,41 @@ class shockVC1: UIViewController {
         shockButton.isEnabled = false
         yesButton.layer.cornerRadius = 8
         noButton.layer.cornerRadius = 8
+        
 
         
         // MARK:- global
         
         globalCounter.setLabelVC(timeCountGlobal, self)
-        globalCounter.globalTimer?.invalidate()
-        globalCounter.startGlobalTime()
+        globalCounter.continueGlobalTime()
+        globalCprTimer.setLabelVC1(cprCountGlobal, self)
+        globalCprTimer.continueCpr()
         
-        resumeButton.isEnabled = false
-        resumeButton.setBackgroundImage(UIImage(named:"white"), for: .disabled)
-        resumeButton.setBackgroundImage(UIImage(named:"playButton"), for: .normal)
         shockButton.imageView!.contentMode = UIView.ContentMode.scaleAspectFit
         
-    
+        cprCountGlobal.configureLabel()
+        shockCountGlobal.configureLabel()
+        epiCountGlobal.configureLabel()
+        epiCountGlobal.text="Epi: \(globalCounter.epiCountGlobal)"
+        shockCountGlobal.text = "Defib: \(globalCounter.defibCountGlobal)"
+        cprCountGlobal.text = "CPR: \(globalCounter.cprCountGlobal)"
     }
-    
-    
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
         globalCounter.setLabelVC(timeCountGlobal, self)
-        globalCounter.globalTimer?.invalidate()
-        globalCounter.startGlobalTime()
-        
-        
+        globalCounter.continueGlobalTime()
+        globalCprTimer.setLabelVC1(cprCountGlobal, self)
+        globalCprTimer.continueCpr()
         
     }
     
     
     override func viewDidDisappear(_ animated: Bool) {
-        
-        resumeButton.isEnabled = false
         shockButton.setImage(UIImage(named:"white"), for: .normal)
         shockButton.isEnabled = false
-        
     }
     
     
@@ -101,44 +98,10 @@ class shockVC1: UIViewController {
     @IBAction func shockPressed(_ sender: Any) {
         globalCounter.defibCountGlobal+=1
         AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-        
     }
     
+
     
-    @IBAction func resetPressed(_ sender: Any) {
-        
-        if globalCounter.globalTimer?.isValid ?? false{
-        
-            globalCounter.globalTimer?.invalidate()
-            resumeButton.isEnabled = true
-            resetButton.setTitle("Reset", for: .normal)
-            resetButton.setTitleColor(.systemBlue, for: .normal)
-        }
-        
-        else if globalCounter.globalTimer?.isValid == false && globalCounter.globalTimeCounter > 0 {
-            
-            resetButton.setTitle("Start", for: .normal)
-            resetButton.setTitleColor(.systemGreen, for: .normal)
-            
-            timeCountGlobal.text = "00:00"
-            resumeButton.isEnabled = false
-            globalCounter.globalReset()        }
-    
-            else {globalCounter.startGlobalTime()
-                resetButton.setTitle("Stop", for: .normal)
-                resetButton.setTitleColor(.systemRed, for: .normal)
-                resumeButton.isEnabled = false
-            }
-    }
-    
-    
-    @IBAction func resumePressed(_ sender: Any) {
-        resumeButton.isEnabled = false
-        
-        globalCounter.startGlobalTime()
-        resetButton.setTitle("Stop", for: .normal)
-        resetButton.setTitleColor(.systemRed, for: .normal)
-    }
     
 
     

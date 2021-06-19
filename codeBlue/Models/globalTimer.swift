@@ -32,6 +32,11 @@ class globalCounter{
         globalCounter.globalTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateUITime), userInfo: nil, repeats: true)
     }
     
+    static func continueGlobalTime(){
+        globalCounter.globalTimer?.invalidate()
+        globalCounter.startGlobalTime()
+    }
+    
     
     static func alert(on vc: UIViewController){
         

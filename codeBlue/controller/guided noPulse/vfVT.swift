@@ -31,7 +31,6 @@ class vfVT: UIViewController {
     @IBOutlet weak var htCauses: UIButton!
     
 // MARK: Timer outlets
-    private let cprTimer = timerClass(type: "CPR")
     private let cprVibration = cprVibrationTimer()
     
     
@@ -61,8 +60,8 @@ class vfVT: UIViewController {
         roscButton.layer.cornerRadius = 8
         rolesButton.layer.cornerRadius = 8
         htCauses.layer.cornerRadius = 8
-       
-        cprButton.configureCheck()
+        cprListLabel.configureCprListLabel()
+        cprButton.configureCheckCpr()
         accessButton.configureCheck()
         cprGlobalCount.text = "CPR:  \(globalCounter.cprCountGlobal)"
         epiCountGlobal.text="Epi: \(globalCounter.epiCountGlobal)"
@@ -70,8 +69,9 @@ class vfVT: UIViewController {
         cprGlobalCount.configureLabel()
         shockGlobalCount.configureLabel()
         epiCountGlobal.configureLabel()
-        cprTimer.setLabel(cprLabel, self, "noPulse3")
         
+        globalCprTimer.setCprLabel(cprLabel, cprGlobalCount, self, "noPulse3")
+        stopButton.setStopText()
     }
     
     
@@ -80,83 +80,41 @@ class vfVT: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         globalCounter.setLabelVC(timeCountGlobal, self)
-        globalCounter.globalTimer.invalidate()
-        globalCounter.startGlobalTime()
-        stopButton.setTitle("Stop", for: .normal)
-        stopButton.setTitleColor(.systemRed, for: .normal)
+        globalCounter.continueGlobalTime()
+        globalCprTimer.setCprLabel(cprLabel, cprGlobalCount, self, "noPulse3")
+        globalCprTimer.continueCpr()
         
         cprGlobalCount.text = "CPR:  \(globalCounter.cprCountGlobal)"
         epiCountGlobal.text="Epi: \(globalCounter.epiCountGlobal)"
         shockGlobalCount.text = "Defib: \(globalCounter.defibCountGlobal)"
    
-        cprTimer.timer?.invalidate()
-        cprLabel.text="2:00"
-        
-        cprButton.configureCheck()
+        cprButton.configureCheckCpr()
         accessButton.configureCheck()
     }
     
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(true)
-        cprTimer.invalidate()
-        cprTimer.time = 120
         cprVibration.timer?.invalidate()
         cprVibration.time = 0
-        cprListLabel.reset()
-        accessLabel.reset()
+       
     }
     
     
     
     
     @IBAction func stopTapped(_ sender: Any) {
-        //      Stop is pressed on running timer
-                if globalCounter.globalTimer?.isValid ?? false {
-                    globalCounter.globalTimer?.invalidate()
-                    
-                    cprTimer.timer?.invalidate()
-                    cprVibration.timer?.invalidate()
-                    cprVibration.time = 0
-                    stopButton.setTitle("Resume", for: .normal)
-                    stopButton.setTitleColor(.systemIndigo, for: .normal)
-                   
-                    
-                    
-                }
-                
-        //    Resume is pressed on stopped timer
-                else {
-                    
-//                 Resume stopped timers
-                    globalCounter.startGlobalTime()
-                    if cprTimer.timer?.isValid == false && cprTimer.time < 120 {
-                        cprTimer.startTimer()}
-//                Configure button
-                    stopButton.setTitle("Stop", for: .normal)
-                    stopButton.setTitleColor(.systemRed, for: .normal)
-            
-                }}
+        stopButton.stopButtonProp(cprVibration: cprVibration, cprButton: cprButton, cprListLabel: cprListLabel)
+    }
     
     
 
         
 
-            
-    
     
     @IBAction func resetPress(_ sender: Any) {
 
-//        change stop button color
-
-            stopButton.setTitle("Start", for: .normal)
-            stopButton.setTitleColor(.systemGreen, for: .normal)
-            
-//        stop timers
-            globalCounter.globalTimer?.invalidate()
-        
-            cprTimer.timer?.invalidate()
-            cprVibration.timer?.invalidate()
+        newReset.resetButtonProp(stopButton: stopButton, cprVibration: cprVibration, cprLabel: cprLabel, cprListLabel: cprListLabel)
             
 //        Reset everthing
             globalCounter.globalReset()
@@ -164,30 +122,20 @@ class vfVT: UIViewController {
             epiCountGlobal.text = "Epi: 0"
             shockGlobalCount.text = "Defib: 0"
             timeCountGlobal.text = "00:00"
-            cprTimer.time = 120
+            globalCprTimer.time = 120
             
             cprButton.configureCheck()
             accessButton.configureCheck()
           
-            cprTimer.timer?.invalidate()
-            cprLabel.text = "2:00"
-            cprListLabel.reset()
             accessLabel.reset()
-            htTable.resetTable()
+            
         
     }
     
     
-    
-    
-    
-    
-
-
-    
     @IBAction func homeTapped(_ sender: Any) {
         globalCounter.globalReset()
-        cprTimer.timer?.invalidate()
+        globalCprTimer.timer?.invalidate()
         cprVibration.timer?.invalidate()
         cprVibration.time = 0
 
@@ -202,7 +150,7 @@ class vfVT: UIViewController {
     @IBAction func roscPress(_ sender: Any) {
         globalCounter.globalTimer?.invalidate()
     
-        cprTimer.invalidate()
+        globalCprTimer.invalidate()
         cprVibration.timer?.invalidate()
         cprVibration.time = 0
         
@@ -248,36 +196,11 @@ class vfVT: UIViewController {
     
 //    MARK: CHECKLIST
     
-    
     @IBAction func cprPressed(_ sender: Any) {
-        
         cprButton.checkOffOn()
         cprListLabel.fadeLabel()
-        
-        if cprTimer.timer?.isValid ?? false {
-            cprTimer.invalidate()
-            cprTimer.time = 120
-            cprLabel.text = "2:00"
-            cprVibration.timer?.invalidate()
-            cprVibration.time = 0
-        }
-        
-        else if cprTimer.timer?.isValid == false && cprTimer.time < 120 {
-            cprTimer.time = 120
-            cprLabel.text = "2:00"
-            cprVibration.time=0
-            cprVibration.timer?.invalidate()
-        }
-        
-        else{
-            cprTimer.time = 120
-            cprTimer.startTimer()
-            globalCounter.cprCountGlobal+=1
-            cprGlobalCount.text = "CPR: \(globalCounter.cprCountGlobal)"
-            cprVibration.startVibration()
-//            cprAlert.sendAlert(VC: self)
-        }
-        
+        cprButton.cprButtonProperties(cprLabel: cprLabel, cprVibration: cprVibration, cprCountGlobal: cprGlobalCount)
+        stopButton.setStopText()
     }
     
     

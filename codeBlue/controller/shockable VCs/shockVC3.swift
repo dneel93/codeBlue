@@ -12,18 +12,13 @@ import AudioToolbox
 class shockVC3: UIViewController {
 
     @IBOutlet weak var noButton: UIButton!
-    
     @IBOutlet weak var yesButton: UIButton!
-    
     @IBOutlet weak var shockButton: UIButton!
-    
     @IBOutlet weak var timeCountGlobal: UILabel!
     
-    @IBOutlet weak var resetButton: UIButton!
-    
-    
-    @IBOutlet weak var resumeButton: UIButton!
-    
+    @IBOutlet weak var cprCountGlobal: UILabel!
+    @IBOutlet weak var shockCountGlobal: UILabel!
+    @IBOutlet weak var epiCountGlobal: UILabel!
     
     
     // MARK:- View did load methods
@@ -38,15 +33,19 @@ class shockVC3: UIViewController {
         // MARK:- global
         
         globalCounter.setLabelVC(timeCountGlobal, self)
-        globalCounter.globalTimer?.invalidate()
-        globalCounter.startGlobalTime()
+        globalCounter.continueGlobalTime()
+        globalEpiTimer.setLabelVC1(epiCountGlobal, self)
+        globalEpiTimer.continueEpiTimer()
         
-        resumeButton.isEnabled = false
-        resumeButton.setBackgroundImage(UIImage(named:"white"), for: .disabled)
-        resumeButton.setBackgroundImage(UIImage(named:"playButton"), for: .normal)
         shockButton.imageView!.contentMode = UIView.ContentMode.scaleAspectFit
         
-    
+        cprCountGlobal.configureLabel()
+        shockCountGlobal.configureLabel()
+        epiCountGlobal.configureLabel()
+        globalCprTimer.setLabelVC1(cprCountGlobal, self)
+        shockCountGlobal.text = "Defib: \(globalCounter.defibCountGlobal)"
+        cprCountGlobal.text = "CPR: \(globalCounter.cprCountGlobal)"
+        
     }
     
     
@@ -56,17 +55,15 @@ class shockVC3: UIViewController {
         super.viewWillAppear(true)
         
         globalCounter.setLabelVC(timeCountGlobal, self)
-        globalCounter.globalTimer?.invalidate()
-        globalCounter.startGlobalTime()
-        
-        
+        globalCounter.continueGlobalTime()
+        globalCprTimer.setLabelVC1(cprCountGlobal, self)
+        globalCprTimer.continueCpr()
         
     }
     
     
     override func viewDidDisappear(_ animated: Bool) {
         
-        resumeButton.isEnabled = false
         shockButton.setImage(UIImage(named:"white"), for: .normal)
         shockButton.isEnabled = false
         
@@ -102,43 +99,7 @@ class shockVC3: UIViewController {
     }
     
     
-    @IBAction func resetPressed(_ sender: Any) {
-        
-        if globalCounter.globalTimer?.isValid ?? false{
-        
-            globalCounter.globalTimer?.invalidate()
-            resumeButton.isEnabled = true
-            resetButton.setTitle("Reset", for: .normal)
-            resetButton.setTitleColor(.systemBlue, for: .normal)
-        }
-        
-        else if globalCounter.globalTimer?.isValid == false && globalCounter.globalTimeCounter > 0 {
-            
-            resetButton.setTitle("Start", for: .normal)
-            resetButton.setTitleColor(.systemGreen, for: .normal)
-            
-            timeCountGlobal.text = "00:00"
-            resumeButton.isEnabled = false
-            globalCounter.globalReset()  
-        }
-    
-            else {globalCounter.startGlobalTime()
-                resetButton.setTitle("Stop", for: .normal)
-                resetButton.setTitleColor(.systemRed, for: .normal)
-                resumeButton.isEnabled = false
-            }
-    }
-    
-    
-    @IBAction func resumePressed(_ sender: Any) {
-        resumeButton.isEnabled = false
-        
-        globalCounter.startGlobalTime()
-        resetButton.setTitle("Stop", for: .normal)
-        resetButton.setTitleColor(.systemRed, for: .normal)
-    }
-    
-
+   
     
 
 }
