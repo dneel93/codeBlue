@@ -19,7 +19,9 @@ class vfAmio: UIViewController {
     
     @IBOutlet weak var epiLabel: UILabel!
     
-// MARK: labels
+    @IBOutlet weak var totalReset: UIBarButtonItem!
+    
+    // MARK: labels
 
     @IBOutlet weak var cprListLabel: UILabel!
     @IBOutlet weak var amioLabel: UILabel!
@@ -91,6 +93,7 @@ class vfAmio: UIViewController {
         globalEpiTimer.continueEpiTimer()
         globalCprTimer.setCprLabel(cprLabel, cprCountGlobal, self, "noPulse9")
         globalCprTimer.continueCpr()
+        stopButton.setStopText()
         
         cprCountGlobal.text = "CPR:  \(globalCounter.cprCountGlobal)"
         shockCountGlobal.text = "Defib: \(globalCounter.defibCountGlobal)"
@@ -127,28 +130,35 @@ class vfAmio: UIViewController {
     
     @IBAction func resetPress(_ sender: Any) {
 
-        newReset.resetButtonProp(stopButton: stopButton, cprVibration: cprVibration, cprLabel: cprLabel, cprListLabel: cprListLabel)
+        newReset.resetCPRonly(stopButton: stopButton, cprVibration: cprVibration, cprLabel: cprLabel, cprListLabel: cprListLabel, cprButton:cprButton,cprCountGlobal: cprCountGlobal)}
+    
+    
+    @IBAction func totalResetPress(_ sender: Any) {
+    
+            totalReset.totalReset(stopButton: stopButton, cprVibration: cprVibration, cprLabel: cprLabel, cprListLabel: cprListLabel)
         
-//        Reset everthing
-            globalCounter.globalReset()
-            cprCountGlobal.text = "CPR: 0"
-            epiCountGlobal.text = "Epi: 0"
-            shockCountGlobal.text = "Defib: 0"
-            timeCountGlobal.text = "00:00"
-            globalCprTimer.time = 120
-            globalEpiTimer.timeCounter = 180
-            
-            cprButton.configureCheck()
-            cprButton.configureCheck()
-            amioButton.configureCheck()
-            causesButton.configureCheck()
-            epiButton.configureCheck()
-            cprListLabel.reset()
-            causesLabel.reset()
-            amioLabel.reset()
-            epiLabel.text = "Epinephrine 1mg"
-          
+        //        Reset everthing
+                    cprCountGlobal.text = "CPR: 0"
+                    epiCountGlobal.text = "Epi: 0"
+                    shockCountGlobal.text = "Defib: 0"
+                    timeCountGlobal.text = "00:00"
+                    
+                    cprButton.configureCheckCpr()
+                    cprButton.configureCheck()
+                    amioButton.configureCheck()
+                    causesButton.configureCheck()
+                    epiButton.configureCheck()
+                    cprListLabel.reset()
+                    causesLabel.reset()
+                    amioLabel.reset()
+                    epiLabel.text = "Epinephrine 1mg"
     }
+    
+    
+        
+
+          
+    
     
     
     
@@ -219,7 +229,7 @@ class vfAmio: UIViewController {
 
         cprButton.checkOffOn()
         cprListLabel.fadeLabel()
-        cprButton.cprButtonProperties(cprLabel: cprLabel, cprVibration: cprVibration, cprCountGlobal: cprCountGlobal)
+        cprButton.cprButtonProperties(cprLabel: cprLabel, cprVibration: cprVibration, cprCountGlobal: cprCountGlobal, cprListLabel: cprListLabel)
         stopButton.setStopText()
     }
     
@@ -236,6 +246,7 @@ class vfAmio: UIViewController {
     
     @IBAction func epiPressed(_ sender: Any) {
         epiButton.checkOffOn()
+        epiLabel.fadeLabel()
         epiButton.epiButtonProperties(epiLabel: epiLabel, epiCountLabel: epiCountGlobal)
         
     }

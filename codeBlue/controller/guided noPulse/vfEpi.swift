@@ -23,6 +23,7 @@ class vfEpi: UIViewController {
     @IBOutlet weak var rolesButton: UIButton!
     
     @IBOutlet weak var htButton: UIButton!
+    @IBOutlet weak var totalReset: UIBarButtonItem!
     
     
 // MARK: Labels
@@ -90,6 +91,7 @@ class vfEpi: UIViewController {
         cprButton.configureCheckCpr()
         epiButton.configureCheckEpi()
         intButton.configureCheck()
+        stopButton.setStopText()
         
         epiLabel.text = "Epinephrine 1mg"
     }
@@ -110,35 +112,37 @@ class vfEpi: UIViewController {
         }
     
     
-
-        
-
-            
-    
-    
     @IBAction func resetPress(_ sender: Any) {
 
-        newReset.resetButtonProp(stopButton: stopButton, cprVibration: cprVibration, cprLabel: cprLabel, cprListLabel: cprListLabel)
-            
-//        Reset everthing
-            globalCounter.globalReset()
-            cprCountGlobal.text = "CPR: 0"
-            epiCountGlobal.text = "Epi: 0"
-            shockCountGlobal.text = "Defib: 0"
-            timeCountGlobal.text = "00:00"
-            globalCprTimer.time = 120
-            globalEpiTimer.timeCounter = 180
-            
-            cprButton.configureCheck()
-            cprButton.configureCheck()
-            intButton.configureCheck()
-            epiButton.configureCheck()
-            intLabel.reset()
-            cprListLabel.reset()
-            epiLabel.text = "Epinephrine 1mg"
-            epiLabel.reset()
-          
+        newReset.resetCPRonly(stopButton: stopButton, cprVibration: cprVibration, cprLabel: cprLabel, cprListLabel: cprListLabel, cprButton: cprButton, cprCountGlobal: cprCountGlobal)}
+    
+    
+    
+    @IBAction func totalResetPress(_ sender: Any) {
+        totalReset.totalReset(stopButton: stopButton, cprVibration: cprVibration, cprLabel: cprLabel, cprListLabel: cprListLabel)
+       
+        //        Reset everthing
+                    
+                    cprCountGlobal.text = "CPR: 0"
+                    epiCountGlobal.text = "Epi: 0"
+                    shockCountGlobal.text = "Defib: 0"
+                    timeCountGlobal.text = "00:00"
+                    
+                    cprButton.configureCheck()
+                    cprButton.configureCheck()
+                    intButton.configureCheck()
+                    epiButton.configureCheck()
+                    intLabel.reset()
+                    cprListLabel.reset()
+                    epiLabel.text = "Epinephrine 1mg"
+                    epiLabel.reset()
     }
+    
+    
+    
+
+          
+    
     
     
 
@@ -216,7 +220,7 @@ class vfEpi: UIViewController {
         
         cprButton.checkOffOn()
         cprListLabel.fadeLabel()
-        cprButton.cprButtonProperties(cprLabel: cprLabel, cprVibration: cprVibration, cprCountGlobal: cprCountGlobal)
+        cprButton.cprButtonProperties(cprLabel: cprLabel, cprVibration: cprVibration, cprCountGlobal: cprCountGlobal, cprListLabel: cprListLabel)
         stopButton.setStopText()
     }
     

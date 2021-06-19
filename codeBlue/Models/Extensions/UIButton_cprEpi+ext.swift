@@ -18,7 +18,6 @@ func configure(title:String){
         self.titleLabel?.textAlignment = .center}
     
     
-    
     func epiButtonProperties(epiLabel:UILabel, epiCountLabel:UILabel){
         
         
@@ -29,6 +28,7 @@ func configure(title:String){
         
         else if globalEpiTimer.timer?.isValid == false && globalEpiTimer.timeCounter == 0 {
             globalEpiTimer.timeCounter = 180
+            globalEpiTimer.startGlobalTime()
             epiLabel.text = "Epinephrine 1mg"
         }
         
@@ -42,7 +42,7 @@ func configure(title:String){
     
     
     
-    func cprButtonProperties(cprLabel:UILabel, cprVibration:cprVibrationTimer, cprCountGlobal:UILabel){
+    func cprButtonProperties(cprLabel:UILabel, cprVibration:cprVibrationTimer, cprCountGlobal:UILabel, cprListLabel:UILabel){
         
         if globalCprTimer.timer?.isValid ?? false {
             globalCprTimer.timer?.invalidate()
@@ -97,7 +97,7 @@ func configure(title:String){
         setTitleColor(.systemRed, for: .normal)
             
             if let c = cprButton, let cl = cprListLabel{
-                    c.checkOffOn()
+                    c.configureCheckCpr()
                     cl.fadeLabel()
                     }
         }
@@ -125,8 +125,29 @@ func configure(title:String){
                     cprListLabel.reset()
                     
                     htTable.resetTable()
-                
+        
+                    globalCounter.globalReset()
+                    globalCprTimer.time = 120
+                    globalEpiTimer.timeCounter = 180
             }
+    
+    
+    func resetCPRonly(stopButton:UIButton, cprVibration:cprVibrationTimer,cprLabel:UILabel,cprListLabel:UILabel, cprButton:UIButton, cprCountGlobal:UILabel){
+        
+        stopButton.setTitle("Start", for: .normal)
+        stopButton.setTitleColor(.systemGreen, for: .normal)
+        
+        globalCprTimer.timer?.invalidate()
+        globalCprTimer.time = 120
+        cprLabel.text = "2:00"
+        cprListLabel.reset()
+        cprVibration.timer?.invalidate()
+        cprButton.configureCheckCpr()
+        cprCountGlobal.text = "CPR: \(globalCounter.cprCountGlobal)"
+        
+    }
+    
+    
     
     
     func setStopText(){

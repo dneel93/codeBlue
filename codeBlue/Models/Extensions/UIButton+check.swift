@@ -18,6 +18,12 @@ func configureCheckCpr(){
         isSelected = true
     }
     
+    else if globalCprTimer.timer?.isValid == false && globalCprTimer.time<120{
+        
+        setBackgroundImage(UIImage(named: "checked_box"), for: .normal)
+        isSelected = true
+    }
+    
     else {
         setBackgroundImage(UIImage(named: "empty_box"), for: .normal)
     

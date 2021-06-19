@@ -20,13 +20,16 @@ class globalCprTimer {
  
     
     
-   static func alert(on vc: UIViewController, to segue:String){
+   static func alert(on vc: UIViewController, to segue:String?){
         
         let alert = UIAlertController(title: "Time Alert", message: "2 min since CPR started", preferredStyle: UIAlertController.Style.alert)
         
         alert.addAction(UIAlertAction(title: "Check Pulse", style: UIAlertAction.Style.default, handler: {(action) in
             
-            vc.performSegue(withIdentifier: segue, sender: Any?.self)
+            if let s = segue{
+            vc.performSegue(withIdentifier: s, sender: Any?.self)
+            }
+    
         }))
         
         vc.present(alert, animated: true, completion: nil)
@@ -62,6 +65,7 @@ class globalCprTimer {
         
         self.label2 = l2
         self.vc = v
+        self.segue = nil
     }
     
     
@@ -96,8 +100,8 @@ class globalCprTimer {
         else if time == 0 {
             self.timer?.invalidate()
             self.time = 120
-            if let v = vc, let s = segue {
-                alert(on: v, to: s)
+            if let v = vc {
+                alert(on: v, to: segue)
             }
             
             

@@ -41,6 +41,7 @@ class vfVT: UIViewController {
     @IBOutlet var epiCountGlobal: UILabel!
     @IBOutlet var stopButton: UIButton!
     @IBOutlet var timeCountGlobal: UILabel!
+    @IBOutlet weak var totalReset: UIBarButtonItem!
     
     
     
@@ -88,6 +89,7 @@ class vfVT: UIViewController {
         epiCountGlobal.text="Epi: \(globalCounter.epiCountGlobal)"
         shockGlobalCount.text = "Defib: \(globalCounter.defibCountGlobal)"
    
+        stopButton.setStopText()
         cprButton.configureCheckCpr()
         accessButton.configureCheck()
     }
@@ -101,36 +103,36 @@ class vfVT: UIViewController {
     }
     
     
-    
-    
     @IBAction func stopTapped(_ sender: Any) {
         stopButton.stopButtonProp(cprVibration: cprVibration, cprButton: cprButton, cprListLabel: cprListLabel)
     }
-    
-    
-
-        
 
     
     @IBAction func resetPress(_ sender: Any) {
 
-        newReset.resetButtonProp(stopButton: stopButton, cprVibration: cprVibration, cprLabel: cprLabel, cprListLabel: cprListLabel)
+        newReset.resetCPRonly(stopButton: stopButton, cprVibration: cprVibration, cprLabel: cprLabel, cprListLabel: cprListLabel, cprButton: cprButton, cprCountGlobal: cprGlobalCount)}
+    
+    
+    @IBAction func totalResetPress(_ sender: Any) {
+    
+        totalReset.totalReset(stopButton: stopButton, cprVibration: cprVibration, cprLabel: cprLabel, cprListLabel: cprListLabel)
+        
+        //        Reset everthing
+                    cprGlobalCount.text = "CPR: 0"
+                    epiCountGlobal.text = "Epi: 0"
+                    shockGlobalCount.text = "Defib: 0"
+                    timeCountGlobal.text = "00:00"
+                    
+                    cprButton.configureCheck()
+                    accessButton.configureCheck()
+                    accessLabel.reset()
+    }
+    
             
-//        Reset everthing
-            globalCounter.globalReset()
-            cprGlobalCount.text = "CPR: 0"
-            epiCountGlobal.text = "Epi: 0"
-            shockGlobalCount.text = "Defib: 0"
-            timeCountGlobal.text = "00:00"
-            globalCprTimer.time = 120
-            
-            cprButton.configureCheck()
-            accessButton.configureCheck()
-          
-            accessLabel.reset()
+
             
         
-    }
+    
     
     
     @IBAction func homeTapped(_ sender: Any) {
@@ -199,7 +201,7 @@ class vfVT: UIViewController {
     @IBAction func cprPressed(_ sender: Any) {
         cprButton.checkOffOn()
         cprListLabel.fadeLabel()
-        cprButton.cprButtonProperties(cprLabel: cprLabel, cprVibration: cprVibration, cprCountGlobal: cprGlobalCount)
+        cprButton.cprButtonProperties(cprLabel: cprLabel, cprVibration: cprVibration, cprCountGlobal: cprGlobalCount, cprListLabel: cprListLabel)
         stopButton.setStopText()
     }
     

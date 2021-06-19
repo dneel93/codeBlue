@@ -35,6 +35,7 @@ class asystolePeaContVC: UIViewController {
     @IBOutlet weak var cprListLabel: UILabel!
     @IBOutlet weak var causesLabel: UILabel!
     
+    @IBOutlet weak var totalReset: UIBarButtonItem!
     
 //    MARK: GLOBAL VARIABLES
     @IBOutlet var stopButton: UIButton!
@@ -80,12 +81,13 @@ class asystolePeaContVC: UIViewController {
         globalCounter.continueGlobalTime()
         globalCprTimer.setCprLabel(cprLabel, cprCountGlobal, self, "noPulse8")
         globalCprTimer.continueCpr()
-        
+        stopButton.setStopText()
+        cprButton.configureCheckCpr()
         
         cprCountGlobal.text = "CPR: \(globalCounter.cprCountGlobal)"
         epiCountGlobal.text="Epi: \(globalCounter.epiCountGlobal)"
         shockCountGlobal.text = "Defib: \(globalCounter.defibCountGlobal)"
-        cprButton.configureCheckCpr()
+        
         causesButton.configureCheck()
        
     }
@@ -106,33 +108,37 @@ class asystolePeaContVC: UIViewController {
     }
     
     
-
-
-    
     
     @IBAction func resetPress(_ sender: Any) {
 
-        newReset.resetButtonProp(stopButton: stopButton, cprVibration: cprVibration, cprLabel: cprLabel, cprListLabel: cprListLabel)
-            
-//        Reset everthing
-            globalCounter.globalReset()
-            cprCountGlobal.text = "CPR: 0"
-            epiCountGlobal.text = "Epi: 0"
-            shockCountGlobal.text = "Defib: 0"
-            timeCountGlobal.text = "00:00"
-            globalCprTimer.time = 120
-            
-            cprButton.configureCheck()
-            causesButton.configureCheck()
-            bicarbButton.configureCheck()
-            ionsButton.configureCheck()
-            ionsLabel.reset()
-            cprListLabel.reset()
-            bicarbLabel.reset()
-            causesLabel.reset()
-          
+        newReset.resetCPRonly(stopButton: stopButton, cprVibration: cprVibration, cprLabel: cprLabel, cprListLabel: cprListLabel, cprButton: cprButton,cprCountGlobal: cprCountGlobal)}
+    
+    
+    @IBAction func totalResetPress(_ sender: Any) {
+    
+        totalReset.totalReset(stopButton: stopButton, cprVibration: cprVibration, cprLabel: cprLabel, cprListLabel: cprListLabel)
         
+        //        Reset everthing
+                    cprCountGlobal.text = "CPR: 0"
+                    epiCountGlobal.text = "Epi: 0"
+                    shockCountGlobal.text = "Defib: 0"
+                    timeCountGlobal.text = "00:00"
+                    
+                    cprButton.configureCheckCpr()
+                    causesButton.configureCheck()
+                    bicarbButton.configureCheck()
+                    ionsButton.configureCheck()
+                    ionsLabel.reset()
+                    cprListLabel.reset()
+                    bicarbLabel.reset()
+                    causesLabel.reset()
+    
     }
+    
+            
+
+        
+    
     
     
     
@@ -193,7 +199,7 @@ class asystolePeaContVC: UIViewController {
     @IBAction func cprPress(_ sender: Any) {
         cprButton.checkOffOn()
         cprListLabel.fadeLabel()
-        cprButton.cprButtonProperties(cprLabel: cprLabel, cprVibration: cprVibration, cprCountGlobal: cprCountGlobal)
+        cprButton.cprButtonProperties(cprLabel: cprLabel, cprVibration: cprVibration, cprCountGlobal: cprCountGlobal, cprListLabel: cprListLabel)
         stopButton.setStopText()
     }
     

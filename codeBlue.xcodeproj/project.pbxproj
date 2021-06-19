@@ -13,6 +13,7 @@
 		CC1E1F3D26798241003538D2 /* globalEpiTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1E1F3C26798241003538D2 /* globalEpiTimer.swift */; };
 		CC1E1F3F267AF76B003538D2 /* UILabel_fade+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1E1F3E267AF76B003538D2 /* UILabel_fade+ext.swift */; };
 		CC1E1F41267AF7CF003538D2 /* UIButton_cprEpi+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1E1F40267AF7CF003538D2 /* UIButton_cprEpi+ext.swift */; };
+		CC1E1F43267E4D3E003538D2 /* BarButton_reset+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1E1F42267E4D3E003538D2 /* BarButton_reset+ext.swift */; };
 		CC2771502513110300EC6E94 /* Algos.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC27714F2513110300EC6E94 /* Algos.storyboard */; };
 		CC2771522513113500EC6E94 /* algoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2771512513113500EC6E94 /* algoVC.swift */; };
 		CC2771542513981200EC6E94 /* cardiacArrestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2771532513981200EC6E94 /* cardiacArrestVC.swift */; };
@@ -83,6 +84,7 @@
 		CC1E1F3C26798241003538D2 /* globalEpiTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = globalEpiTimer.swift; sourceTree = "<group>"; };
 		CC1E1F3E267AF76B003538D2 /* UILabel_fade+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel_fade+ext.swift"; sourceTree = "<group>"; };
 		CC1E1F40267AF7CF003538D2 /* UIButton_cprEpi+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton_cprEpi+ext.swift"; sourceTree = "<group>"; };
+		CC1E1F42267E4D3E003538D2 /* BarButton_reset+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BarButton_reset+ext.swift"; sourceTree = "<group>"; };
 		CC27714F2513110300EC6E94 /* Algos.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Algos.storyboard; sourceTree = "<group>"; };
 		CC2771512513113500EC6E94 /* algoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = algoVC.swift; sourceTree = "<group>"; };
 		CC2771532513981200EC6E94 /* cardiacArrestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardiacArrestVC.swift; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 				CCC4298A2517DED2001AA0D9 /* UIButton+check.swift */,
 				CC794E1225F647C400DB1D63 /* paddedLabel.swift */,
 				CC1E1F3E267AF76B003538D2 /* UILabel_fade+ext.swift */,
+				CC1E1F42267E4D3E003538D2 /* BarButton_reset+ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 				CC4A06842665932A0058E997 /* eventLogTableVC.swift in Sources */,
 				CC909EEC25EC748000650BA3 /* guidedNarrowQRS.swift in Sources */,
 				CC1E1F41267AF7CF003538D2 /* UIButton_cprEpi+ext.swift in Sources */,
+				CC1E1F43267E4D3E003538D2 /* BarButton_reset+ext.swift in Sources */,
 				CC82B9EA2554877A001DB28C /* globalTimer.swift in Sources */,
 				CCEB7C97253C2E2D00DD66EB /* cardiacTableVC.swift in Sources */,
 				CCA449BF2511E5CB0097D370 /* SceneDelegate.swift in Sources */,

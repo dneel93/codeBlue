@@ -21,7 +21,7 @@ class guidedNoPulseVC1: UIViewController {
     
     @IBOutlet weak var newReset: UIButton!
     
-    
+    @IBOutlet weak var totalReset: UIBarButtonItem!
     
     
 // MARK: label outlets
@@ -106,6 +106,8 @@ class guidedNoPulseVC1: UIViewController {
         epiCountGlobal.text="Epi: \(globalCounter.epiCountGlobal)"
         shockCountGlobal.text = "Defib: \(globalCounter.defibCountGlobal)"
         htTable.resetTable()
+        stopButton.setStopText()
+        cprButton.configureCheckCpr()
         
     }
     
@@ -116,27 +118,36 @@ class guidedNoPulseVC1: UIViewController {
     
     
     @IBAction func resetPress(_ sender: Any) {
-
-        newReset.resetButtonProp(stopButton: stopButton, cprVibration: cprVibration, cprLabel: cprLabel, cprListLabel: cprListLabel)
-        
-//        Reset everthing
-            globalCounter.globalReset()
-            cprCountGlobal.text = "CPR: 0"
-            epiCountGlobal.text = "Epi: 0"
-            shockCountGlobal.text = "Defib: 0"
-            timeCountGlobal.text = "00:00"
-            globalCprTimer.time = 120
-            
-            cprButton.configureCheck()
-            o2Button.configureCheck()
-            defibButton.configureCheck()
-            assignButton.configureCheck()
-            assignLabel.reset()
-            cprListLabel.reset()
-            o2Label.reset()
-            defibLabel.reset()
-        
+        newReset.resetCPRonly(stopButton: stopButton, cprVibration: cprVibration, cprLabel: cprLabel, cprListLabel: cprListLabel, cprButton: cprButton, cprCountGlobal: cprCountGlobal)
     }
+        
+    
+    
+    @IBAction func totalResetPress(_ sender: Any) {
+   // EXTENSION ON BARBUTTON ITEM
+       
+        totalReset.totalReset(stopButton: stopButton, cprVibration: cprVibration, cprLabel: cprLabel, cprListLabel: cprListLabel)
+        
+        //        Reset everthing
+                    cprCountGlobal.text = "CPR: 0"
+                    epiCountGlobal.text = "Epi: 0"
+                    shockCountGlobal.text = "Defib: 0"
+                    timeCountGlobal.text = "00:00"
+                    
+                    
+                    cprButton.configureCheckCpr()
+                    o2Button.configureCheck()
+                    defibButton.configureCheck()
+                    assignButton.configureCheck()
+                    assignLabel.reset()
+                    cprListLabel.reset()
+                    o2Label.reset()
+                    defibLabel.reset()
+    }
+    
+
+        
+    
     
     
     
@@ -216,6 +227,7 @@ class guidedNoPulseVC1: UIViewController {
     @IBAction func cprPress(_ sender: Any) {
         cprButton.checkOffOn()
         cprListLabel.fadeLabel()
+        
 
 // TIMER LOGIC for CPR (timer and vibration/alert only on this VC)
         
