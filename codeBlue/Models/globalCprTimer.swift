@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 
 class globalCprTimer {
@@ -24,11 +25,13 @@ class globalCprTimer {
         
         let alert = UIAlertController(title: "Time Alert", message: "2 min since CPR started", preferredStyle: UIAlertController.Style.alert)
         
-        alert.addAction(UIAlertAction(title: "Check Pulse", style: UIAlertAction.Style.default, handler: {(action) in
+        alert.addAction(UIAlertAction(title: "Check Rhythm", style: UIAlertAction.Style.default, handler: {(action) in
             
+            AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
             if let s = segue{
             vc.performSegue(withIdentifier: s, sender: Any?.self)
             }
+            
     
         }))
         
@@ -41,10 +44,13 @@ class globalCprTimer {
         
         let alert = UIAlertController(title: "10s until pulse check", message: "", preferredStyle: UIAlertController.Style.alert)
         
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{(action) in
+            
+            AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+            }
+        ))
         
         vc.present(alert, animated: true, completion: nil)
-        
         
         let when = DispatchTime.now() + 3.5
                DispatchQueue.main.asyncAfter(deadline: when){

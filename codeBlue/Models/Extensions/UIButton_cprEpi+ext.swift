@@ -42,7 +42,7 @@ func configure(title:String){
     
     
     
-    func cprButtonProperties(cprLabel:UILabel, cprVibration:cprVibrationTimer, cprCountGlobal:UILabel, cprListLabel:UILabel){
+    func cprButtonProperties(cprLabel:UILabel, cprVibration:cprVibrationTimer, cprCountGlobal:UILabel, cprListLabel:UILabel, VC:UIViewController){
         
         if globalCprTimer.timer?.isValid ?? false {
             globalCprTimer.timer?.invalidate()
@@ -61,6 +61,7 @@ func configure(title:String){
         
         else{
             globalCprTimer.startCpr()
+            cprAlert.sendAlert(VC: VC)
             globalCounter.cprCountGlobal+=1
             cprVibration.time = 0
             cprVibration.startVibration()
@@ -70,7 +71,7 @@ func configure(title:String){
     }
     
     
-    func stopButtonProp(cprVibration:cprVibrationTimer, cprButton:UIButton?,cprListLabel:UILabel?){
+    func stopButtonProp(cprVibration:cprVibrationTimer, cprButton:UIButton?,cprListLabel:UILabel?, VC:UIViewController){
         
         
         if globalCprTimer.timer?.isValid == true{
@@ -92,6 +93,7 @@ func configure(title:String){
         else {
             globalCprTimer.startCpr()
             globalCounter.cprCountGlobal+=1
+            cprAlert.sendAlert(VC: VC)
 //                Configure button
         setTitle("Stop", for: .normal)
         setTitleColor(.systemRed, for: .normal)

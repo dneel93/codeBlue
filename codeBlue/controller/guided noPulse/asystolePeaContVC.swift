@@ -103,7 +103,7 @@ class asystolePeaContVC: UIViewController {
     }
     
     @IBAction func stopTapped(_ sender: Any) {
-        stopButton.stopButtonProp(cprVibration: cprVibration, cprButton: cprButton, cprListLabel: cprListLabel)
+        stopButton.stopButtonProp(cprVibration: cprVibration, cprButton: cprButton, cprListLabel: cprListLabel, VC:self)
 
     }
     
@@ -179,6 +179,7 @@ class asystolePeaContVC: UIViewController {
         stopButton.setTitle("Reset", for: .normal)
         stopButton.setTitleColor(.systemBlue, for: .normal)
         globalCprTimer.invalidate()
+        globalEpiTimer.invalidate()
         cprVibration.timer?.invalidate()
         cprVibration.time = 0
         
@@ -199,7 +200,7 @@ class asystolePeaContVC: UIViewController {
     @IBAction func cprPress(_ sender: Any) {
         cprButton.checkOffOn()
         cprListLabel.fadeLabel()
-        cprButton.cprButtonProperties(cprLabel: cprLabel, cprVibration: cprVibration, cprCountGlobal: cprCountGlobal, cprListLabel: cprListLabel)
+        cprButton.cprButtonProperties(cprLabel: cprLabel, cprVibration: cprVibration, cprCountGlobal: cprCountGlobal, cprListLabel: cprListLabel, VC:self)
         stopButton.setStopText()
     }
     

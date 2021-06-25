@@ -98,7 +98,7 @@ class asystolePEA: UIViewController {
         shockCountGlobal.text = "Defib: \(globalCounter.defibCountGlobal)"
         
         accessButton.configureCheck()
-        epiButton.configureCheck()
+        epiButton.configureCheckEpi()
         intubationButton.configureCheck()
         
         
@@ -119,7 +119,7 @@ class asystolePEA: UIViewController {
     
     @IBAction func stopTapped(_ sender: Any) {
         
-        stopButton.stopButtonProp(cprVibration: cprVibration, cprButton: cprButton, cprListLabel: cprListLabel)
+        stopButton.stopButtonProp(cprVibration: cprVibration, cprButton: cprButton, cprListLabel: cprListLabel, VC:self)
         
     }
     
@@ -187,6 +187,7 @@ class asystolePEA: UIViewController {
         stopButton.setTitle("Reset", for: .normal)
         stopButton.setTitleColor(.systemBlue, for: .normal)
         globalCprTimer.invalidate()
+        globalEpiTimer.invalidate()
         cprVibration.timer?.invalidate()
         cprVibration.time = 0
         
@@ -235,7 +236,7 @@ class asystolePEA: UIViewController {
     @IBAction func cprPress(_ sender: Any) {
         cprButton.checkOffOn()
         cprListLabel.fadeLabel()
-        cprButton.cprButtonProperties(cprLabel: cprLabel, cprVibration: cprVibration, cprCountGlobal: cprCountGlobal, cprListLabel: cprListLabel)
+        cprButton.cprButtonProperties(cprLabel: cprLabel, cprVibration: cprVibration, cprCountGlobal: cprCountGlobal, cprListLabel: cprListLabel, VC:self)
         stopButton.setStopText()
     }
     

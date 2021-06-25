@@ -112,7 +112,8 @@ class guidedNoPulseVC1: UIViewController {
     }
     
     @IBAction func stopTapped(_ sender: Any) {
-        stopButton.stopButtonProp(cprVibration: cprVibration, cprButton: cprButton, cprListLabel: cprListLabel)
+        
+        stopButton.stopButtonProp(cprVibration: cprVibration, cprButton: cprButton, cprListLabel: cprListLabel, VC:self)
     }
     
     
@@ -179,6 +180,7 @@ class guidedNoPulseVC1: UIViewController {
         globalCounter.globalTimer?.invalidate()
         
         globalCprTimer.invalidate()
+        globalEpiTimer.invalidate()
         cprVibration.timer?.invalidate()
         cprVibration.time = 0
         
@@ -225,50 +227,31 @@ class guidedNoPulseVC1: UIViewController {
     }
     
     @IBAction func cprPress(_ sender: Any) {
+        
         cprButton.checkOffOn()
         cprListLabel.fadeLabel()
-        
 
-// TIMER LOGIC for CPR (timer and vibration/alert only on this VC)
-        
-        if globalCprTimer.timer?.isValid ?? false {
-            globalCprTimer.invalidate()
-            globalCprTimer.time = 120
-            cprVibration.timer?.invalidate()
-            cprVibration.time=120
-            cprLabel.text = "2:00"
-        }
-        
-        else if globalCprTimer.timer?.isValid == false && globalCprTimer.time < 120 {
-            globalCprTimer.time = 120
-            cprVibration.time=0
-            cprVibration.timer?.invalidate()
-            cprLabel.text = "2:00"
-        }
-        
-        else{
-            globalCprTimer.time = 120
-            globalCprTimer.startCpr()
-            globalCounter.cprCountGlobal+=1
-            cprCountGlobal.text = "CPR: \(globalCounter.cprCountGlobal)"
-            
-            cprVibration.time = 0
-            cprVibration.startVibration()
-            cprAlert.sendAlert(VC: self)
-        
-        }
+        cprButton.cprButtonProperties(cprLabel: cprLabel, cprVibration: cprVibration, cprCountGlobal: cprCountGlobal, cprListLabel: cprListLabel, VC:self)
         
         stopButton.setStopText()
         
     }
     
     @IBAction func o2Press(_ sender: Any) {
-    
         o2Button.checkOffOn()
         o2Label.fadeLabel()
         
-    }
+        bagMaskAlerts.alert1(VC: self)
+    
+    
+        let when2 = DispatchTime.now() + 60
+               DispatchQueue.main.asyncAfter(deadline: when2){
+                bagMaskAlerts.alert2(VC: self)
+               }}
         
+    
+       
+    
     @IBAction func defibPress(_ sender: Any) {
         defibButton.checkOffOn()
         defibLabel.fadeLabel()
@@ -277,11 +260,6 @@ class guidedNoPulseVC1: UIViewController {
     
   
     
-    
-    
-    
-    
-
     
 }
     

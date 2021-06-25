@@ -10,6 +10,7 @@
 		5C767F190C8375A43E4636CF /* Pods_codeBlue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 218F4FFF39E871C2346E422A /* Pods_codeBlue.framework */; };
 		CC0E3A3125D8F518001E16E8 /* cprVibrationTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0E3A3025D8F518001E16E8 /* cprVibrationTimer.swift */; };
 		CC0E3B2525E23ED4001E16E8 /* algo_guidedNoPulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0E3B2425E23ED4001E16E8 /* algo_guidedNoPulse.swift */; };
+		CC17438E26844E2F0094E5B2 /* bagMaskAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC17438D26844E2F0094E5B2 /* bagMaskAlerts.swift */; };
 		CC1E1F3D26798241003538D2 /* globalEpiTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1E1F3C26798241003538D2 /* globalEpiTimer.swift */; };
 		CC1E1F3F267AF76B003538D2 /* UILabel_fade+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1E1F3E267AF76B003538D2 /* UILabel_fade+ext.swift */; };
 		CC1E1F41267AF7CF003538D2 /* UIButton_cprEpi+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1E1F40267AF7CF003538D2 /* UIButton_cprEpi+ext.swift */; };
@@ -81,6 +82,7 @@
 		4465DD027E4E25CB011CF503 /* Pods-codeBlue.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-codeBlue.release.xcconfig"; path = "Target Support Files/Pods-codeBlue/Pods-codeBlue.release.xcconfig"; sourceTree = "<group>"; };
 		CC0E3A3025D8F518001E16E8 /* cprVibrationTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cprVibrationTimer.swift; sourceTree = "<group>"; };
 		CC0E3B2425E23ED4001E16E8 /* algo_guidedNoPulse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = algo_guidedNoPulse.swift; sourceTree = "<group>"; };
+		CC17438D26844E2F0094E5B2 /* bagMaskAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bagMaskAlerts.swift; sourceTree = "<group>"; };
 		CC1E1F3C26798241003538D2 /* globalEpiTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = globalEpiTimer.swift; sourceTree = "<group>"; };
 		CC1E1F3E267AF76B003538D2 /* UILabel_fade+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel_fade+ext.swift"; sourceTree = "<group>"; };
 		CC1E1F40267AF7CF003538D2 /* UIButton_cprEpi+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton_cprEpi+ext.swift"; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 				CC2FA226262A9CA5007D7525 /* TableViewCell.xib */,
 				CC1E1F3C26798241003538D2 /* globalEpiTimer.swift */,
 				CCDB2CAB267C731300F44E7C /* globalCprTimer.swift */,
+				CC17438D26844E2F0094E5B2 /* bagMaskAlerts.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -488,6 +491,7 @@
 				CC2FA224262A9446007D7525 /* HtDataModel.swift in Sources */,
 				CC2E7AFF262D4B40009C1669 /* algo_guided2.swift in Sources */,
 				CCA449D12511E5F90097D370 /* firstVC.swift in Sources */,
+				CC17438E26844E2F0094E5B2 /* bagMaskAlerts.swift in Sources */,
 				CCEB7CA825400C7000DD66EB /* bradyTableVC.swift in Sources */,
 				CC50ABFB2551451500B2B96E /* vfVT.swift in Sources */,
 				CC50AB4125426FE100B2B96E /* rhythmTableVC.swift in Sources */,
@@ -660,7 +664,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = BTMP3Q45G4;
 				INFOPLIST_FILE = codeBlue/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -681,7 +685,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = BTMP3Q45G4;
 				INFOPLIST_FILE = codeBlue/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

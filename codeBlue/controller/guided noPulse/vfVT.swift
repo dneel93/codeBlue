@@ -104,7 +104,7 @@ class vfVT: UIViewController {
     
     
     @IBAction func stopTapped(_ sender: Any) {
-        stopButton.stopButtonProp(cprVibration: cprVibration, cprButton: cprButton, cprListLabel: cprListLabel)
+        stopButton.stopButtonProp(cprVibration: cprVibration, cprButton: cprButton, cprListLabel: cprListLabel, VC:self)
     }
 
     
@@ -153,6 +153,7 @@ class vfVT: UIViewController {
         globalCounter.globalTimer?.invalidate()
     
         globalCprTimer.invalidate()
+        globalEpiTimer.invalidate()
         cprVibration.timer?.invalidate()
         cprVibration.time = 0
         
@@ -201,7 +202,7 @@ class vfVT: UIViewController {
     @IBAction func cprPressed(_ sender: Any) {
         cprButton.checkOffOn()
         cprListLabel.fadeLabel()
-        cprButton.cprButtonProperties(cprLabel: cprLabel, cprVibration: cprVibration, cprCountGlobal: cprGlobalCount, cprListLabel: cprListLabel)
+        cprButton.cprButtonProperties(cprLabel: cprLabel, cprVibration: cprVibration, cprCountGlobal: cprGlobalCount, cprListLabel: cprListLabel, VC:self)
         stopButton.setStopText()
     }
     
