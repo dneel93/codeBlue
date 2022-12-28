@@ -29,6 +29,7 @@ class asystolePEA: UIViewController {
     @IBOutlet weak var rolesButton: UIButton!
     @IBOutlet weak var algoButton: UIButton!
     @IBOutlet weak var htButton: UIButton!
+    @IBOutlet weak var logButton: UIButton!
     
     @IBOutlet weak var totalReset: UIBarButtonItem!
     
@@ -57,13 +58,19 @@ class asystolePEA: UIViewController {
         globalCounter.setLabelVC(timeCountGlobal, self)
         globalCounter.globalTimer?.invalidate()
         globalCounter.startGlobalTime()
-        stopButton.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 4)
-        newReset.transform = CGAffineTransform(rotationAngle: CGFloat.pi / -4)
+     
     
-        roscButton.layer.cornerRadius = 8
-        algoButton.layer.cornerRadius = 8
-        rolesButton.layer.cornerRadius = 8
-        htButton.layer.cornerRadius = 8
+        let color = UIColor(red: 241/255, green: 248/255, blue: 254/255, alpha: 1.0)
+        roscButton.configure(title:"ROSC", colors: color)
+        algoButton.configure(title: "Algo",colors: color)
+        rolesButton.configure(title: "Roles",colors: color)
+        htButton.configure(title: "H&T", colors:color)
+        
+        stopButton.setStopText()
+        newReset.configureShadow()
+        logButton.configureShadow()
+        
+    
         cprButton.configureCheckCpr()
         cprListLabel.configureCprListLabel()
         accessButton.configureCheck()
@@ -77,7 +84,7 @@ class asystolePEA: UIViewController {
         epiCountGlobal.configureLabel()
         
         globalCprTimer.setCprLabel(cprLabel, cprCountGlobal, self, "noPulse6")
-        stopButton.setStopText()
+        
     }
     
    
@@ -163,18 +170,24 @@ class asystolePEA: UIViewController {
     
     
     @IBAction func homeTapped(_ sender: Any) {
-        globalCounter.globalReset()  
-        globalCounter.globalTimer?.invalidate()
-        cprVibration.timer?.invalidate()
-        cprVibration.time = 0
-
-        cprCountGlobal.text = "CPR: 0"
-        epiCountGlobal.text = "Epi: 0"
-        shockCountGlobal.text = "Defib: 0"
-        timeCountGlobal.text = "00:00"
+        totalReset.totalReset(stopButton: stopButton, cprVibration: cprVibration, cprLabel: cprLabel, cprListLabel: cprListLabel)
         
-        globalCprTimer.timer?.invalidate()
-        globalEpiTimer.timer?.invalidate()
+        //        Reset everthing
+                cprCountGlobal.text = "CPR: 0"
+                epiCountGlobal.text = "Epi: 0"
+                shockCountGlobal.text = "Defib: 0"
+                timeCountGlobal.text = "00:00"
+                
+                cprButton.configureCheck()
+                accessButton.configureCheck()
+                epiButton.configureCheck()
+                intubationButton.configureCheck()
+                intLabel.reset()
+                cprListLabel.reset()
+                epiLabel.text = "Epinephrine 1mg"
+                epiLabel.reset()
+                accessLabel.reset()
+        
         htTable.resetTable()
         self.navigationController?.popToRootViewController(animated: true)
         
@@ -183,13 +196,14 @@ class asystolePEA: UIViewController {
     // MARK: Bottom button actions
     
     @IBAction func roscPress(_ sender: Any) {
-        globalCounter.globalTimer?.invalidate()
+       /* globalCounter.globalTimer?.invalidate()
         stopButton.setTitle("Reset", for: .normal)
         stopButton.setTitleColor(.systemBlue, for: .normal)
         globalCprTimer.invalidate()
         globalEpiTimer.invalidate()
         cprVibration.timer?.invalidate()
-        cprVibration.time = 0
+        cprVibration.time = 0 */
+        
         
         let storyboard = UIStoryboard(name: "Algos", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "rosc")
@@ -245,12 +259,18 @@ class asystolePEA: UIViewController {
     @IBAction func accessPress(_ sender: Any) {
         accessButton.checkOffOn()
         accessLabel.fadeLabel()
+        
+        if accessButton.isSelected == true{
+            let time = eventLog.getDate()
+            eventLog.eventTime.append("Sent Labs and confirmed IV access: \(time)")
+        }
     }
     
     
     
     @IBAction func epiPressed(_ sender: Any) {
         epiButton.checkOffOn()
+        epiLabel.fadeLabel()
         epiButton.epiButtonProperties(epiLabel: epiLabel, epiCountLabel: epiCountGlobal)
         }
     

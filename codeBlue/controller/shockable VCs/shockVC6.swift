@@ -25,17 +25,27 @@ class shockVC6: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        shockButton.setImage(UIImage(named:"white"), for: .normal)
+        shockButton.setImage(UIImage(named:"white_2"), for: .normal)
         shockButton.isEnabled = false
-        yesButton.layer.cornerRadius = 8
-        noButton.layer.cornerRadius = 8
+        yesButton.configureShadow()
+        noButton.configureShadow()
+        cprCountGlobal.configureLabel()
+        shockCountGlobal.configureLabel()
+        epiCountGlobal.configureLabel()
         
+    
         // MARK:- global
+        
+        
         
         globalCounter.setLabelVC(timeCountGlobal, self)
         globalCounter.globalTimer?.invalidate()
         globalCounter.startGlobalTime()
         globalCprTimer.setLabelVC1(cprCountGlobal, self)
+        
+        globalEpiTimer.setLabelVC1(epiCountGlobal, self)
+        globalEpiTimer.continueEpiTimer()
+        
         epiCountGlobal.text="Epi: \(globalCounter.epiCountGlobal)"
         shockCountGlobal.text = "Defib: \(globalCounter.defibCountGlobal)"
         
@@ -51,13 +61,15 @@ class shockVC6: UIViewController {
         globalCounter.startGlobalTime()
         globalCprTimer.setLabelVC1(cprCountGlobal, self)
         globalCprTimer.continueCpr()
+        globalEpiTimer.setLabelVC1(epiCountGlobal, self)
+        globalEpiTimer.continueEpiTimer()
     }
     
     
     
     override func viewDidDisappear(_ animated: Bool) {
         
-        shockButton.setImage(UIImage(named:"white"), for: .normal)
+        shockButton.setImage(UIImage(named:"white_2"), for: .normal)
         shockButton.isEnabled = false
     }
     
@@ -77,7 +89,7 @@ class shockVC6: UIViewController {
         }
         
         else{
-            shockButton.setImage(UIImage(named:"white"), for: .normal)
+            shockButton.setImage(UIImage(named:"white_2"), for: .normal)
             shockButton.isEnabled = false
             
         }}
@@ -85,6 +97,8 @@ class shockVC6: UIViewController {
     
     @IBAction func shockPressed(_ sender: Any) {
         globalCounter.defibCountGlobal+=1
+        let time = eventLog.getDate()
+        eventLog.eventTime.append("Defibrillation: \(time)")
         AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
     }
     

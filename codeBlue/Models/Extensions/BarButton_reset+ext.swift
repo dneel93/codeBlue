@@ -14,8 +14,7 @@ extension UIBarButtonItem {
     
         //        change stop button color
 
-                    stopButton.setTitle("Start", for: .normal)
-                    stopButton.setTitleColor(.systemGreen, for: .normal)
+                    stopButton.setBackgroundImage( UIImage(named: "Start"), for: .normal)
                     
         //        stop timers
                     globalCounter.globalTimer?.invalidate()

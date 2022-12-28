@@ -27,7 +27,7 @@ class globalCprTimer {
         
         alert.addAction(UIAlertAction(title: "Check Rhythm", style: UIAlertAction.Style.default, handler: {(action) in
             
-            AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+            
             if let s = segue{
             vc.performSegue(withIdentifier: s, sender: Any?.self)
             }
@@ -36,7 +36,7 @@ class globalCprTimer {
         }))
         
         vc.present(alert, animated: true, completion: nil)
-        
+       AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
     }
     
     
@@ -45,12 +45,13 @@ class globalCprTimer {
         let alert = UIAlertController(title: "10s until pulse check", message: "", preferredStyle: UIAlertController.Style.alert)
         
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{(action) in
-            
             AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
             }
         ))
         
         vc.present(alert, animated: true, completion: nil)
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+        
         
         let when = DispatchTime.now() + 3.5
                DispatchQueue.main.asyncAfter(deadline: when){
@@ -100,6 +101,7 @@ class globalCprTimer {
         
         if time == 10 {
             if let v = vc{
+                
                 pulseAlert(on: v)}
         }
         
@@ -107,6 +109,7 @@ class globalCprTimer {
             self.timer?.invalidate()
             self.time = 120
             if let v = vc {
+                
                 alert(on: v, to: segue)
             }
             

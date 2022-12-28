@@ -23,7 +23,7 @@ class eventLogTableVC: UITableViewController {
     
     let totalTime = Float(globalCounter.globalTimeCounter)/60
     
-    
+    var Date:String=""
    
     
     
@@ -33,6 +33,22 @@ class eventLogTableVC: UITableViewController {
         let totalTimeLog = String(format: "Total time (min): %.2f", totalTime)
         let array:[String] = [totalTimeLog,cprRoundsLog,epiDosesLog,defibLog, amioLog]
         guidedLogArray = array
+        Date=self.getDate()
+        
+    }
+    
+    func getDate()->String{
+        
+        let Date = Foundation.Date()
+        let calendar = Calendar.current
+        
+        let year = calendar.component(.year, from: Date)
+        let month = calendar.component(.month, from: Date)
+        let day = calendar.component(.day, from: Date)
+        
+        let date = "\(month)/\(day)/\(year)"
+        
+        return date
     }
     
     
@@ -42,13 +58,23 @@ class eventLogTableVC: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 2
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 
-        let sectionName = "Event Log (Cardiac Arrest)"
-        return sectionName
+        let sectionName1 = "Event Summary: \(Date)"
+        let sectionName2 = "Event Log: \(Date)"
+        
+        if section == 0{
+            return sectionName1}
+        else {return sectionName2}
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        (view as! UITableViewHeaderFooterView).contentView.backgroundColor = UIColor(red: CGFloat(111.0/255.0), green: CGFloat(128.0/255.0), blue: CGFloat(218.0/255.0), alpha: 1.0)
+        
+        (view as! UITableViewHeaderFooterView).textLabel?.textColor = .white
     }
     
     
@@ -56,13 +82,18 @@ class eventLogTableVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return guidedLogArray.count
+        if section == 0 {
+        return guidedLogArray.count}
+        else {return eventLog.eventTime.count}
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath)
         
-        cell.textLabel?.text = guidedLogArray[indexPath.row]
+        let infos = indexPath.section == 0 ? guidedLogArray[indexPath.row] : eventLog.eventTime[indexPath.row]
+        
+        
+        cell.textLabel?.text = infos
         cell.textLabel?.numberOfLines = 0
 
         return cell

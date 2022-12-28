@@ -58,7 +58,7 @@ class TableViewCell: UITableViewCell {
         
         switch p {
         
-        case "?": statusLabel.backgroundColor = .systemIndigo
+        case "?": statusLabel.backgroundColor = UIColor(red: CGFloat(111.0/255.0), green: CGFloat(128.0/255.0), blue: CGFloat(218.0/255.0), alpha: 1.0)
         
         case "Ruled in": statusLabel.backgroundColor = .systemGreen
             
@@ -67,9 +67,8 @@ class TableViewCell: UITableViewCell {
         
             
         default:
-            statusLabel.backgroundColor = .systemIndigo
+            statusLabel.backgroundColor = UIColor(red: CGFloat(111.0/255.0), green: CGFloat(128.0/255.0), blue: CGFloat(218.0/255.0), alpha: 1.0)
             
-        
         
     }
         

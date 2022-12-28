@@ -24,8 +24,8 @@ class guidedPulseVC3: UIViewController {
         o2Button.configureCheck()
         ecgButton.configureCheck()
         teleButton.configureCheck()
-        noButton.layer.cornerRadius = 8
-        yesButton.layer.cornerRadius = 8
+        noButton.configureShadow()
+        yesButton.configureShadow()
         self.navigationItem.title = "Bradycardia"
         
         

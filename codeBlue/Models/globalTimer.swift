@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class globalCounter{
     
     static var cprCountGlobal:Int = 0
@@ -100,7 +101,10 @@ class globalCounter{
         cprCountGlobal = 0
         epiCountGlobal = 0
         defibCountGlobal = 0
+        amioCountGlobal = 0
         globalTimeCounter = 0
+
+        eventLog.eventTime = []
     }
     
     

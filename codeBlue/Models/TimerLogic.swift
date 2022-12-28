@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class timerClass {
    
@@ -30,14 +31,14 @@ class timerClass {
         alert.addAction(UIAlertAction(title: "Check Pulse", style: UIAlertAction.Style.default, handler: {(action) in
             
             vc.performSegue(withIdentifier: segue, sender: Any?.self)
+            
         }))
         }
         
         else{alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))}
         
-        
         vc.present(alert, animated: true, completion: nil)
-        
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
         
         if self.type == "Epi"{
             let when = DispatchTime.now() + 4
@@ -56,8 +57,9 @@ class timerClass {
         
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
         
+       
         vc.present(alert, animated: true, completion: nil)
-        
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
         
         let when = DispatchTime.now() + 3.5
                DispatchQueue.main.asyncAfter(deadline: when){
@@ -111,12 +113,15 @@ class timerClass {
         
         if time == 10 {
             if let v = vc{
-                pulseAlert(on: v)}
+                
+                pulseAlert(on: v)
+            }
         }
         
         else if time == 0 {
             self.timer?.invalidate()
             if let v = vc, let s = segue {
+                
                 alert(on: v, to: s)
             }}
         

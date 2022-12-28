@@ -15,8 +15,8 @@ class guided1VC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        pulseButton.configure(title: "Pulse")
-        noPulseButton.configure(title: "No Pulse")
+  
+        
         self.navigationItem.title = "Guided Code"
 
     }

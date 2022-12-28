@@ -26,10 +26,11 @@ class shockVC5: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        shockButton.setImage(UIImage(named:"white"), for: .normal)
+        shockButton.setImage(UIImage(named:"white_2"), for: .normal)
         shockButton.isEnabled = false
-        yesButton.layer.cornerRadius = 8
-        noButton.layer.cornerRadius = 8
+        
+        yesButton.configureShadow()
+        noButton.configureShadow()
         
         // MARK:- global
         
@@ -46,6 +47,7 @@ class shockVC5: UIViewController {
         globalCprTimer.setLabelVC1(cprCountGlobal, self)
         shockCountGlobal.text = "Defib: \(globalCounter.defibCountGlobal)"
         cprCountGlobal.text = "CPR: \(globalCounter.cprCountGlobal)"
+        epiCountGlobal.text="Epi: \(globalCounter.epiCountGlobal)"
     }
     
     
@@ -59,14 +61,14 @@ class shockVC5: UIViewController {
         globalCounter.startGlobalTime()
         globalCprTimer.setLabelVC1(cprCountGlobal, self)
         globalCprTimer.continueCpr()
-        
-        
+        globalEpiTimer.setLabelVC1(epiCountGlobal, self)
+        globalEpiTimer.continueEpiTimer()
     }
     
     
     override func viewDidDisappear(_ animated: Bool) {
         
-        shockButton.setImage(UIImage(named:"white"), for: .normal)
+        shockButton.setImage(UIImage(named:"white_2"), for: .normal)
         shockButton.isEnabled = false
         
     }
@@ -89,7 +91,7 @@ class shockVC5: UIViewController {
         }
         
         else{
-            shockButton.setImage(UIImage(named:"white"), for: .normal)
+            shockButton.setImage(UIImage(named:"white_2"), for: .normal)
             shockButton.isEnabled = false
             
         }}
@@ -97,6 +99,8 @@ class shockVC5: UIViewController {
     
     @IBAction func shockPressed(_ sender: Any) {
         globalCounter.defibCountGlobal+=1
+        let time = eventLog.getDate()
+        eventLog.eventTime.append("Defibrillation: \(time)")
         AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
     }
     

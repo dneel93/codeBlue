@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "checked_box.png",
+      "filename" : "Group 87.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Group 87 (1).png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "Group 87 (2).png",
       "idiom" : "universal",
       "scale" : "3x"
     }

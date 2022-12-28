@@ -18,6 +18,8 @@ class vfEpi: UIViewController {
     @IBOutlet var intButton: UIButton!
     @IBOutlet var epiLabel: UILabel!
     
+    @IBOutlet weak var logButton: UIButton!
+    
     @IBOutlet weak var roscButton: UIButton!
     @IBOutlet weak var algoButton: UIButton!
     @IBOutlet weak var rolesButton: UIButton!
@@ -53,13 +55,21 @@ class vfEpi: UIViewController {
         globalCounter.startGlobalTime()
         globalEpiTimer.setLabelVC(epiLabel, epiCountGlobal, self)
         
-        stopButton.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 4)
-        newReset.transform = CGAffineTransform(rotationAngle: CGFloat.pi / -4)
+      
         
-        algoButton.layer.cornerRadius = 8
-        roscButton.layer.cornerRadius = 8
-        rolesButton.layer.cornerRadius = 8
-        htButton.layer.cornerRadius = 8
+        let color = UIColor(red: 241/255, green: 248/255, blue: 254/255, alpha: 1.0)
+        roscButton.configure(title:"ROSC", colors: color)
+        algoButton.configure(title: "Algo",colors: color)
+        rolesButton.configure(title: "Roles",colors: color)
+        htButton.configure(title: "H&T", colors:color)
+        
+        stopButton.setStopText()
+        newReset.configureShadow()
+        logButton.configureShadow()
+        
+        
+        
+        
         cprButton.configureCheckCpr()
         cprListLabel.configureCprListLabel()
         epiButton.configureCheckEpi()
@@ -154,28 +164,37 @@ class vfEpi: UIViewController {
         
         
     @IBAction func homeTapped(_ sender: Any) {
-        globalCounter.globalReset()  
-        globalCounter.globalTimer.invalidate()
-        cprVibration.timer?.invalidate()
-        cprVibration.time = 0
-        
-        cprCountGlobal.text = "CPR: 0"
-        epiCountGlobal.text = "Epi: 0"
-        shockCountGlobal.text = "Defib: 0"
-        timeCountGlobal.text = "00:00"
-        htTable.resetTable()
+        totalReset.totalReset(stopButton: stopButton, cprVibration: cprVibration, cprLabel: cprLabel, cprListLabel: cprListLabel)
+       
+        //        Reset everthing in UI
+
+                    cprCountGlobal.text = "CPR: 0"
+                    epiCountGlobal.text = "Epi: 0"
+                    shockCountGlobal.text = "Defib: 0"
+                    timeCountGlobal.text = "00:00"
+                    
+                    cprButton.configureCheck()
+                    cprButton.configureCheck()
+                    intButton.configureCheck()
+                    epiButton.configureCheck()
+                    intLabel.reset()
+                    cprListLabel.reset()
+                    epiLabel.text = "Epinephrine 1mg"
+                    epiLabel.reset()
+                    htTable.resetTable()
         
         self.navigationController?.popToRootViewController(animated: true)
     }
     
     @IBAction func roscPress(_ sender: Any) {
-        globalCounter.globalTimer?.invalidate()
+        
+        /*globalCounter.globalTimer?.invalidate()
         stopButton.setTitle("Reset", for: .normal)
         stopButton.setTitleColor(.systemBlue, for: .normal)
         globalCprTimer.invalidate()
         globalEpiTimer.invalidate()
         cprVibration.timer?.invalidate()
-        cprVibration.time = 0
+        cprVibration.time = 0 */
         
         let storyboard = UIStoryboard(name: "Algos", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "rosc")
@@ -227,6 +246,7 @@ class vfEpi: UIViewController {
     
     @IBAction func epiPressed(_ sender: Any) {
         epiButton.checkOffOn()
+        epiLabel.fadeLabel()
         epiButton.epiButtonProperties(epiLabel: epiLabel, epiCountLabel: epiCountGlobal)
     }
     

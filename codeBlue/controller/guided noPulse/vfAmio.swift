@@ -19,6 +19,7 @@ class vfAmio: UIViewController {
     
     @IBOutlet weak var epiLabel: UILabel!
     
+    @IBOutlet weak var logButton: UIButton!
     @IBOutlet weak var totalReset: UIBarButtonItem!
     
     // MARK: labels
@@ -58,15 +59,20 @@ class vfAmio: UIViewController {
         globalCounter.setLabelVC(timeCountGlobal, self)
         globalCounter.globalTimer?.invalidate()
         globalCounter.startGlobalTime()
-        stopButton.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 4)
-        newReset.transform = CGAffineTransform(rotationAngle: CGFloat.pi / -4)
+       
         
        
-        roscButton.layer.cornerRadius = 8
-        algoButton.layer.cornerRadius = 8
-        rolesButton.layer.cornerRadius = 8
-
-        htButton.layer.cornerRadius = 8
+        let color = UIColor(red: 241/255, green: 248/255, blue: 254/255, alpha: 1.0)
+        roscButton.configure(title:"ROSC", colors: color)
+        algoButton.configure(title: "Algo",colors: color)
+        rolesButton.configure(title: "Roles",colors: color)
+        htButton.configure(title: "H&T", colors:color)
+        
+        stopButton.setStopText()
+        newReset.configureShadow()
+        logButton.configureShadow()
+        
+        
         amioButton.configureCheck()
         cprButton.configureCheckCpr()
         cprListLabel.configureCprListLabel()
@@ -79,7 +85,7 @@ class vfAmio: UIViewController {
         shockCountGlobal.configureLabel()
         epiCountGlobal.configureLabel()
         globalCprTimer.setCprLabel(cprLabel, cprCountGlobal, self, "noPulse9")
-        stopButton.setStopText()
+        
     }
     
 
@@ -102,7 +108,7 @@ class vfAmio: UIViewController {
         cprButton.configureCheckCpr()
         causesButton.configureCheck()
         epiButton.configureCheckEpi()
-        
+        epiLabel.configureEpiListLabel()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -169,18 +175,26 @@ class vfAmio: UIViewController {
     
     
     @IBAction func homeTapped(_ sender: Any) {
-        globalCounter.globalReset()
-        globalCounter.globalTimer?.invalidate()
-        cprVibration.timer?.invalidate()
-        cprVibration.time = 0
+        totalReset.totalReset(stopButton: stopButton, cprVibration: cprVibration, cprLabel: cprLabel, cprListLabel: cprListLabel)
+    
+    //        Reset everthing in UI
+                cprCountGlobal.text = "CPR: 0"
+                epiCountGlobal.text = "Epi: 0"
+                shockCountGlobal.text = "Defib: 0"
+                timeCountGlobal.text = "00:00"
+                
+                cprButton.configureCheckCpr()
+                cprButton.configureCheck()
+                amioButton.configureCheck()
+                causesButton.configureCheck()
+                epiButton.configureCheck()
+                cprListLabel.reset()
+                causesLabel.reset()
+                amioLabel.reset()
+                epiLabel.text = "Epinephrine 1mg"
+                htTable.resetTable()
         
-        cprCountGlobal.text = "CPR: 0"
-        epiCountGlobal.text = "Epi: 0"
-        shockCountGlobal.text = "Defib: 0"
-        timeCountGlobal.text = "00:00"
-        htTable.resetTable()
-        
-        globalCprTimer.timer?.invalidate()
+       
         self.navigationController?.popToRootViewController(animated: true)
     }
     
@@ -194,13 +208,14 @@ class vfAmio: UIViewController {
     }
     
     @IBAction func roscPress(_ sender: Any) {
-        globalCounter.globalTimer?.invalidate()
+       
+        /* globalCounter.globalTimer?.invalidate()
         stopButton.setTitle("Reset", for: .normal)
         stopButton.setTitleColor(.systemBlue, for: .normal)
         globalCprTimer.invalidate()
         globalEpiTimer.invalidate()
         cprVibration.timer?.invalidate()
-        cprVibration.time = 0
+        cprVibration.time = 0 */
         
         let storyboard = UIStoryboard(name: "Algos", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "rosc")
@@ -242,6 +257,13 @@ class vfAmio: UIViewController {
     @IBAction func amioPressed(_ sender: Any) {
         amioButton.checkOffOn()
         amioLabel.fadeLabel()
+        
+        if amioButton.isSelected == true{
+            globalCounter.amioCountGlobal+=1
+            let time = eventLog.getDate()
+            eventLog.eventTime.append("Amio Dose: \(time)")
+        }
+        
     }
     
     

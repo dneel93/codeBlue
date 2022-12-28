@@ -19,7 +19,7 @@ class HTcausesTableVC: UITableViewController {
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 300
         
-        
+    
     }
 
 
@@ -94,13 +94,13 @@ class HTcausesTableVC: UITableViewController {
                 htTable.array[indexPath.row].status="Ruled in"
                 
             case "Ruled in": cell.statusLabel.text = "?"
-                cell.statusLabel.backgroundColor = .systemIndigo
+                cell.statusLabel.backgroundColor = UIColor(red: CGFloat(111.0/255.0), green: CGFloat(128.0/255.0), blue: CGFloat(218.0/255.0), alpha: 1.0)
                 
                 htTable.array[indexPath.row].status="?"
             
                 
             default: cell.statusLabel.text = "?"
-                cell.statusLabel.backgroundColor = .systemIndigo
+                cell.statusLabel.backgroundColor = UIColor(red: CGFloat(111.0/255.0), green: CGFloat(128.0/255.0), blue: CGFloat(218.0/255.0), alpha: 1.0)
                 htTable.array[indexPath.row].status="?"
             
             }

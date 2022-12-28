@@ -21,7 +21,6 @@ class cprVibrationTimer {
          }
     
     
-    
     @objc func vibrate() {
         time+=0.59
         AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))

@@ -16,8 +16,8 @@ class guidedPulseVC1: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tachyButton.configure(title: "Tachycardia")
-        bradyButton.configure(title:"Bradycardia")
+        tachyButton.configureShadow()
+        bradyButton.configureShadow()
         self.navigationItem.title = "Pulse"
     
     }

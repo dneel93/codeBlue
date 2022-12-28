@@ -63,7 +63,7 @@ class guidedPulseVC6: UIViewController {
         }
         
         else{
-            cardio.text = "Synchronized Cardioversion ❤️"}
+            cardio.text = "Synchronized Cardioversion"}
         
         card = !card
     }
@@ -75,7 +75,7 @@ class guidedPulseVC6: UIViewController {
                 .text = "Sedation:\nMidazolam: 1-2mg IV\nFentanyl: 25-100mcg IV"}
         
         else{
-            sedation.text = "Sedation 💊"
+            sedation.text = "Sedation"
         }
         sed = !sed
     }

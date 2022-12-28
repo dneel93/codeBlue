@@ -33,7 +33,6 @@ class globalEpiTimer{
     
 
     
-    
     static func startGlobalTime(){
         globalEpiTimer.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateUITime), userInfo: nil, repeats: true)
     }

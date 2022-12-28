@@ -44,6 +44,8 @@ class asystolePeaContVC: UIViewController {
     @IBOutlet var epiCountGlobal: UILabel!
     @IBOutlet var timeCountGlobal: UILabel!
     @IBOutlet weak var newReset: UIButton!
+    @IBOutlet weak var logButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,13 +53,20 @@ class asystolePeaContVC: UIViewController {
         globalCounter.setLabelVC(timeCountGlobal, self)
         globalCounter.globalTimer?.invalidate()
         globalCounter.startGlobalTime()
-        stopButton.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 4)
-        newReset.transform = CGAffineTransform(rotationAngle: CGFloat.pi / -4)
         
-        roscButton.layer.cornerRadius = 8
-        algoButton.layer.cornerRadius = 8
-        rolesButton.layer.cornerRadius = 8
-        htButton.layer.cornerRadius = 8
+        
+        let color = UIColor(red: 241/255, green: 248/255, blue: 254/255, alpha: 1.0)
+        roscButton.configure(title:"ROSC", colors: color)
+        algoButton.configure(title: "Algo",colors: color)
+        rolesButton.configure(title: "Roles",colors: color)
+        htButton.configure(title: "H&T", colors:color)
+        
+        stopButton.setStopText()
+        newReset.configureShadow()
+        logButton.configureShadow()
+        
+        
+        
         cprButton.configureCheckCpr()
         cprListLabel.configureCprListLabel()
         causesButton.configureCheck()
@@ -71,7 +80,7 @@ class asystolePeaContVC: UIViewController {
         epiCountGlobal.text="Epi:\(globalCounter.epiCountGlobal)"
         shockCountGlobal.text = "Defib:\(globalCounter.defibCountGlobal)"
         globalCprTimer.setCprLabel(cprLabel, cprCountGlobal, self, "noPulse8")
-        stopButton.setStopText()
+        
     }
     
     
@@ -81,6 +90,8 @@ class asystolePeaContVC: UIViewController {
         globalCounter.continueGlobalTime()
         globalCprTimer.setCprLabel(cprLabel, cprCountGlobal, self, "noPulse8")
         globalCprTimer.continueCpr()
+        globalEpiTimer.setLabelVC1(epiCountGlobal, self)
+        globalEpiTimer.continueEpiTimer()
         stopButton.setStopText()
         cprButton.configureCheckCpr()
         
@@ -139,28 +150,27 @@ class asystolePeaContVC: UIViewController {
 
         
     
-    
-    
-    
-   
-    
-    
-    
 
     
     @IBAction func homeTapped(_ sender: Any) {
-        globalCounter.globalReset()
-        globalCprTimer.timer?.invalidate()
-        globalCprTimer.time = 120
-        cprVibration.timer?.invalidate()
-        cprVibration.time = 0
         
-
-        cprCountGlobal.text = "CPR: 0"
-        epiCountGlobal.text = "Epi: 0"
-        shockCountGlobal.text = "Defib: 0"
-        timeCountGlobal.text = "00:00"
-        globalCounter.globalTimer?.invalidate()
+        totalReset.totalReset(stopButton: stopButton, cprVibration: cprVibration, cprLabel: cprLabel, cprListLabel: cprListLabel)
+        
+        //        Reset everthing
+                    cprCountGlobal.text = "CPR: 0"
+                    epiCountGlobal.text = "Epi: 0"
+                    shockCountGlobal.text = "Defib: 0"
+                    timeCountGlobal.text = "00:00"
+                    
+                    cprButton.configureCheckCpr()
+                    causesButton.configureCheck()
+                    bicarbButton.configureCheck()
+                    ionsButton.configureCheck()
+                    ionsLabel.reset()
+                    cprListLabel.reset()
+                    bicarbLabel.reset()
+                    causesLabel.reset()
+        
         htTable.resetTable()
         self.navigationController?.popToRootViewController(animated: true)
     }
@@ -175,13 +185,14 @@ class asystolePeaContVC: UIViewController {
     }
     
     @IBAction func roscPress(_ sender: Any) {
-        globalCounter.globalTimer?.invalidate()
+        
+        /* globalCounter.globalTimer?.invalidate()
         stopButton.setTitle("Reset", for: .normal)
         stopButton.setTitleColor(.systemBlue, for: .normal)
         globalCprTimer.invalidate()
         globalEpiTimer.invalidate()
         cprVibration.timer?.invalidate()
-        cprVibration.time = 0
+        cprVibration.time = 0 */
         
         let storyboard = UIStoryboard(name: "Algos", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "rosc")
@@ -208,11 +219,21 @@ class asystolePeaContVC: UIViewController {
     @IBAction func bicarbPress(_ sender: Any) {
         bicarbButton.checkOffOn()
         bicarbLabel.fadeLabel()
+        
+        if bicarbButton.isSelected == true{
+            let time = eventLog.getDate()
+            eventLog.eventTime.append("Bicarb 1amp: \(time)")
+        }
     }
     
     @IBAction func ionsPress(_ sender: Any) {
         ionsButton.checkOffOn()
         ionsLabel.fadeLabel()
+        
+        if ionsButton.isSelected == true{
+            let time = eventLog.getDate()
+            eventLog.eventTime.append("Mg/Ca (2g) given: \(time)")
+        }
     }
     
     

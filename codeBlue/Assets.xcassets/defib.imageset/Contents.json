@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "defib.png",
+      "filename" : "Task Completed - Light (8).png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "defib@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "defib@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

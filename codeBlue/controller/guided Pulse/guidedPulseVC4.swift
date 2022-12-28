@@ -17,8 +17,8 @@ class guidedPulseVC4: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        noButton.configure(title: "No")
-        yesButton.configure(title: "Yes")
+        noButton.configureShadow()
+        yesButton.configureShadow()
 
     }
     

@@ -15,15 +15,17 @@ class firstVC: UIViewController, MenuControllerDelegate, UINavigationControllerD
     @IBOutlet var aclsAlgo: UIButton!
     var SideMenu: SideMenuNavigationController?
     
-    
     @IBOutlet var ACLS: UIView!
-    
     @IBOutlet var About: UIView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        guidedCode.layer.cornerRadius = 8
+        guidedCode.configure(title: "Guided")
+        guidedCode.configureShadow()
         aclsAlgo.layer.cornerRadius = 8
+        aclsAlgo.configureShadow()
+        
         let menu = MenuListController()
         menu.delegate = self
         SideMenu = SideMenuNavigationController(rootViewController: menu)
@@ -33,8 +35,14 @@ class firstVC: UIViewController, MenuControllerDelegate, UINavigationControllerD
         SideMenuManager.default.addPanGestureToPresent(toView: self.view)
         self.ACLS.isHidden = true
         self.About.isHidden = true
+        
+        UIApplication.shared.isIdleTimerDisabled = false
        
     
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        UIApplication.shared.isIdleTimerDisabled = false
     }
     
     
@@ -46,6 +54,8 @@ class firstVC: UIViewController, MenuControllerDelegate, UINavigationControllerD
                 
                 self?.ACLS.isHidden = true
                 self?.About.isHidden = false
+                self?.guidedCode.isHidden = true
+                self?.aclsAlgo.isHidden = true
 
             }
             
@@ -53,12 +63,16 @@ class firstVC: UIViewController, MenuControllerDelegate, UINavigationControllerD
                
                 self?.ACLS.isHidden = false
                 self?.About.isHidden = true
+                self?.guidedCode.isHidden = true
+                self?.aclsAlgo.isHidden = true
             }
             
             else if name == "Home"{
                 
                 self?.ACLS.isHidden = true
                 self?.About.isHidden = true
+                self?.guidedCode.isHidden = false
+                self?.aclsAlgo.isHidden = false
             }
            
             else if name == "Complete Survey"{

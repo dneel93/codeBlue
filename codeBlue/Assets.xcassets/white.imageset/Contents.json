@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "white.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Ellipse 43.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

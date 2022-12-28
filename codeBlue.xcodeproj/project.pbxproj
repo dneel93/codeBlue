@@ -10,6 +10,7 @@
 		5C767F190C8375A43E4636CF /* Pods_codeBlue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 218F4FFF39E871C2346E422A /* Pods_codeBlue.framework */; };
 		CC0E3A3125D8F518001E16E8 /* cprVibrationTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0E3A3025D8F518001E16E8 /* cprVibrationTimer.swift */; };
 		CC0E3B2525E23ED4001E16E8 /* algo_guidedNoPulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0E3B2425E23ED4001E16E8 /* algo_guidedNoPulse.swift */; };
+		CC110F1C26D5D82900438F57 /* eventLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC110F1B26D5D82900438F57 /* eventLog.swift */; };
 		CC17438E26844E2F0094E5B2 /* bagMaskAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC17438D26844E2F0094E5B2 /* bagMaskAlerts.swift */; };
 		CC1E1F3D26798241003538D2 /* globalEpiTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1E1F3C26798241003538D2 /* globalEpiTimer.swift */; };
 		CC1E1F3F267AF76B003538D2 /* UILabel_fade+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1E1F3E267AF76B003538D2 /* UILabel_fade+ext.swift */; };
@@ -51,11 +52,14 @@
 		CC82B9FF25591685001DB28C /* guidedPulseVC6.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC82B9FE25591685001DB28C /* guidedPulseVC6.swift */; };
 		CC909EEC25EC748000650BA3 /* guidedNarrowQRS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC909EEB25EC748000650BA3 /* guidedNarrowQRS.swift */; };
 		CC92B9F125C3EDEF00BB0493 /* codeStructureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC92B9F025C3EDEE00BB0493 /* codeStructureVC.swift */; };
+		CC95E44826EB0C2F00192AA3 /* gradientColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC95E44726EB0C2F00192AA3 /* gradientColor.swift */; };
+		CC95E48826EF924900192AA3 /* progressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC95E48726EF924900192AA3 /* progressBar.swift */; };
 		CCA449BD2511E5CB0097D370 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA449BC2511E5CB0097D370 /* AppDelegate.swift */; };
 		CCA449BF2511E5CB0097D370 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA449BE2511E5CB0097D370 /* SceneDelegate.swift */; };
 		CCA449C42511E5CB0097D370 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCA449C22511E5CB0097D370 /* Main.storyboard */; };
 		CCA449C62511E5CD0097D370 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCA449C52511E5CD0097D370 /* Assets.xcassets */; };
 		CCA449D12511E5F90097D370 /* firstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA449D02511E5F90097D370 /* firstVC.swift */; };
+		CCA4C287280A71BF0000CBC6 /* ROSC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCA4C286280A71BF0000CBC6 /* ROSC.storyboard */; };
 		CCC2525025A587C600E98607 /* TimerLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC2524F25A587C600E98607 /* TimerLogic.swift */; };
 		CCC429812517CE87001AA0D9 /* guidedPulse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCC429802517CE87001AA0D9 /* guidedPulse.storyboard */; };
 		CCC429832517CEAB001AA0D9 /* guidedPulseVC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC429822517CEAB001AA0D9 /* guidedPulseVC1.swift */; };
@@ -82,6 +86,7 @@
 		4465DD027E4E25CB011CF503 /* Pods-codeBlue.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-codeBlue.release.xcconfig"; path = "Target Support Files/Pods-codeBlue/Pods-codeBlue.release.xcconfig"; sourceTree = "<group>"; };
 		CC0E3A3025D8F518001E16E8 /* cprVibrationTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cprVibrationTimer.swift; sourceTree = "<group>"; };
 		CC0E3B2425E23ED4001E16E8 /* algo_guidedNoPulse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = algo_guidedNoPulse.swift; sourceTree = "<group>"; };
+		CC110F1B26D5D82900438F57 /* eventLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventLog.swift; sourceTree = "<group>"; };
 		CC17438D26844E2F0094E5B2 /* bagMaskAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bagMaskAlerts.swift; sourceTree = "<group>"; };
 		CC1E1F3C26798241003538D2 /* globalEpiTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = globalEpiTimer.swift; sourceTree = "<group>"; };
 		CC1E1F3E267AF76B003538D2 /* UILabel_fade+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel_fade+ext.swift"; sourceTree = "<group>"; };
@@ -123,6 +128,8 @@
 		CC82B9FE25591685001DB28C /* guidedPulseVC6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guidedPulseVC6.swift; sourceTree = "<group>"; };
 		CC909EEB25EC748000650BA3 /* guidedNarrowQRS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guidedNarrowQRS.swift; sourceTree = "<group>"; };
 		CC92B9F025C3EDEE00BB0493 /* codeStructureVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = codeStructureVC.swift; sourceTree = "<group>"; };
+		CC95E44726EB0C2F00192AA3 /* gradientColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gradientColor.swift; sourceTree = "<group>"; };
+		CC95E48726EF924900192AA3 /* progressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = progressBar.swift; sourceTree = "<group>"; };
 		CCA449B92511E5CB0097D370 /* codeBlue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = codeBlue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCA449BC2511E5CB0097D370 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCA449BE2511E5CB0097D370 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +137,7 @@
 		CCA449C52511E5CD0097D370 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CCA449CA2511E5CD0097D370 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CCA449D02511E5F90097D370 /* firstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstVC.swift; sourceTree = "<group>"; };
+		CCA4C286280A71BF0000CBC6 /* ROSC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ROSC.storyboard; sourceTree = "<group>"; };
 		CCC2524F25A587C600E98607 /* TimerLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerLogic.swift; sourceTree = "<group>"; };
 		CCC429802517CE87001AA0D9 /* guidedPulse.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = guidedPulse.storyboard; sourceTree = "<group>"; };
 		CCC429822517CEAB001AA0D9 /* guidedPulseVC1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guidedPulseVC1.swift; sourceTree = "<group>"; };
@@ -267,6 +275,7 @@
 				CC27715D2517C4B900EC6E94 /* guided.storyboard */,
 				CCC429802517CE87001AA0D9 /* guidedPulse.storyboard */,
 				CCC429842517CF40001AA0D9 /* guidedNoPulse.storyboard */,
+				CCA4C286280A71BF0000CBC6 /* ROSC.storyboard */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -291,6 +300,7 @@
 				CC794E1225F647C400DB1D63 /* paddedLabel.swift */,
 				CC1E1F3E267AF76B003538D2 /* UILabel_fade+ext.swift */,
 				CC1E1F42267E4D3E003538D2 /* BarButton_reset+ext.swift */,
+				CC95E44726EB0C2F00192AA3 /* gradientColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -337,11 +347,13 @@
 				CC0E3A3025D8F518001E16E8 /* cprVibrationTimer.swift */,
 				CC606D0725D8863E002BAEFE /* cprAlert.swift */,
 				CC2FA223262A9446007D7525 /* HtDataModel.swift */,
+				CC110F1B26D5D82900438F57 /* eventLog.swift */,
 				CC2FA225262A9CA5007D7525 /* TableViewCell.swift */,
 				CC2FA226262A9CA5007D7525 /* TableViewCell.xib */,
 				CC1E1F3C26798241003538D2 /* globalEpiTimer.swift */,
 				CCDB2CAB267C731300F44E7C /* globalCprTimer.swift */,
 				CC17438D26844E2F0094E5B2 /* bagMaskAlerts.swift */,
+				CC95E48726EF924900192AA3 /* progressBar.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -409,6 +421,7 @@
 				CC2771502513110300EC6E94 /* Algos.storyboard in Resources */,
 				CCA449C62511E5CD0097D370 /* Assets.xcassets in Resources */,
 				CC27715E2517C4B900EC6E94 /* guided.storyboard in Resources */,
+				CCA4C287280A71BF0000CBC6 /* ROSC.storyboard in Resources */,
 				CCA449C42511E5CB0097D370 /* Main.storyboard in Resources */,
 				CCC429812517CE87001AA0D9 /* guidedPulse.storyboard in Resources */,
 				CC2FA228262A9CA5007D7525 /* TableViewCell.xib in Resources */,
@@ -487,6 +500,7 @@
 				CC2FA23726366559007D7525 /* shockVC5.swift in Sources */,
 				CCEB7CA2253F57D100DD66EB /* postArrestTableVC.swift in Sources */,
 				CCC429872517CF81001AA0D9 /* guidedNoPulseVC1.swift in Sources */,
+				CC110F1C26D5D82900438F57 /* eventLog.swift in Sources */,
 				CC2E7AFC262D4B2C009C1669 /* algo_guided1.swift in Sources */,
 				CC2FA224262A9446007D7525 /* HtDataModel.swift in Sources */,
 				CC2E7AFF262D4B40009C1669 /* algo_guided2.swift in Sources */,
@@ -497,6 +511,7 @@
 				CC50AB4125426FE100B2B96E /* rhythmTableVC.swift in Sources */,
 				CCD2D2E22533FE87008DB015 /* guidedPulseOverdoseTableVC.swift in Sources */,
 				CCEB7CAE2540126900DD66EB /* tachyVC.swift in Sources */,
+				CC95E48826EF924900192AA3 /* progressBar.swift in Sources */,
 				CC2FA22F263125B8007D7525 /* shockVC1.swift in Sources */,
 				CCDB2CAC267C731300F44E7C /* globalCprTimer.swift in Sources */,
 				CCD2D2E525340635008DB015 /* guidedPulseVC5.swift in Sources */,
@@ -509,6 +524,7 @@
 				CC50ABF8255142D200B2B96E /* vfAmio.swift in Sources */,
 				CC1E1F3D26798241003538D2 /* globalEpiTimer.swift in Sources */,
 				CC7B75702593B0A400BC961E /* SideMenuManager.swift in Sources */,
+				CC95E44826EB0C2F00192AA3 /* gradientColor.swift in Sources */,
 				CCEB7C9B253F50C000DD66EB /* postArrestVC.swift in Sources */,
 				CC2FA23126336529007D7525 /* shockVC2.swift in Sources */,
 				CC0E3A3125D8F518001E16E8 /* cprVibrationTimer.swift in Sources */,
@@ -663,10 +679,13 @@
 			baseConfigurationReference = F52F8D09D017512DC21828F6 /* Pods-codeBlue.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 31;
 				DEVELOPMENT_TEAM = BTMP3Q45G4;
 				INFOPLIST_FILE = codeBlue/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -674,6 +693,7 @@
 				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = DN.codeBlue;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -684,10 +704,13 @@
 			baseConfigurationReference = 4465DD027E4E25CB011CF503 /* Pods-codeBlue.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 31;
 				DEVELOPMENT_TEAM = BTMP3Q45G4;
 				INFOPLIST_FILE = codeBlue/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -695,6 +718,7 @@
 				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = DN.codeBlue;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

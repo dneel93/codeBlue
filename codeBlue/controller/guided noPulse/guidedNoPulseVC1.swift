@@ -18,6 +18,8 @@ class guidedNoPulseVC1: UIViewController {
     @IBOutlet var defibButton: UIButton!
     @IBOutlet var cprLabel: UILabel!
     @IBOutlet weak var assignButton: UIButton!
+    @IBOutlet weak var epiButton: UIButton!
+    
     
     @IBOutlet weak var newReset: UIButton!
     
@@ -29,7 +31,7 @@ class guidedNoPulseVC1: UIViewController {
     @IBOutlet weak var cprListLabel: UILabel!
     @IBOutlet weak var assignLabel: UILabel!
     @IBOutlet weak var defibLabel: UILabel!
-    
+    @IBOutlet weak var epiLabel: UILabel!
     
     
     private let cprVibration = cprVibrationTimer()
@@ -56,35 +58,40 @@ class guidedNoPulseVC1: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         globalCounter.setLabelVC(timeCountGlobal, self)
         globalCounter.globalTimer?.invalidate()
         globalCounter.startGlobalTime()
+        globalEpiTimer.setLabelVC(epiLabel, epiCountGlobal, self)
         
-        roscButton.configure(title:"ROSC")
-        algoButton.configure(title: "Algo")
-        rolesButton.configure(title: "Roles")
-        causesButton.configure(title: "H&T")
+        let color = UIColor(red: 241/255, green: 248/255, blue: 254/255, alpha: 1.0)
+        roscButton.configure(title:"ROSC", colors: color)
+        algoButton.configure(title: "Algo",colors: color)
+        rolesButton.configure(title: "Roles",colors: color)
+        causesButton.configure(title: "H&T", colors:color)
+        
         cprButton.configureCheckCpr()
         o2Button.configureCheck()
         defibButton.configureCheck()
-        
-        stopButton.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 4)
+        epiButton.configureCheckEpi()
         
         stopButton.setStopText()
+        newReset.configureShadow()
+        logButton.configureShadow()
         
-        newReset.transform = CGAffineTransform(rotationAngle: CGFloat.pi / -4)
-        
-        
+    
         assignButton.configureCheck()
         cprCountGlobal.configureLabel()
         shockCountGlobal.configureLabel()
         epiCountGlobal.configureLabel()
         cprListLabel.configureCprListLabel()
-        
+        epiLabel.configureEpiListLabel()
         
         epiCountGlobal.text="Epi: \(globalCounter.epiCountGlobal)"
         shockCountGlobal.text = "Defib: \(globalCounter.defibCountGlobal)"
         globalCprTimer.setCprLabel(cprLabel, cprCountGlobal, self, "noPulse1")
+        
+        UIApplication.shared.isIdleTimerDisabled = true
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -102,13 +109,15 @@ class guidedNoPulseVC1: UIViewController {
         globalCounter.continueGlobalTime()
         globalCprTimer.setCprLabel(cprLabel, cprCountGlobal, self, "noPulse1")
         globalCprTimer.continueCpr()
+        globalEpiTimer.setLabelVC(epiLabel, epiCountGlobal, self)
+        globalEpiTimer.continueEpiTimer()
         
         epiCountGlobal.text="Epi: \(globalCounter.epiCountGlobal)"
         shockCountGlobal.text = "Defib: \(globalCounter.defibCountGlobal)"
         htTable.resetTable()
         stopButton.setStopText()
         cprButton.configureCheckCpr()
-        
+        epiButton.configureCheckEpi()
     }
     
     @IBAction func stopTapped(_ sender: Any) {
@@ -144,26 +153,38 @@ class guidedNoPulseVC1: UIViewController {
                     cprListLabel.reset()
                     o2Label.reset()
                     defibLabel.reset()
+        epiButton.configureCheckEpi()
+        epiLabel.configureEpiListLabel()
+        
     }
     
 
         
     
-    
-    
-    
-    
 
     
     @IBAction func homeTapped(_ sender: Any) {
-        globalCounter.globalTimer?.invalidate()
-        globalCprTimer.timer?.invalidate()
-        globalCounter.globalTimeCounter = 0
+        
+        totalReset.totalReset(stopButton: stopButton, cprVibration: cprVibration, cprLabel: cprLabel, cprListLabel: cprListLabel)
+        
+        cprCountGlobal.text = "CPR: 0"
+        epiCountGlobal.text = "Epi: 0"
+        shockCountGlobal.text = "Defib: 0"
         timeCountGlobal.text = "00:00"
-        globalCounter.globalReset()  
-        cprVibration.time=0
-        cprVibration.timer?.invalidate()
-        htTable.resetTable()
+        
+        cprButton.configureCheckCpr()
+        o2Button.configureCheck()
+        defibButton.configureCheck()
+        assignButton.configureCheck()
+        assignLabel.reset()
+        cprListLabel.reset()
+        o2Label.reset()
+        defibLabel.reset()
+        epiButton.configureCheck()
+        epiLabel.text = "Epinephrine 1mg"
+        epiLabel.reset()
+        
+        
         self.navigationController?.popToRootViewController(animated: true)
     }
     
@@ -177,12 +198,14 @@ class guidedNoPulseVC1: UIViewController {
     
     
     @IBAction func roscPress(_ sender: Any) {
-        globalCounter.globalTimer?.invalidate()
-        
-        globalCprTimer.invalidate()
-        globalEpiTimer.invalidate()
-        cprVibration.timer?.invalidate()
-        cprVibration.time = 0
+    
+       /* globalCounter.globalTimer?.invalidate()
+         stopButton.setTitle("Reset", for: .normal)
+         stopButton.setTitleColor(.systemBlue, for: .normal)
+         globalCprTimer.invalidate()
+         globalEpiTimer.invalidate()
+         cprVibration.timer?.invalidate()
+         cprVibration.time = 0 */
         
         
         let storyboard = UIStoryboard(name: "Algos", bundle: nil)
@@ -206,7 +229,7 @@ class guidedNoPulseVC1: UIViewController {
         let storyboard = UIStoryboard(name: "guidedNoPulse", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "htCauses")
         self.present(vc, animated: true)
-    
+
     }
     
     
@@ -241,22 +264,34 @@ class guidedNoPulseVC1: UIViewController {
         o2Button.checkOffOn()
         o2Label.fadeLabel()
         
-        bagMaskAlerts.alert1(VC: self)
-    
-    
+        if o2Label.textColor ==  UIColor.black
+            .withAlphaComponent(0.3){
+            bagMaskAlerts.alert1(VC: self)
+        }
+       
         let when2 = DispatchTime.now() + 60
                DispatchQueue.main.asyncAfter(deadline: when2){
+                AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
                 bagMaskAlerts.alert2(VC: self)
                }}
         
     
-       
-    
     @IBAction func defibPress(_ sender: Any) {
         defibButton.checkOffOn()
         defibLabel.fadeLabel()
+        
+        if defibButton.isSelected == true{
+            let time = eventLog.getDate()
+            eventLog.eventTime.append("Defib Attached: \(time)")
+        }
     }
     
+    
+    @IBAction func epiPressed(_ sender: Any) {
+        epiButton.checkOffOn()
+        epiLabel.fadeLabel()
+        epiButton.epiButtonProperties(epiLabel: epiLabel, epiCountLabel: epiCountGlobal)
+        }
     
   
     

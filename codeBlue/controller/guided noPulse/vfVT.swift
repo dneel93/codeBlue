@@ -13,9 +13,9 @@ class vfVT: UIViewController {
     @IBOutlet var cprButton: UIButton!
     @IBOutlet var accessButton: UIButton!
     @IBOutlet var cprLabel: UILabel!
-    
     @IBOutlet weak var newReset: UIButton!
     
+    @IBOutlet weak var logButton: UIButton!
     
     
     
@@ -27,7 +27,6 @@ class vfVT: UIViewController {
     @IBOutlet weak var roscButton: UIButton!
     @IBOutlet weak var algoButton: UIButton!
     @IBOutlet weak var rolesButton: UIButton!
-    
     @IBOutlet weak var htCauses: UIButton!
     
 // MARK: Timer outlets
@@ -53,14 +52,18 @@ class vfVT: UIViewController {
         globalCounter.globalTimer?.invalidate()
         globalCounter.startGlobalTime()
         
-        stopButton.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 4)
         
-        newReset.transform = CGAffineTransform(rotationAngle: CGFloat.pi / -4)
-
-        algoButton.layer.cornerRadius = 8
-        roscButton.layer.cornerRadius = 8
-        rolesButton.layer.cornerRadius = 8
-        htCauses.layer.cornerRadius = 8
+        let color = UIColor(red: 241/255, green: 248/255, blue: 254/255, alpha: 1.0)
+        roscButton.configure(title:"ROSC", colors: color)
+        algoButton.configure(title: "Algo",colors: color)
+        rolesButton.configure(title: "Roles",colors: color)
+        htCauses.configure(title: "H&T", colors:color)
+        
+        stopButton.setStopText()
+        newReset.configureShadow()
+        logButton.configureShadow()
+        
+        
         cprListLabel.configureCprListLabel()
         cprButton.configureCheckCpr()
         accessButton.configureCheck()
@@ -84,6 +87,8 @@ class vfVT: UIViewController {
         globalCounter.continueGlobalTime()
         globalCprTimer.setCprLabel(cprLabel, cprGlobalCount, self, "noPulse3")
         globalCprTimer.continueCpr()
+        globalEpiTimer.setLabelVC1(epiCountGlobal, self)
+        globalEpiTimer.continueEpiTimer()
         
         cprGlobalCount.text = "CPR:  \(globalCounter.cprCountGlobal)"
         epiCountGlobal.text="Epi: \(globalCounter.epiCountGlobal)"
@@ -136,26 +141,30 @@ class vfVT: UIViewController {
     
     
     @IBAction func homeTapped(_ sender: Any) {
-        globalCounter.globalReset()
-        globalCprTimer.timer?.invalidate()
-        cprVibration.timer?.invalidate()
-        cprVibration.time = 0
-
-        cprGlobalCount.text = "CPR: 0"
-        epiCountGlobal.text = "Epi: 0"
-        shockGlobalCount.text = "Defib: 0"
-        timeCountGlobal.text = "00:00"
-        globalCounter.globalTimer.invalidate()
+        totalReset.totalReset(stopButton: stopButton, cprVibration: cprVibration, cprLabel: cprLabel, cprListLabel: cprListLabel)
+        
+        //        Reset everthing in UI
+                    cprGlobalCount.text = "CPR: 0"
+                    epiCountGlobal.text = "Epi: 0"
+                    shockGlobalCount.text = "Defib: 0"
+                    timeCountGlobal.text = "00:00"
+                    
+                    cprButton.configureCheck()
+                    accessButton.configureCheck()
+                    accessLabel.reset()
+                    htTable.resetTable()
+        
         self.navigationController?.popToRootViewController(animated: true)
     }
     
     @IBAction func roscPress(_ sender: Any) {
-        globalCounter.globalTimer?.invalidate()
+        
+        /*globalCounter.globalTimer?.invalidate()
     
         globalCprTimer.invalidate()
         globalEpiTimer.invalidate()
         cprVibration.timer?.invalidate()
-        cprVibration.time = 0
+        cprVibration.time = 0 */
         
         let storyboard = UIStoryboard(name: "Algos", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "rosc")
@@ -210,6 +219,11 @@ class vfVT: UIViewController {
     @IBAction func accessPressed(_ sender: Any) {
         accessButton.checkOffOn()
         accessLabel.fadeLabel()
+        
+        if accessButton.isSelected == true{
+            let time = eventLog.getDate()
+            eventLog.eventTime.append("Got IV access: \(time)")
+        }
     }
     
     

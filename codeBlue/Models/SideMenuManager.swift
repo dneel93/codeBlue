@@ -23,7 +23,7 @@ UITableViewController{
 
 override func viewDidLoad() {
     super.viewDidLoad()
-    tableView.backgroundColor = UIColor(red: 0.032, green: 0.216, blue: 0.678, alpha: 1)
+    tableView.backgroundColor = UIColor(red: 0.42, green: 0.46, blue: 0.70, alpha: 1)
     tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
 }
 
